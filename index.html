@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="The Official Website of Author Todd Croak-Falen.">
+	<meta name="author" content="Todd Croak-Falen">
+	<meta name="keyword" content="Todd Croak-Falen, Catch Up To Myself, The Druggist">
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/ico/favicon.png">
+
+	<!-- <title>MARCO - One Page Bootstrap 3 Theme</title> -->
+	<title>Todd Croak-Falen | Web Design</title>
+
+	<link href="assets/css/hover_pack.css" rel="stylesheet">
+
+	<!-- Bootstrap core CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="assets/css/main.css" rel="stylesheet">
+	<link href="assets/css/colors/color-74c9be.css" rel="stylesheet">    
+	<link href="assets/css/animations.css" rel="stylesheet">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+	
+	
+	<!-- JavaScripts needed at the beginning
+	================================================== -->
+	<script type="text/javascript" src="http://alvarez.is/demo/marco/assets/js/twitterFetcher_v10_min.js"></script>
+
+	<!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+	<script type="text/javascript">
+		// When the window has finished loading create our google map below
+		google.maps.event.addDomListener(window, 'load', init);
+	
+		function init() {
+			// Basic options for a simple Google Map
+			// For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+			var mapOptions = {
+				// How zoomed in you want the map to start at (always required)
+				zoom: 11,
+				
+				scrollwheel: false,
+
+				// The latitude and longitude to center the map (always required)
+				center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+				// How you would like to style the map. 
+				// This is where you would paste any style found on Snazzy Maps.
+				styles: [	{		featureType:'water',		stylers:[{color:'#74c9be'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#f2f2f2'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#444444'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
+			};
+
+			// Get the HTML DOM element that will contain your map 
+			// We are using a div with id="map" seen below in the <body>
+			var mapElement = document.getElementById('map');
+
+			// Create the Google Map using out element and options defined above
+			var map = new google.maps.Map(mapElement, mapOptions);
+		}
+	</script>
+	
+	
+	<!-- Main Jquery & Hover Effects. Should load first -->
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="assets/js/hover_pack.js"></script>
+	
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+  </head>
+
+  <body>
+
+
+	<!--  ========== HEADERWRAP ====================================================================================================  -->
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2 mt">
+					<h1 class="animation slideDown">Todd Croak-Falen</h1>
+					<h1 class="animation slideDown">Web Design</h1>
+					<!-- <p class="mt"><button type="button" class="btn btn-cta btn-lg">LEARN MORE</button></p> -->
+				</div>
+				
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div> <!-- /headerwrap -->
+
+	<div class="container">	
+
+		<div class="row mt centered ">
+			<div class="col-lg-4 col-lg-offset-4">
+				<h3>Team Projects</h3>
+				<hr>
+			</div>
+		</div><!-- /row -->
+
+		<div class="row mt">
+			<!-- ROOM[EASE] -->
+			<div class="col-lg-4 col-md-4 col-xs-12 desc">
+				<a class="b-link-fade b-animate-go" href="https://room-ease.herokuapp.com/index" target="_blank"><img width="350" src="assets/img/portfolio/port04.jpg" alt="room[ease]" />
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03" a href="https://room-ease.herokuapp.com/index" target="_blank">Click</h4>
+						<p class="b-from-right b-animate b-delay03">to view</p>
+					</div>
+				</a>
+				<p>room[ease]</p>
+				<p class="lead">Looking for a roommate? Answer a few questions about yourself, then about the type of roommate you'd like. Then let our proprietary algorithm match you up with the most compatible candidates.</p>
+				<hr-d>
+				<!-- <p class="time"><i class="fa fa-comment-o"></i> 3 | <i class="fa fa-calendar"></i> 14 Nov.</p> -->
+			</div><!-- col-lg-4 -->
+			
+			<!-- FUN SOCIETY -->
+			<div class="col-lg-4 col-md-4 col-xs-12 desc">
+				<a class="b-link-fade b-animate-go" href="https://funsociety.club/" target="_blank"><img width="350" src="assets/img/portfolio/port05.jpg" alt="Fun Society" />
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">Click</h4>
+						<p class="b-from-right b-animate b-delay03">to play</p>
+					</div>
+				</a>
+				<p>Fun Society</p>
+				<p class="lead">Fun Society is an escape from the everyday world. An oasis where you can enjoy the diversions in life. Take a break. Play some games with us!</p>
+				<hr-d>
+				<!-- <p class="time"><i class="fa fa-comment-o"></i> 1 | <i class="fa fa-calendar"></i> 13 Oct.</p> -->
+			</div><!-- col-lg-4 -->
+			
+			<!-- TEAM PROJECT 3 -->
+			<div class="col-lg-4 col-md-4 col-xs-12 desc">
+				<a class="b-link-fade b-animate-go" href="#"><img width="350" src="assets/img/portfolio/port06.jpg" alt="Team Project 3" />
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">Team Project 3</h4>
+						<p class="b-from-right b-animate b-delay03">Coming Soon</p>
+					</div>
+				</a>
+				<p>Team Project 3</p>
+				<p class="lead">Coming Soon.</p>
+				<hr-d>
+				<!-- <p class="time"><i class="fa fa-comment-o"></i> 1 | <i class="fa fa-calendar"></i> 13 Oct.</p> -->
+			</div><!-- col-lg-4 -->
+			
+			
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	<div id="cta01">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h2>"A year from now, you will wish you started today."<br/> - Karen Lamb</h2>
+					<!-- <button type="button" class="btn btn-cta btn-lg">LEARN MORE</button> -->
+				</div>
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /cta01 -->
+
+	<!-- SOLO PROJECTS -->
+	<div class="container">
+		<div class="row mt centered ">
+			<div class="col-lg-4 col-lg-offset-4">
+				<h3>Solo Projects</h3>
+				<hr>
+			</div>
+		</div><!-- /row -->
+		<div class="row mt centered">	
+			<!-- AUTHOR WEBSITE -->
+			<div class="col-lg-4 desc">
+				<a class="b-link-fade b-animate-go" href="http://www.toddcf.com" target="_blank"><img width="350" height="225" src="assets/img/cutm-2k-wallpaper.jpg" alt="Author Website">
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">Click</h4>
+						<p class="b-from-right b-animate b-delay03">to view</p>
+					</div>
+				</a>
+				<p>Author Webite</p>
+			</div>
+			<!-- COLLECTOR OF THE CRYSTAL SKULLS -->
+			<div class="col-lg-4 desc">
+				<a class="b-link-fade b-animate-go" href="https://crystal-skull-collector.herokuapp.com/" target="_blank"><img width="350" height="225" src="assets/img/indiana.png" alt="Crytal Skulls">
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">Click</h4>
+						<p class="b-from-right b-animate b-delay03">to play</p>
+					</div>
+				</a>
+				<p><a href="https://github.com/toddcf/crystal-skull-collector" target="_blank">Collector of the Crystal Skulls</a></p>
+			</div>
+			<!-- THE SIMPSONS TRIVIA GAME -->
+			<div class="col-lg-4 desc">
+				<a class="b-link-fade b-animate-go" href="#"><img width="350" height="225" src="assets/img/woo-hoo.jpg" alt="Simpsons Trivia Game">
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">Hilarity</h4>
+						<p class="b-from-right b-animate b-delay03">Coming Soon</p>
+					</div>
+				</a>
+				<p>The Simpsons Trivia Game</p>
+			</div>
+
+		</div><!-- /row -->
+		<div class="row mt centered">	
+			<!-- HANGMAN - ROBERT DE NIRO EDITION -->
+			<div class="col-lg-4 desc">
+				<a class="b-link-fade b-animate-go" href="https://stormy-headland-74581.herokuapp.com/"><img width="350" height="225" src="assets/img/heat.jpg" alt="Hangman">
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">Click</h4>
+						<p class="b-from-right b-animate b-delay03">to play</p>
+					</div>
+				</a>
+				<p>Hangman - Robert De Niro Edition</p>
+			</div>
+			<!-- ROLLER COASTER WAIT TIMES -->
+			<div class="col-lg-4 desc">
+				<a class="b-link-fade b-animate-go" href="#"><img width="350" height="225" src="assets/img/roller-coaster.png" alt="Roller Coaster Wait Times">
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">Roller Coaster Wait Times</h4>
+						<p class="b-from-right b-animate b-delay03">Coming Soon</p>
+					</div>
+				</a>
+				<p>Roller Coaster Wait Times</p>
+			</div>
+			<!-- ELEVATOR ALGORITHMS -->
+			<div class="col-lg-4 desc">
+				<a class="b-link-fade b-animate-go" href="#"><img width="350" height="225" src="assets/img/elevator-blueprint.jpg" alt="Elevator Algorightms" />
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">Elevator Algorithms</h4>
+						<p class="b-from-right b-animate b-delay03">Coming Soon</p>
+					</div>
+				</a>
+				<p>Elevator Algorithms</p>
+			</div>
+		</div><!-- /row -->
+
+		<div class="row mt centered">
+			<div class="col-lg-4 col-lg-offset-4">
+				<!-- <button type="button" class="btn btn-theme btn-lg">VIEW OUR PORTFOLIO</button> -->
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+
+
+	<!-- CONNECT -->
+	<div id="cta02">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h2>Connect:</h2>
+					<!-- <button type="button" class="btn btn-cta btn-lg">LEARN MORE</button> -->
+				</div>
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div> <!-- /cta02 -->
+
+
+	<!-- LINKEDIN, GITHUB, RESUME -->
+	<div class="container">
+		<div class="row mt">
+			<!-- Github -->
+			<div class="col-lg-4 centered si">
+				<i class="fa fa-flask"></i>
+				<h4><a href="https://github.com/toddcf" target="_blank">Github</a></h4>
+				<p>View the code behind the sites.</p>
+			</div>
+			<!-- LinkedIn -->
+			<div class="col-lg-4 centered si">
+				<i class="fa fa-eye"></i>
+				<h4><a href="https://www.linkedin.com/in/toddcf" target="_blank">LinkedIn</a></h4>
+				<p>Professional experience, education, skills, and endorsements.</p>
+			</div>
+			<!-- Resume -->
+			<div class="col-lg-4 centered si">
+				<i class="fa fa-mobile"></i>
+				<h4><a href="https://drive.google.com/open?id=0B1FUEWm5lrgAdmpldXhVNWlZNXM" target="_blank">Resumé</a></h4>
+				<p>Convenient PDF, plus contact info.</p>
+			</div>    	
+
+
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+
+	
+	<!-- FOOTER -->
+	<div id="f">
+		<div class="container">
+			<div class="row">
+				<!-- ADDRESS -->
+				<div class="col-lg-3">
+					<h4>Location</h4>
+					<p>
+						<!-- Some Ave. 987,<br/>
+						Postal 64733<br/> -->
+						Los Angeles, CA<br/>
+					</p>
+					<p>
+						<!-- <i class="fa fa-mobile"></i> +55 4893.8943<br/>
+						<i class="fa fa-envelope-o"></i> hello@yourdomain.com -->
+					</p>
+				</div><!-- /col-lg-3 -->
+				
+				<!-- TWEETS -->
+				<div class="col-lg-3">
+					<!-- <h4>Recent Tweets</h4>
+					<div id="showtweets"></div>
+						<script>
+							twitterFetcher.fetch('258157205101088768', 'showtweets', 2, true, false, false, '', false, handleTweets, false);
+							
+							function handleTweets(tweets){
+								var x = tweets.length;
+								var n = 0;
+								var element = document.getElementById('showtweets');
+								var html = '<ul>';
+								while(n < x) {
+								  html += '<li>' + tweets[n] + '</li>';
+								  n++;
+								}
+								html += '</ul>';
+								element.innerHTML = html;
+							}					
+						</script>
+					<p>Follow us <b>@Alvrz_is</b></p> -->
+				</div><!-- /col-lg-3 -->
+				
+				<!-- LATEST POSTS -->
+				<div class="col-lg-3">
+					<!-- <h4>Latest Posts</h4>
+					<p>
+						<i class="fa fa-angle-right"></i> A post with an image<br/>
+						<i class="fa fa-angle-right"></i> Other post with a video<br/>
+						<i class="fa fa-angle-right"></i> A full width post<br/>
+						<i class="fa fa-angle-right"></i> We talk about something nice<br/>
+						<i class="fa fa-angle-right"></i> Yet another single post<br/>
+					</p> -->
+				</div><!-- /col-lg-3 -->
+				
+				<!-- NEW PROJECT -->
+				<div class="col-lg-3">
+					<!-- <h4>New Project</h4>
+					<a href="#"><img class="img-responsive" src="assets/img/portfolio/port03.jpg" alt="" /></a> -->
+				</div><!-- /col-lg-3 -->
+				
+				
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /f -->
+	
+
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/retina.js"></script>
+
+
+	<script>
+		$(window).scroll(function() {
+			$('.si').each(function(){
+			var imagePos = $(this).offset().top;
+	
+			var topOfWindow = $(window).scrollTop();
+				if (imagePos < topOfWindow+400) {
+					$(this).addClass("slideUp");
+				}
+			});
+		});
+	</script>    
+
+
+
+  
+  </body>
+</html>
