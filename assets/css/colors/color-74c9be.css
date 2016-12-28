@@ -69,3 +69,6 @@ p.capitalize:first-letter {
   border-left: 4px solid #74c9be;
 }
 
+.black {
+	color: black;
+}
