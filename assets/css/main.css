@@ -576,6 +576,26 @@ p.capitalize:first-letter {
 
 
 /* ================== TEAM MEMBERS INFORMATION OVER iMAGE ================== */
+.location {
+	text-align: center;
+	margin: auto;
+}
+
+#location-tag {
+	padding-top: 20%;
+}
+
+#los-angeles {
+	padding-bottom: 20%;
+}
+
+#portrait {
+	width: 200px;
+	border-radius: 100px;
+	margin: 0 auto;
+	display: block;
+}
+
 .members {
   width: 302px;
   position: relative;
