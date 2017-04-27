@@ -1,0 +1,228 @@
+/* Not sure this html made any difference */
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	font-family: "Tangerine", serif;
+	background-color: #ffffff; /*White*/
+	font-size: 20px;
+	/*Bottom = footer height*/
+	margin: 0 0 80px 0;
+	padding: 0;
+}
+
+/* Navbar */
+#nav_bar {
+	margin-bottom: 0px;
+	padding: 0;
+	background-color: #ffffff;
+	border: none;
+}
+
+.weather {
+	/* Set color to important to override its default color: */
+	color: #4aa1f3 !important;
+	font-size: 25px;
+	font-weight: 600;
+}
+
+/* Get the nav_list id and its two child elements: */
+#nav_list > li > a {
+	color: #4aa1f3 !important;
+	font-weight: 500;
+}
+
+#logo {
+	max-height: 42px;
+	margin-right: 8px;
+	/* Position the logo next to the text: */
+	display: inline-block;
+	/* Move the text and logo up: */
+	margin-top: -15px;
+}
+
+/* index.html */
+#headRow {
+	background: url(../img/bg.jpg) no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 250px;
+	margin-top: 0px;
+	margin-left: 0px;
+}
+
+#colHeadText1 {
+	color: white;
+	padding-top: 30px;
+	font-size: 50px;
+}
+
+#colHeadText2 {
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+ul#list_item {
+	color: white;
+	font-size: 35px;
+	text-align: center;
+}
+
+#welcome {
+	margin-top: 40px;
+}
+
+#welcome-paragraph {
+	font-size: 18px;
+	font-weight: normal;
+	padding: 12px 25px 40px 25px;
+	letter-spacing: 0.5px;
+}
+
+.explanation {
+	width: 750px;
+	margin: 0 auto;
+}
+
+#rowDiv {
+	margin: auto;
+	width: 100%;
+}
+
+.colDesc {
+	border: 1px solid #e7e7e7;
+	/*margin-bottom: 20px;*/
+	height: 175px;
+	margin: 0 auto 20px auto;
+}
+
+.colDesc h3 {
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/* Font Awesome Icons */
+.info-icon {
+	text-align: center;
+}
+
+.info-icon i {
+	font-size: 30px;
+	margin-top: 15px;
+	color: #4aa1f3;
+}
+
+/* Current & Forecast Pages */
+.jumbotron {
+	margin-bottom: 0px;
+	background-color: #4aa1f3;
+	color: white;
+}
+
+.jumbo {
+	font-size: 40px;
+	font-weight: 600;
+}
+
+#cityDiv {
+	width: 60%;
+	margin: auto;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+input[type="text"] {
+	height: 40px;
+	font-size: 20px;
+}
+
+.submitAll {
+	height: 40px;
+	font-weight: bold;
+}
+
+/* Error Handling */
+#red {
+	/*color: #FF5049 !important;*/
+	animation-name: red;
+    animation-duration: 0.07s;
+    animation-iteration-count: 12;
+    animation-direction: alternate;
+}
+
+@keyframes red {
+	from { color:  }
+	to { color: #FF5049 }
+}
+/* End Error Handling */
+
+#showWeather {
+	width: 60%;
+	margin: auto;
+	margin-bottom: 40px;
+	background-color: #4aa1f3;
+	color: white;
+	border-radius: 6px;
+}
+
+.weather-text {
+	padding-left: 50px;
+	font-weight: bold;
+}
+
+#weather-text-top {
+	padding-top: 20px;
+	font-size: 30px;
+}
+
+#weather-text-bottom {
+	padding-bottom: 30px;
+}
+
+#table-header {
+	font-weight: bold;
+	font-size: 30px;
+	color: #4aa1f3;
+	margin-bottom: 40px;
+}
+
+table {
+	color: black;
+	font-family: helvetica, arial sans-serif;
+}
+
+th {
+	background-color: #4aa1f3;
+	font-weight: bold;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+}
+
+td {
+	background-color: #fafafa;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+footer {
+	color: white;
+	background-color: #4aa1f3;
+	width: 100%;
+	height: 80px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-top: 15px;
+	font-size: 15px;
+}
+
+.footer-text {
+	color: white;
+	font-size: 15px;
+}
