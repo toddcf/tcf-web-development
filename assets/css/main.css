@@ -701,4 +701,12 @@ p.capitalize:first-letter {
 	}	
 }
 
+/* Omnifood */
 
+.darken {
+	background-color: #000; /* So that the opacity of the images fades toward black. */
+}
+
+.darken img {
+	opacity: 0.5;
+}
