@@ -419,7 +419,7 @@
 		// show cursor
 		showCursor: true,
 		// character for cursor
-		cursorChar: "|",
+		cursorChar: "", /* Removed pike. */
 		// attribute to type (null == text)
 		attr: null,
 		// either html or text

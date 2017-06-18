@@ -34,7 +34,7 @@ $( document ).ready( function() {
 						table += "<tr>";
 							table += "<td><img src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png'></td>";
 							table += "<td>" + data.list[i].weather[0].main + "</td>";
-							table += "<td>" + data.list[i].weather[0].description + "</td>";
+							table += "<td class=\"cap\">" + data.list[i].weather[0].description + "</td>";
 							table += "<td>" + data.list[i].temp.morn + imperialDeg + "</td>";
 							table += "<td>" + data.list[i].temp.night + imperialDeg + "</td>";
 							table += "<td>" + data.list[i].temp.min + imperialDeg + "</td>";

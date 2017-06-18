@@ -1,132 +1,253 @@
-/* Not sure this html made any difference */
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
 html {
 	position: relative;
 	min-height: 100%;
+	font-size: 20px;
+	color: #fff;
 }
 
 body {
-	font-family: "Tangerine", serif;
-	background-color: #ffffff; /*White*/
+	font-family: 'Oxygen', sans-serif, arial;
 	font-size: 20px;
-	/*Bottom = footer height*/
-	margin: 0 0 80px 0;
+	margin: 0;
 	padding: 0;
 }
 
-/* Navbar */
-#nav_bar {
+/* TEXT */
+
+h1,
+h2 { font-weight: 300; }
+
+h1 { font-size: 300%; }
+
+h2 { font-size: 150%; }
+
+h3 {
+	font-size: 100%;
+	font-weight: 400;
+}
+
+a { text-decoration: none; }
+
+.cap { text-transform: capitalize; }
+
+/* BUTTONS */
+
+.btn {
+	/* There's gotta be a much better way to do this:; */
+	/*margin-top: 5px;*/
+	margin-left: 100px;
+}
+
+/*The links will look the same before and after they've been clicked:*/
+.btn:link,
+.btn:visited,
+input[type=submit] {
+	display: inline-block;
+	padding: 10px 30px;
+	font-weight: 300;
+	text-decoration: none;
+	border-radius: 200px;
+	-webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+	transition: background-color 0.2s, border 0.2s, color 0.2s; /* Transition takes 0.2 seconds. */
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+	background-color: #e67e22;
+	border: 1px solid #e67e22;
+	color: #fff;
+	/*margin-right: 15px;*/
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+	border: 1px solid #e67e22;
+	color: #e67e22;
+}
+
+/* Button color darkens when hovered or clicked: */
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+	background-color: #cf6d17;
+}
+
+/* Adds border when hovered or clicked, for consistency with btn-ghost: */
+.btn-full:hover,
+.btn-full:active,
+input[type=submit] {
+	border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+	border: 1px solid #cf6d17;
+	color: #fff;
+}
+
+/* MAIN NAV */
+
+nav {
 	margin-bottom: 0px;
 	padding: 0;
-	background-color: #ffffff;
 	border: none;
+	background: linear-gradient(rgba(256, 256, 256, 0.5), rgba(256, 256, 256, 0));
 }
 
-.weather {
-	/* Set color to important to override its default color: */
-	color: #4aa1f3 !important;
-	font-size: 25px;
-	font-weight: 600;
-}
-
-/* Get the nav_list id and its two child elements: */
-#nav_list > li > a {
-	color: #4aa1f3 !important;
-	font-weight: 500;
-}
+/* Nav-Left */
 
 #logo {
 	max-height: 42px;
-	margin-right: 8px;
-	/* Position the logo next to the text: */
+	margin: 5px 10px -10px 50px;
+	display: inline-block; /* Position the logo next to the text: */
+}
+
+.nav-left {
+	font-size: 140%;
+	line-height: 42px;
+	color: #000 !important;
 	display: inline-block;
-	/* Move the text and logo up: */
-	margin-top: -15px;
 }
 
-/* index.html */
-#headRow {
-	background: url(../img/bg.jpg) no-repeat;
-	background-size: cover;
-	width: 100%;
-	height: 250px;
-	margin-top: 0px;
-	margin-left: 0px;
+.nav-left a:visited { color: #000 !important; }
+
+/* Nav-Right */
+
+.nav-right {
+	float: right;
+	list-style: none; /* Remove bullet points */
+	margin: 10px 50px 0 50px;
 }
 
-#colHeadText1 {
-	color: white;
+.nav-right li {
+	display: inline-block;
+	margin-left: 40px;
+}
+
+.nav-right li a:link,
+.nav-right li a:visited {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 90%;
+	border-bottom: 2px solid transparent;
+	-webkit-transition: border-bottom 0.2;
+	transition: border-bottom 0.2;
+	padding: 8px 0;
+}
+
+.nav-right li a:hover,
+.nav-right li a:active {
+	border-bottom: 2px solid #e67e22;
+}
+
+/* Get the nav_list id and its two child elements: */
+/*#nav_list > li > a {*/
+	/*color: #4aa1f3 !important;*/
+	/*font-weight: 500;*/
+/*}*/
+
+
+
+
+/* INDEX */
+
+.banner {
+	width: 1050px;
+	height: 125px;
+	margin: 50px auto 150px auto;
+	padding: 6px;
+}
+
+.banner-text {
 	padding-top: 30px;
 	font-size: 50px;
 }
 
-#colHeadText2 {
-	color: white;
+.categories {
+	text-align: center;
+	letter-spacing: 2px;
+	margin-top: 50px;
 	padding-top: 20px;
 	padding-bottom: 30px;
 }
 
-ul#list_item {
+/*ul#list_item {
 	color: white;
 	font-size: 35px;
 	text-align: center;
+	list-style: none;
+}*/
+
+/*ol ol,ol ul,ul ol,ul ul {margin-bottom:0}*/
+
+/*.list-unstyled {
+	padding-left: 0;
+	list-style: none;
+}*/
+
+/*.list-inline {
+	padding-left: 0;
+	margin-left: -5px;
+	list-style: none;
+}*/
+
+/*.list-inline>li {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+}*/
+
+.description {
+	width: 75%;
+	margin: 180px auto 0 auto;
 }
 
-#welcome {
-	margin-top: 40px;
-}
-
-#welcome-paragraph {
-	font-size: 18px;
-	font-weight: normal;
-	padding: 12px 25px 40px 25px;
-	letter-spacing: 0.5px;
-}
-
-.explanation {
-	width: 750px;
-	margin: 0 auto;
-}
-
-#rowDiv {
-	margin: auto;
-	width: 100%;
-}
-
-.colDesc {
-	border: 1px solid #e7e7e7;
-	/*margin-bottom: 20px;*/
+.description-col {
+	display: inline-block;
+	vertical-align: top;
 	height: 175px;
-	margin: 0 auto 20px auto;
+	margin: 0 4px;
+	padding: 15px;
 }
 
-.colDesc h3 {
-	font-size: 18px;
-	font-weight: 600;
-	text-transform: uppercase;
+.intro {
+	line-height: 170%;
+	text-align: justify;
+	font-size: 90%;
+	font-weight: 400;	
+	letter-spacing: 1px;
 }
 
-/* Font Awesome Icons */
-.info-icon {
+.btn-padding { padding-top: 20px; }
+
+.open-logo {
+	height: 20px;
+	margin-bottom: -5px;
+}
+
+/* CURRENT & FORECAST PAGES */
+
+.jumbo {
+	text-align: center;
+	margin: 25px auto 0 auto;
+}
+
+.main {
+	margin: 0 auto;
 	text-align: center;
 }
 
-.info-icon i {
-	font-size: 30px;
-	margin-top: 15px;
-	color: #4aa1f3;
-}
-
-/* Current & Forecast Pages */
-.jumbotron {
-	margin-bottom: 0px;
-	background-color: #4aa1f3;
-	color: white;
-}
-
-.jumbo {
-	font-size: 40px;
-	font-weight: 600;
-}
+.main h2 { margin-bottom: 30px; }
 
 #cityDiv {
 	width: 60%;
@@ -140,14 +261,10 @@ input[type="text"] {
 	font-size: 20px;
 }
 
-.submitAll {
-	height: 40px;
-	font-weight: bold;
-}
+.submitAll { margin-left: 15px; }
 
 /* Error Handling */
 #red {
-	/*color: #FF5049 !important;*/
 	animation-name: red;
     animation-duration: 0.07s;
     animation-iteration-count: 12;
@@ -164,65 +281,74 @@ input[type="text"] {
 	width: 60%;
 	margin: auto;
 	margin-bottom: 40px;
-	background-color: #4aa1f3;
-	color: white;
+	background: rgba(0, 0, 0, 0.5);
 	border-radius: 6px;
 }
 
-.weather-text {
-	padding-left: 50px;
-	font-weight: bold;
-}
+.weather-text { text-align: center; }
 
 #weather-text-top {
 	padding-top: 20px;
 	font-size: 30px;
 }
 
-#weather-text-bottom {
-	padding-bottom: 30px;
-}
+#weather-text-bottom { padding-bottom: 30px; }
 
-#table-header {
-	font-weight: bold;
-	font-size: 30px;
-	color: #4aa1f3;
-	margin-bottom: 40px;
-}
+#table-header {	margin-bottom: 40px; }
 
 table {
-	color: black;
-	font-family: helvetica, arial sans-serif;
+	border-collapse: collapse;
+	margin: 0 auto 100px auto;
+}
+
+th,
+td {
+	border: 1px solid #fff;
+	font-size: 90%;
+	text-align: center;
 }
 
 th {
-	background-color: #4aa1f3;
-	font-weight: bold;
-	font-size: 18px;
-	color: white;
-	text-align: center;
+	padding: 12px;
+	background: rgba(0, 0, 0, 0.8);
 }
 
 td {
-	background-color: #fafafa;
-	text-align: center;
-	font-weight: bold;
-	font-size: 18px;
+	background: rgba(0, 0, 0, 0.5);
+	font-weight: 300;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+footer a:link,
+footer a:visited {
+	color: #fff;
+	text-decoration: none; /* No default underline */
+	border-bottom: 1px solid #fff; /* Our own custom underline */
+	/*padding-bottom: 1px;*/ /* Space for underline */
+	-webkit-transition: border-bottom 0.2s, color 0.2s;
+	transition: border-bottom 0.2s, color 0.2s; /* Transition takes 0.2 seconds. */
+}
+
+/* FOOTER */
+
+footer a:hover,
+footer a:active {
+	color: #c0c0c0;
+	border-bottom: 1px solid transparent;
 }
 
 footer {
-	color: white;
-	background-color: #4aa1f3;
 	width: 100%;
 	height: 80px;
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	padding-top: 15px;
-	font-size: 15px;
-}
-
-.footer-text {
-	color: white;
-	font-size: 15px;
+	
+	font-size: 75%;
+	font-weight: 400;
+	text-align: center;
+	
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }

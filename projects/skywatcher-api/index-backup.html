@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- For mobile devices: -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<meta name="Author" content="Todd Croak-Falen">
+		<meta name="Description" content="A weather forecasting app using AJAX and API.">
+		<meta name="keywords" content="weather, forecast">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+		<title>Skywatcher</title>
+
+		<!-- Bootstrap CSS -->
+		<!-- <link type="text/css" rel="stylesheet" href="assets/bootstrap-3.3.7-dist/css/bootstrap.min.css"> -->
+		<!-- Custom CSS -->
+		<link type="text/css" rel="stylesheet" href="assets/css/style.css">
+
+		<!-- Fonts -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	</head>
+
+	<body>
+		
+		<div class="container">
+
+			<nav class="navbar navbar-default" id="nav_bar">
+
+				<!-- Using "container" intead of "container-fluid" so that the text has some margin at the edges. -->
+				<div class="inner-container">
+					<div class="navbar-header">
+						<a href="" class="navbar-brand navbar-link weather">
+							<img src="assets/img/logo.png" alt="Logo" class="img-responsive" id="logo"><strong>Skywatcher</strong>
+						</a>
+						<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="navcol">
+							<span class="sr-only">Toggle Navigation</span>
+							<!-- When collapsed, show three bars: -->
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<!-- This "navcol" id targets the data-target in the button above: -->
+					<div class="collapse navbar-collapse" id="navcol">
+						<!-- Display the links on the right: -->
+						<ul class="nav navbar-nav navbar-right" id="nav_list">
+							<!-- Link to "current weather" page: -->
+							<li><a href="current.html">Current</a></li>
+							<li><a href="forecast.html">Forecast</a></li>
+							<li><a href="http://www.openweathermap.org" target="blank">Open Weather Map</a></li>
+						</ul>
+					</div>
+
+				</div>
+				
+			</nav>
+
+			<div class="row" id="headRow">
+				<div class="col-md-12" id="colText">
+					<h2 class="text-center" id="colHeadText1"></h2>
+
+					<!-- List is place in a row instead of in a column: -->
+					<ul class="list-inline" id="list_item">
+						<!-- Temperature -->
+						<li id="temp"></li>
+						<!-- <li>|</li> -->
+						<!-- Pressure -->
+						<li id="pres"></li>
+						<!-- <li>|</li> -->
+						<!-- Wind Speed -->
+						<li id="wind"></li>
+						<!-- <li>|</li> -->
+						<!-- Humidity -->
+						<li id="humi"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+			<div class="inner-container">
+				<div class="row explanation">
+					<div class="col-md-12">
+						<h2 class="text-center text-primary" id="welcome">Click <a href="current.html"><u>Current</u></a> or <a href="forecast.html"><u>Forecast</u></a> to get the weather conditions . . .</h2>
+						<p class="text-center" id="welcome-paragraph">Skywatcher can search virtually any city in the world and return up to 16 days of weather forecasting using the <a href="http://openweathermap.org" target="blank">Open Weather Map API</a>.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" id="rowDiv">
+				<div class="col-md-4 colDesc">
+					<div class="info-icon">
+						<i class="fa fa-sun-o"></i>
+						<h3 class="text-center">Weather API</h3>
+						<p class="text-center">Use Open Weather Map API to get weather information of any city.</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 colDesc">
+					<div class="info-icon">
+						<i class="fa fa-search"></i>
+						<h3 class="text-center">Search</h3>
+						<p class="text-center">Search for current weather information and forecasts.</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 colDesc">
+					<div class="info-icon">
+						<i class="fa fa-chevron-circle-down"></i>
+						<h3 class="text-center">View Results</h3>
+						<p class="text-center">Get information about temperature, pressure, humidity, and more.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer contents are passed in from app.js file -->
+			<footer class="footer"></footer>
+
+		</div>
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<!-- JavaScript -->
+		<script src="assets/js/app.js" type="text/javascript"></script>
+		<!-- Typed.js -->
+		<script src="assets/js/typed.js" type="text/javascript"></script>
+		<script src="assets/js/animate.js" type="text/javascript"></script>
+		
+	</body>
+</html>

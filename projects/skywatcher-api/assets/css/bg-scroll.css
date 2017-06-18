@@ -1,0 +1,8 @@
+.container {
+	background-image: url(../img/bg.jpg);
+	min-height: 100vh;
+	background-size: cover;
+	/*background-repeat: repeat-y;*/
+	background-position: center;
+	/*background-attachment: local !important;*/
+}
