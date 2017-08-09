@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+			box-sizing: border-box;
 }
 
 html {
@@ -10,6 +10,8 @@ html {
 	min-height: 100%;
 	font-size: 20px;
 	color: #fff;
+	background-image: url(../img/bg.jpg);
+	background-size: cover;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
 h1,
 h2 { font-weight: 300; }
 
-h1 { font-size: 300%; }
+h1 { font-size: 250%; }
 
 h2 { font-size: 150%; }
 
@@ -42,7 +44,9 @@ a { text-decoration: none; }
 .btn {
 	/* There's gotta be a much better way to do this:; */
 	/*margin-top: 5px;*/
-	margin-left: 100px;
+	/*margin-left: 100px;*/
+	/*margin: 0 auto;*/
+	font-weight: 400;
 }
 
 /*The links will look the same before and after they've been clicked:*/
@@ -51,7 +55,6 @@ a { text-decoration: none; }
 input[type=submit] {
 	display: inline-block;
 	padding: 10px 30px;
-	font-weight: 300;
 	text-decoration: none;
 	border-radius: 200px;
 	-webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
@@ -62,14 +65,14 @@ input[type=submit] {
 .btn-full:visited,
 input[type=submit] {
 	background-color: #e67e22;
-	border: 1px solid #e67e22;
+	border: 2px solid #e67e22;
 	color: #fff;
 	/*margin-right: 15px;*/
 }
 
 .btn-ghost:link,
 .btn-ghost:visited {
-	border: 1px solid #e67e22;
+	border: 2px solid #e67e22;
 	color: #e67e22;
 }
 
@@ -85,12 +88,12 @@ input[type=submit]:active {
 .btn-full:hover,
 .btn-full:active,
 input[type=submit] {
-	border: 1px solid #cf6d17;
+	border: 2px solid #cf6d17;
 }
 
 .btn-ghost:hover,
 .btn-ghost:active {
-	border: 1px solid #cf6d17;
+	border: 2px solid #cf6d17;
 	color: #fff;
 }
 
@@ -150,6 +153,18 @@ nav {
 	border-bottom: 2px solid #e67e22;
 }
 
+.mobile-nav-icon {
+	display: none; /* Default. Only displays when media queries kick in. */
+	cursor: pointer;
+	float: right;
+	margin-top: 15px;
+	margin-right: 30px;
+}
+
+.mobile-nav-icon i {
+	font-size: 150%;
+}
+
 /* Get the nav_list id and its two child elements: */
 /*#nav_list > li > a {*/
 	/*color: #4aa1f3 !important;*/
@@ -163,22 +178,22 @@ nav {
 
 .banner {
 	width: 1050px;
-	height: 125px;
-	margin: 50px auto 150px auto;
+	min-height: 175px;
+	margin: 50px auto;
 	padding: 6px;
 }
 
 .banner-text {
 	padding-top: 30px;
-	font-size: 50px;
+	text-align: center;
 }
 
 .categories {
 	text-align: center;
 	letter-spacing: 2px;
-	margin-top: 50px;
+	/*margin-top: 50px auto;*/
 	padding-top: 20px;
-	padding-bottom: 30px;
+	/*padding-bottom: 30px;*/
 }
 
 /*ul#list_item {
@@ -209,22 +224,26 @@ nav {
 
 .description {
 	width: 75%;
-	margin: 180px auto 0 auto;
+	margin: 100px auto;
 }
 
 .description-col {
 	display: inline-block;
 	vertical-align: top;
-	height: 175px;
+	min-height: 210px;
 	margin: 0 4px;
 	padding: 15px;
+	border-radius: 5px;
+	/* Shaded background divs fade out when screen is full size: */
+	background: rgba(0, 0, 0, 0);
+	transition: background 1.5s;
 }
 
 .intro {
 	line-height: 170%;
 	text-align: justify;
 	font-size: 90%;
-	font-weight: 400;	
+	font-weight: 400;
 	letter-spacing: 1px;
 }
 
@@ -256,9 +275,13 @@ nav {
 	text-align: center;
 }
 
+/* INPUT FIELDS */
+
 input[type="text"] {
-	height: 40px;
-	font-size: 20px;
+	font-size: 125%;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 15px;
 }
 
 .submitAll { margin-left: 15px; }
@@ -266,9 +289,9 @@ input[type="text"] {
 /* Error Handling */
 #red {
 	animation-name: red;
-    animation-duration: 0.07s;
-    animation-iteration-count: 12;
-    animation-direction: alternate;
+	animation-duration: 0.07s;
+	animation-iteration-count: 12;
+	animation-direction: alternate;
 }
 
 @keyframes red {

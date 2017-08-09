@@ -11,19 +11,15 @@ A weather forecasting app using AJAX and API.
 - API (Open Weather Map)
 
 ## Future Iterations:
-- Update favicon for full mobile responsiveness.
-- INDEX:
-  - Buttons:
-    - Style hover effects, colors, size & shape, etc. Create a more appealing call to action.
-- CURRENT.HTML:
-  - Make input fields taller.
-- FORECAST.HTML:
-  - Make input fields taller.
-- Remove all code that is no longer used -- including entire Bootstrap folder.
-- Add mobile responsiveness.
-  - Nav:
-    - Toggle dropdown.
-    - jQuery window resize.
+- CURRENT:
+  - Reposition and resize button.
+- FORECAST:
+  - Reposition and resize button.
+- Add mobile responsiveness. 
+  - 850 and below:
+    - Mobile Nav:
+      - Dropdown should be a vertical list.
+      - jQuery window resize. 
 - UI:
   - Pressure: Add comma placeholders.
   - Temperature: No decimal places.
