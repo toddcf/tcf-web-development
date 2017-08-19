@@ -13,33 +13,33 @@
 /* OVERALL ASPECT */
 
 body {
-    background-color: #f2f2f2;
-    font-family: 'Ruda', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #555;
+	background-color: #f2f2f2;
+	font-family: 'Ruda', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	color: #555;
 
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-    
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
+	
 }
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Ruda', sans-serif;
-    font-weight: 900;
-    color: #333;
+	font-family: 'Ruda', sans-serif;
+	font-weight: 900;
+	color: #333;
 }
 
 
 /* Paragraph & Typographic */
 p {
-    line-height: 28px;
-    margin-bottom: 25px;
+	line-height: 28px;
+	margin-bottom: 25px;
 }
 
 .centered {
-    text-align: center;
+	text-align: center;
 }
 
 .goleft {
@@ -48,38 +48,38 @@ p {
 
 /* Links */
 a {
-    word-wrap: break-word;
+	word-wrap: break-word;
 
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+	-webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-o-transition: color 0.1s ease-in, background 0.1s ease-in;
+	transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
 a:hover,
 a:focus {
-    color: #7b7b7b;
-    text-decoration: none;
-    outline: 0;
+	color: #7b7b7b;
+	text-decoration: none;
+	outline: 0;
 }
 
 a:before,
 a:after {
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+	-webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-o-transition: color 0.1s ease-in, background 0.1s ease-in;
+	transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
 }
 
 .navbar {
@@ -149,18 +149,22 @@ border-bottom-width: 0px;
 }
 
 .desc p.lead {
-    font-family: 'Ruda', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    margin-top: -15px;
-    text-align: justify;
+	font-family: 'Ruda', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	margin-top: -15px;
+	text-align: justify;
 }
 
+.full-desc { height: 125px; }
+
+.short-desc { height: 50px; }
+
 .desc p.time {
-    font-family: 'Ruda', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    margin-top: 0px;
+	font-family: 'Ruda', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	margin-top: 0px;
 	color: #979797;
 	text-align: right;
 }
@@ -173,12 +177,12 @@ border-bottom-width: 0px;
 /* Dashed Separator */
 
 hr-d {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px dashed #ccc;
-    margin: 1em 0;
-    padding: 0;
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px dashed #ccc;
+	margin: 1em 0;
+	padding: 0;
 }
 
 
@@ -331,15 +335,15 @@ p.capitalize:first-letter {
 	min-height: 450px;
 	width: 100%;
 	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 #headerwrap h1 {
@@ -449,15 +453,15 @@ p.capitalize:first-letter {
 	min-height: 350px;
 	width: 100%;
 	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 #cta01 h1 {
@@ -489,15 +493,15 @@ p.capitalize:first-letter {
 	min-height: 350px;
 	width: 100%;
 	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 #cta02 h2 {
@@ -517,15 +521,15 @@ p.capitalize:first-letter {
 	min-height: 450px;
 	width: 100%;
 	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 
@@ -551,22 +555,22 @@ p.capitalize:first-letter {
 	padding-top: 40px;
 	padding-bottom: 40px;
 	
-    -webkit-transition: color 0.3s ease-in, background 0.3s ease-in;
-    -moz-transition: color 0.3s ease-in, background 0.3s ease-in;
-    -ms-transition: color 0.3s ease-in, background 0.3s ease-in;
-    -o-transition: color 0.3s ease-in, background 0.3s ease-in;
-    transition: color 0.3s ease-in, background 0.3s ease-in;
+	-webkit-transition: color 0.3s ease-in, background 0.3s ease-in;
+	-moz-transition: color 0.3s ease-in, background 0.3s ease-in;
+	-ms-transition: color 0.3s ease-in, background 0.3s ease-in;
+	-o-transition: color 0.3s ease-in, background 0.3s ease-in;
+	transition: color 0.3s ease-in, background 0.3s ease-in;
 }
 
 #cta-bar:before,
 #cta-bar:after {
-    -webkit-transition: color 0.2s ease-in, background 0.2s ease-in;
-    -moz-transition: color 0.2s ease-in, background 0.2s ease-in;
-    -ms-transition: color 0.2s ease-in, background 0.2s ease-in;
-    -o-transition: color 0.2s ease-in, background 0.2s ease-in;
-    transition: color 0.2s ease-in, background 0.2s ease-in;
-    
-    cursor: pointer;
+	-webkit-transition: color 0.2s ease-in, background 0.2s ease-in;
+	-moz-transition: color 0.2s ease-in, background 0.2s ease-in;
+	-ms-transition: color 0.2s ease-in, background 0.2s ease-in;
+	-o-transition: color 0.2s ease-in, background 0.2s ease-in;
+	transition: color 0.2s ease-in, background 0.2s ease-in;
+	
+	cursor: pointer;
 }
 
 #cta-bar h4 {
@@ -602,8 +606,8 @@ p.capitalize:first-letter {
   float: left;
   margin: 0 20px 0 0;
   > img {
-    display: block;
-    position: relative;
+	display: block;
+	position: relative;
   }
 }
 
