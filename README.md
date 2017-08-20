@@ -24,6 +24,7 @@ Web design portfolio for Todd Croak-Falen.
     - Use sophisticated CSS styling for an impressive UI/UX.
     - Each project:
       - . . . is represented by a GIF instead of a still image.
+      - . . . fades in when you scroll down.
       - At the bottom of the description, show the icons of each technology used. (JavaScript, HTML5, the spinning React logo, etc.)
     - Mobile-responsive, of course.
   - Footer:
