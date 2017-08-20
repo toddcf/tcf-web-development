@@ -26,6 +26,7 @@ Web design portfolio for Todd Croak-Falen.
       - . . . is represented by a GIF instead of a still image.
       - . . . fades in when you scroll down.
       - At the bottom of the description, show the icons of each technology used. (JavaScript, HTML5, the spinning React logo, etc.)
+        - Each one appears one after another, like the logos when you're signing into Google.
     - Mobile-responsive, of course.
   - Footer:
     - Nav
