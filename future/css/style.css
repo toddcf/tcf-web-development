@@ -1,0 +1,9 @@
+body,
+.video-div,
+video {
+	height: 100vh;
+}
+
+video {
+	width: 100%;
+}
