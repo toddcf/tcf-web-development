@@ -33,6 +33,6 @@ body,
 }
 
 .footer-copyright {
-	z-index: 500;
+	z-index: 500 !important;
 	/*color: #fff;*/
 }
