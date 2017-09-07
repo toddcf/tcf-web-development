@@ -31,3 +31,8 @@ body,
 	border: #fff solid 5px !important;
 	font-size: 2rem;
 }
+
+.footer-copyright {
+	z-index: 500;
+	color: #fff;
+}

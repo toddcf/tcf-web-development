@@ -7,10 +7,9 @@ Web design portfolio for Todd Croak-Falen.
 ## Future Iterations
 
 - Landing Page:
-  - Single page (no scrolling).
-  - Video background: UAV footage above a forest.
-  - h1: TCF Web Design.
-  - One button, centered horizontally and vertically on page: ENTER.
+  - Single page
+    - No scrolling -- unless mobile responsiveness requires it. NEED TO FIX THIS. CURRENTLY DOES NOT ALLOW SCROLLING EVEN WHEN WINDOW RESIZES, SO IN SOME CASES YOU CANNOT SEE OR PRESS THE "ENTER" BUTTON.
+  - h1: Test all mobile responsiveness so that my name NEVER breaks into two lines of text.
   - Footer: Copyright 2016 - currentYear.
 - Portfolio Page:
   - Nav (links to each section below)
