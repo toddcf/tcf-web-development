@@ -4,7 +4,9 @@ html {
 
 html,
 body,
-.video-div {
+.carousel-inner,
+.carousel-item,
+.active {
 	height: 100%;
 }
 
