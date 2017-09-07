@@ -15,8 +15,8 @@ body,
     padding-top: 7rem;
 }
 
-.hollow {
-	border: 5px solid #fff;
-	padding: 20px;
-	width: auto;
+.btn-outline-primary {
+	color: #fff !important;
+	border: #fff solid 5px !important;
+	font-size: 2rem;
 }
