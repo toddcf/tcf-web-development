@@ -10,8 +10,8 @@ body,
 	height: 100%;
 }
 
-.carousel-caption {
-    height: 100%;
+.major-text {
+    height: 95%;
     padding-top: 11rem;
 }
 
@@ -30,6 +30,10 @@ body,
 	color: #fff !important;
 	border: #fff solid 5px !important;
 	font-size: 2rem;
+}
+
+.minor-text {
+	height: 5%;
 }
 
 .footer-copyright {
