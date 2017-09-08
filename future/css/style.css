@@ -4,6 +4,7 @@ html {
 
 html,
 body,
+.container-fluid,
 .carousel-inner,
 .carousel-item,
 .active {
@@ -19,11 +20,13 @@ body,
 	font-size: 6rem;
 	font-weight: 300;
 	letter-spacing: 1.3rem;
+	text-shadow: 9px 9px 8px #4C4C4C;
 }
 
 .carousel-caption h2 {
 	font-size: 4rem;
 	font-weight: 300;
+	text-shadow: 9px 9px 8px #4C4C4C;
 }
 
 .btn-outline-primary {

@@ -7,6 +7,7 @@ Web design portfolio for Todd Croak-Falen.
 ## Future Iterations
 
 - Landing Page:
+  - Add grid, which may fix mobile responsiveness issues.
   - Single page
     - No scrolling -- unless mobile responsiveness requires it. NEED TO FIX THIS. CURRENTLY DOES NOT ALLOW SCROLLING EVEN WHEN WINDOW RESIZES, SO IN SOME CASES YOU CANNOT SEE OR PRESS THE "ENTER" BUTTON.
   - h1: Test all mobile responsiveness so that my name NEVER breaks into two lines of text.
