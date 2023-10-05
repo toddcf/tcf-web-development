@@ -1,0 +1,208 @@
+.header-main-img {
+  background-image: url(../../img/bmw-el-cajon/2019-x7/1268x499-min.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#mobile-card-example {
+  background-image: url(../../img/walkthroughs/portfolio/project-cards/project-cards-sm-992x1025-min.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 103%;
+  width: 100%;
+}
+
+#tablet-card-example {
+  background-image: url(../../img/walkthroughs/portfolio/project-cards/project-cards-md-992x750-min.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 75%;
+  width: 100%;
+}
+
+#desktop-card-example {
+  background-image: url(../../img/walkthroughs/portfolio/project-cards/project-cards-lg-992x475-min.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 47%;
+  width: 100%;
+}
+
+.btn-example-box {
+  border: 1px solid #000;
+  padding: 2em;
+  text-transform: uppercase;
+}
+
+.btn-example-dark-bg {
+  background: #333;
+}
+
+.btn-example-light-bg {
+  background: #fff;
+}
+
+.btn-example-container-dark-bg {
+  background-image: linear-gradient(to bottom, #fff 0, #9f9f9f 50%, #5a5a5a 100%);
+  background-position: left bottom;
+  background-size: 100% 200%;
+  transition: 300ms ease-in-out;
+}
+
+.btn-example-container-dark-bg:hover,
+.btn-example-container-dark-bg:active {
+  background-position: left top;
+  cursor: pointer;
+}
+
+.dark-bg-btn,
+.light-bg-btn {
+  transition: 300ms ease-in-out;
+}
+
+.dark-bg-btn:hover,
+.dark-bg-btn:active {
+  color: #000;
+}
+
+.btn-example-container-light-bg {
+  background-image: linear-gradient(to bottom, #9f9f9f 0, #5a5a5a 50%, #292929 100%);
+  background-position: left top;
+  background-size: 100% 200%;
+  transition: 300ms ease-in-out;
+}
+
+.btn-example-container-light-bg:hover,
+.btn-example-container-light-bg:active {
+  background-position: left bottom;
+  cursor: pointer;
+}
+
+.light-bg-btn:hover,
+.light-bg-btn:active {
+  color: #fff;
+}
+
+#delos-img {
+  height: 0;
+  padding-bottom: 40%;
+  width: 100%;
+}
+
+
+
+
+/* Bootstrap Breakpoints */
+/* Extra Small devices only (landscape phones, below 576px) */
+@media (max-width: 575.98px) {
+
+  #bmw-el-cajon-bg-blur {
+    background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/bmw-el-cajon/2019-x7/left-crop-576x630-blur12px-min.jpg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+  }
+
+  #bmw-el-cajon-img-sm {
+    background: url(../img/bmw-el-cajon/2019-x7/576x227-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #delos-img {
+    background-image: url(../../img/walkthroughs/portfolio/westworld/576x232-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Small devices only (landscape phones, between 576px and 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+  #bmw-el-cajon-img-md {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/bmw-el-cajon/2019-x7/768x303-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #delos-img {
+    background-image: url(../../img/walkthroughs/portfolio/westworld/768x309-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  #delos-img {
+    background-image: url(../../img/walkthroughs/portfolio/westworld/1000x402-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+
+/* Medium devices only (tablets, between 768px and 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  #bmw-el-cajon-img-md {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/bmw-el-cajon/2019-x7/992x391-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+  #delos-img-container {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+}
+
+/* Large devices only (desktops, between 992px and 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+  #bmw-el-cajon-img-lg {
+    background: url(../img/bmw-el-cajon/2019-x7/1268x499-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  #bmw-el-cajon-img-lg {
+    background: url(../img/bmw-el-cajon/2019-x7/1440x567-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}

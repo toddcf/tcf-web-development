@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".footer__icon").waypoint(function(e){$(".footer__icon").addClass("footer__icon_effects")},{offset:"85%"});var e=(new Date).getFullYear();$(".currentYear").html("&ndash;&nbsp;"+e+"&nbsp;")});

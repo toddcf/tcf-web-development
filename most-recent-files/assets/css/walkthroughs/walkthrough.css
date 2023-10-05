@@ -1,0 +1,366 @@
+:root {
+  --header-icon-size: 100px;
+  --header-icon-size-neg: -100px;
+}
+
+/*.center-1440 {
+  width: 97%;
+}*/
+
+/*.header-layout-box {
+  position: relative;
+  width: 100%;
+}*/
+
+/* Make this container an element of the header layout?? */
+/*.header-icon-invisible {
+  display: inline-block;
+  height: var(--header-icon-size);
+  margin: 0 2em 1em 0;
+  position: relative;
+  width: var(--header-icon-size);
+}*/
+
+.header-icon-visible {
+  /*border: 8px solid var(--dark-gray-o);*/
+  /*border-radius: 5%;*/
+  /*color: var(--dark-gray-o);*/
+  /*height: var(--header-icon-size);*/
+  /*position: relative;*/
+  /*text-align: center;*/
+  /*transition: 300ms;*/
+  /*width: 100%;*/
+  z-index: 2;
+}
+
+/*.header-icon-visible:hover {
+  border: 8px solid var(--dark-gray);
+  color: var(--dark-gray);
+}*/
+
+/*.header-icon-contents {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}*/
+
+/*.header-icon i {
+  display: block;
+  font-size: calc(var(--header-icon-size) / 2);
+}*/
+
+/*.header-icon-text {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}*/
+
+.header-main-img-container {
+  margin-bottom: 1.5em;
+  position: relative;
+  z-index: 1;
+}
+
+#header-main-img {
+  position: relative;
+  height: 0;
+  padding-bottom: 39%;
+  width: 100%;
+}
+
+#project-container section {
+  margin-bottom: 4em;
+}
+
+/*.gray-card,
+.medium-gray-card,
+.dark-gray-card {
+  color: #fff;
+  margin-bottom: 1.5em;
+  padding: 2em;
+}
+
+.gray-card {
+  background: rgb(153, 153, 153);
+}*/
+
+/*.objective-flex-container {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}*/
+
+/*.objective-flex-item-1 {
+  flex-grow: 1;
+  order: 1;
+}*/
+
+/*.objective-flex-item-2 {
+  flex-grow: 10;
+  order: 2;
+  padding-left: 2em;
+}*/
+
+.objective-icon-visible {
+  border: 5px solid;
+  border-radius: 5%;
+  padding: 1em;
+}
+
+/*.process-flex-container {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}*/
+
+/*.process-flex-item-1 {
+  flex-grow: 1;
+  order: 1;
+}*/
+
+/*.process-flex-item-2 {
+  flex-grow: 8;
+  order: 2;
+  padding-left: 2em;
+}*/
+
+.gray-card-icon-invisible {
+  position: relative;
+}
+
+.process-icon-visible {
+  border: .5em solid;
+  border-radius: 5%;
+  padding: 1em 2em;
+}
+
+.gray-card-icon {
+  display: block !important;
+  font-size: 5em;
+  text-align: center;
+}
+
+.medium-gray-card {
+  background: var(--medium-gray);
+}
+
+.global-btn-box {
+  margin-bottom: 0;
+}
+
+.row-spacer {
+  margin-bottom: 6em;
+}
+
+.walkthrough-heading {
+  margin: 0 auto 1em auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+.walkthrough-heading h2 {
+  color: var(--dark-gray);
+  text-transform: uppercase;
+}
+
+.walkthrough-heading .sidelines {
+  position: relative;
+}
+
+.walkthrough-heading .sidelines::before,
+.walkthrough-heading .sidelines::after {
+  border-top: 1px solid var(--dark-gray);
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1440px;
+}
+
+.walkthrough-heading .sidelines::before {
+  margin-right: 15px;
+  right: 100%;
+}
+
+.walkthrough-heading .sidelines::after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.walkthrough-heading p {
+  color: var(--medium-gray);
+}
+
+.wireframe-title,
+.project-card-title {
+  text-align: center;
+}
+
+.wireframe-img {
+  background: #000; /* Hides white gap at bottom of some images */
+  border: 1px solid #000;
+  overflow: hidden;
+  width: 100%;
+}
+
+.wireframe-img img {
+  transform: scale(1);
+  transition: 5000ms ease-in-out;
+}
+
+.wireframe-img img:hover {
+  transform: scale(1.1);
+}
+
+#project-container h3 {
+  color: var(--medium-gray);
+  text-transform: uppercase;
+}
+
+#project-container .img-wrapper {
+  border: 1px solid var(--dark-gray);
+  box-shadow: .2em .2em .1em rgba(0, 0, 0, .5);
+}
+
+.code-snippet-wrapper pre {
+  border-radius: 0 !important;
+  font-size: 16px;
+  margin-top: 0 !important;
+  padding: 2em;
+}
+
+#project-container code {
+  font-size: .9rem;
+}
+
+.screenshot-container {
+  margin-bottom: 2em;
+}
+
+
+
+
+/* Bootstrap Breakpoints */
+/* Extra Small devices only (landscape phones, below 576px) */
+@media (max-width: 575.98px) {}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+  .walkthrough-heading {
+    width: 95%;
+  }
+
+}
+
+/* Small devices only (landscape phones, between 576px and 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  .header-main-img-container {
+    margin-bottom: 1.5em;
+  }
+
+  /*.objective {
+    margin-right: .75em;
+  }*/
+
+  /*.process {
+    margin-left: .75em;
+  }*/
+
+  .walkthrough-heading {
+    width: 85%;
+  }
+
+  /*.process h2 {
+    text-align: right;
+  }*/
+
+  /*.process-flex-item-1 {
+    order: 2;
+  }*/
+
+  /*.process-flex-item-2 {
+    order: 1;
+    padding-right: 2em;
+    text-align: right;
+  }*/
+
+}
+
+/* Medium devices only (tablets, between 768px and 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+  /*.header-icon-invisible {
+    display: block;
+    margin: 0;
+    position: absolute;
+  }*/
+
+  /*#home-header-icon-invisible {
+    left: 0;
+    top: calc(var(--header-icon-size-neg) / 2);
+  }*/
+
+  /*#live-site-header-icon-invisible {
+    top: calc(var(--header-icon-size-neg) / 2);
+    right: 0;
+  }*/
+
+  /*#github-header-icon-invisible {*/
+    /*top: calc(var(--header-icon-size) * .75);*/ /* Is actually Calc (width + (width * .25)), which works out to width * .75 */
+    /*right: 0;
+  }*/
+
+  .header-main-img-container {
+    margin: calc(var(--header-icon-size) / 2);
+    margin-bottom: 1.5em;
+  }
+
+  /*.objective {
+    margin-top: -100px;
+    position: relative;
+    z-index: 2;
+  }*/
+
+  /*.process {
+    margin-right: calc(var(--header-icon-size) / 2);
+  }*/
+
+  .walkthrough-heading {
+    width: 75%;
+  }
+
+}
+
+/* Large devices only (desktops, between 992px and 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  /*:root {
+    --header-icon-size: 150px;
+    --header-icon-size-neg: -150px;
+  }*/
+
+  .walkthrough-heading {
+    width: 65%;
+  }
+
+}

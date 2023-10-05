@@ -1,0 +1,15 @@
+@media (max-width: 575.98px) {
+
+  .additional-sample__img_omnifood {
+    background-image: url(576x227-min.jpg);
+  }
+
+}
+
+@media (min-width: 576px) {
+
+  .additional-sample__img_omnifood {
+    background-image: url(768x302-min.jpg);
+  }
+
+}

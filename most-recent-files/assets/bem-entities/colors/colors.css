@@ -1,0 +1,17 @@
+:root {
+  /* Gray */
+  --light-slate-gray: #778899;
+  --light-slate-gray-o: rgba(119, 136, 153, .5);
+  --medium-gray: #666;
+  --medium-gray-o: rgba(102, 102, 102, .5);
+  --dark-gray: #333;
+  --dark-gray-o: rgba(33, 33, 33, .5);
+
+  /* Green */
+  --light-green: #3c6221;
+  --light-green-o: rgba(60, 98, 33, .8);
+  --medium-green: #33531c;
+  --medium-green-o: rgba(51, 83, 28, .8);
+  --dark-green: #213612;
+  --dark-green-o: rgba(33, 54, 18, .8);
+}

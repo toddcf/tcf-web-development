@@ -1,0 +1,21 @@
+# Global Settings:
+
+RewriteEngine On
+
+
+# Force HTTPS:
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+
+# Remove filename extensions from URL:
+
+# If the folder exists on the server, don't run the rule:
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# If an HTML file doesn't exist, don't run the rule:
+RewriteCond %{REQUEST_FILENAME}\.html -f
+
+# Show the page that has the .html extension:
+RewriteRule ^(.*)$ $1.html [NC,L]
