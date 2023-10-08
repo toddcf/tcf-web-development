@@ -883,34 +883,49 @@ html {
   opacity: 0; /* Invisible until animation is triggered */
 }
 
-.skills__icon_adobe-photoshop {
-  -webkit-animation-delay: 1750ms;
-          animation-delay: 1750ms;
+.skills__icon_2 {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}f
+
+.skills__icon_3 {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
 }
 
-.skills__icon_adobe-xd {
-  -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
-}
-
-.skills__icon_atomic-design {
-  -webkit-animation-delay: 2250ms;
-          animation-delay: 2250ms;
-}
-
-.skills__icon_bem {
-  -webkit-animation-delay: 2500ms;
-          animation-delay: 2500ms;
-}
-
-.skills__icon_bootstrap {
+.skills__icon_4 {
   -webkit-animation-delay: 750ms;
           animation-delay: 750ms;
 }
 
-.skills__icon_css {
-  -webkit-animation-delay: 250ms;
-          animation-delay: 250ms;
+.skills__icon_5 {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+
+.skills__icon_6 {
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
+}
+
+.skills__icon_7 {
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
+}
+
+.skills__icon_8 {
+  -webkit-animation-delay: 1750ms;
+          animation-delay: 1750ms;
+}
+
+.skills__icon_9 {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+
+.skills__icon_10 {
+  -webkit-animation-delay: 2250ms;
+          animation-delay: 2250ms;
 }
 
 .skills__icon_effects {
@@ -943,31 +958,11 @@ html {
 
 }
 
-.skills__icon_foundation {
-  -webkit-animation-delay: 1000ms;
-          animation-delay: 1000ms;
-}
-
 .skills__icon_img {
   display: block;
   margin: 0 auto 1em;
   max-width: 100px;
   width: 100%;
-}
-
-.skills__icon_jira {
-  -webkit-animation-delay: 2000ms;
-          animation-delay: 2000ms;
-}
-
-.skills__icon_jquery {
-  -webkit-animation-delay: 1250ms;
-          animation-delay: 1250ms;
-}
-
-.skills__icon_js {
-  -webkit-animation-delay: 500ms;
-          animation-delay: 500ms;
 }
 
 .skills__icon_text {
