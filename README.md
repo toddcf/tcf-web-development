@@ -1,6 +1,6 @@
-# Portfolio - Version 3
+# MarTech | UI/UX Front End Web Developer Portfolio
 
-MarTech | UI/UX Front End Web Developer portfolio: https://www.tcf-web-development.com
+https://www.tcf-web-development.com
 
 ![Portfolio](https://github.com/toddcf/tcf-web-development/blob/main/assets/img/header/__video-background/tropical-1440x562-min.jpg "Portfolio")
 
