@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/martech-min.css">
+
+  <title>Todd Croak-Falen | MarTech | Shadow DOM Click Tracking</title>
+
+  <meta name="Author" content="Todd Croak-Falen">
+  <meta name="Description" content="MarTech shadow DOM click tracking.">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="body">
+
+  <div class="body__project-container">
+
+    <h1>Shadow DOM Click Tracking</h1>
+
+    <h2>Shadow DOM Data Element (‘shadow doms’)</h2>
+
+    <pre><code>
+        return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);
+    </pre></code>
+
+    <h2>Shadow DOM “Add Event Listener” Rule</h2>
+
+  <pre><code>
+        const shadowDOMs = _satellite.getVar('shadow doms');
+        
+        const shadowClicks = (e) => {
+          const clickData = {
+            shadowClick: true,
+            clickedElement: '',
+          }
+          
+          if (!!e.target) {
+            if (e.target instanceof SVGElement) {
+              if (!!e.target.getAttribute('d')) {
+                clickData.clickedElement = e.target.parentNode.parentNode; // Handles clicks on path elements *inside* SVG tags -- has to go up two levels. This condition must be nested *inside the "instanceof SVGElement" condition*, as that will also be true.
+              } else {
+                clickData.clickedElement = e.target.parentNode; // Handles clicks on SVG tags.
+              }
+            } else {
+              clickData.clickedElement = e.target; // All other clicks (non-SVG).
+            }
+          }
+          
+          if (!!clickData) {
+            _satellite.track('set-global-click-or-event-variables', clickData);
+            _satellite.track('send-global-click-or-event-beacon');
+          }
+        }
+        
+        if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
+          shadowDOMs.forEach((shadowDOM) => {
+            shadowDOM.shadowRoot.addEventListener('click', shadowClicks);
+          });
+        }
+      </pre></code>
+
+  </div>
+
+</body>
+
+</html>
