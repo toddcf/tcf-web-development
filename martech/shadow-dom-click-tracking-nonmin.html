@@ -45,7 +45,7 @@
         return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);
     </pre></code>
 
-    <p>That's it for the data element!</p>
+    <p>That's all the code you need for the data element!</p>
 
     <h3>Explanation</h3>
 
@@ -54,12 +54,12 @@
       <li><p>However, that returns an HTMLCollection. Convert it to an array by wrapping it inside <b>[...]</b>.</p></li>
       <li><p>Now that you have an array, you can call the <b>.filter</b> method on it.</p></li>
       <li><p>Inside the <b>.filter</b> method, <b>(tag => !!tag.shadowRoot)</b> checks each tag in the array. If a tag contains <b>shadowRoot</b>, then it represents a shadow DOM, and the filter will include it. (If not, the filter will ignore that tag.)</p></li>
-      <li><p><b>return</b> all of this because your data element needs to return a value. You now have a new array made up only of the shadow DOM tags that were filtered out of the entire page.</p></li>
+      <li><p><b>return</b> all of this because your data element needs to return a value. You now have a new array made up only of the shadow DOM tags that were filtered out of the entire page. (If none were found, it will return an empty array.)</p></li>
     </ol>
 
     <h3>How to Use the <b>shadow doms</b> Data Element</h3>
 
-    Executing <b>_satellite.getVar('shadow doms');</b> will return an array containing all shadow DOMs found on the page.
+    Executing <b>_satellite.getVar('shadow doms');</b> will return an array containing all shadow DOMs found on the page. (If none are found, it will return an empty array.)
 
     <h2>Shadow DOM “Add Event Listener” Rule</h2>
 
