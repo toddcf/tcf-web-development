@@ -50,11 +50,11 @@
     <h3>Explanation</h3>
 
     <ol>
-      <li><p><b>document.getElementsByTagName('*')</b> gets all tags on the page.</p></li>
-      <li><p>However, that returns an HTMLCollection. Convert it to an array by wrapping it inside <b>[...]</b>.</p></li>
-      <li><p>Now that you have an array, you can call the <b>.filter</b> method on it.</p></li>
-      <li><p>Inside the <b>.filter</b> method, <b>(tag => !!tag.shadowRoot)</b> checks each tag in the array. If a tag contains <b>shadowRoot</b>, then it represents a shadow DOM, and the filter will include it. (If not, the filter will ignore that tag.)</p></li>
-      <li><p><b>return</b> all of this because your data element needs to return a value. You now have a new array made up only of the shadow DOM tags that were filtered out of the entire page. (If none were found, it will return an empty array.)</p></li>
+      <li><p><code>document.getElementsByTagName('*')</code> gets all tags on the page.</p></li>
+      <li><p>However, that returns an HTMLCollection. Convert it to an array by wrapping it inside <code>[...]</code>.</p></li>
+      <li><p>Now that you have an array, you can call the <code>.filter</code> method on it.</p></li>
+      <li><p>Inside the <code>.filter</code> method, <code>(tag => !!tag.shadowRoot)</code> checks each tag in the array. If a tag contains <code>shadowRoot</code>, then that tag represents a shadow DOM, and the filter will include it. (If not, the filter will ignore that tag.)</p></li>
+      <li><p><code>return</code> all of this because your data element needs to return a value. You now have a new array made up only of the shadow DOM tags that were filtered out of the entire page. (If none were found, it will return an empty array.)</p></li>
     </ol>
 
     <h3>How to Use the <b>shadow doms</b> Data Element</h3>
