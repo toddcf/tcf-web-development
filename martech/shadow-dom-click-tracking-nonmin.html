@@ -142,6 +142,15 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
     <li>
       <p>Now it's time to write the logic that will determine what element in the shadow DOM got clicked. This will typically involve the <code>target</code> in the click event (the <code>e</code> parameter this function takes in). Therefore, before we go any further, let's add some validation to make sure it exists: <code>if (!!e.target)</code></p>
     </li>
+    <li>
+      <p>Inside this code block, there is a specific use case we have to check for: What if the clicked element is an SVG? If you don't account for this, then any time a user clicks an SVG, the <code>clickData</code> object that you pass to your Global Clicks/Events rule is going to be a mess. So add the following condition: <code>if (e.target instanceof SVGElement)</code></p>
+    </li>
+    <li>
+      <p>It gets more complex. There are a couple use cases for SVG elements getting clicked. The user may have clicked on the SVG tag itself, or they may have clicked on the path elements <em>inside</em> the SVG tag. First we'll handle the path elements by nesting yet another condition inside our SVG condition: <code>if (!!e.target.getAttribute('d'))</code></p>
+    </li>
+    <li>
+      <p>Inside the code block we just created for SVG path element clicks, we will look two parentNodes up from the path element, then store it in our <code>clickData</code> object: <code>clickData.clickedElement = e.target.parentNode.parentNode;</code></p>
+    </li>
   </ol>
 
   </div> <!-- Close .body__project-container -->
