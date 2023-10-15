@@ -102,7 +102,7 @@ const shadowClicks = (e) => {
     }
   }
   
-  if (!!clickData) {
+  if (!!clickData.clickedElement) {
     _satellite.track('set-global-click-or-event-variables', clickData);
     _satellite.track('send-global-click-or-event-beacon');
   }
@@ -138,6 +138,9 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
     </li>
     <li>
       <p>On the next line inside the same <code>clickData</code> object, add the property: <code>clickedElement: '',</code>. (We default it to an empty string. We also end this line with a comma. That way, in case we ever add another property after this one in the future, we don't forget to add the comma at that point. Or, when we do add the comma at the time we're adding another property, it doesn't create an additional line of changed code to be reviewed in your pull request.)</p>
+    </li>
+    <li>
+      <p>Now it's time to write the logic that will determine what element in the shadow DOM got clicked. This will typically involve the <code>target</code> in the click event (the <code>e</code> parameter this function takes in). Therefore, before we go any further, let's add some validation to make sure it exists: <code>if (!!e.target)</code></p>
     </li>
   </ol>
 
