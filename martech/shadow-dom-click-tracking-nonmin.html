@@ -43,7 +43,7 @@
 
 <pre><code>
 return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);
-</pre></code>
+</code></pre>
 
     <p>That's all the code you need for the data element!</p>
 
@@ -73,7 +73,9 @@ return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);
 
     <h3>How to Use the <b>shadow doms</b> Data Element</h3>
 
-    <p>Executing <b>_satellite.getVar('shadow doms');</b> will return an array containing all shadow DOMs found on the page. (If none are found, it will return an empty array.)</p>
+    <p>Executing <code>_satellite.getVar('shadow doms');</code> will return an array containing all shadow DOMs found on the page. (If none are found, it will return an empty array.)</p>
+
+    <p>We're going to be using this data element in a separate Adobe Launch rule that listens for clicks in any shadow DOMs.</p>
 
     <h2>Shadow DOM “Add Event Listener” Rule</h2>
 
@@ -111,7 +113,7 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
     shadowDOM.shadowRoot.addEventListener('click', shadowClicks);
   });
 }
-</pre></code>
+</code></pre>
 
   <h3>Explanation</h3>
 
@@ -120,7 +122,7 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
       <p>The first thing we do is grab the <code>shadow doms</code> data element we just created and store it in a variable called <code>shadowDOMs</code>: <code>const shadowDOMs = _satellite.getVar('shadow doms');</code></p>
     </li>
     <li>
-      <p>Then, for the purposes of this explanation, let's skip down to the end of the file and set up our event listener. First, some validation to make sure that <code>shadowDOMs</code> exists, that it is an array, and that this array contains at least one item: <code>if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0)</code>. This is important because if any shadow DOMs change, break, or simply don't exist on your page, you don't want the rest of this code block to execute and start throwing errors.</p>
+      <p>Then, for the purposes of this explanation, let's skip down to the end of the file and set up our event listener. First, some validation to make sure that <code>shadowDOMs</code> exists, that it is an array, and that this array contains at least one item: <code>if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0)</code>. This is important because if no shadow DOMs exist on the page .&nbsp;.&nbsp;. you don't want the rest of this code block to execute and start throwing errors.</p>
     </li>
     <li>
       <p>Now that we're certain that <code>shadowDOMs</code> is an array containing at least one item, we are safe to run the <code>.forEach</code> method on it. And for each shadow DOM in the array, we attach a 'click' listener to its <code>shadowRoot</code>.  And when a click on this <code>shadowRoot</code> is detected, we set it to invoke a function called <code>shadowClicks</code>. (We haven't written that function yet &mdash; that's next.)</p>
