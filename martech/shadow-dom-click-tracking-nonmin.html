@@ -37,6 +37,25 @@
 
     <h1>Shadow DOM Click Tracking</h1>
 
+    <h2>Overview</h2>
+
+    <p>The overall architecture is this:</p>
+
+    <ol>
+      <li>
+        <p>When the page loads, crawl it and collect any shadow DOMs that exist.</p>
+      </li>
+      <li>
+        <p>For each shadow DOM that is found, attach a 'click' event listener to its shadowRoot.</p>
+      </li>
+      <li>
+        <p>If a click is detected by this event listener, determine what the clicked element was and standardize it to the type of object that your Global Clicks/Events rule (for regular DOM clicks) expects.</p>
+      </li>
+      <li>
+        <p>Manually trigger your Global Clicks/Events rule, and send it the standardized object you created.</p>
+      </li>
+    </ol>
+
     <h2>Shadow DOM Data Element (‘shadow doms’)</h2>
 
     <p>First, create a data element called 'shadow doms'. Select 'Custom Code'. Then paste in this snippet:</p>
@@ -167,6 +186,8 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
       <p>Then we'll also trigger our Global Clicks/Events rule that sends the beacon and clears the variables: <code>_satellite.track('send-global-click-or-event-beacon');</code> (Once again, see my article on Global Clicks/Events for an explanation on this architecture.)</p>
     </li>
   </ol>
+
+  <p></p>
 
   </div> <!-- Close .body__project-container -->
 
