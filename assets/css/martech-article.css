@@ -1,1 +1,8 @@
-/* CSS will go here */
+code {
+  background-color: #000;
+  color: #fff;
+}
+
+.code__block {
+  background-color: #000;
+}
