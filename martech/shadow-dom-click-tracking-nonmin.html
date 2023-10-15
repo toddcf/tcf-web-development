@@ -151,6 +151,21 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
     <li>
       <p>Inside the code block we just created for SVG path element clicks, we will look two parentNodes up from the path element, then store it in our <code>clickData</code> object: <code>clickData.clickedElement = e.target.parentNode.parentNode;</code></p>
     </li>
+    <li>
+      <p>Then we can add an <code>else</code> condition to handle the clicks directly on the SVG tags. Inside this condition, we only have to go up <em>one</em> <code>parentNode</code>: <code>clickData.clickedElement = e.target.parentNode;</code></p>
+    </li>
+    <li>
+      <p>We're done with SVGs, so let's exit the <code>(e.target instanceof SVGElement)</code> code block and add an <code>else</code> condition to handle all other non-SVG clicks. Inside, we can just do this: <code>clickData.clickedElement = e.target;</code></p>
+    </li>
+    <li>
+      <p>Now the clicked element (if it exists) has been selected and we are ready to pass it to our Global Clicks/Events rule. For safety, we'll start with some validation to confirm that a clicked element was found before we go so far as to send it: <code>if (!!clickData.clickedElement)</code></p>
+    </li>
+    <li>
+      <p>Inside this condition, we'll first trigger our Global Clicks/Events rule that sets variables, and we'll pass our <code>clickData</code> object into it: <code>_satellite.track('set-global-click-or-event-variables', clickData);</code>. Our Global Clicks/Events rule will take it from here. (See my article on Global Click/Events for this logic.)</p>
+    </li>
+    <li>
+      <p>Then we'll also trigger our Global Clicks/Events rule that sends the beacon and clears the variables: <code>_satellite.track('send-global-click-or-event-beacon');</code> (Once again, see my article on Global Clicks/Events for an explanation on this architecture.)</p>
+    </li>
   </ol>
 
   </div> <!-- Close .body__project-container -->
