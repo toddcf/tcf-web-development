@@ -41,63 +41,105 @@
 
     <p>First, create a data element called 'shadow doms'. Select 'Custom Code'. Then paste in this snippet:</p>
 
-    <pre><code>
-        return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);
-    </pre></code>
+<pre><code>
+return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);
+</pre></code>
 
     <p>That's all the code you need for the data element!</p>
 
     <h3>Explanation</h3>
 
     <ol>
-      <li><p><code>document.getElementsByTagName('*')</code> gets all tags on the page.</p></li>
-      <li><p>However, that returns an HTMLCollection. Convert it to an array by wrapping it inside <code>[...]</code>.</p></li>
-      <li><p>Now that you have an array, you can call the <code>.filter</code> method on it.</p></li>
-      <li><p>Inside the <code>.filter</code> method, <code>(tag => !!tag.shadowRoot)</code> checks each tag in the array. If a tag contains <code>shadowRoot</code>, then that tag represents a shadow DOM, and the filter will include it. (If not, the filter will ignore that tag.)</p></li>
-      <li><p><code>return</code> all of this because your data element needs to return a value. You now have a new array made up only of the shadow DOM tags that were filtered out of the entire page. (If none were found, it will return an empty array.)</p></li>
+      <li>
+        <p><code>document.getElementsByTagName('*')</code> gets all tags on the page.</p>
+      </li>
+      <li>
+        <p>However, that returns an HTMLCollection. Convert it to an array by wrapping it inside <code>[...]</code>.</p>
+      </li>
+      <li>
+        <p>Now that you have an array, you can call the <code>.filter</code> method on it.</p>
+      </li>
+      <li>
+        <p>Inside the <code>.filter</code> method, <code>(tag => !!tag.shadowRoot)</code> checks each tag in the array.
+          If a tag contains <code>shadowRoot</code>, then that tag represents a shadow DOM, and the filter will include
+          it. (If not, the filter will ignore that tag.)</p>
+      </li>
+      <li>
+        <p><code>return</code> all of this because your data element needs to return a value. You now have a new array
+          made up only of the shadow DOM tags that were filtered out of the entire page. (If none were found, it will
+          return an empty array.)</p>
+      </li>
     </ol>
 
     <h3>How to Use the <b>shadow doms</b> Data Element</h3>
 
-    Executing <b>_satellite.getVar('shadow doms');</b> will return an array containing all shadow DOMs found on the page. (If none are found, it will return an empty array.)
+    <p>Executing <b>_satellite.getVar('shadow doms');</b> will return an array containing all shadow DOMs found on the page. (If none are found, it will return an empty array.)</p>
 
     <h2>Shadow DOM “Add Event Listener” Rule</h2>
 
-  <pre><code>
-        const shadowDOMs = _satellite.getVar('shadow doms');
-        
-        const shadowClicks = (e) => {
-          const clickData = {
-            shadowClick: true,
-            clickedElement: '',
-          }
-          
-          if (!!e.target) {
-            if (e.target instanceof SVGElement) {
-              if (!!e.target.getAttribute('d')) {
-                clickData.clickedElement = e.target.parentNode.parentNode; // Handles clicks on path elements *inside* SVG tags -- has to go up two levels. This condition must be nested *inside the "instanceof SVGElement" condition*, as that will also be true.
-              } else {
-                clickData.clickedElement = e.target.parentNode; // Handles clicks on SVG tags.
-              }
-            } else {
-              clickData.clickedElement = e.target; // All other clicks (non-SVG).
-            }
-          }
-          
-          if (!!clickData) {
-            _satellite.track('set-global-click-or-event-variables', clickData);
-            _satellite.track('send-global-click-or-event-beacon');
-          }
-        }
-        
-        if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
-          shadowDOMs.forEach((shadowDOM) => {
-            shadowDOM.shadowRoot.addEventListener('click', shadowClicks);
-          });
-        }
-      </pre></code>
+    First, the full code block for context. Scroll past it for a breakdown of what it does.
 
-  </div>
+<pre><code>
+const shadowDOMs = _satellite.getVar('shadow doms');
+
+const shadowClicks = (e) => {
+  const clickData = {
+    shadowClick: true,
+    clickedElement: '',
+  };
+  
+  if (!!e.target) {
+    if (e.target instanceof SVGElement) {
+      if (!!e.target.getAttribute('d')) {
+        clickData.clickedElement = e.target.parentNode.parentNode; // Handles clicks on path elements *inside* SVG tags -- has to go up two levels. This condition must be nested *inside the "instanceof SVGElement" condition*, as that will also be true.
+      } else {
+        clickData.clickedElement = e.target.parentNode; // Handles clicks on SVG tags.
+      }
+    } else {
+      clickData.clickedElement = e.target; // All other clicks (non-SVG).
+    }
+  }
+  
+  if (!!clickData) {
+    _satellite.track('set-global-click-or-event-variables', clickData);
+    _satellite.track('send-global-click-or-event-beacon');
+  }
+}
+
+if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
+  shadowDOMs.forEach(shadowDOM => {
+    shadowDOM.shadowRoot.addEventListener('click', shadowClicks);
+  });
+}
+</pre></code>
+
+  <h3>Explanation</h3>
+
+  <ol>
+    <li>
+      <p>The first thing we do is grab the <code>shadow doms</code> data element we just created and store it in a variable called <code>shadowDOMs</code>: <code>const shadowDOMs = _satellite.getVar('shadow doms');</code></p>
+    </li>
+    <li>
+      <p>Then, for the purposes of this explanation, let's skip down to the end of the file and set up our event listener. First, some validation to make sure that <code>shadowDOMs</code> exists, that it is an array, and that this array contains at least one item: <code>if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0)</code>. This is important because if any shadow DOMs change, break, or simply don't exist on your page, you don't want the rest of this code block to execute and start throwing errors.</p>
+    </li>
+    <li>
+      <p>Now that we're certain that <code>shadowDOMs</code> is an array containing at least one item, we are safe to run the <code>.forEach</code> method on it. And for each shadow DOM in the array, we attach a 'click' listener to its <code>shadowRoot</code>.  And when a click on this <code>shadowRoot</code> is detected, we set it to invoke a function called <code>shadowClicks</code>. (We haven't written that function yet &mdash; that's next.)</p>
+    </li>
+    <li>
+      <p>Okay, now that we're listening for a function called <code>shadowClicks</code>, it's time to create that function. Scroll back up and create it <em>prior</em> to the listener. And we're going to take in the parameter <code>e</code> for the click event: <code>const shadowClicks = (e) => {};</code></p>
+    </li>
+    <li>
+      <p>Inside the brackets of this function, the first thing we're going to do is create an object called <code>clickData</code>. This object will later be passed to our Global Clicks / Events rule. It is going to simulate the clicked element as if it occured in the regular DOM. But for now, all you have to do is write <code>const clickData = {};</code></p>
+    </li>
+    <li>
+      <p>Inside the <code>clickData</code> object, add the property: <code>shadowClick: true,</code>. (Note that <code>true</code> is a Boolean, not a string. End the line with a comma.) This flag will come in handy once this object is received by your Global Clicks/Events rule and you want to differentiate between regular DOM clicks and shadow DOM clicks. For now, let's not go down this rabbit hole.</p>
+    </li>
+    <li>
+      <p>On the next line inside the same <code>clickData</code> object, add the property: <code>clickedElement: '',</code>. (We default it to an empty string. We also end this line with a comma. That way, in case we ever add another property after this one in the future, we don't forget to add the comma at that point. Or, when we do add the comma at the time we're adding another property, it doesn't create an additional line of changed code to be reviewed in your pull request.)</p>
+    </li>
+  </ol>
+
+  </div> <!-- Close .body__project-container -->
 
 </body>
 
