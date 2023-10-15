@@ -1,8 +1,22 @@
-code {
-  background-color: #000;
-  color: #fff;
+.center__1140 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1140px;
+  width: 100%;
 }
 
 .code__block {
   background-color: #000;
+  color: #fff;
+}
+
+.code__name {
+  font-weight: 700;
+}
+
+.code__snippet {
+  background-color: #000;
+  color: #fff;
 }
