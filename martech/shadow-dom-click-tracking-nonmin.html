@@ -46,25 +46,25 @@
 
     <main class="main">
 
-      <div class="center__1140">
+      <div class="heading heading_theme_clear">
+        <div class="heading__title-overflow">
+          <h1 class="heading__title-tag font_size_5">
+            <span class="heading__title-tag_title">Shadow DOM Click Tracking</span>
+          </h1>
+        </div>
+      </div>
 
-        <div class="heading heading_theme_clear">
+      <section>
+
+        <div class="heading heading_theme_black">
           <div class="heading__title-overflow">
-            <h1 class="heading__title-tag font_size_5">
-              <span class="heading__title-tag_title">Shadow DOM Click Tracking</span>
-            </h1>
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Overview</span>
+            </h2>
           </div>
         </div>
 
-        <section>
-
-          <div class="heading heading_theme_black">
-            <div class="heading__title-overflow">
-              <h2 class="heading__title-tag font_size_4">
-                <span class="heading__title-tag_title">Overview</span>
-              </h2>
-            </div>
-          </div>
+        <div class="center__1140">
           
           <p class="main__text font_size_body">The overall architecture is this:</p>
 
@@ -84,18 +84,22 @@
           </ol>
 
           <p class="main__text font_size_body">This is going to involve a combination of Launch rules and data elements, which is explained in detail below.</p>
+
+        </div> <!-- Close .center__1140 -->
         
-        </section>
+      </section>
 
-        <section>
+      <section>
 
-          <div class="heading heading_theme_black">
-            <div class="heading__title-overflow">
-              <h2 class="heading__title-tag font_size_4">
-                <span class="heading__title-tag_title">Shadow DOM Data Element (‘shadow doms’)</span>
-              </h2>
-            </div>
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Shadow DOM Data Element (‘shadow doms’)</span>
+            </h2>
           </div>
+        </div>
+
+        <div class="center__1140">
 
           <p class="main__text font_size_body">First, create a data element called 'shadow doms'. Select 'Custom Code'. Then paste in this snippet:</p>
 
@@ -105,7 +109,13 @@
 
           <p class="main__text font_size_body">That's all the code you need for the data element!</p>
 
-          <h3>Explanation</h3>
+          <div class="heading heading_theme_clear">
+            <div class="heading__title-overflow">
+              <h3 class="heading__title-tag font_size_2">
+                <span class="heading__title-tag_title">Explanation</span>
+              </h3>
+            </div>
+          </div>
 
           <ol>
             <li>
@@ -129,23 +139,33 @@
             </li>
           </ol>
 
-          <h3>How to Use the <b>shadow doms</b> Data Element</h3>
+          <div class="heading heading_theme_clear">
+            <div class="heading__title-overflow">
+              <h3 class="heading__title-tag font_size_2">
+                <span class="heading__title-tag_title">How to Use the <b>shadow doms</b> Data Element</span>
+              </h3>
+            </div>
+          </div>
 
           <p class="main__text font_size_body">Executing <code class="code__snippet">_satellite.getVar('shadow doms');</code> will return an array containing all shadow DOMs found on the page. (If none are found, it will return an empty array.)</p>
 
           <p class="main__text font_size_body">We're going to be using this data element in a separate Adobe Launch rule that listens for clicks in any shadow DOMs.</p>
 
-        </section>
+        </div> <!-- Close .center__1140 -->
 
-        <section>
+      </section>
 
-          <div class="heading heading_theme_black">
-            <div class="heading__title-overflow">
-              <h2 class="heading__title-tag font_size_4">
-                <span class="heading__title-tag_title">Shadow DOM “Add Event Listener” Rule</span>
-              </h2>
-            </div>
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Shadow DOM “Add Event Listener” Rule</span>
+            </h2>
           </div>
+        </div>
+
+        <div class="center__1140">
 
           <p class="main__text font_size_body">First, the full code block for context. Scroll past it for a breakdown of what it does.</p>
 
@@ -183,7 +203,13 @@
   }
   </code></pre>
 
-          <h3>Explanation</h3>
+          <div class="heading heading_theme_clear">
+            <div class="heading__title-overflow">
+              <h3 class="heading__title-tag font_size_2">
+                <span class="heading__title-tag_title">Explanation</span>
+              </h3>
+            </div>
+          </div>
 
           <ol>
             <li>
@@ -238,9 +264,9 @@
 
           <p class="main__text font_size_body">The rule is now ready to listen for shadow DOM clicks and pass them over to the Global Clicks/Events rule. See my Adobe Global Click Tracking Architecture article for details on how that rule handles the rest.</p>
 
-        </section>
+        </div> <!-- Close .center__1140 -->
 
-      </div> <!-- Close .center__1140 -->
+      </section>
     
     </main>
 
