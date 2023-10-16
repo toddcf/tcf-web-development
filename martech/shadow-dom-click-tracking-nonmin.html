@@ -48,12 +48,24 @@
 
       <div class="center__1140">
 
-        <h1>Shadow DOM Click Tracking</h1>
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h1 class="heading__title-tag font_size_5">
+              <span class="heading__title-tag_title">Shadow DOM Click Tracking</span>
+            </h1>
+          </div>
+        </div>
 
         <section>
 
-          <h2>Overview</h2>
-
+          <div class="heading heading_theme_black">
+            <div class="heading__title-overflow">
+              <h2 class="heading__title-tag font_size_4">
+                <span class="heading__title-tag_title">Overview</span>
+              </h2>
+            </div>
+          </div>
+          
           <p class="main__text font_size_body">The overall architecture is this:</p>
 
           <ol>
@@ -77,7 +89,13 @@
 
         <section>
 
-          <h2>Shadow DOM Data Element (‘shadow doms’)</h2>
+          <div class="heading heading_theme_black">
+            <div class="heading__title-overflow">
+              <h2 class="heading__title-tag font_size_4">
+                <span class="heading__title-tag_title">Shadow DOM Data Element (‘shadow doms’)</span>
+              </h2>
+            </div>
+          </div>
 
           <p class="main__text font_size_body">First, create a data element called 'shadow doms'. Select 'Custom Code'. Then paste in this snippet:</p>
 
@@ -121,11 +139,17 @@
 
         <section>
 
-          <h2>Shadow DOM “Add Event Listener” Rule</h2>
+          <div class="heading heading_theme_black">
+            <div class="heading__title-overflow">
+              <h2 class="heading__title-tag font_size_4">
+                <span class="heading__title-tag_title">Shadow DOM “Add Event Listener” Rule</span>
+              </h2>
+            </div>
+          </div>
 
-          First, the full code block for context. Scroll past it for a breakdown of what it does.
+          <p class="main__text font_size_body">First, the full code block for context. Scroll past it for a breakdown of what it does.</p>
 
-  <pre class="code__block"><code>
+  <pre class="code__block"><code class="code__snippet font_size_body">
   const shadowDOMs = _satellite.getVar('shadow doms');
 
   const shadowClicks = (e) => {
