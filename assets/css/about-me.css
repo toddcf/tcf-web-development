@@ -933,6 +933,21 @@ html {
           animation-delay: 2500ms;
 }
 
+.skills__icon_12 {
+  -webkit-animation-delay: 2750ms;
+          animation-delay: 2750ms;
+}
+
+.skills__icon_13 {
+  -webkit-animation-delay: 3000ms;
+          animation-delay: 3000ms;
+}
+
+.skills__icon_14 {
+  -webkit-animation-delay: 3250ms;
+          animation-delay: 3250ms;
+}
+
 .skills__icon_effects {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
