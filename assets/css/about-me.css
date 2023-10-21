@@ -884,73 +884,73 @@ html {
 }
 
 .skills__icon_2 {
-  -webkit-animation-delay: 250ms;
-          animation-delay: 250ms;
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
 }
 
 .skills__icon_3 {
-  -webkit-animation-delay: 500ms;
-          animation-delay: 500ms;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
 }
 
 .skills__icon_4 {
+  -webkit-animation-delay: 450ms;
+          animation-delay: 450ms;
+}
+
+.skills__icon_5 {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.skills__icon_6 {
   -webkit-animation-delay: 750ms;
           animation-delay: 750ms;
 }
 
-.skills__icon_5 {
-  -webkit-animation-delay: 1000ms;
-          animation-delay: 1000ms;
-}
-
-.skills__icon_6 {
-  -webkit-animation-delay: 1250ms;
-          animation-delay: 1250ms;
-}
-
 .skills__icon_7 {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+
+.skills__icon_8 {
+  -webkit-animation-delay: 1050ms;
+          animation-delay: 1050ms;
+}
+
+.skills__icon_9 {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+}
+
+.skills__icon_10 {
+  -webkit-animation-delay: 1350ms;
+          animation-delay: 1350ms;
+}
+
+.skills__icon_11 {
   -webkit-animation-delay: 1500ms;
           animation-delay: 1500ms;
 }
 
-.skills__icon_8 {
-  -webkit-animation-delay: 1750ms;
-          animation-delay: 1750ms;
-}
-
-.skills__icon_9 {
-  -webkit-animation-delay: 2000ms;
-          animation-delay: 2000ms;
-}
-
-.skills__icon_10 {
-  -webkit-animation-delay: 2250ms;
-          animation-delay: 2250ms;
-}
-
-.skills__icon_11 {
-  -webkit-animation-delay: 2500ms;
-          animation-delay: 2500ms;
-}
-
 .skills__icon_12 {
-  -webkit-animation-delay: 2750ms;
-          animation-delay: 2750ms;
+  -webkit-animation-delay: 1650ms;
+          animation-delay: 1650ms;
 }
 
 .skills__icon_13 {
-  -webkit-animation-delay: 3000ms;
-          animation-delay: 3000ms;
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms;
 }
 
 .skills__icon_14 {
-  -webkit-animation-delay: 3250ms;
-          animation-delay: 3250ms;
+  -webkit-animation-delay: 1950ms;
+          animation-delay: 1950ms;
 }
 
 .skills__icon_15 {
-  -webkit-animation-delay: 3500ms;
-          animation-delay: 3500ms;
+  -webkit-animation-delay: 2100ms;
+          animation-delay: 2100ms;
 }
 
 .skills__icon_effects {
