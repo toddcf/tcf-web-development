@@ -22,6 +22,7 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/fonts.css"> <!-- Change to -min when publishing -->
   <link rel="stylesheet" type="text/css" href="../assets/css/global.css"> <!-- Change to -min when publishing -->
   <link rel="stylesheet" type="text/css" href="../assets/css/martech-article.css"> <!-- Change to -min when publishing -->
+  <link rel="stylesheet" type="text/css" href="../assets/prism/prism.1.29.0.css"> <!-- Change to -min when publishing -->
 
   <title>MarTech | Shadow DOM Click Tracking</title>
 
@@ -179,8 +180,7 @@
 
           <p class="main__text font_size_body">First, the full code block for context. Scroll past it for a breakdown of what it does.</p>
 
-  <pre class="code__block"><code class="code__snippet font_size_body">
-  <c- p><</c->
+  <pre class="code__block"><code class="code__snippet font_size_body language-javascript">
   const shadowDOMs = _satellite.getVar('shadow doms');
 
   const shadowClicks = (e) => {
@@ -375,6 +375,9 @@
 
   <!-- Custom JavaScript -->
   <script src="../assets/js/footer-min.js"></script>
+
+  <!-- Prism -->
+  <script src="../assets/prism/prism.1.29.0.js"></script>
 
 </body>
 
