@@ -948,6 +948,11 @@ html {
           animation-delay: 3250ms;
 }
 
+.skills__icon_15 {
+  -webkit-animation-delay: 3500ms;
+          animation-delay: 3500ms;
+}
+
 .skills__icon_effects {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
