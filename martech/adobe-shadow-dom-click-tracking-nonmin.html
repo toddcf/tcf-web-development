@@ -41,7 +41,7 @@
 
 </head>
 
-<body class="body">
+<body class="body line-numbers">
 
   <div class="body__project-container">
 
@@ -180,8 +180,7 @@
 
           <p class="main__text font_size_body">First, the full code block for context. Scroll past it for a breakdown of what it does.</p>
 
-  <pre class="code__block"><code class="code__snippet font_size_body language-javascript" style="font-size: 16px;">
-  const shadowDOMs = _satellite.getVar('shadow doms');
+  <pre class="code__block font_size_body"><code class="code__snippet font_size_body language-javascript">const shadowDOMs = _satellite.getVar('shadow doms');
 
   const shadowClicks = (e) => {
     const clickData = {
@@ -214,8 +213,7 @@
     shadowDOMs.forEach(shadowDOM => {
       shadowDOM.shadowRoot.addEventListener('click', shadowClicks);
     });
-  }
-  </code></pre>
+  }</code></pre>
 
           <div class="heading heading_theme_clear">
             <div class="heading__title-overflow">
