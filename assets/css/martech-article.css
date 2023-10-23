@@ -7,11 +7,6 @@
   width: 100%;
 }
 
-/* .code__block {
-  background-color: #000;
-  color: #fff;
-} */
-
 .code__name {
   font-family: 'PT Sans', sans-serif;
   font-weight: 700;
@@ -20,6 +15,10 @@
 .code__snippet {
   background-color: #000;
   color: #fff;
+}
+
+.content__block {
+  padding: 2em 0 3em 0;
 }
 
 .heading__title-left {
