@@ -53,16 +53,19 @@
   word-spacing: 0.25em;
 }
 
-.heading__title-tag_title::before,
-.heading__title-tag_title::after {
-  border-top: 1px solid #808080;
-  content: "";
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 100px;
+@media (min-width: 768px) {
+  /* Only when screen is wide enough, to prevent broken-looking styling */
+  .heading__title-tag_title::before,
+  .heading__title-tag_title::after {
+    border-top: 1px solid #808080;
+    content: "";
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100px;
+  }
 }
 
 .heading__title-tag_title::before {
