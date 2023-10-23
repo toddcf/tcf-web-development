@@ -50,6 +50,7 @@
   font-weight: 300;
   position: relative;
   text-transform: uppercase;
+  word-spacing: 0.25em;
 }
 
 .heading__title-tag_title::before,

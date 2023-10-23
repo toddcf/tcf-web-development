@@ -49,8 +49,8 @@
 
       <div class="heading heading_theme_clear">
         <div class="heading__title-overflow">
-          <h1 class="heading__title-tag font_size_5">
-            <span class="heading__title-tag_title">Shadow DOM Click Tracking</span>
+          <h1 class="heading__title-tag font_size_4">
+            <span class="heading__title-tag_title">Shadow DOM Click Tracking in Adobe Launch</span>
           </h1>
         </div>
       </div>
@@ -69,6 +69,7 @@
 
           <div class="content__block">
           
+            <p class="main__text font_size_body">As of this writing, Adobe Launch does not automatically detect clicks inside of shadow DOMs. But there is a way to write some custom JavaScript that detects them manually.</p>
             <p class="main__text font_size_body">The overall architecture is this:</p>
 
             <ol class="main__list font_size_body">
@@ -118,7 +119,7 @@
               <li class="content__block_li">
                 <p class="main__text font_size_body">Then paste in this snippet into the custom code field:</p>
 
-  <pre class="code__block"><code class="code__snippet font_size_body">return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);</code></pre>
+  <pre class="code__block"><code class="language-javascript">return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);</code></pre>
             </li>
           </ol>
 
@@ -147,12 +148,12 @@
                 <p class="main__text font_size_body">Now that you have an array, you can call the <code class="code__name">.filter</code> method on it.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Inside the <code class="code__name">.filter</code> method, <code class="code__snippet">(tag => !!tag.shadowRoot)</code> checks each tag in the array.
+                <p class="main__text font_size_body"><code class="code__snippet">.filter(tag => !!tag.shadowRoot)</code> checks each tag in the array.
                   If a tag contains a <code class="code__name">shadowRoot</code>, then that tag represents a shadow DOM, and the filter will include
                   it. (If not, the filter will ignore that tag.)</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body"><code class="code__name">return</code> all of this because your data element needs to return a value. You now have a new array
+                <p class="main__text font_size_body"><code class="code__snippet">return</code> all of this or else your data element will do all this work but not spit out the results at the end. You now have a new array
                   made up only of the shadow DOM tags that were filtered out of the entire page. (If none were found, it will
                   return an empty array.)</p>
               </li>
@@ -196,7 +197,7 @@
             
             <p class="main__text font_size_body">First, the full code block for context. (Scroll past it for a breakdown of what it does.)</p>
 
-  <pre class="code__block font_size_body"><code class="code__snippet font_size_body language-javascript">const shadowDOMs = _satellite.getVar('shadow doms');
+  <pre class="code__block"><code class="language-javascript">const shadowDOMs = _satellite.getVar('shadow doms');
 
   const shadowClicks = (e) => {
     const clickData = {
