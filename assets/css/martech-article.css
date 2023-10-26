@@ -29,63 +29,6 @@
   margin-bottom: 1.75em;
 }
 
-.heading__title-left {
-  margin: 0 2em;
-  text-align: left;
-}
-
-.heading__title-overflow {
-  margin: 0 2em;
-  overflow: hidden;
-  text-align: center;
-}
-
-.heading__title-tag {
-  font-family: 'Lato', sans-serif;
-  margin: 0;
-}
-
-.heading__title-tag_title {
-  display: inline-block;
-  font-weight: 300;
-  position: relative;
-  text-transform: uppercase;
-  width: fit-content;
-  word-spacing: 0.25em;
-}
-
-.heading__title-tag_title::before,
-.heading__title-tag_title::after {
-  border-top: 1px solid #808080;
-  content: "";
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 100px;
-}
-
-.heading__title-tag_title::before {
-  margin-right: 20px;
-  right: 100%;
-}
-
-.heading__title-tag_title::after {
-  left: 100%;
-  margin-left: 1rem;
-}
-
-.heading_theme_black {
-  background: #000;
-  color: #808080;
-  padding: 1.5rem .5rem;
-}
-
-.heading_theme_clear {
-  padding: 20px 0 30px 0;
-}
-
 .link,
 .link:active,
 .link:focus,
