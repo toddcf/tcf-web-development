@@ -968,52 +968,6 @@ html {
   z-index: -100;
 }
 
-.heading__title-overflow {
-  margin: 0 1em;
-  overflow: hidden;
-  text-align: center;
-}
-
-.heading__title-tag {
-  font-family: 'Lato', sans-serif;
-  margin: 0;
-}
-
-.heading__title-tag_title {
-  display: inline;
-  font-weight: 300;
-  position: relative;
-  text-transform: uppercase;
-}
-
-.heading__title-tag_title::before,
-.heading__title-tag_title::after {
-  border-top: 1px solid #808080;
-  content: "";
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 100px;
-}
-
-.heading__title-tag_title::before {
-  margin-right: 20px;
-  right: 100%;
-}
-
-.heading__title-tag_title::after {
-  left: 100%;
-  margin-left: 1rem;
-}
-
-.heading_theme_black {
-  background: #000;
-  color: #808080;
-  padding: 3rem 1rem;
-}
-
 .nav {
   background-image: -o-linear-gradient(top, #cecece 0, #fff 10%, #fff 50%, #d8d8d8 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cecece), color-stop(10%, #fff), color-stop(50%, #fff), to(#d8d8d8));
