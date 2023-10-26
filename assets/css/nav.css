@@ -1,0 +1,83 @@
+.nav {
+  background-image: -o-linear-gradient(top, #cecece 0, #fff 10%, #fff 50%, #d8d8d8 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cecece), color-stop(10%, #fff), color-stop(50%, #fff), to(#d8d8d8));
+  background-image: linear-gradient(to bottom, #cecece 0, #fff 10%, #fff 50%, #d8d8d8 100%);
+  -webkit-box-shadow: 0 .1em .5em rgba(0, 0, 0, .5);
+          box-shadow: 0 .1em .5em rgba(0, 0, 0, .5);
+  font-size: 1.1em; /* Workaround -- make larger on smaller screens */
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 20;
+}
+
+@media (min-width: 800px) {
+  .nav {
+    font-size: 2vw; /* Workaround -- keep consistent with homepage sizing despite different center content widths */
+  }
+}
+
+@media (min-width: 1440px) {
+  .nav {
+    font-size: 28.8px; /* Workaround -- keep consistent with all pages despite different center content widths */
+  }
+}
+
+.nav__flex {
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.nav__flex_icon {
+  margin-right: .3em;
+}
+
+.nav__flex_link,
+.nav__flex_link:focus,
+.nav__flex_link:visited {
+  color: #000;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  margin: 0;
+  min-height: 57px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: 250ms;
+  -o-transition: 250ms;
+  transition: 250ms;
+}
+
+.nav__flex_link:active,
+.nav__flex_link:hover {
+  color: #808080;
+}
+
+.nav__flex_text {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+}
