@@ -12,6 +12,13 @@
   z-index: 20;
 }
 
+.nav_dropdown-on-scroll {
+  top: -60px; /* Hidden on page load */
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  transition: 500ms;
+}
+
 @media (min-width: 800px) {
   .nav {
     font-size: 2vw; /* Workaround -- keep consistent with homepage sizing despite different center content widths */
