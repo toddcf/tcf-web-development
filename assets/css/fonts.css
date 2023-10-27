@@ -1,5 +1,3 @@
-/* FONT SIZES */
-
 /* Fixed root font size for smallest screens */
 html {
   font-size: 16px;
@@ -70,4 +68,3 @@ html {
     font-size: 22.8px;
   }
 }
-/* END FONT SIZES */
