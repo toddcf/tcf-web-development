@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .nav {
   background-image: -o-linear-gradient(top, #cecece 0, #fff 10%, #fff 50%, #d8d8d8 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cecece), color-stop(10%, #fff), color-stop(50%, #fff), to(#d8d8d8));
