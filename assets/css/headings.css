@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .heading__title-left {
   margin: 0 2em;
   text-align: left;
@@ -19,6 +26,8 @@
   font-weight: 300;
   position: relative;
   text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   word-spacing: 0.25em;
 }
