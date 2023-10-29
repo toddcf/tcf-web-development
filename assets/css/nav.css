@@ -60,6 +60,7 @@
 
 .nav__flex_icon {
   margin-right: .3em;
+  width: 1em; /* For SVG sizing */
 }
 
 .nav__flex_link,
