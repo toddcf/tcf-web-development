@@ -85,16 +85,68 @@
 
           <div class="content__block">
           
-            <p class="main__text font_size_body">Add description here.</p>
-            <p class="main__text font_size_body">The overall architecture is this:</p>
+            <p class="main__text font_size_body">If you want to collect certain data whenever an element is clicked, you can set up two global rules in Adobe Launch:</p>
 
             <ol class="main__list font_size_body">
               <li class="content__block_li">
-                <p class="main__text font_size_body">Add each bullet point here.</p>
+                <p class="main__text font_size_body">One rule that sets variables.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">A second rule that sends and then clears the variables.</p>
               </li>
             </ol>
 
-            <p class="main__text font_size_body">Add summary here.</p>
+            <p class="main__text font_size_body">(Having them split into two parts gives you the flexibility to insert another "Set Variables" rule in between the two later. This consolidates network calls, which cost money, rather than having multiple network calls per click.)</p>
+
+            <p class="main__text font_size_body">Within the "Set Variables" rule, there can be quite a bit of custom code to help you standardize the data into a consistent format programmatically. That's what a big part of this article will focus on.</p>
+
+            <p class="main__text font_size_body">These rules can be triggered a couple different ways:</p>
+
+            <ol class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">A regular click on a link or button.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">A direct call, in situations where a specific element (that is not normally a clickable element) performs a function on a page that you want to track when clicked.</p>
+              </li>
+            </ol>
+
+            <p class="main__text font_size_body">As for the elements themselves, let's say you have stored the data you want collected in their data attributes, all starting with <code class="code__name">data-track-level-</code>. There may be several of these, each ending in a chronological number, in the order you will want to concatenate them before sending to Analytics.</p>
+
+            <p class="main__text font_size_body">For example, let's say you run a solar power company, and you have a Careers page on your website where users can learn more about working for you. On that Careers page, you have a section for each type of career category:</p>
+
+            <ul class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Research & Development</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Installation & Repair</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Administration</p>
+              </li>
+            </ul>
+
+            <p class="main__text font_size_body">And so forth.</p>
+            
+            <p class="main__text font_size_body">And then let's say that within each of those sections, you have a series of cards, one for each job within that category. Each card contains two buttons:</p>
+
+            <ol class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Learn More</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Apply Now</p>
+              </li>
+            </ol>
+
+            <p class="main__text font_size_body">When a user clicks a "Learn More" button, you don't want to simply receive a value of <code class="code__name">learn-more</code> in your Analytics. That doesn't tell you which item they want to learn more about.</p>
+
+            <p class="main__text font_size_body">Instead, you would like to receive a concatenated list such as: <code class="code__name">careers:administration:office-manager:learn-more</code>. <em>That</em> is much more useful.</p>
+
+            <p class="main__text font_size_body">Lastly, let's say you want to receive this value in <code class="code__name">eVar1</code> and <code class="code__name">prop1</code>, and you want to increment <code class="code__name">event1</code> for a custom link click.</p>
+
+            <p class="main__text font_size_body">The following architecture will accomplish this.</p>
 
           </div> <!-- Close .content__block -->
 
@@ -107,7 +159,7 @@
         <div class="heading heading_theme_black">
           <div class="heading__title-overflow">
             <h2 class="heading__title-tag font_size_3">
-              <span class="heading__title-tag_title">Global Clicks/Events Rule</span>
+              <span class="heading__title-tag_title">Create the <b>Global | Set Variables | Clicks or Events #25</b> Rule</span>
             </h2>
           </div>
         </div>
@@ -116,7 +168,7 @@
 
           <div class="content__block">
             
-            <p class="main__text font_size_body">First, the full code block for context. (Scroll past it for a breakdown of what it does.)</p>
+            <p class="main__text font_size_body">This is the rule that will contain a lot of custom code. Here is the full code block for context. (Scroll past it for a breakdown of what it does.) MOVE THIS TO THE LATER SECTION WHEN IT'S CREATED.</p>
 
   <pre class="code__block"><code class="language-javascript">// Code will go here once generalized.</code></pre>
 
@@ -132,19 +184,68 @@
 
           <div class="content__block">
 
+            <p class="main__text font_size_body">First, we will create the "Set Variables" rule and do its basic configuration.</p>
+
             <ol class="main__list font_size_body">
               <li class="content__block_li">
-                <p class="main__text font_size_body">Create a Launch rule. You'll of course use whatever naming conventions your library already follows, but let's say it's called <code class="code__name">Global | Clicks or Events</code></p>
+                <p class="main__text font_size_body">Create a Launch rule. You'll of course use whatever naming conventions your library already follows, but let's say it's called <code class="code__name">Global | Set Variables | Clicks or Events #25</code>.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Set the rule to fire on certain clicked elements. (Check listeners in rule.)</p>
+                <p class="main__text font_size_body">Set the rule to fire on clicks for all anchor tags and buttons.</p>
+                <ol class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Create a new Event.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">In the "Extension" dropdown, select "Core."</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">In the "Event Type" dropdown, select "Click."</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Select the "specific elements" radio button.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">In the "Elements matching the CSS selector" field, type: <code class="code__name">a, button</code></p>
+                  </li>
+                </ol>
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">Also set the rule to fire when certain direct calls are received.</p>
+                <ol class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Create another new Event.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">In the "Extension" dropdown, select "Core."</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">In the "Event Type" dropdown, select "Direct Call."</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">In the "Identifier" field, type: <code class="code__name">set-global-click-or-event-variables</code></p>
+                  </li>
+                </ol>
               </li>
-              <li class="content__block_li">
+              <!-- <li class="content__block_li">
                 <p class="main__text font_size_body">Placeholder for HTML structure when pre tag should be used:</p>
                 <pre class="code__block"><code class="code__snippet font_size_body">// Code would go here.</code></pre>
+              </li> -->
+            </ol>
+
+            <p class="main__text font_size_body">The next step for this rule would be to write the custom code that collects and concatenates all the click-tracking values. But for now let's save this rule and set up its counterpart, the <code class="code__name">Global | Send Beacon, Clear Variables | Clicks or Events #100</code> rule.</p>
+
+            <p class="main__text font_size_body">Now it's time to write the custom code that will collect and concatenate our click tracking values.</p>
+
+            <ol class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Create a new Action. In the "Extension" dropdown, select "Adobe Analytics."</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">In the "Action Type" dropdown, select "Set Variables."</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">In the panel that opens to the right, scroll to the bottom and click "Open Editor." This is where your custom code will go.</p>
               </li>
             </ol>
 
@@ -153,7 +254,7 @@
           <div class="heading heading_theme_clear">
             <div class="heading__title-overflow">
               <h3 class="heading__title-tag font_size_2">
-                <span class="heading__title-tag_title">How to Use the <b>Global | Clicks or Events</b> Rule</span>
+                <span class="heading__title-tag_title">How to Use the <b>Global | Clicks or Events</b> Rules</span>
               </h3>
             </div>
           </div>
