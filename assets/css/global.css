@@ -1,3 +1,12 @@
+.center__960 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 960px;
+  width: 100%;
+}
+
 .center__1140 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
