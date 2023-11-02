@@ -170,8 +170,6 @@ for (const property in clickAttributes) {
   }
 }
 
-_satellite.setVar('click attributes', clickAttributes); // Store this for retrieval in the AEP Web SDK rules / data elements.
-
 // Then do the concatenation here. Must do this separately from the above to control the order of the concatenations.
 // First dynamically push each existing data-track-component-level-X attribute into an array in numerical order:
 let level = 1;
