@@ -1,5 +1,4 @@
 let ruleTriggerType = event.$type.replace('core.', '') // Will be 'core.direct-call', 'core.click', 'core.change', etc. -- remove 'core.' to simplify.  Use 'let' because in some cases, this will be standardized to a different value later.
-_satellite.logger.info('Global Clicks/Events initial ruleTriggerType fired:', ruleTriggerType);
 
 let clickedElement = ''; // This will be the entire element that was clicked, or that was passed in via direct call for Shadow DOM clicks.
 let clickedElementAttributes = ''; // ALL of the attributes from the clickedElement will get retrieved and stored here as an array.
@@ -79,16 +78,13 @@ switch (ruleTriggerType) {
   case 'click':
   case 'change':
     clickedElement = this;
-    _satellite.logger.info('Global Click Rule clickedElement set to "this":', clickedElement);
     s.events = s.apl(s.events, 'event75', ','); // event75 needs to be set for each specific use case to prevent it from being included in non-click events.
     break;
   case 'direct-call':
-    _satellite.logger.info('Global Click Rule direct call sets \'this\' to:', this);
     directCallString = event.identifier;
     if (!!event && !!event.detail) {
       if (!!event.detail.clickedElement) {
         clickedElement = event.detail.clickedElement;
-        _satellite.logger.info('Global Click Rule clickedElement received via direct call:', clickedElement);
       }
       if (!!event.detail.shadowClick) {
         ruleTriggerType = 'shadowClick'; // We need to differentiate between direct calls that are shadow DOM clicks vs. standard direct calls.
@@ -97,8 +93,6 @@ switch (ruleTriggerType) {
     }
     break;
 }
-
-_satellite.logger.info('Global Clicks/Events fired. Post-standardization ruleTriggerType is:', ruleTriggerType);
 
 // Pull all the attributes from the clicked element and store them in an array:
 if (!!clickedElement && !!clickedElement.attributes) {
@@ -115,8 +109,6 @@ if (!!clickedElementAttributes) {
     clickAttributes[key] = value;
   });
 }
-
-_satellite.logger.info('clickAttributes after object is built:', clickAttributes);
 
 // Post-Standardization Logic:
 switch (ruleTriggerType) {
