@@ -524,24 +524,6 @@
 
 }
 
-.center__1140 {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1140px;
-  width: 100%;
-}
-
-.center__1440 {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1440px;
-  padding: 0 15px;
-  width: 100%;
-}
-
 .flexbox {
   display: -webkit-box;
   display: -ms-flexbox;
