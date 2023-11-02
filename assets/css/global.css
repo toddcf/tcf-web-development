@@ -1,26 +1,19 @@
-.center__960 {
+.content__center {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0 auto;
   padding: 0 15px;
+  width: 100%;
+}
+
+.content__center_960 {
   max-width: 960px;
-  width: 100%;
 }
 
-.center__1140 {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0 15px;
+.content__center_1140 {
   max-width: 1140px;
-  width: 100%;
 }
 
-.center__1440 {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0 auto;
+.content__center_1440 {
   max-width: 1440px;
-  padding: 0 15px;
-  width: 100%;
 }
