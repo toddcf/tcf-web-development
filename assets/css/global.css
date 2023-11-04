@@ -24,3 +24,21 @@
 .content__center_1440 {
   max-width: 1440px;
 }
+
+.content__center_1920 {
+  max-width: 1920px;
+}
+
+.header {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.header__img {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
