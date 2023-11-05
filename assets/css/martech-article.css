@@ -64,3 +64,18 @@
   margin: 0 0 1em 0;
   text-align: justify;
 }
+
+.martech-header__img {
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.martech-header__img_wild-water {
+  background-image: url(../img/martech/wild-water/wild-water-1920x150.jpg);
+}
