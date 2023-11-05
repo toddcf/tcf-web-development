@@ -71,15 +71,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
-  padding: 0 0 10% 0;
+  padding: 0 0 8% 0;
   position: relative;
   width: 100%;
 }
 
-.martech-header__img_wild-water {
-  background-image: url(../img/martech/wild-water/wild-water-1920x150.jpg);
+@media (max-width: 575.98px) {
+  .martech-header__img_wild-water {
+    background-image: url(../img/martech/wild-water/wild-water-768x60.jpg);
+  }
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .martech-header__img_wild-water {
+    background-image: url(../img/martech/wild-water/wild-water-1440x112.jpg);
+  }
+}
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .martech-header__img_wild-water {
+    background-image: url(../img/martech/wild-water/wild-water-1920x150.jpg);
+  }  
+}
