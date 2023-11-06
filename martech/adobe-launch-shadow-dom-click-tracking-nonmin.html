@@ -194,7 +194,8 @@
 
           <div class="content__block">
             
-            <p class="main__text font_size_body">First, the full code block for context. (Scroll past it for a breakdown of what it does.)</p>
+            <p class="main__text font_size_body">Once I had my <code class="code__snippet">shadow doms</code> data element working, I was ready to use it in an Adobe Launch rule. I created a rule containing custom code that, if it finds any shadow DOMs on the page, attaches a 'click' listener to each one. I named it <code class="code__name">Global | Add Shadow DOM Event Listeners</code>.</p>
+            <p class="main__text font_size_body">First, the full code block for context. (Scroll past it for a breakdown of what each part does.)</p>
 
   <pre class="code__block"><code class="language-javascript">const shadowDOMs = _satellite.getVar('shadow doms');
 
@@ -249,83 +250,67 @@
 
             <ol class="main__list font_size_body">
               <li class="content__block_li">
-                <p class="main__text font_size_body">Create a Launch rule. You'll of course use whatever naming conventions your library already follows, but let's say it's called <code class="code__name">Global | Add Shadow DOM Event Listeners</code></p>
+                <p class="main__text font_size_body">First, a quick note: I programmed the rule itself to be triggered on every page/route load.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Set the rule to fire on every page/route load. How you do this depends on how your global architecture is already set up in Adobe Launch, but the end goal is that every time a page loads (or every time a SPA route changes), this rule will fire.</p>
+                <p class="main__text font_size_body">The first thing the custom code inside the rule does is grab the <code class="code__name">shadow doms</code> data element and store it in a variable called <code class="code__name">shadowDOMs</code>. (Line 1 in the code above.)</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">The first thing we do inside the rule is grab the <code class="code__name">shadow doms</code> data element we just created and store it in a variable called <code class="code__name">shadowDOMs</code>:</p>
-                <pre><code class="code__snippet">const shadowDOMs = _satellite.getVar('shadow doms');</code></pre>
+                <p class="main__text font_size_body">Next, I created a function called <code class="code__name">shadowClicks</code> that gets triggered whenever a 'click' event is detected in a shadow DOM. It takes in the parameter <code class="code__name">(e)</code> for the click event. (Line 3 in the code above.)</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Then, for the purposes of this explanation, let's skip down to the end of the file (line 30 in the code block above) and set up our event listener. First, some validation to make sure that <code class="code__name">shadowDOMs</code> exists, that it is an array, and that this array contains at least one item:</p>
-                <pre><code class="code__snippet">if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {}</code></pre>
-                <p class="main__text font_size_body">This is important because if no shadow DOMs exist on the page .&nbsp;.&nbsp;. you don't want the rest of this code block to execute and start throwing errors.</p>
+                <p class="main__text font_size_body">The first thing this function does is create an object called <code class="code__name">clickData</code> (line 4 in the code block above). This object will later be passed to our Global Clicks / Events rule. It simulates the clicked element as it would have occurred in the regular DOM.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Now that we're certain that <code class="code__name">shadowDOMs</code> is an array containing at least one item, we are safe to run the <code class="code__name">.forEach</code> method on it. And for each shadow DOM in the array, we attach a 'click' listener to its <code class="code__name">shadowRoot</code>.  And when a click on this <code class="code__name">shadowRoot</code> is detected, we set it to invoke a function called <code class="code__name">shadowClicks</code>. (Lines 31-3 in the code block above.)</p>
-                <pre class="code__block"><code class="code__snippet font_size_body">shadowDOMs.forEach(shadowDOM => {
-    shadowDOM.shadowRoot.addEventListener('click', shadowClicks);
-  });</code></pre>
-                <p class="main__text font_size_body">(We haven't written the  function yet &mdash; that's next.)</p>
+                <p class="main__text font_size_body">The <code class="code__name">clickData</code> object contains the property:</p>
+                <pre><code class="code__snippet">shadowClick: true</code></pre>
+                <p class="main__text font_size_body">(That is line 5 in the code block above. Note that <code class="code__name">true</code> is a Boolean, not a string.)</p>
+                <p class="main__text font_size_body">This flag is important when this object is later passed to the Global Clicks/Events rule. It allows me to differentiate between regular DOM clicks and shadow DOM clicks. But for now, let's not go down this rabbit hole.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Okay, now that we're listening for a function called <code class="code__name">shadowClicks</code>, it's time to create that function. Scroll back up and create it <em>prior</em> to the listener (line 3 in the code block above). And we're going to take in the parameter <code class="code__name">e</code> for the click event:</p>
-                <pre><code class="code__snippet">const shadowClicks = (e) => {};</code></pre>
+                <p class="main__text font_size_body">The next property (line 6) that the <code class="code__name">clickData</code> object contains is:</p>
+                <pre><code class="code__snippet">clickedElement: ''</code></pre>
+                <p class="main__text font_size_body">At the beginning, it is defaulted it to an empty string. But after the rest of the logic in this function determines what exactly should be considered the clicked element, that element will be stored here.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Inside the brackets of this function, the first thing we're going to do is create an object called <code class="code__name">clickData</code> (line 4 in the code block above). This object will later be passed to our Global Clicks / Events rule. It is going to simulate the clicked element as if it occured in the regular DOM. But for now, all you have to do is write:</p>
-                <pre><code class="code__snippet">const clickData = {};</code></pre>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Inside the <code class="code__name">clickData</code> object, add the property:</p>
-                <pre><code class="code__snippet">shadowClick: true,</code>.</pre>
-                <p class="main__text font_size_body">(That is line 5 in the code block above. Note that <code class="code__name">true</code> is a Boolean, not a string. End the line with a comma.) This flag will come in handy once this object is received by your Global Clicks/Events rule and you want to differentiate between regular DOM clicks and shadow DOM clicks. For now, let's not go down this rabbit hole.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">On the next line (line 6) inside the same <code class="code__name">clickData</code> object, add the property:</p>
-                <pre><code class="code__snippet">clickedElement: '',</code></pre>
-                <p class="main__text font_size_body">We default it to an empty string. We also end this line with a comma. That way, in case we ever add another property after this one in the future, we don't forget to add the comma at that point. Or, when we do add the comma at the time we're adding another property, it doesn't create an additional line of changed code to be reviewed in your pull request.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Now it's time to write the logic that will determine what element in the shadow DOM got clicked. This will typically involve the <code class="code__name">target</code> in the click event (the <code class="code__name">e</code> parameter this function takes in). Therefore, before we go any further, let's add some validation to make sure it exists (line 9 in the code block above):</p>
+                <p class="main__text font_size_body">Next is the logic that determines which element in the shadow DOM got clicked. This typically involves the <code class="code__name">target</code> in the click event (the <code class="code__name">e</code> parameter this function takes in). Therefore, the first thing I did was add some validation to make sure that <code class="code__name">e.target</code> even exists. (Line 9.)</p>
                 <pre><code class="code__snippet">if (!!e.target) {}</code></pre>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Inside this code block, there is a specific use case we have to check for: What if the clicked element is an SVG? If you don't account for this, then any time a user clicks an SVG, the <code class="code__name">clickData</code> object that you pass to your Global Clicks/Events rule is going to be a mess. So add the following condition (line 10 in the code block above):</p>
-                <pre><code class="code__snippet">if (e.target instanceof SVGElement) {}</code></pre>
+                <p class="main__text font_size_body">I found out the hard way that if the clicked element is an SVG, the <code class="code__name">clickData</code> object that you pass to your Global Clicks/Events rule is going to be a mess. So I accounted for this specifically by adding the condition you see on line 10 in the code block above.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">It gets more complex. There are a couple use cases for SVG elements getting clicked. The user may have clicked on the SVG tag itself, or they may have clicked on the path elements <em>inside</em> the SVG tag. First we'll handle the path elements by nesting yet another condition inside our SVG condition (line 11 in the code block above):</p>
-                <pre><code class="code__snippet">if (!!e.target.getAttribute('d')) {}</code></pre>
+                <p class="main__text font_size_body">The SVG use case gets more complex. The user may have clicked on the SVG tag itself, or they may have clicked on the path elements <em>inside</em> the SVG tag. Lines 11 - 13 account for clicks on path elements.</p>
                 <p class="main__text font_size_body">Note that this condition must be nested <em>inside</em> the <code class="code__name">instanceof SVGElement</code> condition, as that will also be true.</p>
+                <p class="main__text font_size_body">This code block looks <em>two</em> parentNodes up from the path element, then stores the result in the <code class="code__name">clickData</code> object.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Inside the code block we just created for SVG path element clicks, we will look two parentNodes up from the path element, then store it in our <code class="code__name">clickData</code> object (line 13 in the code block above):</p>
-                <pre><code class="code__snippet">clickData.clickedElement = e.target.parentNode.parentNode;</code></pre>
+                <p class="main__text font_size_body">The <code class="code__name">else</code> condition (lines 14 - 16) accounts for clicks directly on the SVG tags. For this use case, we only have to go up <em>one</em> <code class="code__name">parentNode</code>.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Then we can add an <code class="code__name">else</code> condition (line 14) to handle the clicks directly on the SVG tags. Inside this condition (on line 16), we only have to go up <em>one</em> <code class="code__name">parentNode</code>:</p>
-                <pre><code class="code__snippet">clickData.clickedElement = e.target.parentNode;</code></pre>
+                <p class="main__text font_size_body">That's it for SVGs. On line 18, I exit the SVG condition(s) and account for all other (non-SVG) clicks. This use case is much simpler &mdash; it just grabs <code class="code__name">e.target</code> and stores it in the <code class="code__name">clickData</code> object.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">We're done with SVGs, so let's exit the <code class="code__name">(e.target instanceof SVGElement)</code> code block and add an <code class="code__name">else</code> condition to handle all other non-SVG clicks (line 18). Inside, we can just do this (line 20):</p>
-                <pre><code class="code__snippet">clickData.clickedElement = e.target;</code></pre>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Now the clicked element (if it exists) has been selected and we are ready to pass it to our Global Clicks/Events rule. For safety, we'll start with some validation to confirm that a clicked element was found before we go so far as to send it (line 24):</p>
+                <p class="main__text font_size_body">Now the clicked element (if it exists) has been selected and my code is ready to pass it to the Global Clicks/Events rule. Once again, for safety, I start with some validation to confirm that a clicked element was found before I go so far as to send it (line 24):</p>
                 <pre><code class="code__snippet">if (!!clickData.clickedElement) {}</code></pre>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Inside this condition (line 25), we'll first trigger our Global Clicks/Events rule that sets variables, and we'll pass our <code class="code__name">clickData</code> object into it:</p>
-                <pre><code class="code__snippet">_satellite.track('set-global-click-or-event-variables', clickData);</code></pre>
-                <p class="main__text font_size_body">Our Global Clicks/Events rule will take it from here. (See my article on Global Click/Events for this logic.)</p>
+                <p class="main__text font_size_body">Inside this condition (line 25), I first trigger the Global Clicks/Events rule that sets variables, and then I pass the entire <code class="code__name">clickData</code> object into it.</p>
+                <p class="main__text font_size_body">The Global Clicks/Events rule will take it from here. (See my article on Global Click/Events for how that works.)</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Then we'll also trigger our Global Clicks/Events rule that sends the beacon and clears the variables (line 26):</p>
-                <pre><code class="code__snippet">_satellite.track('send-global-click-or-event-beacon');</code></pre>
+                <p class="main__text font_size_body">Immediately after that, I trigger the Global Clicks/Events rule that sends the beacon and clears the variables (line 26).</p>
                 <p class="main__text font_size_body">(Once again, see my article on Global Clicks/Events for an explanation on this architecture.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">That's it for the function. But it still needed an event listener to trigger it, so I began that process on line 30. The listener is wrapped in some validation to make sure that <code class="code__name">shadowDOMs</code> exists, that it is an array, and that this array contains at least one item. (Remember the <code class="code__name">shadow doms</code> data element I stored in a variable back on line 1? This is where that variable starts getting used.)</p>
+                <p class="main__text font_size_body">This validation is important because if no shadow DOMs exist on the page .&nbsp;.&nbsp;. I don't want the rest of this code block to execute and start throwing errors.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Once I'm certain that <code class="code__name">shadowDOMs</code> is an array containing at least one item, I am safe to run the <code class="code__name">.forEach</code> method on it. (Line 31.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Line 32: &lsquo;For each&rsquo; shadow DOM in the array, I attach a &lsquo;click&rsquo; listener to its <code class="code__name">shadowRoot</code>. And when a click on this <code class="code__name">shadowRoot</code> is detected, all it has to do is invoke the <code class="code__name">shadowClicks</code> function.</p>
               </li>
             </ol>
 
