@@ -89,25 +89,26 @@
 
           <div class="content__block">
           
-            <p class="main__text font_size_body">As of this writing, Adobe Launch does not automatically detect clicks inside of shadow DOMs. But there is a way to write some custom JavaScript that detects them manually.</p>
-            <p class="main__text font_size_body">The overall architecture is this:</p>
+            <p class="main__text font_size_body">When the company I was working for introduced a new global header and footer that existed in the shadow DOM, I faced a new challenge:</p>
+            <p class="main__text font_size_body"></p>It turned out that Adobe Launch did not automatically detect clicks inside of shadow DOMs. We already had a global rule in Launch for clicks and events, but it wasn't getting triggered. Therefore, I had to come up with a custom code workaround to detect shadow DOM clicks manually.</p>
+            <p class="main__text font_size_body">The overall architecture I came up with is:</p>
 
             <ol class="main__list font_size_body">
               <li class="content__block_li">
-                <p class="main__text font_size_body">When the page loads, crawl it and collect any shadow DOMs that exist.</p>
+                <p class="main__text font_size_body">When the page loads, I crawl it and collect any shadow DOMs that exist.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">For each shadow DOM that is found, attach a 'click' event listener to its shadowRoot.</p>
+                <p class="main__text font_size_body">For each shadow DOM that is found, I attach a 'click' event listener to its shadowRoot.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">If a click is detected by this event listener, determine what the clicked element was and standardize it to the type of object that your Global Clicks/Events rule (for regular DOM clicks) expects.</p>
+                <p class="main__text font_size_body">If a click is detected by this event listener, my code determines what the clicked element was and standardizes it to the type of object that our Global Clicks/Events rule (for regular DOM clicks) expects.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Manually trigger your Global Clicks/Events rule, and send it the standardized object you created.</p>
+                <p class="main__text font_size_body">Then I manually trigger our Global Clicks/Events rule, and send it the standardized object that was created by my custom code.</p>
               </li>
             </ol>
 
-            <p class="main__text font_size_body">This is going to involve a combination of Launch rules and data elements, which is explained in detail below.</p>
+            <p class="main__text font_size_body">The custom code is explained in detail below.</p>
 
           </div> <!-- Close .content__block -->
 
