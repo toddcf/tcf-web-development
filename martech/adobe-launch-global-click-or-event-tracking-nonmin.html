@@ -89,7 +89,9 @@
 
           <div class="content__block">
           
-            <p class="main__text font_size_body">If you want to collect certain data whenever an element is clicked, you can set up two global rules in Adobe Launch:</p>
+            <p class="main__text font_size_body">At my company, there is a core set of eVars, props, and events we send for clicks. Therefore, it is easier to maintain if we program those values in one global rule.</p>
+
+            <p class="main__text font_size_body">In fact, there are two global click rules:</p>
 
             <ol class="main__list font_size_body">
               <li class="content__block_li">
@@ -100,24 +102,45 @@
               </li>
             </ol>
 
-            <p class="main__text font_size_body">(Having them split into two parts gives you the flexibility to insert another "Set Variables" rule in between the two later. This consolidates network calls, which cost money, rather than having multiple network calls per click.)</p>
-
-            <p class="main__text font_size_body">Within the "Set Variables" rule, there can be quite a bit of custom code to help you standardize the data into a consistent format programmatically. That's what a big part of this article will focus on.</p>
+            <p class="main__text font_size_body">Having them split into two parts gives us the flexibility to insert another "Set Variables" rule in between the two if we want to add more variables for certain clicks.</p>
 
             <p class="main__text font_size_body">These rules can be triggered a couple different ways:</p>
 
             <ol class="main__list font_size_body">
               <li class="content__block_li">
-                <p class="main__text font_size_body">A regular click on a link or button.</p>
+                <p class="main__text font_size_body">A regular click on a link or button, in which case values can be pulled out of the element&rsquo;s data attributes.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">A direct call, in situations where a specific element (that is not normally a clickable element) performs a function on a page that you want to track when clicked.</p>
+                <p class="main__text font_size_body">A direct call, in situations where a specific element (that is not normally a clickable element) performs a function on a page.</p>
               </li>
             </ol>
 
-            <p class="main__text font_size_body">As for the elements themselves, let's say you have stored the data you want collected in their data attributes, all starting with <code class="code__name">data-track-level-</code>. There may be several of these, each ending in a chronological number, in the order you will want to concatenate them before sending to Analytics.</p>
+            <p class="main__text font_size_body">For the purposes of this article, I&rsquo;ll distill the click variables down to:</p>
 
-            <p class="main__text font_size_body">For example, let's say you run a solar power company, and you have a Careers page on your website where users can learn more about working for you. On that Careers page, you have a section for each type of career category:</p>
+            <ol class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">eVar1 (custom click value)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">prop1 (custom click value)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">event1 (increment)</p>
+              </li>
+            </ol>
+
+            <p class="main__text font_size_body">The basic idea is that each clickable element that we want to track contains the following attributes:</p>
+
+            <ol class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">data-track</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">data-track-id</p>
+              </li>
+            </ol>
+
+            <!-- <p class="main__text font_size_body">For example, let's say you run a solar power company, and you have a Careers page on your website where users can learn more about working for you. On that Careers page, you have a section for each type of career category:</p>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
@@ -148,7 +171,7 @@
 
             <p class="main__text font_size_body">Instead, you would like to receive a concatenated list such as: <code class="code__name">careers:administration:office-manager:learn-more</code>. <em>That</em> is much more useful.</p>
 
-            <p class="main__text font_size_body">Lastly, let's say you want to receive this value in <code class="code__name">eVar1</code> and <code class="code__name">prop1</code>, and you want to increment <code class="code__name">event1</code> for a custom link click.</p>
+            <p class="main__text font_size_body">Lastly, let's say you want to receive this value in <code class="code__name">eVar1</code> and <code class="code__name">prop1</code>, and you want to increment <code class="code__name">event1</code> for a custom link click.</p> -->
 
             <p class="main__text font_size_body">The following architecture will accomplish this.</p>
 
