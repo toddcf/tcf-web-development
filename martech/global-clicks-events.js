@@ -147,16 +147,6 @@ switch (ruleTriggerType) {
     break;
 }
 
-if (
-  !!clickAttributes['data-track'] &&
-  clickAttributes['data-track'] === 'accordion-section' &&
-  !!this &&
-  typeof this.getElementsByTagName === 'function'
-) {
-  // Requires !!this validation to prevent errors on accordion clicks that are handled by direct calls, such as on the CP Payment Page.
-  accordionStatus = this.getElementsByTagName('button')[0].getAttribute('aria-expanded') === 'true' ? 'close' : 'open';
-}
-
 // Final cleanup before concatenation occurs:
 for (const property in clickAttributes) {
   // Run cleanText on all of the clickAttributes that include 'data-track':
