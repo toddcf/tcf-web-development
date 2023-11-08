@@ -123,8 +123,7 @@ switch (ruleTriggerType) {
       if (
         (
           !!className &&
-          typeof className === 'string' &&
-          className.indexOf('blue-btn') < 0
+          typeof className === 'string'
         ) &&
         parentNode.parentNode.dataset.track === 'accordion-section'
       ) {
