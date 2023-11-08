@@ -53,7 +53,7 @@ const getLinkName = (_element) => {
     elementText = _element.textContent;
   }
 
-  if ((altTag === '') || (!elementText)) {
+  if (altTag === '' || !elementText) {
     if (!elementText) {
       elementText = $(_element).clone().children().remove().end().text() || '';
       if (_element.nextElementSibling) {
