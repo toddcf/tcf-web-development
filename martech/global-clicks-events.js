@@ -73,7 +73,7 @@ switch (ruleTriggerType) {
   case 'click':
   case 'change':
     clickedElement = this;
-    s.events = s.apl(s.events, 'event75', ','); // event75 needs to be set for each specific use case to prevent it from being included in non-click events.
+    s.events = s.apl(s.events, 'event1', ','); // event1 needs to be set for each specific use case to prevent it from being included in non-click events.
     break;
   case 'direct-call':
     directCallString = event.identifier;
@@ -83,7 +83,7 @@ switch (ruleTriggerType) {
       }
       if (!!event.detail.shadowClick) {
         ruleTriggerType = 'shadowClick'; // We need to differentiate between direct calls that are shadow DOM clicks vs. standard direct calls.
-        s.events = s.apl(s.events, 'event75', ','); // event75 needs to be set for each specific use case to prevent it from being included in non-click events.
+        s.events = s.apl(s.events, 'event1', ','); // event1 needs to be set for each specific use case to prevent it from being included in non-click events.
       }
     }
     break;
@@ -201,6 +201,6 @@ const cappedLinkValues = customLinkValues.map(customLinkValue => {
 // Then join the capped link values with colons:
 const customLinkValuesConcat = cappedLinkValues.join(':');
 
-s.eVar75 = s.prop75 = customLinkValuesConcat;
-s.linkTrackVars = s.apl(s.linkTrackVars, 'eVar75,prop75,events', ',');
+s.eVar1 = s.prop1 = customLinkValuesConcat;
+s.linkTrackVars = s.apl(s.linkTrackVars, 'eVar1,prop1,events', ',');
 s.linkTrackEvents = s.events;
