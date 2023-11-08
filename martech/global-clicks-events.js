@@ -7,11 +7,6 @@ let accordionStatus = ''; // Will be set to 'open' or 'close' if an accordion is
 const customLinkValues = []; // At the end, the attribute values needed for click tracking will be pushed here, then concatenated.
 let directCallString = '';
 
-// The following are used in 'add-product' clicks:
-let guests = '';
-let guestCount = 0;
-let price = '';
-
 // The following are used if data-track-id is missing:
 let childNodes = '';
 let className = '';
