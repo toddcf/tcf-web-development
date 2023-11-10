@@ -7,7 +7,7 @@ let accordionStatus = ''; // Will be set to 'open' or 'close' if an accordion is
 const customLinkValues = []; // At the end, the attribute values needed for click tracking will be pushed here, then concatenated.
 let directCallString = '';
 
-// The following are used if data-track-id is missing:
+// The following are used if data-track-verb is missing:
 let childNodes = '';
 let className = '';
 let imgTag = '';
@@ -109,8 +109,8 @@ if (!!clickedElementAttributes) {
 switch (ruleTriggerType) {
   case 'click':
   case 'shadowClick':
-    if (!clickAttributes['data-track-id']) {
-      // If data-track-id is missing:
+    if (!clickAttributes['data-track-verb']) {
+      // If data-track-verb is missing:
       name = 'na';
       className = (clickAttributes.class) ? clickAttributes.class : '';
       childNodes = clickedElement.childNodes;
@@ -127,20 +127,20 @@ switch (ruleTriggerType) {
         ) &&
         parentNode.parentNode.dataset.track === 'accordion-section'
       ) {
-        name = parentNode.parentNode.getAttribute('data-track-id');
+        name = parentNode.parentNode.getAttribute('data-track-verb');
         accordionStatus = clickedElement.getAttribute('aria-expanded') === 'true' ? 'close' : 'open';
       }
-      clickAttributes['data-track-id'] = name;
+      clickAttributes['data-track-verb'] = name;
     }
     break;
   case 'direct-call':
     if (!!event && !!event.detail && !event.detail.clickedElement) {
       // If there is an event.detail but it does NOT contain a 'clickedElement', check for the data that was passed in event.detail and assign it to the appropriate clickAttributes:
-      if (!!event.detail.track) {
-        clickAttributes['data-track'] = event.detail.track;
+      if (!!event.detail.trackNoun) {
+        clickAttributes['data-track-noun'] = event.detail.trackNoun;
       }
       if (!!event.detail.id) {
-        clickAttributes['data-track-id'] = event.detail.id;
+        clickAttributes['data-track-verb'] = event.detail.trackVerb;
       }
     }
     break;
@@ -148,7 +148,7 @@ switch (ruleTriggerType) {
 
 // Final cleanup before concatenation occurs:
 for (const property in clickAttributes) {
-  // Run cleanText on all of the clickAttributes that include 'data-track':
+  // Run cleanText on all of the clickAttributes that include attributes containing 'data-track':
   if (property.includes('data-track')) {
     clickAttributes[property] = cleanText(clickAttributes[property]);
   }
@@ -167,12 +167,12 @@ do {
 } while (!!clickAttributes[`data-track-component-level-${level}`]);
 
 // Then manually push in all other attributes we want in the order we want them concatenated:
-if (!!clickAttributes['data-track']) {
-  customLinkValues.push(clickAttributes['data-track']);
+if (!!clickAttributes['data-track-noun']) {
+  customLinkValues.push(clickAttributes['data-track-noun']);
 }
 
-if (!!clickAttributes['data-track-id']) {
-  customLinkValues.push(clickAttributes['data-track-id']);
+if (!!clickAttributes['data-track-verb']) {
+  customLinkValues.push(clickAttributes['data-track-verb']);
 }
 
 if (!!accordionStatus) {
