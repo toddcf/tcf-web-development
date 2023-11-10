@@ -1,10 +1,9 @@
-let ruleTriggerType = event.$type.replace('core.', '') // Will be 'core.direct-call', 'core.click', 'core.change', etc. -- remove 'core.' to simplify.  Use 'let' because in some cases, this will be standardized to a different value later.
-
-let clickedElement = ''; // This will be the entire element that was clicked, or that was passed in via direct call for Shadow DOM clicks.
-let clickedElementAttributes = ''; // ALL of the attributes from the clickedElement will get retrieved and stored here as an array.
-let clickAttributes = {}; // Then the each attribute and its value will be broken out dynamically into key/value pairs and stored in this object.
-let accordionStatus = ''; // Will be set to 'open' or 'close' if an accordion is being clicked.
-const customLinkValues = []; // At the end, the attribute values needed for click tracking will be pushed here, then concatenated.
+let ruleTriggerType = event.$type.replace('core.', '');
+let clickedElement = '';
+let clickedElementAttributes = '';
+let clickAttributes = {};
+let accordionStatus = '';
+const customLinkValues = [];
 let directCallString = '';
 
 // The following are used if data-track-verb is missing:
@@ -73,7 +72,7 @@ switch (ruleTriggerType) {
   case 'click':
   case 'change':
     clickedElement = this;
-    s.events = s.apl(s.events, 'event1', ','); // event1 needs to be set for each specific use case to prevent it from being included in non-click events.
+    s.events = s.apl(s.events, 'event1', ',');
     break;
   case 'direct-call':
     directCallString = event.identifier;
@@ -82,22 +81,18 @@ switch (ruleTriggerType) {
         clickedElement = event.detail.clickedElement;
       }
       if (!!event.detail.shadowClick) {
-        ruleTriggerType = 'shadowClick'; // We need to differentiate between direct calls that are shadow DOM clicks vs. standard direct calls.
-        s.events = s.apl(s.events, 'event1', ','); // event1 needs to be set for each specific use case to prevent it from being included in non-click events.
+        ruleTriggerType = 'shadowClick';
+        s.events = s.apl(s.events, 'event1', ',');
       }
     }
     break;
 }
 
-// Pull all the attributes from the clicked element and store them in an array:
 if (!!clickedElement && !!clickedElement.attributes) {
-  // Validation is necessary because clickedElement.attributes will not work for clicks on elements that are handled by direct calls, such as CP accordions, etc.
   clickedElementAttributes = [...clickedElement.attributes];
 }
 
-// Convert the array of attributes into key/value pairs and store them in the clickAttributes object.  This is the format that will be used for the rest of this rule:
 if (!!clickedElementAttributes) {
-  // Validation is necessary because clickedElementAttributes will not exist for clicks on elements that are handled by direct calls, such as CP accordions, etc.
   clickedElementAttributes.forEach(clickedElementAttribute => {
     const key = clickedElementAttribute.name;
     const value = clickedElementAttribute.value;
