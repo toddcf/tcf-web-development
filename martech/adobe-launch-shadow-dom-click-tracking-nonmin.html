@@ -296,11 +296,11 @@
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">Inside this condition (line 25), I first trigger the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule that sets variables, and then I pass the entire <code class="code__name">clickData</code> object into it.</p>
-                <p class="main__text font_size_body">The <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule will take it from here. (See my article on <a class="link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> for how that works.)</p>
+                <p class="main__text font_size_body">The <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule will take it from here. (See my article on <a class="link link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> for how that works.)</p>
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">Immediately after that, I trigger the <code class="code__name">Global | Send, Clear Variables | Clicks or Events #100</code> rule that sends the beacon and clears the variables (line 26).</p>
-                <p class="main__text font_size_body">(Once again, see my article on <a class="link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> for an explanation on this architecture.)</p>
+                <p class="main__text font_size_body">(Once again, see my article on <a class="link link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> for an explanation on this architecture.)</p>
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">That&rsquo;s it for the function. But it still needed an event listener to trigger it, so I began that process on line 30. The listener is wrapped in some validation to make sure that <code class="code__name">shadowDOMs</code> exists, that it is an array, and that this array contains at least one item. (Remember the <code class="code__name">shadow doms</code> data element I stored in a variable back on line 1? This is where that variable starts getting used.)</p>
@@ -331,7 +331,7 @@
           <div class="content__block">
 
             <p class="main__text font_size_body">Every time a page/route loads, the <code class="code__name">Global | Add Shadow DOM Event Listeners</code> rule fires. It runs the <code class="code__name">shadow doms</code> data element. If that data element returns at least one shadow DOM, the rule sets up a click listener on each of those shadow DOMs. Then, when a shadow DOM click is detected, it will capture the data from the clicked element and pass it over to the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule, simulating a regular-DOM click.</p>
-            <p class="main__text font_size_body">See my <a class="link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> article for details on how the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule handles the rest.</p>
+            <p class="main__text font_size_body">See my <a class="link link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> article for details on how the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule handles the rest.</p>
 
           </div> <!-- Close .content__block -->
 
