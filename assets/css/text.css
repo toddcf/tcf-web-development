@@ -69,6 +69,32 @@ html {
 
 }
 
+.link,
+.link:active,
+.link:focus,
+.link:hover,
+.link:link,
+.link:visited {
+  text-decoration: none;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+
+.link_theme_black,
+.link_theme_black:link,
+.link_theme_black:visited {
+  border-bottom: 1.5px solid #3c6221;
+  color: #3c6221;
+}
+
+.link_theme_black:active,
+.link_theme_black:focus,
+.link_theme_black:hover {
+  border-bottom: 1.5px solid #000;
+  color: #000;
+}
+
 /* Max Root Font Size */
 @media (min-width: 1140px) {
   html {
