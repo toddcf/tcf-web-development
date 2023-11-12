@@ -341,10 +341,10 @@
                 <p class="main__text font_size_body">Both rules listen for clicks on buttons.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">The &ldquo;Set Variables #25&rdquo; listens for the <code class="code__name">set-global-click-or-event-variables</code> direct call.</p>
+                <p class="main__text font_size_body">The &ldquo;Set Variables #25&rdquo; listens for the <code class="code__snippet">set-global-click-or-event-variables</code> direct call.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">The &ldquo;Send, Clear Variables #100&rdquo; listens for the <code class="code__name">send-global-click-or-event-beacon</code> direct call.</p>
+                <p class="main__text font_size_body">The &ldquo;Send, Clear Variables #100&rdquo; listens for the <code class="code__snippet">send-global-click-or-event-beacon</code> direct call.</p>
               </li>
             </ul>
 
@@ -359,7 +359,7 @@
         <div class="heading heading_theme_black">
           <div class="heading__title-overflow">
             <h2 class="heading__title-tag font_size_3">
-              <span class="heading__title-tag_title">Custom Code Syntax for Custom Link Values</span>
+              <span class="heading__title-tag_title">Syntax for Custom Link Values</span>
             </h2>
           </div>
         </div>
@@ -368,7 +368,7 @@
 
           <div class="content__block">
             
-            <p class="main__text font_size_body">Here is the full custom code block for context. (Scroll past it for a step-by-step explanation of each part.)</p>
+            <p class="main__text font_size_body">For context, here is the full custom code block. (Scroll past it for a step-by-step explanation of each part.)</p>
 
   <pre class="code__block"><code class="language-javascript">let ruleTriggerType = event.$type.replace('core.', '');
 let clickedElement = '';
@@ -571,71 +571,12 @@ s.linkTrackEvents = s.events;</code></pre>
 
           <div class="content__block">
 
-            <p class="main__text font_size_body">First, we will create the "Set Variables" rule and do its basic configuration.</p>
-
-            <ol class="main__list font_size_body">
+            <ul class="main__list font_size_body">
               <li class="content__block_li">
-                <p class="main__text font_size_body">Create a Launch rule. You'll of course use whatever naming conventions your library already follows, but let's say it's called <code class="code__name">Global | Set Variables | Clicks or Events #25</code>.</p>
+                <p class="main__text font_size_body">Line 1: We want to know which type of event triggered the rule. The event could be a click, a shadow DOM click, a direct call, a &lsquo;change&rsquo;, etc. This will be used as a starting point to standardize the data coming in. We also strip out the <code class="code__snippet">core.</code> that is always going to be present. (Note that we use <code class="code__snippet">let</code> instead of <code class="code__snippet">const</code> because there will be some manipulation of this value if the event was a shadow DOM click. More on that later.)</p>
               </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Set the rule to fire on clicks for all anchor tags and buttons.</p>
-                <ol class="main__list font_size_body">
-                  <li class="content__block_li">
-                    <p class="main__text font_size_body">Create a new Event.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="main__text font_size_body">In the "Extension" dropdown, select "Core."</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="main__text font_size_body">In the "Event Type" dropdown, select "Click."</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="main__text font_size_body">Select the "specific elements" radio button.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="main__text font_size_body">In the "Elements matching the CSS selector" field, type: <code class="code__name">a, button</code></p>
-                  </li>
-                </ol>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Also set the rule to fire when certain direct calls are received.</p>
-                <ol class="main__list font_size_body">
-                  <li class="content__block_li">
-                    <p class="main__text font_size_body">Create another new Event.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="main__text font_size_body">In the "Extension" dropdown, select "Core."</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="main__text font_size_body">In the "Event Type" dropdown, select "Direct Call."</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="main__text font_size_body">In the "Identifier" field, type: <code class="code__name">set-global-click-or-event-variables</code></p>
-                  </li>
-                </ol>
-              </li>
-              <!-- <li class="content__block_li">
-                <p class="main__text font_size_body">Placeholder for HTML structure when pre tag should be used:</p>
-                <pre class="code__block"><code class="code__snippet font_size_body">// Code would go here.</code></pre>
-              </li> -->
-            </ol>
-
-            <p class="main__text font_size_body">The next step for this rule would be to write the custom code that collects and concatenates all the click-tracking values. But for now let's save this rule and set up its counterpart, the <code class="code__name">Global | Send Beacon, Clear Variables | Clicks or Events #100</code> rule.</p>
-
-            <p class="main__text font_size_body">Now it's time to write the custom code that will collect and concatenate our click tracking values.</p>
-
-            <ol class="main__list font_size_body">
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Create a new Action. In the "Extension" dropdown, select "Adobe Analytics."</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">In the "Action Type" dropdown, select "Set Variables."</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">In the panel that opens to the right, scroll to the bottom and click "Open Editor." This is where your custom code will go.</p>
-              </li>
-            </ol>
-
+            </ul>
+              
           </div> <!-- Close .content__block -->
 
         </div> <!-- Close .content__center content__center_700 -->
