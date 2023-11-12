@@ -95,7 +95,7 @@
 
             <p class="main__text font_size_body">In addition to those baseline variables, if that event is a click, we also send:</p>
 
-            <ol class="main__list font_size_body">
+            <ul class="main__list font_size_body">
               <li class="content__block_li">
                 <p class="main__text font_size_body">event1: Custom Link Click (increment)</p>
               </li>
@@ -105,7 +105,7 @@
               <li class="content__block_li">
                 <p class="main__text font_size_body">prop1: Custom Link Value (same value as eVar1)</p>
               </li>
-            </ol>
+            </ul>
 
           </div> <!-- Close .content__block -->
 
@@ -118,6 +118,38 @@
             </h3>
           </div>
         </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="main__text font_size_body">The Custom Link Value that gets passed into eVar1 and prop1 is typically a concatenation of two data attributes, which we put into each element we want to track clicks on:</p>
+
+            <ul class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">data-track-noun (represents &ldquo;what&rdquo; is being clicked)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">data-track-verb (represents the &ldquo;action&rdquo; the user is taking)</p>
+              </li>
+            </ul>
+
+            <p class="main__text font_size_body">These two values get concatenated, colon-delimited, and assigned to eVar1 and prop1. For example, if we had a &ldquo;Careers&rdquo; card containing a &ldquo;Learn More&rdquo; button, that button would contain:</p>
+
+            <ul class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">data-track-noun="careers"</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">data-track-verb="learn-more"</p>
+              </li>
+            </ul>
+
+            <p class="main__text font_size_body">(We standardize these values to lowercase kebab-case.) The resulting value passed in eVar1 and prop1 would be <code class="code__name">careers:learn-more</code>.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
         
       </section>
 
