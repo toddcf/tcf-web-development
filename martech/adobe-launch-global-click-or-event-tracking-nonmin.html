@@ -257,6 +257,20 @@
 
             <p class="main__text font_size_body">This requires more than just our standard two <code class="code__name">data-track-noun</code> and <code class="code__name">data-track-verb</code> attributes. In cases like this, we will have:</p>
 
+            <ul class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">data-track-component-level-1="employment"</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">data-track-noun="research-development"</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">data-track-verb="learn-more"</p>
+              </li>
+            </ul>
+
+            <p class="main__text font_size_body">And the three of those need to get concatenated, in the right order, and only if they exist. In addition, there could be multiple levels of parent components. We could have <code class="code__name">data-track-component-level-1</code>, <code class="code__name">2</code>, <code class="code__name">3</code>, etc. So even more custom logic is required to account for those use cases.</p>
+
           </div> <!-- Close .content__block -->
 
         </div> <!-- Close .content__center content__center_700 -->
