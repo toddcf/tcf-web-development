@@ -181,6 +181,85 @@
           </div> <!-- Close .content__block -->
 
         </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h3 class="heading__title-tag font_size_2">
+              <span class="heading__title-tag_title">Nested AEM Components</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="main__text font_size_body">Even more complex is if we have AEM components nested inside each other in any order and any combination you might imagine. (See my article on Adobe Launch Nested AEM Component Click Tracking for details.)</p>
+
+            <p class="main__text font_size_body">For example, our Careers page has three sections:</p>
+
+            <ol class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Employment</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Apprenticeships</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Internships</p>
+              </li>
+            </ol>
+
+            <p class="main__text font_size_body">Within each of these sections there is a set of cards, each representing a category. For example, the &ldquo;Employment&rdquo; section contains these cards:</p>
+
+            <ul class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Administration</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Research & Development</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Sales</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Installation & Repair</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Support</p>
+              </li>
+            </ul>
+
+            <p class="main__text font_size_body">And each card contains two buttons:</p>
+
+            <ul class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Learn More</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">View Jobs</p>
+              </li>
+            </ul>
+
+            <p class="main__text font_size_body">If a user clicks a &ldquo;Learn More&rdquo; button and all we pass is <code class="code__name">learn-more</code>, that won&rsquo;t tell us much about which careers are getting the most clicks. Instead, we want values like:</p>
+
+            <ul class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">employment:research-development:learn-more</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">employment:installation-repair:view-jobs</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">employment:administration:learn-more</p>
+              </li>
+            </ul>
+
+            <p class="main__text font_size_body">This requires more than just our standard two <code class="code__name">data-track-noun</code> and <code class="code__name">data-track-verb</code> attributes. In cases like this, we will have:</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
         
       </section>
 
