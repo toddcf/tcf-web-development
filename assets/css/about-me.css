@@ -204,10 +204,6 @@
   padding-bottom: 50px;
 }
 
-.body {
-  margin: 0;
-}
-
 .body__project-container {
   overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
   position: relative;

@@ -5,6 +5,10 @@
 * Browsers: last 4 version
 */
 
+.body {
+  margin: 0;
+}
+
 .content__center {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
