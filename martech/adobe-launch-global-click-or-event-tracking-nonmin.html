@@ -608,21 +608,68 @@ s.linkTrackEvents = s.events;</code></pre>
                 <p class="main__text font_size_body">Lines 70 - 88: Next, I determine what I want to consider the clicked element to be:</p>
                 <ul class="main__list font_size_body">
                   <li class="content__block_li">
-                    <p class="main__text font_size_body">Line 2: For the clicked element (regular or simulated) itself.</p>
+                    <p class="main__text font_size_body">Line 73: If the rule was triggered by a &lsquo;click&rsquo; or a &lsquo;change&rsquo;, the clicked element will be the &lsquo;this&rsquo; keyword.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="main__text font_size_body">Line 3: Will become an array where <em>all</em> the attributes of the clicked element will be stored.</p>
+                    <p class="main__text font_size_body">Line 74: Since I know this use case means that it should be tracked as a click, I go ahead and increment <code class="code__snippet">event1</code> now.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="main__text font_size_body">Line 4: For the key/value pairs for each attribute after they are converted from the above array.</p>
+                    <p class="main__text font_size_body">Lines 78 - 80: If the rule was triggered by a direct call, it may have received an object along with it that I want to treat as the clicked element.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="main__text font_size_body">Line 5: For the &lsquo;open&rsquo; or &lsquo;close&rsquo; value on an accordion click.</p>
+                    <p class="main__text font_size_body">Line 82: If the rule was triggered by a shadow DOM click, I reassign its <code class="code__snippet">ruleTriggerType</code> value to <code class="code__snippet">shadowClick</code> so that I can differentiate between the two in my logic later.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="main__text font_size_body">Line 6: At the end, I will push just the values we want to track, in the order we want to track them, into this array.</p>
+                    <p class="main__text font_size_body">Line 83: And if this event <em>was</em> a shadow DOM click, I can also go ahead and increment <code class="code__snippet">event1</code> now.</p>
                   </li>
                 </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 89 - 91: Now that I&rsquo;ve determined what I want to use as my clicked element, I can pull the attributes from it and store them in an array. (The validation is necessary because <code class="code__snippet">clickedElement.attributes</code> will not work if a direct call passed a custom object into this rule containing only the specific data that is needed. That use case will be accounted for later.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 93 - 99: Convert the array of attributes into key/value pairs and store them in the <code class="code__snippet">clickAttributes</code> object. (This is the format that will be used for the rest of the rule.) Once again, validation is necessary in case the object passed into this rule does not contain architecture consistent with that of a clicked element.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 103 - 114: If the event was triggered by either a regular click or a shadow DOM click, and if the clicked element is missing the <code class="code__snippet">data-track-verb</code> attribute, fallback logic is used to source a value from other attributes instead.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 116 - 125: If the clicked element is an accordion, the accordion status is set to either &lsquo;open&rsquo; or &lsquo;close&rsquo; based on the <code class="code__snippet">aria-expanded</code> attribute.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Line 126: In the end, I store the fallback value in the <code class="code__snippet">clickAttributes</code> object&rsquo;s <code class="code__snippet">data-track-verb</code> property.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 129 - 138: If the rule was triggered by a direct call with a custom object passed into it, I look specifically for those custom properties here.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 142 - 147: Finally, the <code class="code__snippet">clickAttributes</code> object contains all the key/value pairs it&rsquo;s going to get. The properties that will ultimately be passed to Adobe Analytics start with <code class="code__snippet">data-track</code>. Those are the only ones I need to convert to lowercase kebab-case. (And I do need to do this in case some of these values were indeed pulled from fallbacks such as link text, alt tags, aria-labels, etc. They could include special characters, spaces, capital letters, and more.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 149 - 169: Now that all of the tracking values have been standardized to lowercase kebab-case, it is time to stage them in the order that they will be concatenated and passed to Adobe Analytics in eVar1 and prop1. This is done by simply pushing them into an array in the desired order:</p>
+                <ul class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 149 - 157: That means I stage all the <code class="code__snippet">data-track-component-level-1</code>, <code class="code__snippet">2</code>,<code class="code__snippet">3</code>, etc. values first, and in numerical order. But I have no way of knowing how many there will be, or if there will even be any at all. (This use case will only apply if there are AEM components on the page. See my article on Adobe Launch Nested AEM Component Click Tracking for full details.) Therefore, I use a <code class="code__name">do while</code> loop.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 159 - 161: If there is a <code class="code__snippet">data-track-noun</code> value, I stage that next.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 163 - 165: If there is a <code class="code__snippet">data-track-verb</code> value, I stage that next.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 167 - 169: Lastly, if this was an accordion click, I stage either <code class="code__snippet">open</code> or <code class="code__snippet">close</code>.</p>
+                  </li>
+                </ul>
+                <li class="content__block_li">
+                  <p class="main__text font_size_body">Lines 172 - 177: Adobe has a 255-character limit, and my concatenation could potentially get pretty long. (Especially if there are a lot of layers of nested components, or if the text from an anchor tag was used as a fallback.) If the custom link tracking value goes over 255 characters, Adobe will truncate it. I'd rather control how that truncation occurs, so I cap each individual value at 60 characters. (The ballpark estimation is that our site will likely not have more than four layers of nested components &mdash; plus perhaps an &lsquo;open&rsquo; or &lsquo;close&rsquo; appendage at the end if this was an accordion click.)</p>
+                </li>
+                <li class="content__block_li">
+                  <p class="main__text font_size_body">Line 180: Finally, the actual concatenation is done by joining the items in the array with colons.</p>
+                </li>
+                <li class="content__block_li">
+                  <p class="main__text font_size_body">Lines 182 - 184: Assign all the values to their respective places in Adobe&rsquo;s <code class="code__snippet">s</code> object.</p>
+                </li>
               </li>
             </ul>
               
