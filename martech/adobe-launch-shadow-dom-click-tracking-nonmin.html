@@ -307,12 +307,14 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
               <li class="content__block_li">
                 <p class="main__text font_size_body">Lines 30 - 34: That&rsquo;s it for the function. But it still needed an event listener to trigger it. The listener is wrapped in some validation to make sure that <code class="code__name">shadowDOMs</code> exists, that it is an array, and that this array contains at least one item. (Remember the <code class="code__name">shadow doms</code> data element I stored in a variable back on line 1? This is where that variable starts getting used.)</p>
                 <p class="main__text font_size_body">This validation is important because if no shadow DOMs exist on the page .&nbsp;.&nbsp;. I don&rsquo;t want the rest of this code block to execute and start throwing errors.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Line 31: Once I&rsquo;m certain that <code class="code__name">shadowDOMs</code> is an array containing at least one item, I am safe to run the <code class="code__name">.forEach</code> method on it.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Line 32: &lsquo;For each&rsquo; shadow DOM in the array, I attach a &lsquo;click&rsquo; listener to its <code class="code__name">shadowRoot</code>. And when a click on this <code class="code__name">shadowRoot</code> is detected, all it has to do is invoke the <code class="code__name">shadowClicks</code> function.</p>
+                <ul class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 31: Once I&rsquo;m certain that <code class="code__name">shadowDOMs</code> is an array containing at least one item, I am safe to run the <code class="code__name">.forEach</code> method on it.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 32: &lsquo;For each&rsquo; shadow DOM in the array, I attach a &lsquo;click&rsquo; listener to its <code class="code__name">shadowRoot</code>. And when a click on this <code class="code__name">shadowRoot</code> is detected, all it has to do is invoke the <code class="code__name">shadowClicks</code> function.</p>
+                  </li>
+                </ul>
               </li>
             </ul>
 
