@@ -314,6 +314,43 @@
           </div> <!-- Close .content__block -->
 
         </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h3 class="heading__title-tag font_size_2">
+              <span class="heading__title-tag_title">Sending and Clearing the Variables</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="main__text font_size_body">One last architectural note before I move on to the syntax of the custom code itself. This <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule <em>sets</em> the variables, but it does not <em>send and clear</em> them. That function is handled by a separate rule called <code class="code__name">Global | Send, Clear Variables | Clicks or Events #100</code> rule.</p>
+
+            <p class="main__text font_size_body">The <code class="code__name">#25</code> and the <code class="code__name">#100</code> at the end of each rule&rsquo;s name represents the &ldquo;order&rdquo; each one is programmed to fire in. This ensures that the <code class="code__name">#25</code> rule fires first, and the <code class="code__name">#100</code> rule fires second. This also allows us to fire additional custom click tracking rules in between order <code class="code__name">#25</code> and order <code class="code__name">#100</code> so that we can roll some additional data into certain clicks if we want to and include it in the same network call.</p>
+
+            <p class="main__text font_size_body">This means that both rules need to trigger on all the exact same events in order to stay in sync &mdash; with one difference:</p>
+
+            <ul class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Both rules listen for clicks on anchor tags.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Both rules listen for clicks on buttons.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">The &ldquo;Set Variables #25&rdquo; listens for the <code class="code__name">set-global-click-or-event-variables</code> direct call.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">The &ldquo;Send, Clear Variables #100&rdquo; listens for the <code class="code__name">send-global-click-or-event-beacon</code> direct call.</p>
+              </li>
+            </ul>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
         
       </section>
 
