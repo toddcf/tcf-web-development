@@ -4,7 +4,6 @@ let clickedElementAttributes = '';
 let clickAttributes = {};
 let accordionStatus = '';
 const customLinkValues = [];
-let directCallString = '';
 
 // The following are used if data-track-verb is missing:
 let childNodes = '';
@@ -75,7 +74,6 @@ switch (ruleTriggerType) {
     s.events = s.apl(s.events, 'event1', ',');
     break;
   case 'direct-call':
-    directCallString = event.identifier;
     if (!!event && !!event.detail) {
       if (!!event.detail.clickedElement) {
         clickedElement = event.detail.clickedElement;
@@ -130,11 +128,10 @@ switch (ruleTriggerType) {
     break;
   case 'direct-call':
     if (!!event && !!event.detail && !event.detail.clickedElement) {
-      // If there is an event.detail but it does NOT contain a 'clickedElement', check for the data that was passed in event.detail and assign it to the appropriate clickAttributes:
       if (!!event.detail.trackNoun) {
         clickAttributes['data-track-noun'] = event.detail.trackNoun;
       }
-      if (!!event.detail.id) {
+      if (!!event.detail.trackVerb) {
         clickAttributes['data-track-verb'] = event.detail.trackVerb;
       }
     }
@@ -143,14 +140,12 @@ switch (ruleTriggerType) {
 
 // Final cleanup before concatenation occurs:
 for (const property in clickAttributes) {
-  // Run cleanText on all of the clickAttributes that include attributes containing 'data-track':
   if (property.includes('data-track')) {
     clickAttributes[property] = cleanText(clickAttributes[property]);
   }
 }
 
-// Then do the concatenation here. Must do this separately from the above to control the order of the concatenations.
-// First dynamically push each existing data-track-component-level-X attribute into an array in numerical order:
+// Stage the custom link values in the order they will be concatenated:
 let level = 1;
 let dataTrackComponentLevelX = '';
 do {
@@ -161,7 +156,6 @@ do {
   level++;
 } while (!!clickAttributes[`data-track-component-level-${level}`]);
 
-// Then manually push in all other attributes we want in the order we want them concatenated:
 if (!!clickAttributes['data-track-noun']) {
   customLinkValues.push(clickAttributes['data-track-noun']);
 }
