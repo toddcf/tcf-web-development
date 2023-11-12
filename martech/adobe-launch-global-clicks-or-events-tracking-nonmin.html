@@ -661,15 +661,15 @@ s.linkTrackEvents = s.events;</code></pre>
                     <p class="main__text font_size_body">Lines 167 - 169: Lastly, if this was an accordion click, I stage either <code class="code__snippet">open</code> or <code class="code__snippet">close</code>.</p>
                   </li>
                 </ul>
-                <li class="content__block_li">
-                  <p class="main__text font_size_body">Lines 172 - 177: Adobe has a 255-character limit, and my concatenation could potentially get pretty long. (Especially if there are a lot of layers of nested components, or if the text from an anchor tag was used as a fallback.) If the custom link tracking value goes over 255 characters, Adobe will truncate it. I'd rather control how that truncation occurs, so I cap each individual value at 60 characters. (The ballpark estimation is that our site will likely not have more than four layers of nested components &mdash; plus perhaps an &lsquo;open&rsquo; or &lsquo;close&rsquo; appendage at the end if this was an accordion click.)</p>
-                </li>
-                <li class="content__block_li">
-                  <p class="main__text font_size_body">Line 180: Finally, the actual concatenation is done by joining the items in the array with colons.</p>
-                </li>
-                <li class="content__block_li">
-                  <p class="main__text font_size_body">Lines 182 - 184: Assign all the values to their respective places in Adobe&rsquo;s <code class="code__snippet">s</code> object.</p>
-                </li>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 172 - 177: Adobe has a 255-character limit, and my concatenation could potentially get pretty long. (Especially if there are a lot of layers of nested components, or if the text from an anchor tag was used as a fallback.) If the custom link tracking value goes over 255 characters, Adobe will truncate it. I'd rather control how that truncation occurs, so I cap each individual value at 60 characters. (The ballpark estimation is that our site will likely not have more than four layers of nested components &mdash; plus perhaps an &lsquo;open&rsquo; or &lsquo;close&rsquo; appendage at the end if this was an accordion click.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Line 180: Finally, the actual concatenation is done by joining the items in the array with colons.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 182 - 184: Assign all the values to their respective places in Adobe&rsquo;s <code class="code__snippet">s</code> object.</p>
               </li>
             </ul>
               
