@@ -289,7 +289,7 @@
 
             <p class="main__text font_size_body">All of the above needs to work the same way if a user clicks an element inside a shadow DOM. (For example, our global header and footer are each inside a shadow DOM.)</p>
 
-            <p class="main__text font_size_body">As of this writing, Adobe Launch does not detect clicks in shadow DOMs, so we have to simulate those by passing the clicked element into this rule via direct call object.  (See my article on <a href="adobe-launch-shadow-dom-click-tracking">Adobe Launch Shadow DOM Click Tracking</a> for how this is accomplished.)</p>
+            <p class="main__text font_size_body">As of this writing, Adobe Launch does not detect clicks in shadow DOMs, so we have to simulate those by passing the clicked element into this rule via direct call object.  (See my article on <a class="link link_theme_black" href="adobe-launch-shadow-dom-click-tracking">Adobe Launch Shadow DOM Click Tracking</a> for how this is accomplished.)</p>
 
             <p class="main__text font_size_body">So, this <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule needs to be able to take in that object, treat it as if it were a regular clicked element, and then account for all the same use cases listed above.</p>
 
