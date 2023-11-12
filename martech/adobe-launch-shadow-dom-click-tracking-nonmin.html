@@ -90,7 +90,7 @@
           <div class="content__block">
           
             <p class="main__text font_size_body">When the company I was working for introduced a new global header and footer that existed in the shadow DOM, I faced a new challenge:</p>
-            <p class="main__text font_size_body">It turned out that Adobe Launch did not automatically detect clicks inside of shadow DOMs. We already had a global rule in Launch for clicks and events, but it wasn&rsquo;t getting triggered. Therefore, I had to come up with a custom code workaround to detect shadow DOM clicks manually.</p>
+            <p class="main__text font_size_body">It turned out that Adobe Launch did not automatically detect clicks inside of shadow DOMs. We already had a global rule in Launch for clicks and events (<code class="code__name">Global | Set Variables | Clicks or Events #25</code>), but it wasn&rsquo;t getting triggered. Therefore, I had to come up with a custom code workaround to detect shadow DOM clicks manually.</p>
             <p class="main__text font_size_body">The overall architecture I came up with is:</p>
 
             <ol class="main__list font_size_body">
@@ -101,10 +101,10 @@
                 <p class="main__text font_size_body">For each shadow DOM that is found, I attach a &lsquo;click&rsquo; event listener to its shadowRoot.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">If a click is detected by this event listener, my code determines what the clicked element was and standardizes it to the type of object that the <code class="code__name">Global Clicks/Events</code> rule (for regular DOM clicks) expects.</p>
+                <p class="main__text font_size_body">If a click is detected by this event listener, my code determines what the clicked element was and standardizes it to the type of object that the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule (for regular DOM clicks) expects.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Then I manually trigger the <code class="code__name">Global Clicks/Events</code> rule, and send it the standardized object that was created by my custom code.</p>
+                <p class="main__text font_size_body">Then I manually trigger the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule, and send it the standardized object that was created by my custom code.</p>
               </li>
             </ol>
 
@@ -259,13 +259,13 @@
                 <p class="main__text font_size_body">Next, I created a function called <code class="code__name">shadowClicks</code> that gets triggered whenever a &lsquo;click&rsquo; event is detected in a shadow DOM. It takes in the parameter <code class="code__name">(e)</code> for the click event. (Line 3 in the code above.)</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">The first thing this function does is create an object called <code class="code__name">clickData</code> (line 4 in the code block above). This object will later be passed to our Global Clicks / Events rule. It simulates the clicked element as it would have occurred in the regular DOM.</p>
+                <p class="main__text font_size_body">The first thing this function does is create an object called <code class="code__name">clickData</code> (line 4 in the code block above). This object will later be passed to our <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule. It simulates the clicked element as it would have occurred in the regular DOM.</p>
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">The <code class="code__name">clickData</code> object contains the property:</p>
                 <pre><code class="code__snippet">shadowClick: true</code></pre>
                 <p class="main__text font_size_body">(That is line 5 in the code block above. Note that <code class="code__name">true</code> is a Boolean, not a string.)</p>
-                <p class="main__text font_size_body">This flag is important when this object is later passed to the <code class="code__name">Global Clicks/Events</code> rule. It allows me to differentiate between regular DOM clicks and shadow DOM clicks. But for now, let&rsquo;s not go down this rabbit hole.</p>
+                <p class="main__text font_size_body">This flag is important when this object is later passed to the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule. It allows me to differentiate between regular DOM clicks and shadow DOM clicks. But for now, let&rsquo;s not go down this rabbit hole.</p>
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">The next property (line 6) that the <code class="code__name">clickData</code> object contains is:</p>
@@ -277,7 +277,7 @@
                 <pre><code class="code__snippet">if (!!e.target) {}</code></pre>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">I found out the hard way that if the clicked element is an SVG, the <code class="code__name">clickData</code> object that you pass to your <code class="code__name">Global Clicks/Events</code> rule is going to be a mess. So I accounted for this specifically by adding the condition you see on line 10 in the code block above.</p>
+                <p class="main__text font_size_body">I found out the hard way that if the clicked element is an SVG, the <code class="code__name">clickData</code> object that you pass to your <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule is going to be a mess. So I accounted for this specifically by adding the condition you see on line 10 in the code block above.</p>
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">The SVG use case gets more complex. The user may have clicked on the SVG tag itself, or they may have clicked on the path elements <em>inside</em> the SVG tag. Lines 11 - 13 account for clicks on path elements.</p>
@@ -291,16 +291,16 @@
                 <p class="main__text font_size_body">That&rsquo;s it for SVGs. On line 18, I exit the SVG condition(s) and account for all other (non-SVG) clicks. This use case is much simpler &mdash; it just grabs <code class="code__name">e.target</code> and stores it in the <code class="code__name">clickData</code> object.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Now the clicked element (if it exists) has been selected and my code is ready to pass it to the <code class="code__name">Global Clicks/Events</code> rule. Once again, for safety, I start with some validation to confirm that a clicked element was found before I go so far as to send it (line 24):</p>
+                <p class="main__text font_size_body">Now the clicked element (if it exists) has been selected and my code is ready to pass it to the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule. Once again, for safety, I start with some validation to confirm that a clicked element was found before I go so far as to send it (line 24):</p>
                 <pre><code class="code__snippet">if (!!clickData.clickedElement) {}</code></pre>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Inside this condition (line 25), I first trigger the <code class="code__name">Global Clicks/Events</code> rule that sets variables, and then I pass the entire <code class="code__name">clickData</code> object into it.</p>
-                <p class="main__text font_size_body">The <code class="code__name">Global Clicks/Events</code> rule will take it from here. (See my article on Global Click/Events for how that works.)</p>
+                <p class="main__text font_size_body">Inside this condition (line 25), I first trigger the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule that sets variables, and then I pass the entire <code class="code__name">clickData</code> object into it.</p>
+                <p class="main__text font_size_body">The <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule will take it from here. (See my article on <a class="link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> for how that works.)</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">Immediately after that, I trigger the <code class="code__name">Global Clicks/Events</code> rule that sends the beacon and clears the variables (line 26).</p>
-                <p class="main__text font_size_body">(Once again, see my article on <code class="code__name">Global Clicks/Events</code> for an explanation on this architecture.)</p>
+                <p class="main__text font_size_body">Immediately after that, I trigger the <code class="code__name">Global | Send, Clear Variables | Clicks or Events #100</code> rule that sends the beacon and clears the variables (line 26).</p>
+                <p class="main__text font_size_body">(Once again, see my article on <a class="link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> for an explanation on this architecture.)</p>
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">That&rsquo;s it for the function. But it still needed an event listener to trigger it, so I began that process on line 30. The listener is wrapped in some validation to make sure that <code class="code__name">shadowDOMs</code> exists, that it is an array, and that this array contains at least one item. (Remember the <code class="code__name">shadow doms</code> data element I stored in a variable back on line 1? This is where that variable starts getting used.)</p>
@@ -330,8 +330,8 @@
 
           <div class="content__block">
 
-            <p class="main__text font_size_body">Every time a page/route loads, the <code class="code__name">Global | Add Shadow DOM Event Listeners</code> rule fires. It runs the <code class="code__name">shadow doms</code> data element. If that data element returns at least one shadow DOM, the rule sets up a click listener on each of those shadow DOMs. Then, when a shadow DOM click is detected, it will capture the data from the clicked element and pass it over to the <code class="code__name">Global Clicks/Events</code> rule, simulating a regular-DOM click.</p>
-            <p class="main__text font_size_body">See my Adobe Launch Global Click Tracking Architecture article for details on how the <code class="code__name">Global Clicks/Events</code> rule handles the rest.</p>
+            <p class="main__text font_size_body">Every time a page/route loads, the <code class="code__name">Global | Add Shadow DOM Event Listeners</code> rule fires. It runs the <code class="code__name">shadow doms</code> data element. If that data element returns at least one shadow DOM, the rule sets up a click listener on each of those shadow DOMs. Then, when a shadow DOM click is detected, it will capture the data from the clicked element and pass it over to the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule, simulating a regular-DOM click.</p>
+            <p class="main__text font_size_body">See my <a class="link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> article for details on how the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule handles the rest.</p>
 
           </div> <!-- Close .content__block -->
 
