@@ -123,7 +123,7 @@
 
           <div class="content__block">
 
-            <p class="main__text font_size_body">The Custom Link Value that gets passed into eVar1 and prop1 is typically a concatenation of two data attributes, which we put into each element we want to track clicks on:</p>
+            <p class="main__text font_size_body">The Custom Link Value that gets passed into eVar1 and prop1 is typically a concatenation of two data attributes, which I put into each element we want to track clicks on:</p>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
@@ -134,7 +134,7 @@
               </li>
             </ul>
 
-            <p class="main__text font_size_body">These two values get concatenated, colon-delimited, and assigned to eVar1 and prop1. For example, if we had a &ldquo;Careers&rdquo; card containing a &ldquo;Learn More&rdquo; button, that button would contain:</p>
+            <p class="main__text font_size_body">These two values get concatenated, colon-delimited, and assigned to eVar1 and prop1. For example, if my site had a &ldquo;Careers&rdquo; card containing a &ldquo;Learn More&rdquo; button, that button would contain:</p>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
@@ -145,7 +145,7 @@
               </li>
             </ul>
 
-            <p class="main__text font_size_body">(We standardize these values to lowercase kebab-case.) The resulting value passed in eVar1 and prop1 would be <code class="code__name">careers:learn-more</code>.</p>
+            <p class="main__text font_size_body">(We standardize these values to lowercase kebab-case.) The resulting value passed in eVar1 and prop1 would be <code class="code__snippet">careers:learn-more</code>.</p>
 
           </div> <!-- Close .content__block -->
 
@@ -163,9 +163,9 @@
 
           <div class="content__block">
 
-            <p class="main__text font_size_body">Sometimes it gets more complex than this. Maybe there is an FAQ page containing a list of questions. Each question is an accordion that can be opened or closed by clicking on it, and we want to know which is occurring.</p>
+            <p class="main__text font_size_body">Sometimes it gets more complex than this. Maybe there is an FAQ page containing a list of questions. Each question is an accordion that can be opened or closed by clicking on it, and our analysts want to know which is occurring.</p>
 
-            <p class="main__text font_size_body">In this case, we would append a value of &lsquo;open&rsquo; or &lsquo;close&rsquo; to eVar1 and prop1:</p>
+            <p class="main__text font_size_body">In this case, I would append a value of &lsquo;open&rsquo; or &lsquo;close&rsquo; to eVar1 and prop1:</p>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
@@ -194,9 +194,9 @@
 
           <div class="content__block">
 
-            <p class="main__text font_size_body">Even more complex is if we have AEM components nested inside each other in any order and any combination you might imagine. (See my article on Adobe Launch Nested AEM Component Click Tracking for details.)</p>
+            <p class="main__text font_size_body">Even more complex is if the page has AEM components nested inside each other in any order and any combination you might imagine. (See my article on Adobe Launch Nested AEM Component Click Tracking for details.)</p>
 
-            <p class="main__text font_size_body">For example, our Careers page has three sections:</p>
+            <p class="main__text font_size_body">For example, the Careers page has three sections:</p>
 
             <ol class="main__list font_size_body">
               <li class="content__block_li">
@@ -241,7 +241,7 @@
               </li>
             </ul>
 
-            <p class="main__text font_size_body">If a user clicks a &ldquo;Learn More&rdquo; button and all we pass is <code class="code__name">learn-more</code>, that won&rsquo;t tell us much about which careers are getting the most clicks. Instead, we want values like:</p>
+            <p class="main__text font_size_body">If a user clicks a &ldquo;Learn More&rdquo; button and all I pass is <code class="code__name">learn-more</code>, that won&rsquo;t tell our analysts much about which careers are getting the most clicks. Instead, they want values like:</p>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
@@ -255,7 +255,7 @@
               </li>
             </ul>
 
-            <p class="main__text font_size_body">This requires more than just our standard two <code class="code__name">data-track-noun</code> and <code class="code__name">data-track-verb</code> attributes. In cases like this, we will have:</p>
+            <p class="main__text font_size_body">This requires more than just the standard two <code class="code__name">data-track-noun</code> and <code class="code__name">data-track-verb</code> attributes. In cases like this, the elements will have:</p>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
@@ -269,7 +269,7 @@
               </li>
             </ul>
 
-            <p class="main__text font_size_body">And the three of those need to get concatenated, in the right order, and only if they exist. In addition, there could be multiple levels of parent components. We could have <code class="code__name">data-track-component-level-1</code>, <code class="code__name">2</code>, <code class="code__name">3</code>, etc. So even more custom logic is required to account for those use cases.</p>
+            <p class="main__text font_size_body">And the three of those need to get concatenated, in the right order, and only if they exist. In addition, there could be multiple levels of parent components. There could be <code class="code__name">data-track-component-level-1</code>, <code class="code__name">2</code>, <code class="code__name">3</code>, etc. So even more custom logic is required to account for those use cases.</p>
 
           </div> <!-- Close .content__block -->
 
@@ -289,7 +289,7 @@
 
             <p class="main__text font_size_body">All of the above needs to work the same way if a user clicks an element inside a shadow DOM. (For example, our global header and footer are each inside a shadow DOM.)</p>
 
-            <p class="main__text font_size_body">As of this writing, Adobe Launch does not detect clicks in shadow DOMs, so we have to simulate those by passing the clicked element into this rule via direct call object.  (See my article on <a class="link link_theme_black" href="adobe-launch-shadow-dom-click-tracking">Adobe Launch Shadow DOM Click Tracking</a> for how this is accomplished.)</p>
+            <p class="main__text font_size_body">As of this writing, Adobe Launch does not detect clicks in shadow DOMs, so I have to simulate those by passing the clicked element into this rule via direct call object.  (See my article on <a class="link link_theme_black" href="adobe-launch-shadow-dom-click-tracking">Adobe Launch Shadow DOM Click Tracking</a> for how this is accomplished.)</p>
 
             <p class="main__text font_size_body">So, this <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule needs to be able to take in that object, treat it as if it were a regular clicked element, and then account for all the same use cases listed above.</p>
 
@@ -573,7 +573,56 @@ s.linkTrackEvents = s.events;</code></pre>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
-                <p class="main__text font_size_body">Line 1: We want to know which type of event triggered the rule. The event could be a click, a shadow DOM click, a direct call, a &lsquo;change&rsquo;, etc. This will be used as a starting point to standardize the data coming in. We also strip out the <code class="code__snippet">core.</code> that is always going to be present. (Note that we use <code class="code__snippet">let</code> instead of <code class="code__snippet">const</code> because there will be some manipulation of this value if the event was a shadow DOM click. More on that later.)</p>
+                <p class="main__text font_size_body">Line 1: I want to know which type of event triggered the rule. The event could be a click, a shadow DOM click, a direct call, a &lsquo;change&rsquo;, etc. This will be used as a starting point to standardize the data coming in. I also strip out the <code class="code__snippet">core.</code> that is always going to be present. (Note that <code class="code__snippet">let</code> is used instead of <code class="code__snippet">const</code> because there will be some manipulation of this value if the event was a shadow DOM click. More on that later.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 2 - 6: I declare a set of empty variables where certain data will be stored, if certain conditions are later met:</p>
+                <ul class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 2: For the clicked element (regular or simulated) itself.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 3: Will become an array where <em>all</em> the attributes of the clicked element will be stored.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 4: For the key/value pairs for each attribute after they are converted from the above array.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 5: For the &lsquo;open&rsquo; or &lsquo;close&rsquo; value on an accordion click.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 6: At the end, I will push just the values the anaylists want to track, in the order they want to track them, into this array.</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 9 - 13: Declare variables that will be used if the <code class="code__snippet">data-track-verb</code> attribute is missing from the clicked element.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 16 - 38: <code class="code__snippet">cleanText</code> is a helper function that standardizes text to lowercase kebab-case.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 40 - 67: <code class="code__snippet">getLinkName</code> is a helper function that contains fallbacks for getting a click tracking value from other places in the element if the normal <code class="code__snippet">data-track</code> attributes are missing.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 70 - 88: Next, I determine what I want to consider the clicked element to be:</p>
+                <ul class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 2: For the clicked element (regular or simulated) itself.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 3: Will become an array where <em>all</em> the attributes of the clicked element will be stored.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 4: For the key/value pairs for each attribute after they are converted from the above array.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 5: For the &lsquo;open&rsquo; or &lsquo;close&rsquo; value on an accordion click.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 6: At the end, I will push just the values we want to track, in the order we want to track them, into this array.</p>
+                  </li>
+                </ul>
               </li>
             </ul>
               
