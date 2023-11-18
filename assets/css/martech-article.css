@@ -5,36 +5,6 @@
 * Browsers: last 4 version
 */
 
-.code__name {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 700;
-}
-
-.code__snippet {
-  background-color: #000;
-  color: #fff;
-}
-
-.content__block {
-  padding: 1.5em 0 3em 0;
-}
-
-.content__block_li {
-  margin-bottom: 1.75em;
-}
-
-.main__list {
-  font-family: 'PT Sans', sans-serif;
-  margin: 0 0 1em 0;
-  text-align: justify;
-}
-
-.main__text {
-  font-family: 'PT Sans', sans-serif;
-  margin: 0 0 1em 0;
-  text-align: justify;
-}
-
 .martech-header__img {
   background-position-x: center;
   background-position-y: top;
