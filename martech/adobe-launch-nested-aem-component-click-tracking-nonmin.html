@@ -212,14 +212,14 @@
                 <p class="main__text font_size_body">Then it would check the next layer of children for that element. If any contained a <code class="code__snippet">data-track-component-type</code> attribute, the tracking attributes from the parent element would be added to the tracking attributes of the child element using the <code class="code__snippet">data-track-component-level-X</code> attribute.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body">The process would repeat for the children of that child, until no more children were found. Depending on how many layers of nesting there were for the AEM Components, this is where we might wind up with <code>data-track-component-level-1</code>, <code>data-track-component-level-2</code>, <code>data-track-component-level-3</code>, etc.</p>
+                <p class="main__text font_size_body">The process would repeat for the children of that child, until no more children were found. Depending on how many layers of nesting there were for the AEM Components, this is where we might wind up with <code class="code__snippet">data-track-component-level-1</code>, <code class="code__snippet">data-track-component-level-2</code>, <code class="code__snippet">data-track-component-level-3</code>, etc.</p>
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">Once an element has been modified, the Launch rule would set a flag on it so we know it's been handled. That way, if more AEM Components got added to the page after the initial page load and our rule needed to crawl the page again, it could skip modifying the components it already modified in the previous pass.</p>
               </li>
             </ol>
 
-            <p class="main__text font_size_body">Then, the MarTech team would have to modify the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule. Currently, that rule only checked for <code class="code__snippet">data-track-noun</code> and <code class="code__snippet">data-track-verb</code> and concatenated the two. Now it would have to factor in any number of <code class="code__snippet">data-track-component-level-X</code> attributes at the beginning of that concatenation. (For an explanation on how that was accomplished, see my article on <a href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a>.)</p>
+            <p class="main__text font_size_body">Then, the MarTech team would have to modify the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule. Currently, that rule only checked for <code class="code__snippet">data-track-noun</code> and <code class="code__snippet">data-track-verb</code> and concatenated the two. Now it would have to factor in any number of <code class="code__snippet">data-track-component-level-X</code> attributes at the beginning of that concatenation. (For an explanation on how that was accomplished, see my article on <a class="link link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a>.)</p>
 
             <p class="main__text font_size_body">But to see how the programming was done for the AEM Component attributes, keep reading.</p>
 
@@ -234,7 +234,7 @@
         <div class="heading heading_theme_black">
           <div class="heading__title-overflow">
             <h2 class="heading__title-tag font_size_3">
-              <span class="heading__title-tag_title">H2</span>
+              <span class="heading__title-tag_title">&lsquo;Global | Set AEM Component Data Attributes&rsquo; Rule</span>
             </h2>
           </div>
         </div>
