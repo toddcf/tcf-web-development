@@ -89,6 +89,10 @@
 
           <div class="content__block">
           
+            <p class="main__text font_size_body">When my company began using AEM Components, it was the MarTech team&rsquo;s job to implement click tracking on those components. We already had global click tracking in place that would take the <code class="code__name">data-track-noun</code> and <code class="code__name">data-track-verb</code> attributes, concatenate them, and delimit them with a colon. But this was going to require additional complexity.</p>
+
+            <p class="main__text font_size_body">For starters, the AEM Components were going to be nested inside each other. There could be several layers of nesting. And when a component was clicked, we were going to want to concatenate the click tracking values of the parent components all the way down to the child that was clicked.</p>
+            
             <p class="main__text font_size_body">For example, the Careers page has three sections:</p>
 
             <ol class="main__list font_size_body">
@@ -148,7 +152,25 @@
               </li>
             </ul>
 
-            <p class="main__text font_size_body">This requires more than just the standard two <code class="code__name">data-track-noun</code> and <code class="code__name">data-track-verb</code> attributes. In cases like this, the elements will have:</p>
+            <p class="main__text font_size_body">This was going to require more than just the standard two <code class="code__name">data-track-noun</code> and <code class="code__name">data-track-verb</code> attributes.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h3 class="heading__title-tag font_size_2">
+              <span class="heading__title-tag_title">Solution</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="main__text font_size_body">I decided that we could add a <code class="code__snippet">data-track-component-level-X</code> attribute, with <code class="code__snippet">X</code> being a number. (These would have to be set dynamically, because we would never know how many levels a given component was going to be nested.)</p>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
