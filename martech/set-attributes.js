@@ -5,21 +5,21 @@ const aemComponentTracking = {
       // Overwrite all existing tracking attributes just to ensure standardization and cleanup is consistent:
       const numberOfValues = mergedTrackingAttributesArr.length;
       if (!!currentElement && numberOfValues > 0) {
-          // First, if there is only one value in the array, that means it is going to get set to data-track-id.  In case that one value happened to be pulled from data-track, we will remove the data-track attribute to safeguard against data-track and data-track-id both having the same value:
+          // First, if there is only one value in the array, that means it is going to get set to data-track-verb.  In case that one value happened to be pulled from data-track, we will remove the data-track attribute to safeguard against data-track and data-track-verb both having the same value:
           if (numberOfValues === 1) {
-              currentElement.removeAttribute('data-track');
+              currentElement.removeAttribute('data-track-noun');
           }
           
           // Then, the new attribute values get set:
           mergedTrackingAttributesArr.forEach((trackingAttribute, i) => {
               switch (i) {
                   case numberOfValues - 1:
-                      // The last value in the array gets set to data-track-id:
-                      currentElement.setAttribute('data-track-id', trackingAttribute);
+                      // The last value in the array gets set to data-track-verb:
+                      currentElement.setAttribute('data-track-verb', trackingAttribute);
                       break;
                   case numberOfValues - 2:
                       // The second to last value in the array gets set to data-track:
-                      currentElement.setAttribute('data-track', trackingAttribute);
+                      currentElement.setAttribute('data-track-noun', trackingAttribute);
                       break;
                   default:
                       // All other values get set to data-track-component-level-X in chronological order:
@@ -89,14 +89,14 @@ const aemComponentTracking = {
           level++;
       } while (!!currentElement.getAttribute(`data-track-component-level-${level}`));
 
-      // Then get the 'data-track' value if it exists and push it into the existingTrackingAttributes array:
-      const dataTrack = currentElement.getAttribute('data-track');
+      // Then get the 'data-track-noun' value if it exists and push it into the existingTrackingAttributes array:
+      const dataTrack = currentElement.getAttribute('data-track-noun');
       if (!!dataTrack && dataTrack !== 'no-title') {
           existingTrackingAttributes.push(dataTrack);
       }
 
-      // Then get the 'data-track-id' value if it exists and push it into the existingTrackingAttributes array:
-      const dataTrackID = currentElement.getAttribute('data-track-id');
+      // Then get the 'data-track-verb' value if it exists and push it into the existingTrackingAttributes array:
+      const dataTrackID = currentElement.getAttribute('data-track-verb');
       if (!!dataTrackID && dataTrackID !== 'no-title') {
           existingTrackingAttributes.push(dataTrackID);
       }
