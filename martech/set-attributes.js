@@ -90,15 +90,15 @@ const aemComponentTracking = {
       } while (!!currentElement.getAttribute(`data-track-component-level-${level}`));
 
       // Then get the 'data-track-noun' value if it exists and push it into the existingTrackingAttributes array:
-      const dataTrack = currentElement.getAttribute('data-track-noun');
-      if (!!dataTrack && dataTrack !== 'no-title') {
-          existingTrackingAttributes.push(dataTrack);
+      const dataTrackNoun = currentElement.getAttribute('data-track-noun');
+      if (!!dataTrackNoun && dataTrackNoun !== 'no-title') {
+          existingTrackingAttributes.push(dataTrackNoun);
       }
 
       // Then get the 'data-track-verb' value if it exists and push it into the existingTrackingAttributes array:
-      const dataTrackID = currentElement.getAttribute('data-track-verb');
-      if (!!dataTrackID && dataTrackID !== 'no-title') {
-          existingTrackingAttributes.push(dataTrackID);
+      const dataTrackVerb = currentElement.getAttribute('data-track-verb');
+      if (!!dataTrackVerb && dataTrackVerb !== 'no-title') {
+          existingTrackingAttributes.push(dataTrackVerb);
       }
 
       // Once existingTrackingAttributes have been gathered, check to see if the currentElement already had its attributes merged in a previous pass:
@@ -119,7 +119,6 @@ const aemComponentTracking = {
       parentTrackingAttributes = (!!parentTrackingAttributes && Array.isArray(parentTrackingAttributes)) ? parentTrackingAttributes : []; // This may or may not have been passed in, depending on the use case.
       
       if (!!currentElement) {
-          // Generate a list of children one DOM level down -- but no deeper than that:
           currentElementChildren = currentElement.children;
           if (!!currentElementChildren && currentElementChildren.length > 0) {
               // If at least one child was found:
@@ -130,17 +129,6 @@ const aemComponentTracking = {
                           currentElementChild.hasAttribute('data-track-component-type') ||
                           !!['A', 'BUTTON'].includes(currentElementChild.tagName)
                       ) {
-                          // Workaround: Side Tabs and their content both use [data-track-component-type="tab"]. We need to track clicks on the Side Tabs. But the tab content contains links nested beneath them, and we don't want to trigger double-fires on the click tracking rule when those links are clicked, so we need to ignore the tab content:
-                          if (currentElementChild.getAttribute('data-track-component-type') === 'tab') {
-                              const currentElementChildClasses = currentElementChild.getAttribute('class');
-                              _satellite.logger.info('currentElementChildClasses:', currentElementChildClasses);
-                              if (currentElementChildClasses.includes('cmp-tab__content')) {
-                                  _satellite.logger.info('currentElementChildClasses includes cmp-tab__content');
-                                  currentElementChild.setAttribute('data-track-ignore', 'true');
-                              }
-                          }
-                          // END WORKAROUND
-                          
                           // If child has 'data-track-component-type' attribute, or is a button or anchor tag, get its existing tracking attributes, plus pass in any parentTrackingAttributes that exist:
                           aemComponentTracking.getTrackingAttributes(currentElementChild, parentTrackingAttributes);
                       } else {
