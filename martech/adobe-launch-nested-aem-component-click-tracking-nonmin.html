@@ -184,7 +184,44 @@
               </li>
             </ul>
 
-            <p class="main__text font_size_body">And the three of those need to get concatenated, in the right order, and only if they exist. In addition, there could be multiple levels of parent components. There could be <code class="code__name">data-track-component-level-1</code>, <code class="code__name">2</code>, <code class="code__name">3</code>, etc. So even more custom logic is required to account for those use cases.</p>
+            <p class="main__text font_size_body">The three (or more) of those would then be concatenated, in the correct order, and only if they exist. Since there could be multiple levels of parent components, we could potentially wind up with <code class="code__name">data-track-component-level-1</code>, <code class="code__name">2</code>, <code class="code__name">3</code>, etc.</p>
+
+            <p class="main__text font_size_body">The question was how to add these attributes to each AEM Component. Our Content team did not have the bandwidth to add each one manually. Furthermore, AEM Components might be nested in a multitude of ways, and those ways might be changed on the fly. If each such change involved the complete reauthoring of every AEM Component&rsquo;s tracking attributes, the scope of each change would become unwieldy, and the opportunity for mistakes would increase.</p>
+
+            <p class="main__text font_size_body">Therefore, it was decided that these values would be set programmatically. We came up with a two-pronged approach. The first prong was on the AEM side, which would be handled by the Content team:</p>
+
+            <ul class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Each AEM Component would be given a <code class="code__snippet">data-track-component-type</code> attribute. Its value would represent the type of component: <code class="code__snippet">header</code>, <code class="code__snippet">footer</code>, <code class="code__snippet">breadcrumb</code>, <code class="code__snippet">crowdriff</code>, etc. (This is so we will know which elements to treat as AEM Components.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Values from heading tags, link text, etc. are programmatically copied into <code class="code__snippet">data-track-verb</code> attributes.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Each of these values would get programmatically standardized into lowercase kebab-case.</p>
+              </li>
+            </ul>
+
+            <p class="main__text font_size_body">The second prong would be handled by the MarTech team, via Adobe Launch:</p>
+
+            <ol class="main__list font_size_body">
+              <li class="content__block_li">
+                <p class="main__text font_size_body">On each page/route load, an Adobe Launch rule would fire that would crawl the page. If it found any elements containing a <code class="code__snippet">data-track-component-type</code> attribute, it would collect its tracking attributes.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Then it would check the next layer of children for that element. If any contained a <code class="code__snippet">data-track-component-type</code> attribute, the tracking attributes from the parent element would be added to the tracking attributes of the child element using the <code class="code__snippet">data-track-component-level-X</code> attribute.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">The process would repeat for the children of that child, until no more children were found. Depending on how many layers of nesting there were for the AEM Components, this is where we might wind up with <code>data-track-component-level-1</code>, <code>data-track-component-level-2</code>, <code>data-track-component-level-3</code>, etc.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Once an element has been modified, the Launch rule would set a flag on it so we know it's been handled. That way, if more AEM Components got added to the page after the initial page load and our rule needed to crawl the page again, it could skip modifying the components it already modified in the previous pass.</p>
+              </li>
+            </ol>
+
+            <p class="main__text font_size_body">Then, the MarTech team would have to modify the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule. Currently, that rule only checked for <code class="code__snippet">data-track-noun</code> and <code class="code__snippet">data-track-verb</code> and concatenated the two. Now it would have to factor in any number of <code class="code__snippet">data-track-component-level-X</code> attributes at the beginning of that concatenation. (For an explanation on how that was accomplished, see my article on <a href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a>.)</p>
+
+            <p class="main__text font_size_body">But to see how the programming was done for the AEM Component attributes, keep reading.</p>
 
           </div> <!-- Close .content__block -->
 
