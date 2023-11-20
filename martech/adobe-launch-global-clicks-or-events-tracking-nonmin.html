@@ -196,66 +196,7 @@
 
             <p class="main__text font_size_body">Even more complex is if the page has AEM components nested inside each other in any order and any combination you might imagine. (See my article on <a class="link link_theme_black" href="adobe-launch-nested-aem-component-click-tracking">Adobe Launch Nested AEM Component Click Tracking</a> for details.)</p>
 
-            <p class="main__text font_size_body">For example, the Careers page has three sections:</p>
-
-            <ol class="main__list font_size_body">
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Employment</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Apprenticeships</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Internships</p>
-              </li>
-            </ol>
-
-            <p class="main__text font_size_body">Within each of these sections there is a set of cards, each representing a category. For example, the &ldquo;Employment&rdquo; section contains these cards:</p>
-
-            <ul class="main__list font_size_body">
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Administration</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Research & Development</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Sales</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Installation & Repair</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Support</p>
-              </li>
-            </ul>
-
-            <p class="main__text font_size_body">And each card contains two buttons:</p>
-
-            <ul class="main__list font_size_body">
-              <li class="content__block_li">
-                <p class="main__text font_size_body">Learn More</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">View Jobs</p>
-              </li>
-            </ul>
-
-            <p class="main__text font_size_body">If a user clicks a &ldquo;Learn More&rdquo; button and all I pass is <code class="code__name">learn-more</code>, that won&rsquo;t tell our analysts much about which careers are getting the most clicks. Instead, they want values like:</p>
-
-            <ul class="main__list font_size_body">
-              <li class="content__block_li">
-                <p class="main__text font_size_body">employment:research-development:learn-more</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">employment:installation-repair:view-jobs</p>
-              </li>
-              <li class="content__block_li">
-                <p class="main__text font_size_body">employment:administration:learn-more</p>
-              </li>
-            </ul>
-
-            <p class="main__text font_size_body">This requires more than just the standard two <code class="code__name">data-track-noun</code> and <code class="code__name">data-track-verb</code> attributes. In cases like this, the elements will have:</p>
+            <p class="main__text font_size_body">If this is the case, we will have additional attributes such as <code class="code__snippet font_size_body">data-track-component-level-X</code> (with <code class="code__snippet font_size_body">X</code> being a number) to also concatenate prior to the <code class="code__snippet font_size_body">data-track-noun</code> and <code class="code__snippet font_size_body">data-track-verb</code> values:</p>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
@@ -269,8 +210,8 @@
               </li>
             </ul>
 
-            <p class="main__text font_size_body">And the three of those need to get concatenated, in the right order, and only if they exist. In addition, there could be multiple levels of parent components. There could be <code class="code__name">data-track-component-level-1</code>, <code class="code__name">2</code>, <code class="code__name">3</code>, etc. So even more custom logic is required to account for those use cases.</p>
-
+            <p class="main__text font_size_body">Giving us results like: <code class="code__snippet font_size_body">employment:research-development:learn-more</code>.</p>
+          
           </div> <!-- Close .content__block -->
 
         </div> <!-- Close .content__center content__center_700 -->
