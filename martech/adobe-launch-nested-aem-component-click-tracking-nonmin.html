@@ -497,6 +497,34 @@ aemComponentTracking.init();</code></pre>
                   </li>
                 </ul>
               </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 2 - 26: <code class="code__snippet font_size_body">setTrackingAttributes</code> method. This is where the ultimate purpose of this rule is achieved. Now that all parent tracking attributes and existing tracking attributes have been collected, deduplicated, and staged in the order that they should be concatenated for Analytics upon the user&rsquo;s click, it is time to populate those values into the appropriate data attributes within the current element. To prevent unintended results, all tracking attributes get overwritten.</p>
+                <ul class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 7 - 9: This code block handles a very specific use case. I discovered times when an AEM Component contained only the <code class="code__snippet font_size_body">data-track-noun</code> attribute. This meant that it was the only value to be collected and &ldquo;merged,&rdquo; and would be placed in <code class="code__snippet font_size_body">data-track-verb</code> at this stage &mdash; resulting in both <code class="code__snippet font_size_body">data-track-noun</code> and <code class="code__snippet font_size_body">data-track-verb</code> having the same value. When clicked, the same value would be concatenated with each other. To prevent this, if only one value is going to be set, we first actively remove the <code class="code__snippet font_size_body">data-track-noun</code> attribute from the current element.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 11 - 22: Take the array of merged attributes and set them into the appropriate data attributes:</p>
+                    <ul class="main__list font_size_body">
+                      <li class="content__block_li">
+                        <p class="main__text font_size_body">Lines 13 - 15: The last value in the array gets set to <code class="code__snippet font_size_body">data-track-verb</code>.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="main__text font_size_body">Lines 16 - 18: The second-to-last value in the array gets set to <code class="code__snippet font_size_body">data-track-noun</code>. (We have to work a bit backward in this manner because we don&rsquo;t know how many items will be in the array.)</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="main__text font_size_body">Lines 19 - 20: If there are more than two items in the array, now we start from the front and set them into <code class="code__snippet font_size_body">data-track-component-level-X</code> (whichever number <code class="code__snippet font_size_body">X</code> is for this item &mdash; the index number plus 1).</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 23: Set the <code class="code__snippet font_size_body">data-track-component-attributes-set</code> attribute to <code class="code__snippet font_size_body">"true"</code>. This is the flag that will prevent us from running all this same logic again if the page needs to be crawled more than once.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 25: And now that we&rsquo;ve handled this element, it&rsquo;s time to repeat this entire process on each of <em>its</em> children. So we invoke <code class="code__snippet font_size_body">checkChildren</code> once again, and this time we <em>do</em> have merged tracking attributes to pass into it. Conveniently, they are already in the <code class="code__snippet font_size_body">mergedTrackingAttributesArr</code> array, so there is no need to scrape them out of the current element all over again &mdash; we just pass that array into the <code class="code__snippet font_size_body">checkChildren</code> method.</p>
+                  </li>
+                </ul>
+              </li>
             </ul>
 
           </div> <!-- Close .content__block -->
