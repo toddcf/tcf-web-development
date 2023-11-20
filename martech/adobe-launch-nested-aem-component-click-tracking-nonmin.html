@@ -138,7 +138,7 @@
               </li>
             </ul>
 
-            <p class="main__text font_size_body">If a user clicks a &ldquo;Learn More&rdquo; button and all I pass is <code class="code__name">learn-more</code>, that won&rsquo;t tell our analysts much about which careers are getting the most clicks. Instead, they want values like:</p>
+            <p class="main__text font_size_body">If a user clicks a &ldquo;Learn More&rdquo; button and all I pass is <code class="code__name font_size_body">learn-more</code>, that won&rsquo;t tell our analysts much about which careers are getting the most clicks. Instead, they want values like:</p>
 
             <ul class="main__list font_size_body">
               <li class="content__block_li">
@@ -219,7 +219,7 @@
               </li>
             </ol>
 
-            <p class="main__text font_size_body">Then, the MarTech team would have to modify the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule. Currently, that rule only checked for <code class="code__snippet font_size_body">data-track-noun</code> and <code class="code__snippet font_size_body">data-track-verb</code> and concatenated the two. Now it would have to factor in any number of <code class="code__snippet font_size_body">data-track-component-level-X</code> attributes at the beginning of that concatenation. (For an explanation on how that was accomplished, see my article on <a class="link link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a>.)</p>
+            <p class="main__text font_size_body">Then, the MarTech team would have to modify the <code class="code__name font_size_body">Global | Set Variables | Clicks or Events #25</code> rule. Currently, that rule only checked for <code class="code__snippet font_size_body">data-track-noun</code> and <code class="code__snippet font_size_body">data-track-verb</code> and concatenated the two. Now it would have to factor in any number of <code class="code__snippet font_size_body">data-track-component-level-X</code> attributes at the beginning of that concatenation. (For an explanation on how that was accomplished, see my article on <a class="link link_theme_black" href="adobe-launch-global-clicks-or-events-tracking">Adobe Launch Global Clicks or Events Tracking</a>.)</p>
 
             <p class="main__text font_size_body">But to see how the programming was done for the AEM Component attributes, keep reading.</p>
 
@@ -243,7 +243,7 @@
 
           <div class="content__block">
 
-            <p class="main__text font_size_body">We created an Adobe Launch rule named <code class="code__name">Global | Set AEM Component Data Attributes</code>. Here&rsquo;s the full syntax for context. (Scroll past it for an explanation on how each part works.)</p>
+            <p class="main__text font_size_body">We created an Adobe Launch rule named <code class="code__name font_size_body">Global | Set AEM Component Data Attributes</code>. Here&rsquo;s the full syntax for context. (Scroll past it for an explanation on how each part works.)</p>
           
           </div> <!-- Close .content__block -->
 
@@ -403,14 +403,81 @@ aemComponentTracking.init();</code></pre>
 
             <p class="main__text font_size_body">The entire rule is written as an object literal (<code class="code__snippet font_size_body">const aemComponentTracking = {}</code>), so each method inside that object is declared prior to any other methods that will call it. Therefore, this explanation will work from the bottom up.</p>
             
-            <ol class="main__list font_size_body">
+            <ul class="main__list font_size_body">
               <li class="content__block_li">
-                <p class="main__text font_size_body"><code class="code__snippet font_size_body">Code Snippet</code> goes here.</p>
+                <p class="main__text font_size_body">Line 131: On the last line of code, <code class="code__snippet font_size_body">aemComponentTracking.init()</code> is invoked.</p>
               </li>
               <li class="content__block_li">
-                <p class="main__text font_size_body"><code class="code__name">Code Name</code> goes here.</p>
+                <p class="main__text font_size_body">Lines 112 - 128: <code class="code__snippet font_size_body">init</code> method:</p>
+                <ul class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 113 - 118: The first thing <code class="code__snippet font_size_body">init</code> does is check the regular DOM.</p>
+                    <ul class="main__list font_size_body">
+                      <li class="content__block_li">
+                        <p class="main__text font_size_body">Line 115: To reduce performance drag, a quick check is done to make sure there is at least one AEM Component on the page. If there is not, we don&rsquo;t crawl the DOM.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="main__text font_size_body">Line 117: Take the first layer of the DOM (<code class="code__snippet font_size_body">window.document.body</code>) and pass it into the <code class="code__snippet font_size_body">checkChildren</code> method.</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 120 - 127: Next, <code class="code__snippet font_size_body">init</code> does the same thing to any shadow DOMs that may exist on the page. (See my article on <a href="adobe-launch-shadow-dom-click-tracking" class="link link_theme_black"></a> for details on this architecture.)</p>
+                  </li>
+                </ul>
               </li>
-            </ol>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 88 - 111: <code class="code__snippet font_size_body">checkChildren</code> method. All this method does is check if the current element has children. If so, it decides which method to call on each one.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 88 - 90: The <code class="code__snippet font_size_body">checkChildren</code> method takes in the current element. Optionally, it can also take in any parent tracking attributes that get passed into it, but those are not a given. For example, on Line 90, it defaults this value to an empty array if none was passed in. And since this first pass is on the top level of the DOM or shadow DOM, there are no parent tracking attributes to pass in yet.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Line 93: Generate a list of children one DOM level down &mdash; but no deeper than that. (At each layer, we have to perform quite a few potential actions before moving down another layer deeper.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Line 94: Check to see if at least one child was found. (If not, we skip this entire code block and do nothing &mdash; we have reached the end of this portion of the DOM tree.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Line 95 - 107: If at least one child was found, check each child to see if it is an AEM Component, a button, or an anchor tag.</p>
+                <ul class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 102: For each item that meets this criteria, invoke the <code class="code__snippet font_size_body">getTrackingAttributes</code> method and pass this item into it. If any parent tracking attributes exist, pass those in, too &mdash;.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 104: For each item that does <em>not</em> meet the criteria, simply invoke the <code class="code__snippet font_size_body">checkChildren</code> method on it recursively without getting or setting any attributes. (Just because this child is not an AEM Component, a button, or a link, does not mean that these types of elements will not be nested beneath it, so we must keep drilling down.)</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 54 - 87: <code class="code__snippet font_size_body">getTrackingAttributes</code> method. As the name implies, this method only <em>gets</em> the existing tracking attributes on an element. (It does not start merging them with any parent tracking attributes yet &mdash; that will be handled by a separate method.)</p>
+                <ul class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 56: An empty array is created to collect any applicable existing tracking attributes.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 58 - 66: First, any <code class="code__snippet font_size_body">data-track-component-level-X</code> attribute values that exist are collected in numerical order and pushed into the <code class="code__snippet font_size_body">existingTrackingAttributes</code> array. Since we don&rsquo;t know how many (if any) there will be, a do while loop is used.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 68 - 71: Next, if a <code class="code__snippet font_size_body">data-track-noun</code> attribute exists, push that value in. (Note that there are use cases where this value may have been set to <code class="code__snippet font_size_body">"no-title"</code> if the AEM Component was just a container and did not have anything of substance to be included in the click tracking. So we filter those out on Line 69.)</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 73 - 76: Next, the same actions are performed for <code class="code__snippet font_size_body">data-track-verb</code>.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 78 - 86: If this is not the first pass that this rule is making on the page (for example, if more AEM Components were added after the page loaded), then a flag will have been set to prevent our code from needlessly refactoring the same attributes on the AEM Components that were already handled in the previous pass. This flag is the <code class="code__snippet font_size_body">data-track-component-attributes-set="true"</code> attribute.</p>
+                    <ul class="main__list font_size_body">
+                      <li class="content__block_li">
+                        <p class="main__text font_size_body">Line 83: If this attribute is found, we don&rsquo;t need to do any merging or setting of attributes. Instead, we just invoke the <code class="code__snippet font_size_body">checkChildren</code> method on it and pass in the current element plus the existing tracking attributes we just collected, as they may need to get merged in with any child element tracking attributes if necessary.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="main__text font_size_body">Line 85: If the current element&rsquo;s attributes have <em>not</em> already been merged, we invoke the <code class="code__snippet font_size_body">mergeTrackingAttributes</code> method to handle this. Therefore, we need to pass in both the existing tracking attributes plus any parent tracking attributes so that the two can be merged by that method.</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
 
           </div> <!-- Close .content__block -->
 
