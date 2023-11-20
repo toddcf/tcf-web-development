@@ -442,7 +442,7 @@ aemComponentTracking.init();</code></pre>
                 <p class="main__text font_size_body">Line 95 - 107: If at least one child was found, check each child to see if it is an AEM Component, a button, or an anchor tag.</p>
                 <ul class="main__list font_size_body">
                   <li class="content__block_li">
-                    <p class="main__text font_size_body">Line 102: For each item that meets this criteria, invoke the <code class="code__snippet font_size_body">getTrackingAttributes</code> method and pass this item into it. If any parent tracking attributes exist, pass those in, too &mdash;.</p>
+                    <p class="main__text font_size_body">Line 102: For each item that meets this criteria, invoke the <code class="code__snippet font_size_body">getTrackingAttributes</code> method and pass this item into it. If any parent tracking attributes exist, pass those in, too.</p>
                   </li>
                   <li class="content__block_li">
                     <p class="main__text font_size_body">Line 104: For each item that does <em>not</em> meet the criteria, simply invoke the <code class="code__snippet font_size_body">checkChildren</code> method on it recursively without getting or setting any attributes. (Just because this child is not an AEM Component, a button, or a link, does not mean that these types of elements will not be nested beneath it, so we must keep drilling down.)</p>
@@ -474,6 +474,26 @@ aemComponentTracking.init();</code></pre>
                         <p class="main__text font_size_body">Line 85: If the current element&rsquo;s attributes have <em>not</em> already been merged, we invoke the <code class="code__snippet font_size_body">mergeTrackingAttributes</code> method to handle this. Therefore, we need to pass in both the existing tracking attributes plus any parent tracking attributes so that the two can be merged by that method.</p>
                       </li>
                     </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="main__text font_size_body">Lines 34 - 53: <code class="code__snippet font_size_body">mergeTrackingAttributes</code> method.</p>
+                <ul class="main__list font_size_body">
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 35 - 37: Take in the existing tracking attributes, plus any parent tracking attributes, confirm that each are in array form, and then create an empty array where each of their values will be staged in order prior to setting them in the current element&rsquo;s appropriate tracking attributes.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Lines 39 - 47: Declare the <code class="code__snippet font_size_body">mergedTrackingAttributesArrPusher</code> function, which will deduplicate the values as they are merged. Note that this function references the <code class="code__snippet font_size_body">uniqueValue</code> method for this purpose, which is declared on Lines 27 - 33.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 49: The parent tracking attributes are deduplicated and staged first, since they should be at the front of the final concatenation.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 50: The existing tracking attributes are deduplicated and staged second, since they should be at the end of the final concatenation.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="main__text font_size_body">Line 52: All tracking values have now been deduplicated and staged into the array in the order we&rsquo;ll want them concatenated for Analytics. Which means we&rsquo;re ready to rewrite the current element&rsquo;s tracking attributes in this order. This will be done by passing this array into the <code class="code__snippet font_size_body">setTrackingAttributes</code> method.</p>
                   </li>
                 </ul>
               </li>
