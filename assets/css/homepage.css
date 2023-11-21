@@ -526,7 +526,7 @@
   display: flex;
 }
 
-.flexbox_layout_card-smalls {
+.flexbox_layout_card-small {
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: flex-start;
@@ -547,7 +547,7 @@
 
 @media (min-width: 576px) {
 
-  .flexbox_layout_card-smalls {
+  .flexbox_layout_card-small {
     padding: 100px 0 0 0;
   }
 
