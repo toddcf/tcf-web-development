@@ -14,16 +14,16 @@ $( document ).ready( function() {
 
     // Author Site card's offset triggers animation.
     // Not actually using "direction," because this animation will only happen once.
-    $( '.additional-sample__backboard_author-site' ).waypoint( function( direction ) {
-      $( '.additional-sample__backboard_author-site' ).addClass( 'additional-sample__backboard_author-site_effects' );
+    $( '.card-small__backboard_author-site' ).waypoint( function( direction ) {
+      $( '.card-small__backboard_author-site' ).addClass( 'card-small__backboard_author-site_effects' );
     }, {
       offset: '85%'
     });
   } else {
     // My Portfolio card's offset triggers animation for all other cards.
     // Not actually using "direction," because this animation will only happen once.
-    $( '.additional-sample__backboard_my-portfolio' ).waypoint( function( direction ) {
-      $( '.additional-sample__backboard_author-site' ).addClass( 'additional-sample__backboard_author-site_effects' );
+    $( '.card-small__backboard_my-portfolio' ).waypoint( function( direction ) {
+      $( '.card-small__backboard_author-site' ).addClass( 'card-small__backboard_author-site_effects' );
     }, {
       offset: '85%'
     });
@@ -32,8 +32,8 @@ $( document ).ready( function() {
 
   // My Portfolio Effects:
   // Not actually using "direction," because this animation will only happen once.
-  $( '.additional-sample__backboard_my-portfolio' ).waypoint( function( direction ) {
-    $( '.additional-sample__backboard_my-portfolio' ).addClass( 'additional-sample__backboard_my-portfolio_effects' );
+  $( '.card-small__backboard_my-portfolio' ).waypoint( function( direction ) {
+    $( '.card-small__backboard_my-portfolio' ).addClass( 'card-small__backboard_my-portfolio_effects' );
   }, {
     offset: '85%'
   });
@@ -43,16 +43,16 @@ $( document ).ready( function() {
   if ($(window).width() < 576) {
     // Omnifood's card triggers its own animation.
     // Not actually using "direction," because this animation will only happen once.
-    $( '.additional-sample__backboard_omnifood' ).waypoint( function( direction ) {
-      $( '.additional-sample__backboard_omnifood' ).addClass( 'additional-sample__backboard_omnifood_effects' );
+    $( '.card-small__backboard_omnifood' ).waypoint( function( direction ) {
+      $( '.card-small__backboard_omnifood' ).addClass( 'card-small__backboard_omnifood_effects' );
     }, {
       offset: '85%'
     });
   } else {
     // My Portfolio card triggers Omnifood's animation.
     // Not actually using "direction," because this animation will only happen once.
-    $( '.additional-sample__backboard_my-portfolio' ).waypoint( function( direction ) {
-      $( '.additional-sample__backboard_omnifood' ).addClass( 'additional-sample__backboard_omnifood_effects' );
+    $( '.card-small__backboard_my-portfolio' ).waypoint( function( direction ) {
+      $( '.card-small__backboard_omnifood' ).addClass( 'card-small__backboard_omnifood_effects' );
     }, {
       offset: '85%'
     });

@@ -5,7 +5,7 @@
 * Browsers: last 4 version
 */
 
-.additional-sample {
+.card-small {
   -ms-flex: 0 0 100%;
   -webkit-box-flex: 0;
           flex: 0 0 100%;
@@ -17,7 +17,7 @@
 
 @media (min-width: 576px) {
 
-  .additional-sample {
+  .card-small {
     -ms-flex: 0 0 50%;
     -webkit-box-flex: 0;
             flex: 0 0 50%;
@@ -28,7 +28,7 @@
 
 @media (min-width: 768px) {
 
-  .additional-sample {
+  .card-small {
     -ms-flex: 0 0 33.333333%;
     -webkit-box-flex: 0;
             flex: 0 0 33.333333%;
@@ -37,7 +37,7 @@
   
 }
 
-.additional-sample__backboard {
+.card-small__backboard {
   background-position: left center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,53 +51,53 @@
 
 @media (max-width: 575.98px) {
 
-  .additional-sample__backboard_author-site {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/additional-sample/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
+  .card-small__backboard_author-site {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
   }
 
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
 
-  .additional-sample__backboard_author-site {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/additional-sample/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
+  .card-small__backboard_author-site {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
   }
 
 }
 
 @media (min-width: 768px) {
 
-  .additional-sample__backboard_author-site {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/additional-sample/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
+  .card-small__backboard_author-site {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
   }
 
 }
 
-.additional-sample__backboard_author-site_effects {
+.card-small__backboard_author-site_effects {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-name: additional-sample__backboard_author-site_effects;
-          animation-name: additional-sample__backboard_author-site_effects;
+  -webkit-animation-name: card-small__backboard_author-site_effects;
+          animation-name: card-small__backboard_author-site_effects;
 }
 
-.additional-sample__backboard_author-site {
+.card-small__backboard_author-site {
   opacity: 0; /* Invisible before the animation is triggered */
 }
 
-.additional-sample__backboard_author-site.additional-sample__backboard_author-site_effects {
+.card-small__backboard_author-site.card-small__backboard_author-site_effects {
   opacity: 1; /* Keeps this card visible after the animation is completed */
 }
 
 /* fadeInUp */
-@-webkit-keyframes additional-sample__backboard_author-site_effects {
+@-webkit-keyframes card-small__backboard_author-site_effects {
 
   from {
     opacity: 0;
@@ -113,7 +113,7 @@
 
 }
 
-@keyframes additional-sample__backboard_author-site_effects {
+@keyframes card-small__backboard_author-site_effects {
 
   from {
     opacity: 0;
@@ -131,7 +131,7 @@
 
 @media (min-width: 768px) {
 
-  .additional-sample__backboard_author-site_effects {
+  .card-small__backboard_author-site_effects {
     -webkit-animation-delay: 300ms;
             animation-delay: 300ms;
   }
@@ -140,53 +140,53 @@
 
 @media (max-width: 575.98px) {
 
-  .additional-sample__backboard_my-portfolio {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/additional-sample/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
+  .card-small__backboard_my-portfolio {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
   }
 
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
 
-  .additional-sample__backboard_my-portfolio {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/additional-sample/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
+  .card-small__backboard_my-portfolio {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
   }
 
 }
 
 @media (min-width: 768px) {
 
-  .additional-sample__backboard_my-portfolio {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/additional-sample/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
+  .card-small__backboard_my-portfolio {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
   }
 
 }
 
-.additional-sample__backboard_my-portfolio_effects {
+.card-small__backboard_my-portfolio_effects {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-name: additional-sample__backboard_my-portfolio_effects;
-          animation-name: additional-sample__backboard_my-portfolio_effects;
+  -webkit-animation-name: card-small__backboard_my-portfolio_effects;
+          animation-name: card-small__backboard_my-portfolio_effects;
 }
 
-.additional-sample__backboard_my-portfolio {
+.card-small__backboard_my-portfolio {
   opacity: 0; /* Invisible before the animation is triggered */
 }
 
-.additional-sample__backboard_my-portfolio.additional-sample__backboard_my-portfolio_effects {
+.card-small__backboard_my-portfolio.card-small__backboard_my-portfolio_effects {
   opacity: 1; /* Keeps this card visible after the animation is completed */
 }
 
 /* fadeInUp */
-@-webkit-keyframes additional-sample__backboard_my-portfolio_effects {
+@-webkit-keyframes card-small__backboard_my-portfolio_effects {
 
   from {
     opacity: 0;
@@ -202,7 +202,7 @@
 
 }
 
-@keyframes additional-sample__backboard_my-portfolio_effects {
+@keyframes card-small__backboard_my-portfolio_effects {
 
   from {
     opacity: 0;
@@ -220,53 +220,53 @@
 
 @media (max-width: 575.98px) {
 
-  .additional-sample__backboard_omnifood {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/additional-sample/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
+  .card-small__backboard_omnifood {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
   }
 
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
 
-  .additional-sample__backboard_omnifood {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/additional-sample/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
+  .card-small__backboard_omnifood {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
   }
 
 }
 
 @media (min-width: 768px) {
 
-  .additional-sample__backboard_omnifood {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/additional-sample/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/additional-sample/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
+  .card-small__backboard_omnifood {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
   }
 
 }
 
-.additional-sample__backboard_omnifood_effects {
+.card-small__backboard_omnifood_effects {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-name: additional-sample__backboard_omnifood_effects;
-          animation-name: additional-sample__backboard_omnifood_effects;
+  -webkit-animation-name: card-small__backboard_omnifood_effects;
+          animation-name: card-small__backboard_omnifood_effects;
 }
 
-.additional-sample__backboard_omnifood {
+.card-small__backboard_omnifood {
   opacity: 0; /* Invisible before the animation is triggered */
 }
 
-.additional-sample__backboard_omnifood.additional-sample__backboard_omnifood_effects {
+.card-small__backboard_omnifood.card-small__backboard_omnifood_effects {
   opacity: 1; /* Keeps this card visible after the animation is completed */
 }
 
 /* fadeInUp */
-@-webkit-keyframes additional-sample__backboard_omnifood_effects {
+@-webkit-keyframes card-small__backboard_omnifood_effects {
 
   from {
     opacity: 0;
@@ -282,7 +282,7 @@
 
 }
 
-@keyframes additional-sample__backboard_omnifood_effects {
+@keyframes card-small__backboard_omnifood_effects {
 
   from {
     opacity: 0;
@@ -300,27 +300,27 @@
 
 @media (min-width: 576px) {
 
-  .additional-sample__backboard_omnifood_effects {
+  .card-small__backboard_omnifood_effects {
     -webkit-animation-delay: 150ms;
             animation-delay: 150ms;
   }
 
 }
 
-.additional-sample__button-duo_btn-1 {
+.card-small__button-duo_btn-1 {
   margin-bottom: 7.5px;
 }
 
-.additional-sample__button-duo_btn-2 {
+.card-small__button-duo_btn-2 {
   margin-bottom: 7.5px;
 }
 
-.additional-sample__content {
+.card-small__content {
   margin: 0 auto;
   width: 90%;
 }
 
-.additional-sample__img {
+.card-small__img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -335,60 +335,60 @@
 
 @media (max-width: 575.98px) {
 
-  .additional-sample__img_author-site {
-    background-image: url(../img/additional-sample/__img/_author-site/576x227-min.jpg);
+  .card-small__img_author-site {
+    background-image: url(../img/card-small/__img/_author-site/576x227-min.jpg);
   }
 
 }
 
 @media (min-width: 576px) {
 
-  .additional-sample__img_author-site {
-    background-image: url(../img/additional-sample/__img/_author-site/768x302-min.jpg);
+  .card-small__img_author-site {
+    background-image: url(../img/card-small/__img/_author-site/768x302-min.jpg);
   }
 
 }
 
 @media (max-width: 575.98px) {
 
-  .additional-sample__img_my-portfolio {
-    background-image: url(../img/additional-sample/__img/_my-portfolio/576x227-min.jpg);
+  .card-small__img_my-portfolio {
+    background-image: url(../img/card-small/__img/_my-portfolio/576x227-min.jpg);
   }
 
 }
 
 @media (min-width: 576px) {
 
-  .additional-sample__img_my-portfolio {
-    background-image: url(../img/additional-sample/__img/_my-portfolio/768x302-min.jpg);
+  .card-small__img_my-portfolio {
+    background-image: url(../img/card-small/__img/_my-portfolio/768x302-min.jpg);
   }
 
 }
 
 @media (max-width: 575.98px) {
 
-  .additional-sample__img_omnifood {
-    background-image: url(../img/additional-sample/__img/_omnifood/576x227-min.jpg);
+  .card-small__img_omnifood {
+    background-image: url(../img/card-small/__img/_omnifood/576x227-min.jpg);
   }
 
 }
 
 @media (min-width: 576px) {
 
-  .additional-sample__img_omnifood {
-    background-image: url(../img/additional-sample/__img/_omnifood/768x302-min.jpg);
+  .card-small__img_omnifood {
+    background-image: url(../img/card-small/__img/_omnifood/768x302-min.jpg);
   }
 
 }
 
-.additional-sample__img-riser {
+.card-small__img-riser {
   height: 0;
   margin: 0 auto .5em auto;
   padding-bottom: 39%;
   position: relative;
 }
 
-.additional-sample__text {
+.card-small__text {
   color: #000;
   font-family: 'PT Sans', sans-serif;
   -webkit-margin-after: 24px;
@@ -401,7 +401,7 @@
           margin-inline-start: 0;
 }
 
-.additional-sample__title {
+.card-small__title {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   margin: 0;
@@ -410,7 +410,7 @@
 
 @media (min-width: 992px) {
 
-  .additional-sample__title {
+  .card-small__title {
     font-weight: 400;
   }
   
@@ -526,7 +526,7 @@
   display: flex;
 }
 
-.flexbox_layout_additional-samples {
+.flexbox_layout_card-smalls {
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: flex-start;
@@ -547,7 +547,7 @@
 
 @media (min-width: 576px) {
 
-  .flexbox_layout_additional-samples {
+  .flexbox_layout_card-smalls {
     padding: 100px 0 0 0;
   }
 
