@@ -15,7 +15,7 @@ $( document ).ready( function() {
     // Author Site card's offset triggers animation.
     // Not actually using "direction," because this animation will only happen once.
     $( '.card-small__backboard_author-site' ).waypoint( function( direction ) {
-      $( '.card-small__backboard_author-site' ).addClass( 'card-small__backboard_author-site_effects' );
+      $( '.card-small__backboard_author-site' ).addClass( 'card-small__backboard_3_effects' );
     }, {
       offset: '85%'
     });
@@ -23,7 +23,7 @@ $( document ).ready( function() {
     // My Portfolio card's offset triggers animation for all other cards.
     // Not actually using "direction," because this animation will only happen once.
     $( '.card-small__backboard_my-portfolio' ).waypoint( function( direction ) {
-      $( '.card-small__backboard_author-site' ).addClass( 'card-small__backboard_author-site_effects' );
+      $( '.card-small__backboard_author-site' ).addClass( 'card-small__backboard_3_effects' );
     }, {
       offset: '85%'
     });

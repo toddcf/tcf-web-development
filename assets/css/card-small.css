@@ -42,6 +42,57 @@
   width: 95%;
 }
 
+.card-small__backboard_3_effects {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: card-small__backboard_3_effects;
+          animation-name: card-small__backboard_3_effects;
+}
+
+/* fadeInUp */
+@-webkit-keyframes card-small__backboard_3_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
+@keyframes card-small__backboard_3_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .card-small__backboard_3_effects {
+    -webkit-animation-delay: 300ms;
+            animation-delay: 300ms;
+  }
+
+}
+
 .card-small__button-duo_btn-1 {
   margin-bottom: 7.5px;
 }
