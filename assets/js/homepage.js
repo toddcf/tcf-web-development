@@ -9,28 +9,7 @@ window.addEventListener('scroll', navReveal);
 
 $( document ).ready( function() {
 
-  // Author Site Effects:
-  if ($(window).width() < 576) {
-
-    // Author Site card's offset triggers animation.
-    // Not actually using "direction," because this animation will only happen once.
-    $( '.card-small__backboard_3' ).waypoint( function( direction ) {
-      $( '.card-small__backboard_3' ).addClass( 'card-small__backboard_3_effects' );
-    }, {
-      offset: '85%'
-    });
-  } else {
-    // The first card's offset triggers animation for all other cards.
-    // Not actually using "direction," because this animation will only happen once.
-    $( '.card-small__backboard_1' ).waypoint( function( direction ) {
-      $( '.card-small__backboard_3' ).addClass( 'card-small__backboard_3_effects' );
-    }, {
-      offset: '85%'
-    });
-  }
-  
-
-  // My Portfolio Effects:
+  // Card #1 Effects:
   // Not actually using "direction," because this animation will only happen once.
   $( '.card-small__backboard_1' ).waypoint( function( direction ) {
     $( '.card-small__backboard_1' ).addClass( 'card-small__backboard_1_effects' );
@@ -39,9 +18,9 @@ $( document ).ready( function() {
   });
 
 
-  // Omnifood Effects:
+  // Card #2 Effects:
   if ($(window).width() < 576) {
-    // Omnifood's card triggers its own animation.
+    // At this screen size, Card #2's offset triggers its own animation.
     // Not actually using "direction," because this animation will only happen once.
     $( '.card-small__backboard_2' ).waypoint( function( direction ) {
       $( '.card-small__backboard_2' ).addClass( 'card-small__backboard_2_effects' );
@@ -49,10 +28,30 @@ $( document ).ready( function() {
       offset: '85%'
     });
   } else {
-    // The first card's offset triggers animation for all other cards.
+    // At this screen size, Card #1's offset triggers animation for all other cards.
     // Not actually using "direction," because this animation will only happen once.
     $( '.card-small__backboard_1' ).waypoint( function( direction ) {
       $( '.card-small__backboard_2' ).addClass( 'card-small__backboard_2_effects' );
+    }, {
+      offset: '85%'
+    });
+  }
+  
+  // Card #3 Effects:
+  if ($(window).width() < 576) {
+
+    // At this screen size, Card #3's offset triggers its own animation.
+    // Not actually using "direction," because this animation will only happen once.
+    $( '.card-small__backboard_3' ).waypoint( function( direction ) {
+      $( '.card-small__backboard_3' ).addClass( 'card-small__backboard_3_effects' );
+    }, {
+      offset: '85%'
+    });
+  } else {
+    // At this screen size, Card #1's offset triggers animation for all other cards.
+    // Not actually using "direction," because this animation will only happen once.
+    $( '.card-small__backboard_1' ).waypoint( function( direction ) {
+      $( '.card-small__backboard_3' ).addClass( 'card-small__backboard_3_effects' );
     }, {
       offset: '85%'
     });
