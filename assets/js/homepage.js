@@ -39,7 +39,6 @@ $( document ).ready( function() {
   
   // Card #3 Effects:
   if ($(window).width() < 576) {
-
     // At this screen size, Card #3's offset triggers its own animation.
     // Not actually using "direction," because this animation will only happen once.
     $( '.card-small__backboard_3' ).waypoint( function( direction ) {
