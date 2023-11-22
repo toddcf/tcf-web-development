@@ -35,15 +35,6 @@
 
 }
 
-/* This one was author-site */
-.card-small__backboard_3 {
-  opacity: 0; /* Invisible before the animation is triggered */
-}
-
-.card-small__backboard_3.card-small__backboard_3_effects {
-  opacity: 1; /* Keeps this card visible after the animation is completed */
-}
-
 @media (max-width: 575.98px) {
 
   .card-small__backboard_my-portfolio {
@@ -252,39 +243,6 @@
   .button_theme_secondary_dark-bg-sm-only:active {
     background-position: left top;
     color: #000;
-  }
-
-}
-
-.flexbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.flexbox_layout_card-small {
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: flex-start;
-      -ms-flex-align: flex-start;
-          align-items: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0 auto;
-  padding: 75px 0 0 0;
-}
-
-@media (min-width: 576px) {
-
-  .flexbox_layout_card-small {
-    padding: 100px 0 0 0;
   }
 
 }

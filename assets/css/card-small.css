@@ -154,6 +154,15 @@
 
 }
 
+/* Card #3 was author-site */
+.card-small__backboard_3 {
+  opacity: 0; /* Invisible before the animation is triggered */
+}
+
+.card-small__backboard_3.card-small__backboard_3_effects {
+  opacity: 1; /* Keeps this card visible after the animation is completed */
+}
+
 .card-small__backboard_3_effects {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
