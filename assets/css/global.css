@@ -51,6 +51,12 @@
   max-width: 1920px;
 }
 
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header {
   margin: 0;
   padding: 0;

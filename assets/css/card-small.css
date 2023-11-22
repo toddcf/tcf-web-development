@@ -266,3 +266,29 @@
   
 }
 
+.flexbox_layout_card-small {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  padding: 75px 0 0 0;
+}
+
+@media (min-width: 576px) {
+
+  .flexbox_layout_card-small {
+    padding: 100px 0 0 0;
+  }
+
+}
