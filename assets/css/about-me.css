@@ -300,12 +300,6 @@
 
 }
 
-.flexbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .flexbox_layout_certificates {
   -ms-flex-line-pack: distribute;
       align-content: space-around;
