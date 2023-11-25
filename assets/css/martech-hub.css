@@ -7,6 +7,12 @@
 
 @media (max-width: 575.98px) {
 
+  .card-small__backboard_global-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+  }
+  
   .card-small__backboard_nested-aem-component-click-tracking {
     background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
@@ -17,6 +23,12 @@
 
 @media (min-width: 576px) and (max-width: 767.98px) {
 
+  .card-small__backboard_global-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/swimming-pool-water-overhead/left-crop-768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-768x840-blur12px-min.jpg);
+  }
+  
   .card-small__backboard_nested-aem-component-click-tracking {
     background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/waterfall-cascade/left-crop-768x840-blur12px-min.jpg);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/waterfall-cascade/left-crop-768x840-blur12px-min.jpg);
@@ -27,6 +39,12 @@
 
 @media (min-width: 768px) {
 
+  .card-small__backboard_global-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+  }
+  
   .card-small__backboard_nested-aem-component-click-tracking {
     background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
@@ -37,6 +55,10 @@
 
 @media (max-width: 575.98px) {
 
+  .card-small__img_global-click-tracking {
+    background-image: url(../img/martech/swimming-pool-water-overhead/576x227-min.jpg);
+  }
+  
   .card-small__img_nested-aem-component-click-tracking {
     background-image: url(../img/martech/waterfall-cascade/576x227-min.jpg);
   }
@@ -45,6 +67,10 @@
 
 @media (min-width: 576px) {
 
+  .card-small__img_global-click-tracking {
+    background-image: url(../img/martech/swimming-pool-water-overhead/768x302-min.jpg);
+  }
+  
   .card-small__img_nested-aem-component-click-tracking {
     background-image: url(../img/martech/waterfall-cascade/768x302-min.jpg);
   }
@@ -55,4 +81,3 @@
 .background_theme_shaded {
   background: rgba(0, 0, 0, .3);
 }
-
