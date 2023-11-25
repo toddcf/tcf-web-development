@@ -18,7 +18,7 @@
 
 @media (max-width: 575.98px) {
   .martech-header__img_swimming-pool-water-overhead {
-    background-image: url(../img/martech/swimming-pool-water-overhead/swimming-pool-water-overhead-768x60-min.jpg);
+    background-image: url(../img/martech/swimming-pool-water-overhead/768x60-min.jpg);
   }
 
   .martech-header__img_waterfall-cascade {
@@ -32,7 +32,7 @@
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .martech-header__img_swimming-pool-water-overhead {
-    background-image: url(../img/martech/swimming-pool-water-overhead/swimming-pool-water-overhead-1440x112-min.jpg);
+    background-image: url(../img/martech/swimming-pool-water-overhead/1440x112-min.jpg);
   }
   
   .martech-header__img_waterfall-cascade {
@@ -46,7 +46,7 @@
 
 @media (min-width: 768px) {
   .martech-header__img_swimming-pool-water-overhead {
-    background-image: url(../img/martech/swimming-pool-water-overhead/swimming-pool-water-overhead-1920x150-min.jpg);
+    background-image: url(../img/martech/swimming-pool-water-overhead/1920x150-min.jpg);
   }
   
   .martech-header__img_waterfall-cascade {
