@@ -23,6 +23,12 @@
   padding: 0;
 }
 
+.breadcrumbs__text {
+  font-family: 'PT Sans', sans-serif;
+  margin: 0 0.75em 1em 0;
+  text-align: left;
+}
+
 .code__name {
   font-family: 'PT Sans', sans-serif;
   font-weight: 700;
