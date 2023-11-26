@@ -135,11 +135,15 @@
 
             <p class="main__text font_size_body">I named this data element <code class="code__name">shadow doms</code>, and it only contains one line of code:</p>
 
-  <pre class="code__block"><code class="language-javascript">return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);</code></pre>
-
           </div> <!-- Close .content__block -->
 
         </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="content__center content__center_1140">
+
+  <pre class="code__block"><code class="language-javascript">return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);</code></pre>
+
+        </div> <!-- Close .content__center_1140 -->
 
         <div class="heading heading_theme_clear">
           <div class="heading__title-overflow">
@@ -198,6 +202,12 @@
             <p class="main__text font_size_body">Once I had my <code class="code__snippet">shadow doms</code> data element working, I was ready to use it in an Adobe Launch rule. I created a rule containing custom code that, if it finds any shadow DOMs on the page, attaches a &lsquo;click&rsquo; listener to each one. I named it <code class="code__name">Global | Add Shadow DOM Event Listeners</code>.</p>
             <p class="main__text font_size_body">First, the full code block for context. (Scroll past it for a breakdown of what each part does.)</p>
 
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="content__center content__center_1140">
+
   <pre class="code__block"><code class="language-javascript">const shadowDOMs = _satellite.getVar('shadow doms');
 
 const shadowClicks = (e) => {
@@ -233,9 +243,7 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
   });
 }</code></pre>
 
-          </div> <!-- Close .content__block -->
-
-        </div> <!-- Close .content__center content__center_700 -->
+        </div> <!-- Close .content__center content__center_1140 -->
 
         <div class="heading heading_theme_clear">
           <div class="heading__title-overflow">
