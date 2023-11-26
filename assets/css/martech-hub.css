@@ -38,6 +38,10 @@
   z-index: -100;
 }
 
+.content__block {
+  padding-bottom: 1em; /* Reduce from global style's 3em in this case. */
+}
+
 @media (max-width: 575.98px) {
 
   .card-small__backboard_global-click-tracking {

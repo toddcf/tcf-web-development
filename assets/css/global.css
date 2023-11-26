@@ -5,6 +5,15 @@
 * Browsers: last 4 version
 */
 
+.background_theme_black {
+  background-color: #000;
+  color: #808080;
+}
+
+.background_theme_white {
+  background-color: #fff;
+}
+
 .body {
   margin: 0;
   padding: 0;
