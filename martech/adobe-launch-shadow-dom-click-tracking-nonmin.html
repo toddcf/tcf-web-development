@@ -21,7 +21,7 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="../assets/prism/prism-okaidia-1.29.0.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/global-min.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/text-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/text.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/nav-min.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/heading-min.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/martech-article-min.css">
@@ -49,7 +49,7 @@
   <div class="body__project-container">
 
     <nav class="nav">
-      <div class="content__center content__center_1140 nav__flex">
+      <div class="content__center content__center_1440 nav__flex">
         <a href="/" class="nav__flex_link font_size_1">
           <div class="nav__flex_text"><i class="fas fa-home nav__flex_icon"></i>Home</div>
         </a>
@@ -62,7 +62,13 @@
       </div> <!-- Close .nav__flex -->
     </nav>
 
-    <main class="main content-top">
+    <div class="breadcrumbs content-top">
+      <div class="content__center content__center_1440">
+        <p class="breadcrumbs__text font_size_body"><a class="link_theme_black" href="/">Home</a> / <a class="link_theme_black" href="../">MarTech</a> / Adobe Launch Shadow DOM Click Tracking</p>
+      </div> <!-- Close .content__center_1440 -->
+    </div>
+
+    <main class="main">
 
       <header class="header">
         <div class="heading heading_theme_clear">
@@ -94,7 +100,7 @@
             <p class="main__text font_size_body">But it wasn&rsquo;t getting triggered. Therefore, I had to come up with a custom code workaround to detect shadow DOM clicks manually.</p>
             <p class="main__text font_size_body">The overall architecture I came up with is:</p>
 
-            <ol class="main__list font_size_body">
+            <ol class="list__main font_size_body">
               <li class="content__block_li">
                 <p class="main__text font_size_body">When the page loads, I crawl it and collect any shadow DOMs that exist.</p>
               </li>
@@ -157,7 +163,7 @@
 
           <div class="content__block">
             
-            <ol class="main__list font_size_body">
+            <ol class="list__main font_size_body">
               <li class="content__block_li">
                 <p class="main__text font_size_body"><code class="code__snippet font_size_body">document.getElementsByTagName('*')</code> gets all tags on the page.</p>
               </li>
@@ -259,7 +265,7 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
 
             <p class="main__text font_size_body">First, a quick note: I programmed the rule itself to be triggered on every page/route load.</p>
 
-            <ul class="main__list font_size_body">
+            <ul class="list__main font_size_body">
               <li class="content__block_li">
                 <p class="main__text font_size_body">Line 1: The first thing the custom code inside the rule does is grab the <code class="code__name">shadow doms</code> data element and store it in a variable called <code class="code__name">shadowDOMs</code>.</p>
               </li>
@@ -286,7 +292,7 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
               </li>
               <li class="content__block_li">
                 <p class="main__text font_size_body">Lines 10 - 17: I found out the hard way that if the clicked element is an SVG, the <code class="code__name">clickData</code> object that you pass to your <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule is going to be a mess. So I accounted for this specifically as follows:</p>
-                <ul class="main__list font_size_body">
+                <ul class="list__main font_size_body">
                   <li class="content__block_li">
                     <p class="main__text font_size_body">Lines 11 - 13: The user may have clicked on the SVG tag itself, or they may have clicked on the path elements <em>inside</em> the SVG tag. This first code block handles clicks on path elements.</p>
                     <p class="main__text font_size_body">Note that this condition must be nested <em>inside</em> the <code class="code__name">instanceof SVGElement</code> condition, as that will also be true.</p>
@@ -315,7 +321,7 @@ if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
               <li class="content__block_li">
                 <p class="main__text font_size_body">Lines 30 - 34: That&rsquo;s it for the function. But it still needed an event listener to trigger it. The listener is wrapped in some validation to make sure that <code class="code__name">shadowDOMs</code> exists, that it is an array, and that this array contains at least one item. (Remember the <code class="code__name">shadow doms</code> data element I stored in a variable back on line 1? This is where that variable starts getting used.)</p>
                 <p class="main__text font_size_body">This validation is important because if no shadow DOMs exist on the page .&nbsp;.&nbsp;. I don&rsquo;t want the rest of this code block to execute and start throwing errors.</p>
-                <ul class="main__list font_size_body">
+                <ul class="list__main font_size_body">
                   <li class="content__block_li">
                     <p class="main__text font_size_body">Line 31: Once I&rsquo;m certain that <code class="code__name">shadowDOMs</code> is an array containing at least one item, I am safe to run the <code class="code__name">.forEach</code> method on it.</p>
                   </li>
