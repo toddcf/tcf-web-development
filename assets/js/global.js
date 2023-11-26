@@ -1,9 +1,13 @@
 // Padding Under Nav:
+const contentTop = document.querySelector('.content-top');
+const navBar = document.querySelector('.nav');
+
 function navSpacing() {
-  var navBar = document.querySelector('.nav');
-  var navBarHeight = navBar.offsetHeight;
-  var contentTop = document.querySelector('.content-top');
-  contentTop.style.paddingTop = navBarHeight + 'px';
+  const navBarHeight = navBar.offsetHeight;
+  contentTop.style.paddingTop = `${navBarHeight + 16}px`;
 }
-navSpacing();
-window.addEventListener('resize', navSpacing);
+
+if (!!navBar && !!contentTop) {
+  navSpacing();
+  window.addEventListener('resize', navSpacing);
+}
