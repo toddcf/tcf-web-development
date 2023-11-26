@@ -4,7 +4,9 @@ const navBar = document.querySelector('.nav');
 
 function navSpacing() {
   const navBarHeight = navBar.offsetHeight;
-  contentTop.style.paddingTop = `${navBarHeight + 16}px`;
+  if (!!navBarHeight) {
+    contentTop.style.paddingTop = `${navBarHeight + 16}px`;
+  }
 }
 
 if (!!navBar && !!contentTop) {
