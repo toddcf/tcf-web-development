@@ -1,0 +1,1 @@
+function navSpacing(){var e=document.querySelector(".nav").offsetHeight;document.querySelector(".content-top").style.paddingTop=e+"px"}navSpacing(),window.addEventListener("resize",navSpacing);
