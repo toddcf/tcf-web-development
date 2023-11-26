@@ -139,8 +139,3 @@
   }
 
 }
-
-/* Homepage and MarTech Hub: This can probably move to global.css or something */
-.background_theme_shaded {
-  background: rgba(0, 0, 0, .3);
-}

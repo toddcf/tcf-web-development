@@ -10,6 +10,10 @@
   color: #808080;
 }
 
+.background_theme_shaded {
+  background: rgba(0, 0, 0, .3);
+}
+
 .background_theme_white {
   background-color: #fff;
 }
