@@ -5,6 +5,39 @@
 * Browsers: last 4 version
 */
 
+.body__project-container {
+  overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
+  position: relative;
+  width: 100%;
+}
+
+/* Background image fallback in case video doesn't load */
+.background__video {
+  background-attachment: fixed;
+  background-image: url(../video/tropical-1920x1080-min.jpg);
+  background-position: bottom right;
+  background-size: cover;
+  bottom: 0;
+  height: auto;
+  min-height: 100vh;
+  min-width: 100%; 
+  position: fixed;
+  right: 0; 
+  width: auto;
+  z-index: -100;
+}
+
+.background__video_video {
+  bottom: 0;
+  height: auto;
+  min-height: 100vh;
+  min-width: 100%; 
+  position: fixed;
+  right: 0; 
+  width: auto;
+  z-index: -100;
+}
+
 @media (max-width: 575.98px) {
 
   .card-small__backboard_global-click-tracking {
