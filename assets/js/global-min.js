@@ -1,1 +1,1 @@
-const contentTop=document.querySelector(".content-top"),navBar=document.querySelector(".nav");function navSpacing(){let n=navBar.offsetHeight;n&&(contentTop.style.paddingTop=`${n+16}px`)}navBar&&contentTop&&(navSpacing(),window.addEventListener("resize",navSpacing));
+const contentTop=document.querySelector(".content-top"),navBar=document.querySelector(".nav");function navSpacing(){let n=navBar.offsetHeight;n&&(contentTop.style.paddingTop=`${n+32}px`)}navBar&&contentTop&&(navSpacing(),window.addEventListener("resize",navSpacing));
