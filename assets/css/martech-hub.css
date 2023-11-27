@@ -1,0 +1,141 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.body__project-container {
+  overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
+  position: relative;
+  width: 100%;
+}
+
+/* Background image fallback in case video doesn't load */
+.background__video {
+  background-attachment: fixed;
+  background-image: url(../video/tropical-1920x1080-min.jpg);
+  background-position: bottom right;
+  background-size: cover;
+  bottom: 0;
+  height: auto;
+  min-height: 100vh;
+  min-width: 100%; 
+  position: fixed;
+  right: 0; 
+  width: auto;
+  z-index: -100;
+}
+
+.background__video_video {
+  bottom: 0;
+  height: auto;
+  min-height: 100vh;
+  min-width: 100%; 
+  position: fixed;
+  right: 0; 
+  width: auto;
+  z-index: -100;
+}
+
+.content__block {
+  padding-bottom: 1em; /* Reduce from global style's 3em in this case. */
+}
+
+@media (max-width: 575.98px) {
+
+  .card-small__backboard_global-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+  }
+  
+  .card-small__backboard_nested-aem-component-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
+  }
+
+  .card-small__backboard_shadow-dom-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/wild-water/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/wild-water/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/wild-water/left-crop-576x630-blur12px-min.jpg);
+  }
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+  .card-small__backboard_global-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/swimming-pool-water-overhead/left-crop-768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-768x840-blur12px-min.jpg);
+  }
+  
+  .card-small__backboard_nested-aem-component-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/waterfall-cascade/left-crop-768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/waterfall-cascade/left-crop-768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/waterfall-cascade/left-crop-768x840-blur12px-min.jpg);
+  }
+
+  .card-small__backboard_shadow-dom-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/wild-water/left-crop-768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/wild-water/left-crop-768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/wild-water/left-crop-768x840-blur12px-min.jpg);
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .card-small__backboard_global-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/swimming-pool-water-overhead/left-crop-576x630-blur12px-min.jpg);
+  }
+  
+  .card-small__backboard_nested-aem-component-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/waterfall-cascade/left-crop-576x630-blur12px-min.jpg);
+  }
+
+  .card-small__backboard_shadow-dom-click-tracking {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/wild-water/left-crop-576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/wild-water/left-crop-576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/wild-water/left-crop-576x630-blur12px-min.jpg);
+  }
+
+}
+
+@media (max-width: 575.98px) {
+
+  .card-small__img_global-click-tracking {
+    background-image: url(../img/martech/swimming-pool-water-overhead/576x227-min.jpg);
+  }
+  
+  .card-small__img_nested-aem-component-click-tracking {
+    background-image: url(../img/martech/waterfall-cascade/576x227-min.jpg);
+  }
+
+  .card-small__img_shadow-dom-click-tracking {
+    background-image: url(../img/martech/wild-water/576x227-min.jpg);
+  }
+
+}
+
+@media (min-width: 576px) {
+
+  .card-small__img_global-click-tracking {
+    background-image: url(../img/martech/swimming-pool-water-overhead/768x302-min.jpg);
+  }
+  
+  .card-small__img_nested-aem-component-click-tracking {
+    background-image: url(../img/martech/waterfall-cascade/768x302-min.jpg);
+  }
+
+  .card-small__img_shadow-dom-click-tracking {
+    background-image: url(../img/martech/wild-water/768x302-min.jpg);
+  }
+
+}
