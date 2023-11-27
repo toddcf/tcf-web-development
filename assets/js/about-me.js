@@ -1,13 +1,3 @@
-// Padding Under Nav:
-function navSpacing() {
-  var navBar = document.querySelector('.nav');
-  var navBarHeight = navBar.offsetHeight;
-  var aboutSection = document.querySelector('.about-section');
-  aboutSection.style.paddingTop = navBarHeight + 'px';
-}
-navSpacing();
-window.addEventListener('resize', navSpacing);
-
 // Skills Icon Effects
 $( document ).ready( function() {
 
