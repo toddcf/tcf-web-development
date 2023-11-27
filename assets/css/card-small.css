@@ -1,0 +1,310 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.card-small {
+  -ms-flex: 0 0 100%;
+  -webkit-box-flex: 0;
+          flex: 0 0 100%;
+  max-width: 100%;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+
+  .card-small {
+    -ms-flex: 0 0 50%;
+    -webkit-box-flex: 0;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+}
+
+@media (min-width: 768px) {
+
+  .card-small {
+    -ms-flex: 0 0 33.333333%;
+    -webkit-box-flex: 0;
+            flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  
+}
+
+.card-small__backboard {
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  -webkit-box-shadow: 20px 20px 20px 1px rgba(0, 0, 0, .3);
+          box-shadow: 20px 20px 20px 1px rgba(0, 0, 0, .3);
+  margin: 0 auto 100px auto;
+  padding-bottom: 16px;
+  width: 95%;
+}
+
+/* THE FOLLOWING #1, #2, AND #3 MAY BE ABLE TO BE CONSOLIDATED SOMEWHAT */
+/* #1 was my-portfolio */
+.card-small__backboard_1_effects {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: card-small__backboard_1_effects;
+          animation-name: card-small__backboard_1_effects;
+}
+
+.card-small__backboard_1 {
+  opacity: 0; /* Invisible before the animation is triggered */
+}
+
+.card-small__backboard_1.card-small__backboard_1_effects {
+  opacity: 1; /* Keeps this card visible after the animation is completed */
+}
+
+/* fadeInUp */
+@-webkit-keyframes card-small__backboard_1_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
+@keyframes card-small__backboard_1_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
+/* #2 was omnifood */
+.card-small__backboard_2_effects {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: card-small__backboard_2_effects;
+          animation-name: card-small__backboard_2_effects;
+}
+
+.card-small__backboard_2 {
+  opacity: 0; /* Invisible before the animation is triggered */
+}
+
+.card-small__backboard_2.card-small__backboard_2_effects {
+  opacity: 1; /* Keeps this card visible after the animation is completed */
+}
+
+/* fadeInUp */
+@-webkit-keyframes card-small__backboard_2_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
+@keyframes card-small__backboard_2_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
+@media (min-width: 576px) {
+
+  .card-small__backboard_2_effects {
+    -webkit-animation-delay: 150ms;
+            animation-delay: 150ms;
+  }
+
+}
+
+/* Card #3 was author-site */
+.card-small__backboard_3 {
+  opacity: 0; /* Invisible before the animation is triggered */
+}
+
+.card-small__backboard_3.card-small__backboard_3_effects {
+  opacity: 1; /* Keeps this card visible after the animation is completed */
+}
+
+.card-small__backboard_3_effects {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: card-small__backboard_3_effects;
+          animation-name: card-small__backboard_3_effects;
+}
+
+/* fadeInUp */
+@-webkit-keyframes card-small__backboard_3_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
+@keyframes card-small__backboard_3_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .card-small__backboard_3_effects {
+    -webkit-animation-delay: 300ms;
+            animation-delay: 300ms;
+  }
+
+}
+
+.card-small__button-duo_btn-1 {
+  margin-bottom: 7.5px;
+}
+
+.card-small__button-duo_btn-2 {
+  margin-bottom: 7.5px;
+}
+
+.card-small__content {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.card-small__img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .3);
+          box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .3);
+  height: 0;
+  padding-bottom: 39%;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+}
+
+.card-small__img-riser {
+  height: 0;
+  margin: 0 auto .5em auto;
+  padding-bottom: 39%;
+  position: relative;
+}
+
+.card-small__text {
+  color: #000;
+  font-family: 'PT Sans', sans-serif;
+  -webkit-margin-after: 24px;
+          margin-block-end: 24px;
+  -webkit-margin-before: 16px;
+          margin-block-start: 16px;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+}
+
+.card-small__title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+
+  .card-small__title {
+    font-weight: 400;
+  }
+  
+}
+
+.flexbox_layout_card-small {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  padding: 75px 0 0 0;
+}
+
+@media (min-width: 576px) {
+
+  .flexbox_layout_card-small {
+    padding: 100px 0 0 0;
+  }
+
+}

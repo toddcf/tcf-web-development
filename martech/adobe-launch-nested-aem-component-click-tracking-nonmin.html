@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Body -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../assets/prism/prism-okaidia-1.29.0.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/global-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/text-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/nav-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/heading-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/martech-article-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/footer-min.css">
+  
+  <title>MarTech | Adobe Launch Nested AEM Component Click Tracking</title>
+
+  <meta name="Author" content="Todd Croak-Falen">
+  <meta name="Description" content="MarTech Adobe Launch Nested AEM Component Click Tracking.">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="body line-numbers">
+
+  <div class="body__project-container">
+
+    <nav class="nav">
+      <div class="content__center content__center_1140 nav__flex">
+        <a href="/" class="nav__flex_link font_size_1">
+          <div class="nav__flex_text"><i class="fas fa-home nav__flex_icon"></i>Home</div>
+        </a>
+        <a href="../about-me" class="nav__flex_link font_size_1">
+          <div class="nav__flex_text"><i class="fas fa-user-circle nav__flex_icon"></i>About Me</div>
+        </a>
+        <!-- <a href="../resume_todd_croak-falen.pdf" target="_blank" class="nav__flex_link font_size_1">
+          <div class="nav__flex_text"><i class="fas fa-file-alt nav__flex_icon"></i>Résumé</div>
+        </a> -->
+      </div> <!-- Close .nav__flex -->
+    </nav>
+
+    <div class="breadcrumbs breadcrumbs_theme_white content-top">
+      <div class="content__center content__center_1440">
+        <p class="breadcrumbs__text font_size_body"><a class="breadcrumbs__text link link_theme_black" href="/">Home</a> <span class="breadcrumbs__text">></span> <a class="breadcrumbs__text link link_theme_black" href="../martech">MarTech</a> <span class="breadcrumbs__text">></span> <span class="breadcrumbs__text">Adobe Launch Nested AEM Component Click Tracking</span></p>
+      </div> <!-- Close .content__center_1440 -->
+    </div>
+
+    <main class="main">
+
+      <header class="header">
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h1 class="heading__title-tag font_size_4">
+              <span class="heading__title-tag_title">Adobe Launch Nested AEM Component Click Tracking</span>
+            </h1>
+          </div>
+        </div>
+        <div class="martech-header__img martech-header__img_waterfall-cascade"></div>
+      </header>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Overview</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+          
+            <p class="text__main font_size_body">When my company began using AEM Components, it was the MarTech team&rsquo;s job to implement click tracking on those components. We already had global click tracking in place that would take the <code class="code__snippet font_size_body">data-track-noun</code> and <code class="code__snippet font_size_body">data-track-verb</code> attributes, concatenate them, and delimit them with a colon. But this was going to require additional complexity.</p>
+
+            <p class="text__main font_size_body">For starters, the AEM Components were going to be nested inside each other. There could be several layers of nesting. And when a component was clicked, we were going to want to concatenate the click tracking values of the parent components all the way down to the child that was clicked.</p>
+            
+            <p class="text__main font_size_body">For example, the Careers page has three sections:</p>
+
+            <ol class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Employment</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Apprenticeships</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Internships</p>
+              </li>
+            </ol>
+
+            <p class="text__main font_size_body">Within each of these sections there is a set of cards, each representing a category. For example, the &ldquo;Employment&rdquo; section contains these cards:</p>
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Administration</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Research & Development</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Sales</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Installation & Repair</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Support</p>
+              </li>
+            </ul>
+
+            <p class="text__main font_size_body">And each card contains two buttons:</p>
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Learn More</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">View Jobs</p>
+              </li>
+            </ul>
+
+            <p class="text__main font_size_body">If a user clicks a &ldquo;Learn More&rdquo; button and all I pass is <code class="code__name font_size_body">learn-more</code>, that won&rsquo;t tell our analysts much about which careers are getting the most clicks. Instead, they want values like:</p>
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">employment:research-development:learn-more</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">employment:installation-repair:view-jobs</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">employment:administration:learn-more</p>
+              </li>
+            </ul>
+
+            <p class="text__main font_size_body">This was going to require more than just the standard two <code class="code__snippet font_size_body">data-track-noun</code> and <code class="code__snippet font_size_body">data-track-verb</code> attributes.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h3 class="heading__title-tag font_size_2">
+              <span class="heading__title-tag_title">Solution</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">I decided that we could add a <code class="code__snippet font_size_body">data-track-component-level-X</code> attribute, with <code class="code__snippet font_size_body">X</code> being a number. (These would have to be set dynamically, because we would never know how many levels a given component was going to be nested.)</p>
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">data-track-component-level-1="employment"</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">data-track-noun="research-development"</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">data-track-verb="learn-more"</p>
+              </li>
+            </ul>
+
+            <p class="text__main font_size_body">The three (or more) of those would then be concatenated, in the correct order, and only if they exist. Since there could be multiple levels of parent components, we could potentially wind up with <code class="code__snippet font_size_body">data-track-component-level-1</code>, <code class="code__snippet font_size_body">2</code>, <code class="code__snippet font_size_body">3</code>, etc.</p>
+
+            <p class="text__main font_size_body">The question was how to add these attributes to each AEM Component. Our Content team did not have the bandwidth to add each one manually. Furthermore, AEM Components might be nested in a multitude of ways, and those ways might be changed on the fly. If each such change involved the complete reauthoring of every AEM Component&rsquo;s tracking attributes, the scope of each change would become unwieldy, and the opportunity for mistakes would increase.</p>
+
+            <p class="text__main font_size_body">Therefore, it was decided that these values would be set programmatically. We came up with a two-pronged approach. The first prong was on the AEM side, which would be handled by the Content team:</p>
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Each AEM Component would be given a <code class="code__snippet font_size_body">data-track-component-type</code> attribute. Its value would represent the type of component: <code class="code__snippet font_size_body">header</code>, <code class="code__snippet font_size_body">footer</code>, <code class="code__snippet font_size_body">breadcrumb</code>, <code class="code__snippet font_size_body">crowdriff</code>, etc. (This is so we will know which elements to treat as AEM Components.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Values from heading tags, link text, etc. are programmatically copied into <code class="code__snippet font_size_body">data-track-verb</code> attributes.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Each of these values would get programmatically standardized into lowercase kebab-case.</p>
+              </li>
+            </ul>
+
+            <p class="text__main font_size_body">The second prong would be handled by the MarTech team, via Adobe Launch:</p>
+
+            <ol class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">On each page/route load, an Adobe Launch rule would fire that would crawl the page. If it found any elements containing a <code class="code__snippet font_size_body">data-track-component-type</code> attribute, it would collect its tracking attributes.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Then it would check the next layer of children for that element. If any contained a <code class="code__snippet font_size_body">data-track-component-type</code> attribute, the tracking attributes from the parent element would be added to the tracking attributes of the child element using the <code class="code__snippet font_size_body">data-track-component-level-X</code> attribute.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">The process would repeat for the children of that child, until no more children were found. Depending on how many layers of nesting there were for the AEM Components, this is where we might wind up with <code class="code__snippet font_size_body">data-track-component-level-1</code>, <code class="code__snippet font_size_body">data-track-component-level-2</code>, <code class="code__snippet font_size_body">data-track-component-level-3</code>, etc.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Once an element has been modified, the Launch rule would set a flag on it so we know it's been handled. That way, if more AEM Components got added to the page after the initial page load and our rule needed to crawl the page again, it could skip modifying the components it already modified in the previous pass.</p>
+              </li>
+            </ol>
+
+            <p class="text__main font_size_body">Then, the MarTech team would have to modify the <code class="code__name font_size_body">Global | Set Variables | Clicks or Events #25</code> rule. Currently, that rule only checked for <code class="code__snippet font_size_body">data-track-noun</code> and <code class="code__snippet font_size_body">data-track-verb</code> and concatenated the two. Now it would have to factor in any number of <code class="code__snippet font_size_body">data-track-component-level-X</code> attributes at the beginning of that concatenation. (For an explanation on how that was accomplished, see my article on <a class="link link_theme_black" href="adobe-launch-global-clicks-events-tracking">Adobe Launch Global Clicks or Events Tracking</a>.)</p>
+
+            <p class="text__main font_size_body">But to see how the programming was done for the AEM Component attributes, keep reading.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+        
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">&lsquo;Global | Set AEM Component Data Attributes&rsquo; Rule</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">We created an Adobe Launch rule named <code class="code__name font_size_body">Global | Set AEM Component Data Attributes</code>. Here&rsquo;s the full syntax for context. (Scroll past it for an explanation on how each part works.)</p>
+          
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="content__center content__center_1140">
+
+          <div class="content__block">
+
+  <pre class="code__block"><code class="language-javascript">const aemComponentTracking = {
+  setTrackingAttributes: (currentElement, mergedTrackingAttributesArr) => {
+    mergedTrackingAttributesArr = (!!mergedTrackingAttributesArr && Array.isArray(mergedTrackingAttributesArr)) ? mergedTrackingAttributesArr : [];
+
+    const numberOfValues = mergedTrackingAttributesArr.length;
+    if (!!currentElement && numberOfValues > 0) {
+      if (numberOfValues === 1) {
+        currentElement.removeAttribute('data-track-noun');
+      }
+
+      mergedTrackingAttributesArr.forEach((trackingAttribute, i) => {
+        switch (i) {
+          case numberOfValues - 1:
+            currentElement.setAttribute('data-track-verb', trackingAttribute);
+            break;
+          case numberOfValues - 2:
+            currentElement.setAttribute('data-track-noun', trackingAttribute);
+            break;
+          default:
+            currentElement.setAttribute(`data-track-component-level-${i + 1}`, trackingAttribute);
+        }
+      });
+      currentElement.setAttribute('data-track-component-attributes-set', 'true');
+    }
+    aemComponentTracking.checkChildren(currentElement, mergedTrackingAttributesArr);
+  },
+  uniqueValue(arr, str) {
+    let unique = true;
+    if (!!arr && Array.isArray(arr) && arr.length > 0 && !!str && arr.includes(str)) {
+      unique = false;
+    }
+    return unique;
+  },
+  mergeTrackingAttributes: (currentElement, existingTrackingAttributes, parentTrackingAttributes) => {
+    existingTrackingAttributes = (!!existingTrackingAttributes && Array.isArray(existingTrackingAttributes)) ? existingTrackingAttributes : [];
+    parentTrackingAttributes = (!!parentTrackingAttributes && Array.isArray(parentTrackingAttributes)) ? parentTrackingAttributes : [];
+    mergedTrackingAttributesArr = [];
+
+    const mergedTrackingAttributesArrPusher = (arr) => {
+      if (!!arr && Array.isArray(arr) && arr.length > 0) {
+        arr.forEach(arrItem => {
+          if (aemComponentTracking.uniqueValue(mergedTrackingAttributesArr, arrItem)) {
+            mergedTrackingAttributesArr.push(arrItem);
+          }
+        });
+      }
+    }
+
+    mergedTrackingAttributesArrPusher(parentTrackingAttributes);
+    mergedTrackingAttributesArrPusher(existingTrackingAttributes);
+
+    aemComponentTracking.setTrackingAttributes(currentElement, mergedTrackingAttributesArr);
+  },
+  getTrackingAttributes: (currentElement, parentTrackingAttributes) => {
+    parentTrackingAttributes = (!!parentTrackingAttributes && Array.isArray(parentTrackingAttributes)) ? parentTrackingAttributes : [];
+    const existingTrackingAttributes = [];
+
+    let level = 1;
+    let parentComponentLevelX = '';
+    do {
+      parentComponentLevelX = currentElement.getAttribute(`data-track-component-level-${level}`);
+      if (!!parentComponentLevelX) {
+        existingTrackingAttributes.push(parentComponentLevelX);
+      }
+      level++;
+    } while (!!currentElement.getAttribute(`data-track-component-level-${level}`));
+
+    const dataTrackNoun = currentElement.getAttribute('data-track-noun');
+    if (!!dataTrackNoun && dataTrackNoun !== 'no-title') {
+      existingTrackingAttributes.push(dataTrackNoun);
+    }
+
+    const dataTrackVerb = currentElement.getAttribute('data-track-verb');
+    if (!!dataTrackVerb && dataTrackVerb !== 'no-title') {
+      existingTrackingAttributes.push(dataTrackVerb);
+    }
+
+    const dataTrackComponentAttributesSet = currentElement.getAttribute('data-track-component-attributes-set');
+    if (
+      !!dataTrackComponentAttributesSet &&
+      dataTrackComponentAttributesSet === 'true'
+    ) {
+      aemComponentTracking.checkChildren(currentElement, existingTrackingAttributes);
+    } else {
+      aemComponentTracking.mergeTrackingAttributes(currentElement, existingTrackingAttributes, parentTrackingAttributes);
+    }
+  },
+  checkChildren: (currentElement, parentTrackingAttributes) => {
+    let currentElementChildren;
+    parentTrackingAttributes = (!!parentTrackingAttributes && Array.isArray(parentTrackingAttributes)) ? parentTrackingAttributes : [];
+
+    if (!!currentElement) {
+      currentElementChildren = currentElement.children;
+      if (!!currentElementChildren && currentElementChildren.length > 0) {
+        currentElementChildren = [...currentElementChildren];
+        if (Array.isArray(currentElementChildren)) {
+          currentElementChildren.forEach(currentElementChild => {
+            if (
+              currentElementChild.hasAttribute('data-track-component-type') ||
+              !!['A', 'BUTTON'].includes(currentElementChild.tagName)
+            ) {
+              aemComponentTracking.getTrackingAttributes(currentElementChild, parentTrackingAttributes);
+            } else {
+              aemComponentTracking.checkChildren(currentElementChild, parentTrackingAttributes);
+            }
+          });
+        }
+        // NOTE: If there were no children, do nothing (stop).
+      }
+    }
+  },
+  init: () => {
+    if (
+      !!window && !!window.document && !!window.document.body &&
+      !!window.document.body.querySelector('[data-track-component-type]')
+    ) {
+      aemComponentTracking.checkChildren(window.document.body);
+    }
+
+    const shadowDOMs = _satellite.getVar('shadow doms');
+    if (!!shadowDOMs && Array.isArray(shadowDOMs) && shadowDOMs.length > 0) {
+      shadowDOMs.forEach((shadowDOM) => {
+        if (!!shadowDOM.querySelector('[data-track-component-type]')) {
+          aemComponentTracking.checkChildren(shadowDOM);
+        }
+      });
+    }
+  },
+}
+
+aemComponentTracking.init();</code></pre>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_1140 -->
+
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h3 class="heading__title-tag font_size_2">
+              <span class="heading__title-tag_title">Explanation</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">The entire rule is written as an object literal (<code class="code__snippet font_size_body">const aemComponentTracking = {}</code>), so each method inside that object is declared prior to any other methods that will call it. Therefore, this explanation will work from the bottom up.</p>
+            
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 131: On the last line of code, <code class="code__snippet font_size_body">aemComponentTracking.init()</code> is invoked.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 112 - 128: <code class="code__snippet font_size_body">init</code> method:</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 113 - 118: The first thing <code class="code__snippet font_size_body">init</code> does is check the regular DOM.</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Line 115: To reduce performance drag, a quick check is done to make sure there is at least one AEM Component on the page. If there is not, we don&rsquo;t crawl the DOM.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Line 117: Take the first layer of the DOM (<code class="code__snippet font_size_body">window.document.body</code>) and pass it into the <code class="code__snippet font_size_body">checkChildren</code> method.</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 120 - 127: Next, <code class="code__snippet font_size_body">init</code> does the same thing to any shadow DOMs that may exist on the page. (See my article on <a href="adobe-launch-shadow-dom-click-tracking" class="link link_theme_black"></a> for details on this architecture.)</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 88 - 111: <code class="code__snippet font_size_body">checkChildren</code> method. All this method does is check if the current element has children. If so, it decides which method to call on each one.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 88 - 90: The <code class="code__snippet font_size_body">checkChildren</code> method takes in the current element. Optionally, it can also take in any parent tracking attributes that get passed into it, but those are not a given. For example, on Line 90, it defaults this value to an empty array if none was passed in. And since this first pass is on the top level of the DOM or shadow DOM, there are no parent tracking attributes to pass in yet.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 93: Generate a list of children one DOM level down &mdash; but no deeper than that. (At each layer, we have to perform quite a few potential actions before moving down another layer deeper.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 94: Check to see if at least one child was found. (If not, we skip this entire code block and do nothing &mdash; we have reached the end of this portion of the DOM tree.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 95 - 107: If at least one child was found, check each child to see if it is an AEM Component, a button, or an anchor tag.</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 102: For each item that meets this criteria, invoke the <code class="code__snippet font_size_body">getTrackingAttributes</code> method and pass this item into it. If any parent tracking attributes exist, pass those in, too.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 104: For each item that does <em>not</em> meet the criteria, simply invoke the <code class="code__snippet font_size_body">checkChildren</code> method on it recursively without getting or setting any attributes. (Just because this child is not an AEM Component, a button, or a link, does not mean that these types of elements will not be nested beneath it, so we must keep drilling down.)</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 54 - 87: <code class="code__snippet font_size_body">getTrackingAttributes</code> method. As the name implies, this method only <em>gets</em> the existing tracking attributes on an element. (It does not start merging them with any parent tracking attributes yet &mdash; that will be handled by a separate method.)</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 56: An empty array is created to collect any applicable existing tracking attributes.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 58 - 66: First, any <code class="code__snippet font_size_body">data-track-component-level-X</code> attribute values that exist are collected in numerical order and pushed into the <code class="code__snippet font_size_body">existingTrackingAttributes</code> array. Since we don&rsquo;t know how many (if any) there will be, a do while loop is used.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 68 - 71: Next, if a <code class="code__snippet font_size_body">data-track-noun</code> attribute exists, push that value in. (Note that there are use cases where this value may have been set to <code class="code__snippet font_size_body">"no-title"</code> if the AEM Component was just a container and did not have anything of substance to be included in the click tracking. So we filter those out on Line 69.)</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 73 - 76: Next, the same actions are performed for <code class="code__snippet font_size_body">data-track-verb</code>.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 78 - 86: If this is not the first pass that this rule is making on the page (for example, if more AEM Components were added after the page loaded), then a flag will have been set to prevent our code from needlessly refactoring the same attributes on the AEM Components that were already handled in the previous pass. This flag is the <code class="code__snippet font_size_body">data-track-component-attributes-set="true"</code> attribute.</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Line 83: If this attribute is found, we don&rsquo;t need to do any merging or setting of attributes. Instead, we just invoke the <code class="code__snippet font_size_body">checkChildren</code> method on it and pass in the current element plus the existing tracking attributes we just collected, as they may need to get merged in with any child element tracking attributes if necessary.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Line 85: If the current element&rsquo;s attributes have <em>not</em> already been merged, we invoke the <code class="code__snippet font_size_body">mergeTrackingAttributes</code> method to handle this. Therefore, we need to pass in both the existing tracking attributes plus any parent tracking attributes so that the two can be merged by that method.</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 34 - 53: <code class="code__snippet font_size_body">mergeTrackingAttributes</code> method.</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 35 - 37: Take in the existing tracking attributes, plus any parent tracking attributes, confirm that each are in array form, and then create an empty array where each of their values will be staged in order prior to setting them in the current element&rsquo;s appropriate tracking attributes.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 39 - 47: Declare the <code class="code__snippet font_size_body">mergedTrackingAttributesArrPusher</code> function, which will deduplicate the values as they are merged. Note that this function references the <code class="code__snippet font_size_body">uniqueValue</code> method for this purpose, which is declared on Lines 27 - 33.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 49: The parent tracking attributes are deduplicated and staged first, since they should be at the front of the final concatenation.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 50: The existing tracking attributes are deduplicated and staged second, since they should be at the end of the final concatenation.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 52: All tracking values have now been deduplicated and staged into the array in the order we&rsquo;ll want them concatenated for Analytics. Which means we&rsquo;re ready to rewrite the current element&rsquo;s tracking attributes in this order. This will be done by passing this array into the <code class="code__snippet font_size_body">setTrackingAttributes</code> method.</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 2 - 26: <code class="code__snippet font_size_body">setTrackingAttributes</code> method. This is where the ultimate purpose of this rule is achieved. Now that all parent tracking attributes and existing tracking attributes have been collected, deduplicated, and staged in the order that they should be concatenated for Analytics upon the user&rsquo;s click, it is time to populate those values into the appropriate data attributes within the current element. To prevent unintended results, all tracking attributes get overwritten.</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 7 - 9: This code block handles a very specific use case. I discovered times when an AEM Component contained only the <code class="code__snippet font_size_body">data-track-noun</code> attribute. This meant that it was the only value to be collected and &ldquo;merged,&rdquo; and would be placed in <code class="code__snippet font_size_body">data-track-verb</code> at this stage &mdash; resulting in both <code class="code__snippet font_size_body">data-track-noun</code> and <code class="code__snippet font_size_body">data-track-verb</code> having the same value. When clicked, the same value would be concatenated with each other. To prevent this, if only one value is going to be set, we first actively remove the <code class="code__snippet font_size_body">data-track-noun</code> attribute from the current element.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 11 - 22: Take the array of merged attributes and set them into the appropriate data attributes:</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 13 - 15: The last value in the array gets set to <code class="code__snippet font_size_body">data-track-verb</code>.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 16 - 18: The second-to-last value in the array gets set to <code class="code__snippet font_size_body">data-track-noun</code>. (We have to work a bit backward in this manner because we don&rsquo;t know how many items will be in the array.)</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 19 - 20: If there are more than two items in the array, now we start from the front and set them into <code class="code__snippet font_size_body">data-track-component-level-X</code> (whichever number <code class="code__snippet font_size_body">X</code> is for this item &mdash; the index number plus 1).</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 23: Set the <code class="code__snippet font_size_body">data-track-component-attributes-set</code> attribute to <code class="code__snippet font_size_body">"true"</code>. This is the flag that will prevent us from running all this same logic again if the page needs to be crawled more than once.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 25: And now that we&rsquo;ve handled this element, it&rsquo;s time to repeat this entire process on each of <em>its</em> children. So we invoke <code class="code__snippet font_size_body">checkChildren</code> once again, and this time we <em>do</em> have merged tracking attributes to pass into it. Conveniently, they are already in the <code class="code__snippet font_size_body">mergedTrackingAttributesArr</code> array, so there is no need to scrape them out of the current element all over again &mdash; we just pass that array into the <code class="code__snippet font_size_body">checkChildren</code> method.</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <p class="text__main font_size_body">Once the end is reached and there are no more children to check, the rule stops. All AEM Components are now prepped for our <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule to pull from when the user clicks one. See my <a class="link link_theme_black" href="adobe-launch-global-clicks-events-tracking">Adobe Launch Global Clicks or Events Tracking article</a> for details on how that rule takes it from here.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+    
+    </main>
+
+    <footer class="footer footer_theme_black">
+
+      <div class="content__center content__center_1140">
+      
+        <div class="footer__icon-row">
+
+          <div class="footer__icon">
+            <a href="/" class="footer__icon_link">
+              <div class="footer__icon_link-content">
+                <i class="fas fa-home footer__icon_icon"></i>
+                <p class="footer__icon_text font_size_body">Home</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer__icon">
+            <a href="https://www.github.com/toddcf" target="_blank" class="footer__icon_link">
+              <div class="footer__icon_link-content">
+                <i class="fab fa-github footer__icon_icon"></i>
+                <p class="footer__icon_text font_size_body">GitHub</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer__icon">
+            <a href="https://www.linkedin.com/in/toddcf" target="_blank" class="footer__icon_link">
+              <div class="footer__icon_link-content">
+                <i class="fab fa-linkedin footer__icon_icon"></i>
+                <p class="footer__icon_text font_size_body">LinkedIn</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer__icon">
+            <a href="resume_todd_croak-falen.pdf" target="_blank" class="footer__icon_link">
+              <div class="footer__icon_link-content">
+                <i class="fas fa-file-alt footer__icon_icon"></i>
+                <p class="footer__icon_text font_size_body">Résumé</p>
+                <p class="footer__icon_text font_size_body">(PDF with contact info)</p>
+              </div>
+            </a>
+          </div>
+          
+        </div> <!-- Close .footer-icon__row -->
+
+        <div class="footer__copyright">
+          <p class="footer__copyright_text font_size_body">&copy; Copyright 2016 <span class="currentYear"></span>Todd Croak-Falen</p>
+        </div>
+
+      </div> <!-- Close .content__center content__center_1140 -->
+
+    </footer>
+
+  </div> <!-- Close .body__project-container -->
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- Waypoints -->
+  <script src="../assets/js/jquery.waypoints.min.js"></script>
+
+  <!-- Prism -->
+  <script src="../assets/prism/prism-okaidia-1.29.0.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="../assets/js/global-min.js"></script>
+  <script src="../assets/js/footer-min.js"></script>
+
+</body>
+
+</html>

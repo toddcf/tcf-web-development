@@ -204,10 +204,6 @@
   padding-bottom: 50px;
 }
 
-.body {
-  margin: 0;
-}
-
 .body__project-container {
   overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
   position: relative;
@@ -217,15 +213,6 @@
 .body_about-me {
   margin: 0;
   padding: 0;
-}
-
-.center__1140 {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1140px;
-  width: 100%;
 }
 
 .certificate {
@@ -313,12 +300,6 @@
 
 }
 
-.flexbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .flexbox_layout_certificates {
   -ms-flex-line-pack: distribute;
       align-content: space-around;
@@ -374,32 +355,6 @@
           justify-content: center;
   margin: 0 auto;
   padding: 2em 0;
-}
-
-.link,
-.link:active,
-.link:focus,
-.link:hover,
-.link:link,
-.link:visited {
-  text-decoration: none;
-  -webkit-transition: 300ms;
-  -o-transition: 300ms;
-  transition: 300ms;
-}
-
-.link_theme_black,
-.link_theme_black:link,
-.link_theme_black:visited {
-  border-bottom: 1.5px solid #3c6221;
-  color: #3c6221;
-}
-
-.link_theme_black:active,
-.link_theme_black:focus,
-.link_theme_black:hover {
-  border-bottom: 1.5px solid #000;
-  color: #000;
 }
 
 .parallax_circuit-board {

@@ -15,9 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/font-sizes-min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/nav.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/headings-min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animation-min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/global-min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/text-min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/nav-min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/heading-min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/about-me-min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/footer-min.css">
 
@@ -43,7 +45,7 @@
     <div class="body__project-container">
 
       <nav class="nav">
-        <div class="center__1140 nav__flex">
+        <div class="content__center content__center_1140 nav__flex">
           <a href="/" class="nav__flex_link font_size_1">
             <div class="nav__flex_text"><img class="fas fa-home nav__flex_icon" src="assets/fontawesome-free-6.4.2-web/svgs/solid/house.svg" alt="House Icon">Home</div>
             <!-- <div class="nav__flex_text"><i class="fas fa-home nav__flex_icon"></i>Home</div> -->
@@ -57,13 +59,19 @@
         </div> <!-- Close .nav__flex -->
       </nav>
 
+      <div class="breadcrumbs breadcrumbs_theme_white content-top">
+        <div class="content__center content__center_1440">
+          <p class="breadcrumbs__text font_size_body"><a class="breadcrumbs__text link link_theme_black" href="/">Home</a> <span class="breadcrumbs__text">></span> <span class="breadcrumbs__text">About Me</span></p>
+        </div> <!-- Close .content__center_1440 -->
+      </div>
+  
       <!-- Main Content -->
       <main class="main-content">
 
         <!-- About Section -->
         <section class="about-section">
 
-          <div class="center__1140">
+          <div class="content__center content__center_1140">
 
             <div class="heading heading_theme_clear">
               <div class="heading__title-overflow">
@@ -98,7 +106,7 @@
 
             </div> <!-- Close .bio_layout -->
 
-          </div> <!-- Close .center__1140 -->
+          </div> <!-- Close .content__center content__center_1140 -->
               
         </section> <!-- Close .about-section -->
 
@@ -115,7 +123,7 @@
 
           <div class="background background_theme_wood-panel">
 
-            <div class="center__1140">
+            <div class="content__center content__center_1140">
 
               <div class="flexbox flexbox_layout_professional-references">
 
@@ -213,7 +221,7 @@
                 
               </div> <!-- Close .flexbox -->
               
-            </div> <!-- Close .center__1140 -->
+            </div> <!-- Close .content__center content__center_1140 -->
 
           </div> <!-- Close .wood-panel-bg -->
           
@@ -230,7 +238,7 @@
             </div>
           </div>
 
-          <div class="center__1140">
+          <div class="content__center content__center_1140">
 
             <div class="flexbox flexbox_layout_skills">
 
@@ -311,7 +319,7 @@
               
             </div> <!-- Close .flexbox_layout_skills -->
             
-          </div> <!-- Close .center__1140 -->
+          </div> <!-- Close .content__center content__center_1140 -->
           
         </section> <!-- Close .skills-section -->
 
@@ -328,7 +336,7 @@
 
           <div class="parallax parallax_circuit-board" data-image-src="assets/img/parallax/_circuit-board/circuit-board-2250x1529-min.jpg">
 
-            <div class="center__1140">
+            <div class="content__center content__center_1140">
 
               <div class="flexbox flexbox_layout_certificates">
 
@@ -469,7 +477,7 @@
 
               </div> <!-- Close .flexbox -->
 
-            </div> <!-- Close .center__1140 -->
+            </div> <!-- Close .content__center content__center_1140 -->
 
           </div> <!-- Close .certificates-bg -->
 
@@ -479,7 +487,7 @@
 
       <footer class="footer footer_theme_black">
 
-        <div class="center__1140">
+        <div class="content__center content__center_1140">
         
           <div class="footer__icon-row">
 
@@ -528,7 +536,7 @@
             <p class="footer__copyright_text font_size_body">&copy; Copyright 2016 <span class="currentYear"></span>Todd Croak-Falen</p>
           </div>
 
-        </div> <!-- Close .center__1140 -->
+        </div> <!-- Close .content__center content__center_1140 -->
 
       </footer>
 
@@ -541,6 +549,7 @@
     <script src="assets/js/jquery.waypoints.min.js"></script>
 
     <!-- Custom JavaScript -->
+    <script src="assets/js/global-min.js"></script>
     <script src="assets/js/about-me-min.js"></script>
     <script src="assets/js/footer-min.js"></script>
 

@@ -1,0 +1,115 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* Fixed root font size for smallest screens */
+html {
+  font-size: 16px;
+}
+
+.font_size_body {
+  font-size: 16px;
+}
+
+/* Font Ratio 1.125 (Major Second) for smallest screens */
+.font_size_1 {
+  font-size: 1em;
+}
+
+.font_size_2 {
+  font-size: 1.125em;
+}
+
+.font_size_3 {
+  font-size: 1.266em;
+}
+
+.font_size_4 {
+  font-size: 1.424em;
+}
+
+.font_size_5 {
+  font-size: 1.602em;
+}
+
+.font_size_6 {
+  font-size: 1.802em;
+}
+
+.list__main {
+  font-family: 'PT Sans', sans-serif;
+  margin: 0 0 1em 0;
+  text-align: justify;
+}
+
+.text__main {
+  font-family: 'PT Sans', sans-serif;
+  margin: 0 0 1em 0;
+  text-align: justify;
+}
+
+@media (min-width: 800px) {
+  
+  /* Fluid root font size for medium screens and up */
+  html {
+    font-size: 2vw;
+  }
+
+  /* Font Ratio 1.250 (Major Third) for larger screens */
+  .font_size_2 {
+    font-size: 1.25em;
+  }
+
+  .font_size_3 {
+    font-size: 1.563em;
+  }
+
+  .font_size_4 {
+    font-size: 1.953em;
+  }
+
+  .font_size_5 {
+    font-size: 2.441em;
+  }
+
+  .font_size_6 {
+    font-size: 3.052em;
+  }
+
+}
+
+.link,
+.link:active,
+.link:focus,
+.link:hover,
+.link:link,
+.link:visited {
+  text-decoration: none;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+
+.link_theme_black,
+.link_theme_black:link,
+.link_theme_black:visited {
+  border-bottom: 1.5px solid #3c6221;
+  color: #3c6221;
+}
+
+.link_theme_black:active,
+.link_theme_black:focus,
+.link_theme_black:hover {
+  border-bottom: 1.5px solid #000;
+  color: #000;
+}
+
+/* Max Root Font Size */
+@media (min-width: 1140px) {
+  html {
+    font-size: 22.8px;
+  }
+}
