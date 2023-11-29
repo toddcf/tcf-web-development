@@ -38,6 +38,11 @@
   z-index: -100;
 }
 
+.professional-section__solid-white-bg {
+  background: #fff;
+  padding-bottom: 100px;
+}
+
 @media (max-width: 575.98px) {
 
   .card-small__backboard_author-site {
@@ -184,19 +189,11 @@
     background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
   }
 
-}
-
-@media (min-width: 768px) {
-
   .card-small__backboard_my-portfolio {
     background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
     background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
   }
-
-}
-
-@media (min-width: 768px) {
 
   .card-small__backboard_omnifood {
     background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
@@ -204,11 +201,33 @@
     background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
   }
 
-}
+  .card-widescreen__img_md_acura-of-tempe {
+    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_acura-of-tempe/992x391-min.jpg);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_acura-of-tempe/992x391-min.jpg);
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_acura-of-tempe/992x391-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-.professional-section__solid-white-bg {
-  background: #fff;
-  padding-bottom: 100px;
+  .card-widescreen__img_md_bmw-el-cajon {
+    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/992x391-min.jpg);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/992x391-min.jpg);
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/992x391-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .card-widescreen__img_md_honda-new-rochelle {
+    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/992x391-min.jpg);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/992x391-min.jpg);
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/992x391-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -270,45 +289,6 @@
 
   .card-widescreen__img_lg_honda-new-rochelle {
     background: url(../img/card-widescreen/__img/_lg/_honda-new-rochelle/1440x567-min.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-
-  .card-widescreen__img_md_acura-of-tempe {
-    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_acura-of-tempe/992x391-min.jpg);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_acura-of-tempe/992x391-min.jpg);
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_acura-of-tempe/992x391-min.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-
-  .card-widescreen__img_md_bmw-el-cajon {
-    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/992x391-min.jpg);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/992x391-min.jpg);
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/992x391-min.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-
-  .card-widescreen__img_md_honda-new-rochelle {
-    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/992x391-min.jpg);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/992x391-min.jpg);
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/992x391-min.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
