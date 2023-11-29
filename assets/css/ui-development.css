@@ -189,58 +189,6 @@
 
 }
 
-.card-widescreen:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen {
-    border-radius: 5px;
-    -webkit-box-shadow: 20px 20px 20px 1px rgba(0, 0, 0, 0.3);
-            box-shadow: 20px 20px 20px 1px rgba(0, 0, 0, 0.3);
-    margin: 0 auto 100px auto;
-    padding-bottom: 0;
-    width: 95%;
-  }
-
-}
-
-@media (min-width: 576px) {
-
-  .card-widescreen {
-    padding-bottom: 25px;
-  }
-
-}
-
-@media (min-width: 768px) {
-
-  .card-widescreen {
-    padding-bottom: 50px;
-  }
-
-}
-
-@media (min-width: 992px) {
-
-  .card-widescreen {
-    padding-bottom: 100px;
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen__backboard {
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 5px;
-  }
-
-}
-
 @media (max-width: 575.98px) {
 
   .card-widescreen__backboard_acura-of-tempe {
@@ -269,104 +217,6 @@
     background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_honda-new-rochelle/576x630-blur12px-min.jpg);
   }
 
-}
-
-.card-widescreen__button-trio {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 1rem 0;
-}
-
-@media (min-width: 992px) {
-
-  .card-widescreen__button-trio {
-    padding: 0;
-  }
-
-}
-
-.card-widescreen__button-trio_btn-1 {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -ms-flex: 0 0 100%;
-  -webkit-box-flex: 0;
-          flex: 0 0 100%;
-  margin-bottom: 2em;
-  max-width: 100%;
-  min-height: 1px;
-  position: relative;
-  width: 100%;
-}
-
-@media (min-width: 576px) {
-
-  .card-widescreen__button-trio_btn-1 {
-    -ms-flex: 0 0 50%;
-    -webkit-box-flex: 0;
-            flex: 0 0 50%;
-    margin-bottom: 15px;
-    max-width: 50%;
-    padding-right: 7.5px;
-  }
-
-}
-
-.card-widescreen__button-trio_btn-2 {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -ms-flex: 0 0 100%;
-  -webkit-box-flex: 0;
-          flex: 0 0 100%;
-  margin-bottom: 15px;
-  max-width: 100%;
-  min-height: 1px;
-  position: relative;
-  width: 100%;
-}
-
-@media (min-width: 576px) {
-
-  .card-widescreen__button-trio_btn-2 {
-    -ms-flex: 0 0 50%;
-    -webkit-box-flex: 0;
-            flex: 0 0 50%;
-    max-width: 50%;
-    padding-left: 7.5px;
-  }
-
-}
-
-.card-widescreen__button-trio_btn-3 {
-  -ms-flex: 0 0 100%;
-  -webkit-box-flex: 0;
-          flex: 0 0 100%;
-  max-width: 100%;
-  min-height: 1px;
-  position: relative;
-  width: 100%;
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen__content {
-    margin: 0 auto;
-    width: 90%;
-  }
-
-}
-
-@media (min-width: 992px) {
-
-  .card-widescreen__img_lg {
-    height: 0;
-    padding-bottom: 39%;
-    position: relative;
-    width: 100%;
-  }
-  
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -431,16 +281,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
-}
-
-@media (min-width: 576px) and (max-width: 991.98px) {
-
-  .card-widescreen__img_md {
-    height: 0;
-    padding-bottom: 39%;
-    width: 100%;
   }
 
 }
@@ -525,20 +365,6 @@
 
 @media (max-width: 575.98px) {
 
-  .card-widescreen__img_sm {
-    -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .3);
-            box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .3);
-    height: 0;
-    padding-bottom: 39%;
-    position: absolute;
-    top: -20px;
-    width: 100%;
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
   .card-widescreen__img_sm_acura-of-tempe {
     background: url(../img/card-widescreen/__img/_sm/_acura-of-tempe/576x227-min.jpg);
     background-position: center;
@@ -566,117 +392,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen__img-riser {
-    height: 0;
-    margin: 0 auto .5em auto;
-    padding-bottom: 39%;
-    position: relative;
-  }
-
-}
-
-.card-widescreen__info-module {
-  padding: 1em 0 0 0;
-}
-
-@media (min-width: 576px) {
-
-  .card-widescreen__info-module {
-    background: #fff;
-    border: none;
-    color: #000;
-    margin: -3.5% auto 0 auto;
-    padding: .75rem 1rem;
-    width: 85%;
-  }
-
-}
-
-@media (min-width: 992px) {
-
-  .card-widescreen__info-module {
-    bottom: 0;
-    margin-bottom: 0;
-    padding-bottom: .5em;
-    position: absolute;
-    width: 34%;
-  }
-  
-}
-
-@media (min-width: 992px) {
-
-  .card-widescreen__info-module_left {
-    left: 3%;
-  }
-  
-}
-
-@media (min-width: 992px) {
-
-  .card-widescreen__info-module_right {
-    right: 3%;
-  }
-  
-}
-
-.card-widescreen__info-module_text {
-  color: #fff;
-  font-family: 'PT Sans', sans-serif;
-  -webkit-margin-after: 1em;
-          margin-block-end: 1em;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-end: 0;
-          margin-inline-end: 0;
-  -webkit-margin-start: 0;
-          margin-inline-start: 0;
-}
-
-@media (min-width: 576px) {
-
-  .card-widescreen__info-module_text {
-    color: #000;
-  }
-
-}
-
-.card-widescreen__title {
-  color: #fff;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  margin: 0 0 16px 0;
-  text-align: center;
-}
-
-@media (min-width: 576px) {
-
-  .card-widescreen__title {
-    color: #808080;
-    margin: 0;
-  }
-
-}
-
-@media (min-width: 576px) {
-
-  .card-widescreen__title-box {
-    background: #fff;
-    color: #000;
-    margin: 0 auto -2.25% auto;
-    padding: .25em 1em;
-    position: relative;
-    width: 85%; /* Fallback */
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    z-index: 2;
   }
 
 }
