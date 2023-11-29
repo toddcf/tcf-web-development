@@ -239,42 +239,12 @@
     background-size: cover;
   }
 
-}
-
-@media (min-width: 1200px) {
-
-  .card-widescreen__img_lg_acura-of-tempe {
-    background: url(../img/card-widescreen/__img/_lg/_acura-of-tempe/1440x567-min.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-
   .card-widescreen__img_lg_bmw-el-cajon {
     background: url(../img/card-widescreen/__img/_lg/_bmw-el-cajon/1268x499-min.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-
-}
-
-@media (min-width: 1200px) {
-
-  .card-widescreen__img_lg_bmw-el-cajon {
-    background: url(../img/card-widescreen/__img/_lg/_bmw-el-cajon/1440x567-min.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
 
   .card-widescreen__img_lg_honda-new-rochelle {
     background: url(../img/card-widescreen/__img/_lg/_honda-new-rochelle/1268x499-min.jpg);
@@ -286,6 +256,20 @@
 }
 
 @media (min-width: 1200px) {
+
+  .card-widescreen__img_lg_acura-of-tempe {
+    background: url(../img/card-widescreen/__img/_lg/_acura-of-tempe/1440x567-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .card-widescreen__img_lg_bmw-el-cajon {
+    background: url(../img/card-widescreen/__img/_lg/_bmw-el-cajon/1440x567-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   .card-widescreen__img_lg_honda-new-rochelle {
     background: url(../img/card-widescreen/__img/_lg/_honda-new-rochelle/1440x567-min.jpg);
