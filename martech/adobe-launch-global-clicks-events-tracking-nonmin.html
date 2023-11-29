@@ -108,9 +108,6 @@
               <li class="content__block_li">
                 <p class="text__main font_size_body">eVar1: Custom Link Value (describes which element was clicked)</p>
               </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">prop1: Custom Link Value (same value as eVar1)</p>
-              </li>
             </ul>
 
           </div> <!-- Close .content__block -->
@@ -129,7 +126,7 @@
 
           <div class="content__block">
 
-            <p class="text__main font_size_body">The Custom Link Value that gets passed into eVar1 and prop1 is typically a concatenation of two data attributes, which I put into each element we want to track clicks on:</p>
+            <p class="text__main font_size_body">The Custom Link Value that gets passed into eVar1 is typically a concatenation of two data attributes, which I put into each element we want to track clicks on:</p>
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
@@ -140,7 +137,7 @@
               </li>
             </ul>
 
-            <p class="text__main font_size_body">These two values get concatenated, colon-delimited, and assigned to eVar1 and prop1. For example, if my site had a &ldquo;Careers&rdquo; card containing a &ldquo;Learn More&rdquo; button, that button would contain:</p>
+            <p class="text__main font_size_body">These two values get concatenated, colon-delimited, and assigned to eVar1. For example, if my site had a &ldquo;Careers&rdquo; card containing a &ldquo;Learn More&rdquo; button, that button would contain:</p>
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
@@ -151,7 +148,7 @@
               </li>
             </ul>
 
-            <p class="text__main font_size_body">(We standardize these values to lowercase kebab-case.) The resulting value passed in eVar1 and prop1 would be <code class="code__snippet">careers:learn-more</code>.</p>
+            <p class="text__main font_size_body">(We standardize these values to lowercase kebab-case.) The resulting value passed in eVar1 would be <code class="code__snippet">careers:learn-more</code>.</p>
 
           </div> <!-- Close .content__block -->
 
@@ -171,7 +168,7 @@
 
             <p class="text__main font_size_body">Sometimes it gets more complex than this. Maybe there is an FAQ page containing a list of questions. Each question is an accordion that can be opened or closed by clicking on it, and our analysts want to know which is occurring.</p>
 
-            <p class="text__main font_size_body">In this case, I would append a value of &lsquo;open&rsquo; or &lsquo;close&rsquo; to eVar1 and prop1:</p>
+            <p class="text__main font_size_body">In this case, I would append a value of &lsquo;open&rsquo; or &lsquo;close&rsquo; to eVar1:</p>
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
@@ -504,8 +501,8 @@ const cappedLinkValues = customLinkValues.map(customLinkValue => {
 // Then join the capped link values with colons:
 const customLinkValuesConcat = cappedLinkValues.join(':');
 
-s.eVar1 = s.prop1 = customLinkValuesConcat;
-s.linkTrackVars = s.apl(s.linkTrackVars, 'eVar1,prop1,events', ',');
+s.eVar1 = customLinkValuesConcat;
+s.linkTrackVars = s.apl(s.linkTrackVars, 'eVar1,events', ',');
 s.linkTrackEvents = s.events;</code></pre>
 
         </div> <!-- Close .content__center content__center_1140 -->
@@ -597,7 +594,7 @@ s.linkTrackEvents = s.events;</code></pre>
                 <p class="text__main font_size_body">Lines 142 - 147: Finally, the <code class="code__snippet">clickAttributes</code> object contains all the key/value pairs it&rsquo;s going to get. The properties that will ultimately be passed to Adobe Analytics start with <code class="code__snippet">data-track</code>. Those are the only ones I need to convert to lowercase kebab-case. (And I do need to do this in case some of these values were indeed pulled from fallbacks such as link text, alt tags, aria-labels, etc. They could include special characters, spaces, capital letters, and more.)</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 149 - 169: Now that all of the tracking values have been standardized to lowercase kebab-case, it is time to stage them in the order that they will be concatenated and passed to Adobe Analytics in eVar1 and prop1. This is done by simply pushing them into an array in the desired order:</p>
+                <p class="text__main font_size_body">Lines 149 - 169: Now that all of the tracking values have been standardized to lowercase kebab-case, it is time to stage them in the order that they will be concatenated and passed to Adobe Analytics in eVar1. This is done by simply pushing them into an array in the desired order:</p>
                 <ul class="list__main font_size_body">
                   <li class="content__block_li">
                     <p class="text__main font_size_body">Lines 149 - 157: That means I stage all the <code class="code__snippet">data-track-component-level-1</code>, <code class="code__snippet">2</code>, <code class="code__snippet">3</code>, etc. values first, and in numerical order. But I have no way of knowing how many there will be, or if there will even be any at all. (This use case will only apply if there are AEM components on the page. See my article on <a class="link link_theme_black" href="adobe-launch-nested-aem-component-click-tracking">Adobe Launch Nested AEM Component Click Tracking</a> for full details.) Therefore, I use a <code class="code__name">do while</code> loop.</p>
