@@ -143,137 +143,16 @@
 
 }
 
-.body_homepage {
+/* .body_homepage {
   margin: 0;
   padding: 0;
-}
+} */
 
-.body__project-container {
-  overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
-  position: relative;
+/* .body__project-container {
+  overflow: hidden; */ /* Prevents the header video from going wider than the rest of the project */
+  /* position: relative;
   width: 100%;
-}
-
-.header {
-  min-height: 100vh;
-  position: relative;
-}
-
-.header__text-overlay {
-  height: auto;
-  left: 50%;
-  margin: 0 auto;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-  width: 100%;
-}
-
-.header__text-overlay_h1 {
-  font-size: 1em; /* Overrides H1 default size */
-}
-
-.header__text-overlay_h1_main-name {
-  -webkit-animation-duration: 8000ms;
-          animation-duration: 8000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: fadeInDown;
-          animation-name: fadeInDown;
-  color: #fff;
-  display: block;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  letter-spacing: .5em;
-  margin-bottom: .5em;
-  text-align: center;
-  text-shadow: .3em .3em .15em rgba(0, 0, 0, 0.9);
-  z-index: 10;
-}
-
-@media (min-width: 800px) {
-  .header__text-overlay_h1_main-name {
-    letter-spacing: .25em;
-    text-shadow: .2em .2em .1em rgba(0, 0, 0, 0.5);
-  }
-}
-
-.header__text-overlay_h1_main-subheading {
-  -webkit-animation-duration: 8000ms;
-          animation-duration: 8000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  color: #fff;
-  display: block;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  letter-spacing: .5em;
-  text-align: center;
-  text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.9);
-  z-index: 10;
-}
-
-@media (min-width: 800px) {
-  .header__text-overlay_h1_main-subheading {
-    letter-spacing: .25em;
-    text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.7);
-  }
-}
-
-.header__text-overlay_h1_main-subheading_divider {
-  -webkit-animation-duration: 8000ms;
-          animation-duration: 8000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  color: #fff;
-  display: block;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  letter-spacing: .25em;
-  text-align: center;
-  text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.9);
-  z-index: 10;
-}
-
-@media (min-width: 800px) {
-  .header__text-overlay_h1_main-subheading_divider {
-    text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.7);
-  }
-}
-
-/* Background image fallback in case video doesn't load */
-.header__video-background {
-  background-attachment: fixed;
-  background-image: url(../img/header/__video-background/tropical-1920x1080-min.jpg);
-  background-position: bottom right;
-  background-size: cover;
-  bottom: 0;
-  height: auto;
-  min-height: 100vh;
-  min-width: 100%; 
-  position: fixed;
-  right: 0; 
-  width: auto;
-  z-index: -100;
-}
-
-.header__video-background_video {
-  bottom: 0;
-  height: auto;
-  min-height: 100vh;
-  min-width: 100%; 
-  position: fixed;
-  right: 0; 
-  width: auto;
-  z-index: -100;
-}
+} */
 
 .portfolio__heading {
   background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .5) 100%);
