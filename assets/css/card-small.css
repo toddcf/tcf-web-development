@@ -15,54 +15,6 @@
   width: 100%;
 }
 
-@media (max-width: 575.98px) {
-
-  .card-small__img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-}
-
-@media (min-width: 576px) {
-
-  .card-small {
-    -ms-flex: 0 0 50%;
-    -webkit-box-flex: 0;
-            flex: 0 0 50%;
-    max-width: 50%;
-  }
-
-  .card-small__img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-  .card-small__img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-}
-
-@media (min-width: 768px) {
-
-  .card-small {
-    -ms-flex: 0 0 33.333333%;
-    -webkit-box-flex: 0;
-            flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-  }
-  
-}
-
 .card-small__backboard {
   background-position: left center;
   background-repeat: no-repeat;
@@ -76,7 +28,6 @@
 }
 
 /* THE FOLLOWING #1, #2, AND #3 MAY BE ABLE TO BE CONSOLIDATED SOMEWHAT */
-/* #1 was my-portfolio */
 .card-small__backboard_1_effects {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
@@ -127,7 +78,6 @@
 
 }
 
-/* #2 was omnifood */
 .card-small__backboard_2_effects {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
@@ -178,16 +128,6 @@
 
 }
 
-@media (min-width: 576px) {
-
-  .card-small__backboard_2_effects {
-    -webkit-animation-delay: 150ms;
-            animation-delay: 150ms;
-  }
-
-}
-
-/* Card #3 was author-site */
 .card-small__backboard_3 {
   opacity: 0; /* Invisible before the animation is triggered */
 }
@@ -234,15 +174,6 @@
     opacity: 1;
     -webkit-transform: none;
             transform: none;
-  }
-
-}
-
-@media (min-width: 768px) {
-
-  .card-small__backboard_3_effects {
-    -webkit-animation-delay: 300ms;
-            animation-delay: 300ms;
   }
 
 }
@@ -300,14 +231,6 @@
   text-align: center;
 }
 
-@media (min-width: 992px) {
-
-  .card-small__title {
-    font-weight: 400;
-  }
-  
-}
-
 .flexbox_layout_card-small {
   -ms-flex-line-pack: center;
       align-content: center;
@@ -329,8 +252,44 @@
 
 @media (min-width: 576px) {
 
+  .card-small {
+    -ms-flex: 0 0 50%;
+    -webkit-box-flex: 0;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .card-small__backboard_2_effects {
+    -webkit-animation-delay: 150ms;
+            animation-delay: 150ms;
+  }
+
   .flexbox_layout_card-small {
     padding: 100px 0 0 0;
   }
 
+}
+
+@media (min-width: 768px) {
+
+  .card-small {
+    -ms-flex: 0 0 33.333333%;
+    -webkit-box-flex: 0;
+            flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .card-small__backboard_3_effects {
+    -webkit-animation-delay: 300ms;
+            animation-delay: 300ms;
+  }
+  
+}
+
+@media (min-width: 992px) {
+
+  .card-small__title {
+    font-weight: 400;
+  }
+  
 }
