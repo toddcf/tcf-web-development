@@ -15,6 +15,16 @@
   width: 100%;
 }
 
+@media (max-width: 575.98px) {
+
+  .card-small__img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+}
+
 @media (min-width: 576px) {
 
   .card-small {
@@ -22,6 +32,22 @@
     -webkit-box-flex: 0;
             flex: 0 0 50%;
     max-width: 50%;
+  }
+
+  .card-small__img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+  .card-small__img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
 }

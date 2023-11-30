@@ -63,12 +63,6 @@
     background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
   }
 
-  .card-small__img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
   .card-small__img_author-site {
     background-image: url(../img/card-small/__img/_author-site/576x227-min.jpg);
   }
@@ -97,12 +91,6 @@
     background-image: -o-linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_honda-new-rochelle/576x630-blur12px-min.jpg);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../img/card-widescreen/__backboard/_honda-new-rochelle/576x630-blur12px-min.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_honda-new-rochelle/576x630-blur12px-min.jpg);
-  }
-
-  .card-widescreen__img_sm {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   .card-widescreen__img_sm_acura-of-tempe {
@@ -139,12 +127,6 @@
     background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
   }
 
-  .card-small__img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
   .card-small__img_author-site {
     background-image: url(../img/card-small/__img/_author-site/768x302-min.jpg);
   }
@@ -159,12 +141,6 @@
 
   .professional-section__solid-white-bg {
     padding-bottom: 0;
-  }
-
-  .card-widescreen__img_md {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   .card-widescreen__img_md_acura-of-tempe {
@@ -207,12 +183,6 @@
     background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
   }
 
-  .card-small__img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
   .card-small__img_author-site {
     background-image: url(../img/card-small/__img/_author-site/768x302-min.jpg);
   }
@@ -223,12 +193,6 @@
 
   .card-small__img_omnifood {
     background-image: url(../img/card-small/__img/_omnifood/768x302-min.jpg);
-  }
-
-  .card-widescreen__img_md {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   .card-widescreen__img_md_acura-of-tempe {
@@ -253,12 +217,6 @@
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
-  .card-widescreen__img_lg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
   .card-widescreen__img_lg_acura-of-tempe {
     background: url(../img/card-widescreen/__img/_lg/_acura-of-tempe/1268x499-min.jpg);
   }
@@ -274,12 +232,6 @@
 }
 
 @media (min-width: 1200px) {
-
-  .card-widescreen__img_lg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
   
   .card-widescreen__img_lg_acura-of-tempe {
     background: url(../img/card-widescreen/__img/_lg/_acura-of-tempe/1440x567-min.jpg);
