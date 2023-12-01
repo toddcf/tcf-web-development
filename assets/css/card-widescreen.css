@@ -5,10 +5,6 @@
 * Browsers: last 4 version
 */
 
-/* .card-widescreen:last-child {
-  margin-bottom: 0;
-} */
-
 .card-widescreen__button-trio {
   display: -ms-flexbox;
   display: -webkit-box;
