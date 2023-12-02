@@ -105,6 +105,10 @@
     background-image: url(../img/card-widescreen/__img/_sm/_honda-new-rochelle/576x227-min.jpg);
   }
 
+  .professional-section__solid-white-bg {
+    padding-top: 75px;
+  };
+
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
