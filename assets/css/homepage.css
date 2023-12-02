@@ -56,11 +56,6 @@
   word-spacing: 0.16em;
 }
 
-.leadIn {
-  color: #fff;
-  display: block;
-}
-
 .name {
   color: #fff;
   display: block;
@@ -126,12 +121,6 @@
 
 
 
-/* MOSTLY DEPRECATED */
-.body_homepage {
-  margin: 0;
-  padding: 0;
-}
-
 .body__project-container {
   overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
   position: relative;
@@ -172,6 +161,7 @@
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   letter-spacing: .5em;
+  line-height: 1em; /* Carried over from author site */
   margin-bottom: .5em;
   text-align: center;
   text-shadow: .3em .3em .15em rgba(0, 0, 0, 0.9);
