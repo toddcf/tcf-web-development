@@ -47,25 +47,6 @@
   text-decoration: none;
 }
 
-.copyright {
-  color: #faebd7;
-  font-family: 'Rajdhani', 'Arial', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-	line-height: 1.5em;
-	margin: 0;
-  padding: 1em 15px;
-  text-align: center;
-  word-spacing: 0.16em;
-}
-
-.footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
 .h1 {
   font-family: 'Rajdhani', 'Arial', sans-serif;
   font-weight: 400;
@@ -73,16 +54,6 @@
   line-height: 1.5em;
 	text-align: center;
   word-spacing: 0.16em;
-}
-
-.html {
-  background-attachment: fixed;
-  background-image: url("../images/cannon-beach-haystack-rock.jpg");
-  background-position: top right;
-  background-size: cover; /*Shows entire image*/
-  border-radius: border-box;
-  height: 100vh;
-  min-width: fit-content;
 }
 
 .leadIn {
