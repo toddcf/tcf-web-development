@@ -353,15 +353,7 @@
 
 .professional-section__solid-white-bg {
   background: #fff;
-  padding-bottom: 100px;
-}
-
-@media (min-width: 576px) {
-
-  .professional-section__solid-white-bg {
-    padding-bottom: 0;
-  }
-
+  padding-bottom: 1px; /* Allows the white background to extend to the height of the card's margin-bottom. */
 }
 
 @media (max-width: 575.98px) {
