@@ -73,6 +73,7 @@
 }
 
 /* ANIMATIONS */
+/* Probably move this to the animation.css file, and differentiate its naming conventions. */
 .animated {
   -webkit-animation-duration: 6000ms;
           animation-duration: 6000ms;
@@ -82,21 +83,21 @@
 
 @-webkit-keyframes expanding {
   from {
-    opacity: normal;
+    letter-spacing: 0.125em;
   }
 
   to {
-    letter-spacing: 0.125em;
+    letter-spacing: 0.3em;
   }
 }
 
 @keyframes expanding {
   from {
-    opacity: normal;
+    letter-spacing: 0.125em;
   }
 
   to {
-    letter-spacing: 0.125em;
+    letter-spacing: 0.3em;
   }
 }
 
@@ -118,8 +119,6 @@
     padding: 0.5em 1em;
   }
 }
-
-
 
 .body__project-container {
   overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
@@ -145,22 +144,15 @@
   width: 100%;
 }
 
-.header__text-overlay_h1 {
-  font-size: 1em; /* Overrides H1 default size */
-}
+/* .header__text-overlay_h1 { */
+  /* font-size: 1em; */ /* Overrides H1 default size -- ALTHOUGH MAYBE WE DON'T WANT TO DO THIS ANYMORE */
+/* } */
 
 .header__text-overlay_h1_main-name {
-  -webkit-animation-duration: 8000ms;
-          animation-duration: 8000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: fadeInDown;
-          animation-name: fadeInDown;
   color: #fff;
   display: block;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  letter-spacing: .5em;
   line-height: 1em; /* Carried over from author site */
   margin-bottom: .5em;
   text-align: center;
@@ -176,12 +168,6 @@
 }
 
 .header__text-overlay_h1_main-subheading {
-  -webkit-animation-duration: 8000ms;
-          animation-duration: 8000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
   color: #fff;
   display: block;
   font-family: 'Lato', sans-serif;
@@ -195,29 +181,6 @@
 @media (min-width: 800px) {
   .header__text-overlay_h1_main-subheading {
     letter-spacing: .25em;
-    text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.7);
-  }
-}
-
-.header__text-overlay_h1_main-subheading_divider {
-  -webkit-animation-duration: 8000ms;
-          animation-duration: 8000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  color: #fff;
-  display: block;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  letter-spacing: .25em;
-  text-align: center;
-  text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.9);
-  z-index: 10;
-}
-
-@media (min-width: 800px) {
-  .header__text-overlay_h1_main-subheading_divider {
     text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.7);
   }
 }
