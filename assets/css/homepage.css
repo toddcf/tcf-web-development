@@ -84,20 +84,24 @@
 @-webkit-keyframes expanding {
   from {
     letter-spacing: 0.125em;
+    word-spacing: 0.16em;
   }
 
   to {
-    letter-spacing: 0.3em;
+    letter-spacing: 0.35em;
+    word-spacing: 0.25em;
   }
 }
 
 @keyframes expanding {
   from {
     letter-spacing: 0.125em;
+    word-spacing: 0.16em;
   }
 
   to {
-    letter-spacing: 0.3em;
+    letter-spacing: 0.35em;
+    word-spacing: 0.25em;
   }
 }
 
