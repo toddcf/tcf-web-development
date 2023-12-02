@@ -40,7 +40,7 @@
 
 .professional-section__solid-white-bg {
   background: #fff;
-  padding-bottom: 100px;
+  padding-bottom: 1px; /* Allows the white background to extend to the height of the card's margin-bottom. */
 }
 
 @media (max-width: 575.98px) {
@@ -137,10 +137,6 @@
 
   .card-small__img_omnifood {
     background-image: url(../img/card-small/__img/_omnifood/768x302-min.jpg);
-  }
-
-  .professional-section__solid-white-bg {
-    padding-bottom: 0;
   }
 
   .card-widescreen__img_md_acura-of-tempe {
