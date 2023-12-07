@@ -39,7 +39,7 @@
   border-radius: 5px;
   color: #000;
   font-weight: 700;
-  border: 2px solid #fff;
+  border: 3px solid #000;
   box-shadow: .6em .6em .25em rgba(0, 0, 0, 0.2);
   -webkit-transition: 250ms ease-in-out;
   -o-transition: 250ms ease-in-out;
@@ -49,6 +49,7 @@
 .button_theme_black-white:hover,
 .button_theme_black-white:active {
   background-color: #000;
+  border: 3px solid #fff;
   color: #fff;
 }
 
