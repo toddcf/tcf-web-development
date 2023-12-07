@@ -35,23 +35,19 @@
 }
 
 .button_theme_black-white {
-  background-image: linear-gradient(to bottom, #fff 0, #fff 25%, #cecece 50%, #000 75%);
-  /* background-image: -o-linear-gradient(top, #cecece 0, #fff 10%, #fff 50%, #d8d8d8 100%);
-  background-image: -o-linear-gradient(top, #9f9f9f 0, #5a5a5a 50%, #292929 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #9f9f9f), color-stop(50%, #5a5a5a), to(#292929));
-  background-image: linear-gradient(to bottom, #9f9f9f 0, #5a5a5a 50%, #292929 100%); */
-  background-position: left top;
-  background-size: 100% 200%;
+  background-color: #fff;
   border-radius: 5px;
   color: #000;
-  -webkit-transition: 300ms ease-in-out;
-  -o-transition: 300ms ease-in-out;
-  transition: 300ms ease-in-out;
+  font-weight: 700;
+  -webkit-transition: 250ms ease-in-out;
+  -o-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
 }
 
 .button_theme_black-white:hover,
 .button_theme_black-white:active {
-  background-position: left bottom;
+  background-color: #000;
+  color: #fff;
 }
 
 .button_theme_primary {
