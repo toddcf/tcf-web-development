@@ -132,20 +132,11 @@
 
 .header {
   min-height: 100vh;
-  position: relative;
 }
 
 .header__text-overlay {
-  height: auto;
-  left: 50%;
-  margin: 0 auto;
-  position: absolute;
+  margin: 0 auto 3rem auto;
   text-align: center;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-  width: 100%;
 }
 
 /* .header__text-overlay_h1 { */
