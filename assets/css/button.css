@@ -34,22 +34,23 @@
   cursor: pointer;
 }
 
-.button_theme_black-white {
-  background-color: #fff;
+.button_theme_tropical-sand {
+  background-image: linear-gradient(to bottom, #fff 0, #efe2dd 10%, #bfb4b0 40%, #a79e9a 50%, #8f8784 60%, #5f5a58 90%, #474342 100%); /* Calculated from shades of #efe2dd */
+  background-position: left top;
+  background-size: 100% 200%;
   border-radius: 5px;
+  box-shadow: .6em .6em .27em rgba(0, 0, 0, 0.2);
   color: #000;
-  font-weight: 700;
-  border: 3px solid #000;
-  box-shadow: .6em .6em .25em rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  text-transform: uppercase;
   -webkit-transition: 250ms ease-in-out;
   -o-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
 }
 
-.button_theme_black-white:hover,
-.button_theme_black-white:active {
-  background-color: #000;
-  border: 3px solid #fff;
+.button_theme_tropical-sand:hover,
+.button_theme_tropical-sand:active {
+  background-position: left bottom;
   color: #fff;
 }
 
