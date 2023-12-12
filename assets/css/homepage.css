@@ -9,69 +9,6 @@
 
 @charset "UTF-8";
 
-.banner {
-  background: rgba(0, 0, 0, 0.6);
-  margin: 0 0 5em 0;
-  padding: 1em 0;
-  text-align: center;
-}
-
-.body {
-  margin: 0;
-}
-
-.btn {
-  background: rgba(0, 0, 0, 0.5);
-  border: 0.125em solid #fff !important; /* Must be marked !important or the bottom border will be removed by the <a> style. */
-  color: #fff;
-  font-family: 'Rajdhani', 'Arial', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-	line-height: 1.5em;
-	padding: 0.75em 1em; /* Must be marked !important or the bottom padding will be reduced to 1px by the <a> style. */
-  text-transform: uppercase;
-  transition: 150ms;
-  word-spacing: 0.16em;
-}
-
-.btn:focus,
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-}
-
-.btn:hover,
-.btn:active {
-  color: #FFD700;
-  border-color: #FFD700 !important; /* Must be marked !important or the border won't change. */
-  text-decoration: none;
-}
-
-.h1 {
-  font-family: 'Rajdhani', 'Arial', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.125em;
-  line-height: 1.5em;
-	text-align: center;
-  word-spacing: 0.16em;
-}
-
-.name {
-  color: #fff;
-  display: block;
-  line-height: 1em;
-  width: 100%;
-}
-
-.nav {
-  align-content: center;
-  align-items: center;
-  gap: 2.5em;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-}
-
 /* ANIMATIONS */
 /* Probably move this to the animation.css file, and differentiate its naming conventions. */
 .animated {
@@ -111,18 +48,7 @@
 }
 
 
-/* MEDIA QUERIES */
-@media (min-width: 576px) {
-  .banner {
-    margin-top: 20vh;
-  }
-}
 
-@media (min-width: 800px) {
-  .btn {
-    padding: 0.5em 1em;
-  }
-}
 
 .body__project-container {
   overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
@@ -138,10 +64,6 @@
   margin: 0 auto 3rem auto;
   text-align: center;
 }
-
-/* .header__text-overlay_h1 { */
-  /* font-size: 1em; */ /* Overrides H1 default size -- ALTHOUGH MAYBE WE DON'T WANT TO DO THIS ANYMORE */
-/* } */
 
 .header__text-overlay_h1_main-name {
   color: #fff;
