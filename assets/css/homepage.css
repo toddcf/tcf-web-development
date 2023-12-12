@@ -5,51 +5,6 @@
 * Browsers: last 4 version
 */
 
-/* FROM AUTHOR SITE */
-
-@charset "UTF-8";
-
-/* ANIMATIONS */
-/* Probably move this to the animation.css file, and differentiate its naming conventions. */
-.animated {
-  -webkit-animation-duration: 6000ms;
-          animation-duration: 6000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-}
-
-@-webkit-keyframes expanding {
-  from {
-    letter-spacing: 0.125em;
-    word-spacing: 0.16em;
-  }
-
-  to {
-    letter-spacing: 0.35em;
-    word-spacing: 0.25em;
-  }
-}
-
-@keyframes expanding {
-  from {
-    letter-spacing: 0.125em;
-    word-spacing: 0.16em;
-  }
-
-  to {
-    letter-spacing: 0.35em;
-    word-spacing: 0.25em;
-  }
-}
-
-.expanding {
-  -webkit-animation-name: expanding;
-          animation-name: expanding;
-}
-
-
-
-
 .body__project-container {
   overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
   position: relative;
