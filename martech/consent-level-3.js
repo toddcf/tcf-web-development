@@ -1,6 +1,6 @@
 let consentLevel3 = false; // Default.
 if (
-  _satellite.getVar('consent level 2 | performance') === true &&
+  _satellite.getVar('consent level 2 | analytics') === true &&
   window.dataLayer?.user?.consent?.C0003 === true
 ) {
   consentLevel3 = true;
