@@ -1,7 +1,7 @@
 let consentLevel4 = false; // Default.
 if (
   _satellite.getVar('consent level 2 | performance') === true &&
-  window.digitalData.user.consent.C0004 === true &&
+  window.digitalData?.user?.consent?.C0004 === true &&
   _satellite.getVar('consent | sharing allowed') === true &&
   !_satellite.getVar('consent | global privacy control')
 ) {
