@@ -1,5 +1,5 @@
 let consentLevel2 = false;
-if (window.digitalData?.user?.consent?.C0002 === true) {
+if (window.dataLayer?.user?.consent?.C0002 === true) {
   consentLevel2 = true;
 }
 return consentLevel2;
