@@ -1,1 +1,1 @@
-return !!navigator.globalPrivacyControl;
+return Navigator.globalPrivacyControl;
