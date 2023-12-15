@@ -95,27 +95,27 @@
 
           <div class="content__block">
           
-            <p class="text__main font_size_body">When the company I was working for introduced a new global header and footer that existed in the shadow DOM, I faced a new challenge:</p>
-            <p class="text__main font_size_body">It turned out that Adobe Launch did not automatically detect clicks inside of shadow DOMs. We already had a global rule in Launch to track clicks and events. (Called <code class="code__name">Global | Set Variables | Clicks or Events #25</code> &mdash; see my article on <a class="link link_theme_black" href="adobe-launch-global-clicks-events-tracking">Adobe Launch Global Clicks or Events Tracking</a> for details on how it works.)</p>
-            <p class="text__main font_size_body">But it wasn&rsquo;t getting triggered. Therefore, I had to come up with a custom code workaround to detect shadow DOM clicks manually.</p>
-            <p class="text__main font_size_body">The overall architecture I came up with is:</p>
+            <p class="text__main font_size_body">It is ethical &mdash; and in many places, the law &mdash; to obtain consent from users when tracking their behavior on your website. And there can be different levels of consent.</p>
+            <p class="text__main font_size_body">For example:</p>
 
             <ol class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">When the page loads, I crawl it and collect any shadow DOMs that exist.</p>
+                <p class="text__main font_size_body">Strictly Necessary</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">For each shadow DOM that is found, I attach a &lsquo;click&rsquo; event listener to its shadowRoot.</p>
+                <p class="text__main font_size_body">Analytics</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">If a click is detected by this event listener, my code determines what the clicked element was and standardizes it to the type of object that the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule (for regular DOM clicks) expects.</p>
+                <p class="text__main font_size_body">Personalization</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Then I manually trigger the <code class="code__name">Global | Set Variables | Clicks or Events #25</code> rule, and send it the standardized object that was created by my custom code.</p>
+                <p class="text__main font_size_body">Marketing</p>
               </li>
             </ol>
 
-            <p class="text__main font_size_body">The custom code is explained in detail below.</p>
+            <p class="text__main font_size_body">A user might consent to, or reject, any combination of these levels.</p>
+            <p class="text__main font_size_body">I was heavily involved in the coding of this logic on our website. We created one data element for each consent level, then applied the appropriate data element to each Adobe Launch rule as a condition.</p>
+            <p class="text__main font_size_body">Here&rsquo;s how the programming works.</p>
 
           </div> <!-- Close .content__block -->
 
