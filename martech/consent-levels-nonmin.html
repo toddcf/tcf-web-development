@@ -183,11 +183,31 @@
 
         </div> <!-- Close .content__center content__center_700 -->
 
-        <div class="content__center content__center_1140">
+      </section>
 
-  <pre class="code__block"><code class="language-javascript">return [...document.getElementsByTagName('*')].filter(tag => !!tag.shadowRoot);</code></pre>
+      <section>
 
-        </div> <!-- Close .content__center_1140 -->
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Consent Level 1: Strictly Necessary</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">Ironically, the <code class="code__snippet font_size_body">consent level 1 | strictly necessary</code> data element is going to seem unnecessary from a programming perspective, because all it contains is:</p>
+            
+            <pre class="code__block"><code class="language-javascript">return true;</code></pre>
+
+            <p class="text__main font_size_body">It doesn&rsquo;t even check the data layer &mdash; it just returns a hardcoded Boolean <code class="language-javascript">true</code>.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
 
         <div class="heading heading_theme_clear">
           <div class="heading__title-overflow">
@@ -200,6 +220,18 @@
         <div class="content__center content__center_700">
 
           <div class="content__block">
+            
+            <p class="text__main font_size_body">We do it this way because Level 1 is always allowed; the user cannot turn it off. Adobe Launch rules that fall into this category are not for Analytics, Personalization, or Marketing. They are for functionality, such as triggering slide-ins or popups. And we don&rsquo;t want that functionality to break if there is a timing issue or glitch in the data layer, so we just hardcode it to <code class="language-javascript">true</code>.</p>
+
+            <p class="text__main font_size_body">It might also seem unnecessary to bother adding the <code class="code__snippet font_size_body">consent level 1 | strictly necessary</code> data element as a condition in the applicable Launch rules if it is always going to be <code class="language-javascript">true</code>. But we humans don&rsquo;t want to keep thinking we forgot to add a consent level condition to those rules every time we open them, so we do ourselves a psychological favor and just add it.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+        
             
             <ol class="list__main font_size_body">
               <li class="content__block_li">
