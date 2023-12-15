@@ -231,29 +231,67 @@
 
       </section>
 
-        
-            
-            <ol class="list__main font_size_body">
-              <li class="content__block_li">
-                <p class="text__main font_size_body"><code class="code__snippet font_size_body">document.getElementsByTagName('*')</code> gets all tags on the page.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">However, that returns an HTMLCollection. So I wrapped it inside a spread operator <code  class="code__snippet">[...]</code> to convert it to an array.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Now that I had an array, I could call the <code class="code__name">.filter</code> method on it.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body"><code class="code__snippet">.filter(tag => !!tag.shadowRoot)</code> checks each tag in the array.
-                  If a tag contains a <code class="code__name">shadowRoot</code>, then that tag represents a shadow DOM, and the filter will include
-                  it. (If not, the filter will ignore that tag.)</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Last but not least, I <code class="code__snippet">return</code> all of this, or else my data element will do all this work but not spit out the results at the end.</p>
-              </li>
-            </ol>
+      <section>
 
-            <p class="text__main font_size_body">Now, any time I run <code class="code__snippet">_satellite.getVar('shadow doms')</code>, I receive an array containing all the shadow DOM tags that were filtered out of the entire page. (If none were found, it will return an empty array.)</p>
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Consent Level 2: Analytics</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">Because consent can have some pretty strict legal repercussions, our data elements don&rsquo;t simply pull values straight from the data layer &mdash; they do a few custom validations first.</p>
+            <p class="text__main font_size_body">The <code class="code__snippet font_size_body">consent level 2 | analytics</code> data element uses the following custom code:</p>
+
+  <pre class="code__block"><code class="language-javascript">let consentLevel2 = false; // Default.
+if (window.dataLayer?.user?.consent?.C0002 === true) {
+  consentLevel2 = true;
+}
+return consentLevel2;</code></pre>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h3 class="heading__title-tag font_size_2">
+              <span class="heading__title-tag_title">Explanation</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 1: Default to <code class="code__snippet font_size_body">false</code>. We assume no tracking is allowed until proven otherwise. (What if the user rejected Analytics tracking, but a technical glitch caused our data layer not to load? If we defaulted to <code class="code__snippet font_size_body">true</code>, our tracking could illegally fire.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 2: Check the <code class="code__snippet">C0002</code> value in the data layer.</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">NOTE: Optional chaining will throw warnings in Launch because, as of this writing, Launch can only handle up to ES6, and optional chaining is a feature of ES11. Although the code will still run in most browsers, Launch will flag each line of code containing optional chaining. To avoid this distraction, we use a long string of <code class="code__snippet font_size_body">!!window.dataLayer && !!window.dataLayer.user</code> etc. in real life. But for the purposes of this case study, I&rsquo;m shortening it to the optional chaining syntax.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Note that we check the value and type (<code class="code__snippet font_size_body">=== true</code>). This safeguards against a type glitch causing a string like <code class="code__snippet font_size_body">false</code> to return truthy.</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 3: If this value was <code class="code__snippet">true</code> in the data layer, no sense pulling it again &mdash; it&rsquo;s shorter to just hardcode it to <code class="code__snippet">true</code> at this point.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 5: Return the result, whether it is still the default of <code class="code__snippet">false</code>, or it has been overwritten to <code class="code__snippet">true</code>.</p>
+              </li>
+            </ul>
 
           </div> <!-- Close .content__block -->
 

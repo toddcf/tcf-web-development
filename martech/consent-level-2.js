@@ -1,4 +1,4 @@
-let consentLevel2 = false;
+let consentLevel2 = false; // Default.
 if (window.dataLayer?.user?.consent?.C0002 === true) {
   consentLevel2 = true;
 }
