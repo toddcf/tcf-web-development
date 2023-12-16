@@ -1,1 +1,0 @@
-return true; // Hardcoded in case digitalData.user.consent.C0001 has not been set yet. But Consent Level 1 rules should always be allowed to fire.
