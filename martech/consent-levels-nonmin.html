@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Body -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../assets/prism/prism-okaidia-1.29.0.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/global-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/text-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/nav-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/heading-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/martech-article-min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/footer-min.css">
+  
+  <title>MarTech | Consent Levels</title>
+
+  <meta name="Author" content="Todd Croak-Falen">
+  <meta name="Description" content="MarTech Consent Levels.">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="body line-numbers">
+
+  <div class="body__project-container">
+
+    <nav class="nav">
+      <div class="content__center content__center_1440 nav__flex">
+        <a href="/" class="nav__flex_link font_size_1">
+          <div class="nav__flex_text"><i class="fas fa-home nav__flex_icon"></i>Home</div>
+        </a>
+        <a href="../about-me" class="nav__flex_link font_size_1">
+          <div class="nav__flex_text"><i class="fas fa-user-circle nav__flex_icon"></i>About Me</div>
+        </a>
+        <!-- <a href="../resume_todd_croak-falen.pdf" target="_blank" class="nav__flex_link font_size_1">
+          <div class="nav__flex_text"><i class="fas fa-file-alt nav__flex_icon"></i>Résumé</div>
+        </a> -->
+      </div> <!-- Close .nav__flex -->
+    </nav>
+
+    <div class="breadcrumbs breadcrumbs_theme_white content-top">
+      <div class="content__center content__center_1440">
+        <p class="breadcrumbs__text font_size_body"><a class="breadcrumbs__text link link_theme_black" href="/">Home</a> <span class="breadcrumbs__text">></span> <a class="breadcrumbs__text link link_theme_black" href="../martech">MarTech</a> <span class="breadcrumbs__text">></span> <span class="breadcrumbs__text">Consent Levels</span></p>
+      </div> <!-- Close .content__center_1440 -->
+    </div>
+
+    <main class="main">
+
+      <header class="header">
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h1 class="heading__title-tag font_size_4">
+              <span class="heading__title-tag_title">Consent Levels</span>
+            </h1>
+          </div>
+        </div>
+        <div class="martech-header__img martech-header__img_birds-flying"></div>
+      </header>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Overview</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+          
+            <p class="text__main font_size_body">It is ethical &mdash; and in many places, the law &mdash; to obtain consent from users when tracking their behavior on your website. And there can be different levels of consent.</p>
+            <p class="text__main font_size_body">For example:</p>
+
+            <ol class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Strictly Necessary</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Analytics</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Personalization</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Marketing</p>
+              </li>
+            </ol>
+
+            <p class="text__main font_size_body">A user might consent to, or reject, any combination of these levels.</p>
+            <p class="text__main font_size_body">I was heavily involved in the coding of this logic on our website. We created one data element for each consent level, then applied the appropriate data element to each Adobe Launch rule as a condition.</p>
+            <p class="text__main font_size_body">Here&rsquo;s how the programming works.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+        
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">OneTrust</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">OneTrust is a third-party application that we installed on our site. When the user first lands, a OneTrust banner or popup prompts them to select their tracking preferences. Once they do, OneTrust populates the following properties in the data layer with the corresponding Booleans:</p>
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">dataLayer:</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">user:</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">consent:</p>
+                        <ul class="list__main font_size_body">
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">C0001</p>
+                          </li>
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">C0002</p>
+                          </li>
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">C0003</p>
+                          </li>
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">C0004</p>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            
+            <p class="text__main font_size_body">For example, if a user allowed Analytics tracking (Level 2), that property in the data layer would be set to:</p>
+
+            <p class="text__main font_size_body"><code class="language-javascript">dataLayer.user.consent.C0002: true</code></p>
+
+            <p class="text__main font_size_body">And if a user did <em>not</em> allow Marketing (Level 4) tracking:</p>
+
+            <p class="text__main font_size_body"><code class="language-javascript">dataLayer.user.consent.C0004: false</code></p>
+
+            <p class="text__main font_size_body">These preferences are stored in a browser cookie so that the same user doesn&rsquo;t need to keep making these selections every time they return to our site.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Consent Level 1: Strictly Necessary</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">Ironically, the <code class="code__name font_size_body">consent level 1 | strictly necessary</code> data element is going to seem unnecessary from a programming perspective, because all it contains is:</p>
+            
+            <pre class="code__block"><code class="language-javascript">return true;</code></pre>
+
+            <p class="text__main font_size_body">It doesn&rsquo;t even check the data layer &mdash; it just returns a hardcoded Boolean <code class="language-javascript">true</code>.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h3 class="heading__title-tag font_size_2">
+              <span class="heading__title-tag_title">Explanation</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+            
+            <p class="text__main font_size_body">We do it this way because Level 1 is always allowed; the user cannot turn it off. Adobe Launch rules that fall into this category are not for Analytics, Personalization, or Marketing. They are for functionality, such as triggering slide-ins or popups. And we don&rsquo;t want that functionality to break if there is a timing issue or glitch in the data layer, so we just hardcode it to <code class="language-javascript">true</code>.</p>
+
+            <p class="text__main font_size_body">It might also seem unnecessary to bother adding the <code class="code__name font_size_body">consent level 1 | strictly necessary</code> data element as a condition in the applicable Launch rules if it is always going to be <code class="language-javascript">true</code>. But we humans don&rsquo;t want to keep thinking we forgot to add a consent level condition to those rules every time we open them, so we do ourselves a psychological favor and just add it.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Consent Level 2: Analytics</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">Because consent can have some pretty strict legal repercussions, our data elements don&rsquo;t simply pull values straight from the data layer &mdash; they do a few custom validations first.</p>
+            <p class="text__main font_size_body">The <code class="code__name font_size_body">consent level 2 | analytics</code> data element uses the following custom code:</p>
+
+  <pre class="code__block"><code class="language-javascript">let consentLevel2 = false; // Default.
+if (window.dataLayer?.user?.consent?.C0002 === true) {
+  consentLevel2 = true;
+}
+return consentLevel2;</code></pre>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h3 class="heading__title-tag font_size_2">
+              <span class="heading__title-tag_title">Explanation</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 1: Default to <code class="language-javascript">false</code>. We assume no tracking is allowed until proven otherwise. (What if the user rejected Analytics tracking, but a technical glitch caused our data layer not to load? If we defaulted to <code class="language-javascript">true</code>, our tracking could illegally fire.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 2: Check the <code class="language-javascript">C0002</code> value in the data layer.</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">NOTE: Optional chaining will throw warnings in Launch because, as of this writing, Launch can only handle up to ES6, and optional chaining is a feature of ES11. Although the code will still run in most browsers, Launch will flag each line of code containing optional chaining. To avoid this distraction, we use a long string of <code class="language-javascript">!!window.dataLayer && !!window.dataLayer.user</code> etc. in real life. But for the purposes of this case study, I&rsquo;m shortening it to the optional chaining syntax.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Note that we check the value and type (<code class="language-javascript">=== true</code>). This safeguards against a type glitch causing a string like <code class="language-javascript">false</code> to return truthy.</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 3: If this value was <code class="language-javascript">true</code> in the data layer, no sense pulling it again &mdash; it&rsquo;s shorter to just hardcode it to <code class="language-javascript">true</code> at this point.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 5: Return the result, whether it is still the default of <code class="language-javascript">false</code>, or it has been overwritten to <code class="language-javascript">true</code>.</p>
+              </li>
+            </ul>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Consent Level 3: Personalization</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+            
+            <p class="text__main font_size_body">The main example of Personalization is Adobe Target. We use Adobe Target for A/B tests, and to tailor the site&rsquo;s contents to known users. For example, if we know that a user was viewing a specific product the last time they visited our website, we can show that product to them when they return, and hopefully reignite that interest.</p>
+
+            <p class="text__main font_size_body">We&rsquo;re doing the same validation check we did in the <code class="code__name">consent level 2 | analytics</code> data element, plus <em>we only allow Consent Level 3 to fire if Consent Level 2 was also true</em>.</p>
+
+            <p class="text__main font_size_body">In other words, if the user declined Analytics tracking (Level 2), but allowed Personalization (Level 3), we still don&rsquo;t fire Personalization.</p>
+
+            <p class="text__main font_size_body">Here is the code for the <code class="code__name">consent level 3 | personalization</code> data element:</p>
+            
+  <pre class="code__block"><code class="language-javascript">let consentLevel3 = false; // Default.
+if (
+  _satellite.getVar('consent level 2 | analytics') === true &&
+  window.dataLayer?.user?.consent?.C0003 === true
+) {
+  consentLevel3 = true;
+}
+return consentLevel3;</code></pre>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Consent Level 4: Marketing</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">The <code class="code__name">consent level 4 | marketing</code> data element is for marketing pixels. (We may place ads on Facebook, Google, Pinterest, etc. If those ads drive traffic to the site, we want to track that success.)</p>
+
+            <p class="text__main font_size_body">Once again, we only allow Marketing (Level 4) to fire if Analytics (Level 2) is also <code class="language-javascript">true</code>. One reason for this is that if there is a question about the metrics from a marketing pixel, we want to be able to match it to the metrics from Adobe Analytics to see how they compare.</p>
+
+  <pre class="code__block"><code class="language-javascript">let consentLevel4 = false; // Default.
+if (
+  _satellite.getVar('consent level 2 | analytics') === true &&
+  window.dataLayer?.user?.consent?.C0004 === true &&
+  _satellite.getVar('consent | sharing allowed') === true &&
+  !_satellite.getVar('consent | global privacy control')
+) {
+  consentLevel4 = true;
+}
+return consentLevel4;</code></pre>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="heading heading_theme_clear">
+          <div class="heading__title-overflow">
+            <h3 class="heading__title-tag font_size_2">
+              <span class="heading__title-tag_title">Explanation</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 3 - 4: These should look familiar by now.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 5 - 6: But marketing pixels share data with third parties. Therefore, we have two more conditions that must be met before we return <code class="language-javascript">true</code>:</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 5: The user must be allowing sharing. (More on this in the next section.)</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 6: The user&rsquo;s browser&rsquo;s Global Privacy Control must <em>not</em> be active. (More on this in the section after that.)</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Sharing Allowed</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">If a user has created an account on our website, they have the ability to save their sharing preferences. And if they do <em>not</em> want us to share their data with third parties, <code class="language-javascript">dataLayer.user.consent.sharingAllowed</code> will be set to <code class="language-javascript">false</code>.</p>
+
+            <p class="text__main font_size_body">Our <code class="code__name">consent | sharing allowed</code> data element looks to that property, but it also contains custom validation to ensure that it is the proper data type. (When we send this value to AEP, it must be the expected data type, or we will have batch ingestion failures.)</p>
+
+  <pre class="code__block"><code class="language-javascript">let sharingAllowed = false; // Default.
+if (window.dataLayer?.user?.consent?.sharingAllowed === true) {
+  sharingAllowed = true;
+}
+return sharingAllowed;</code></pre>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Global Privacy Control</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">A full explanation of Global Privacy Control can be found here:</p>
+
+            <p class="text__main font_size_body"><a class="link link_theme_black" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/globalPrivacyControl">https://developer.mozilla.org/en-US/docs/Web/API/Navigator/globalPrivacyControl</a></p>
+
+            <p class="text__main font_size_body">For the purposes of this case study, suffice it to say that our <code class="code__name">consent | global privacy control</code> data element just needs to return the value of <code class="language-javascript">Navigator.globalPrivacyControl</code>. (It will be <code class="language-javascript">true</code> if the user does <em>not</em> want their data shared with third parties.)</p>
+
+  <pre class="code__block"><code class="language-javascript">return Navigator.globalPrivacyControl;</code></pre>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Adobe Launch Rule Conditions</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">Once each data element was programmed and tested, we simply added the appropriate one as a condition to each Launch rule according to the level of consent required to fire that rule.</p>
+
+            <p class="text__main font_size_body">For example, if a Launch rule fired a marketing pixel, we added the <code class="code__name">consent level 4 | marketing</code> data element as one of that rule&rsquo;s conditions.</p>
+
+            <p class="text__main font_size_body">And if a Launch rule fired some Adobe Analytics tracking, we added the <code class="code__name">consent level 2 | analytics</code> data element as one of <em>that</em> rule&rsquo;s conditions.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+    
+    </main>
+
+    <footer class="footer footer_theme_black">
+
+      <div class="content__center content__center_1140">
+      
+        <div class="footer__icon-row">
+
+          <div class="footer__icon">
+            <a href="/" class="footer__icon_link">
+              <div class="footer__icon_link-content">
+                <i class="fas fa-home footer__icon_icon"></i>
+                <p class="footer__icon_text font_size_body">Home</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer__icon">
+            <a href="https://www.github.com/toddcf" target="_blank" class="footer__icon_link">
+              <div class="footer__icon_link-content">
+                <i class="fab fa-github footer__icon_icon"></i>
+                <p class="footer__icon_text font_size_body">GitHub</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer__icon">
+            <a href="https://www.linkedin.com/in/toddcf" target="_blank" class="footer__icon_link">
+              <div class="footer__icon_link-content">
+                <i class="fab fa-linkedin footer__icon_icon"></i>
+                <p class="footer__icon_text font_size_body">LinkedIn</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer__icon">
+            <a href="resume_todd_croak-falen.pdf" target="_blank" class="footer__icon_link">
+              <div class="footer__icon_link-content">
+                <i class="fas fa-file-alt footer__icon_icon"></i>
+                <p class="footer__icon_text font_size_body">Résumé</p>
+                <p class="footer__icon_text font_size_body">(PDF with contact info)</p>
+              </div>
+            </a>
+          </div>
+          
+        </div> <!-- Close .footer-icon__row -->
+
+        <div class="footer__copyright">
+          <p class="footer__copyright_text font_size_body">&copy; Copyright 2016 <span class="currentYear"></span>Todd Croak-Falen</p>
+        </div>
+
+      </div> <!-- Close .content__center content__center_1140 -->
+
+    </footer>
+
+  </div> <!-- Close .body__project-container -->
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- Waypoints -->
+  <script src="../assets/js/jquery.waypoints.min.js"></script>
+
+  <!-- Prism -->
+  <script src="../assets/prism/prism-okaidia-1.29.0.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="../assets/js/global-min.js"></script>
+  <script src="../assets/js/footer-min.js"></script>
+
+</body>
+
+</html>
