@@ -432,6 +432,60 @@ return sharingAllowed;</code></pre>
         </div> <!-- Close .content__center content__center_700 -->
 
       </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Global Privacy Control</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">A full explanation of Global Privacy Control can be found here:</p>
+
+            <p class="text__main font_size_body"><a class="link link_theme_black" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/globalPrivacyControl">https://developer.mozilla.org/en-US/docs/Web/API/Navigator/globalPrivacyControl</a></p>
+
+            <p class="text__main font_size_body">For the purposes of this case study, suffice it to say that our <code class="code__name">consent | global privacy control</code> data element just needs to return the value of <code class="language-javascript">Navigator.globalPrivacyControl</code>. (It will be <code class="language-javascript">true</code> if the user does <em>not</em> want their data shared with third parties.</p>
+
+  <pre class="code__block"><code class="language-javascript">return Navigator.globalPrivacyControl;</code></pre>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Adobe Launch Rule Conditions</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">Once each data element was programmed and tested, we simply added the appropriate one as a condition to each Launch rule according to the level of consent required to fire that rule.</p>
+
+            <p class="text__main font_size_body">For example, if a Launch rule fired a marketing pixel, we added the <code class="code__name">consent level 4 | marketing</code> data element as one of that rule&rsquo;s conditions.</p>
+
+            <p class="text__main font_size_body">And if a Launch rule fired some Adobe Analytics tracking, we added the <code class="code__name">consent level 2 | analytics</code> data element as one of <em>that</em> rule&rsquo;s conditions.</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
     
     </main>
 
