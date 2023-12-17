@@ -95,7 +95,7 @@
 
           <div class="content__block">
           
-            <p class="text__main font_size_body">When my company began using AEM Components, it was the MarTech team&rsquo;s job to implement click tracking on those components. We already had global click tracking in place that would take the <code class="language-javascript">data-track-noun</code> and <code class="language-javascript">data-track-verb</code> attributes, concatenate them, and delimit them with a colon. But this was going to require additional complexity.</p>
+            <p class="text__main font_size_body">When my company began using AEM Components, it was the MarTech team&rsquo;s job to implement click tracking on those components. We already had global click tracking in place that would take the <code class="language-html">data-track-noun</code> and <code class="language-html">data-track-verb</code> attributes, concatenate them, and delimit them with a colon. But this was going to require additional complexity.</p>
 
             <p class="text__main font_size_body">For starters, the AEM Components were going to be nested inside each other. There could be several layers of nesting. And when a component was clicked, we were going to want to concatenate the click tracking values of the parent components all the way down to the child that was clicked.</p>
             
@@ -158,7 +158,7 @@
               </li>
             </ul>
 
-            <p class="text__main font_size_body">This was going to require more than just the standard two <code class="language-javascript">data-track-noun</code> and <code class="language-javascript">data-track-verb</code> attributes.</p>
+            <p class="text__main font_size_body">This was going to require more than just the standard two <code class="language-html">data-track-noun</code> and <code class="language-html">data-track-verb</code> attributes.</p>
 
           </div> <!-- Close .content__block -->
 
@@ -176,7 +176,7 @@
 
           <div class="content__block">
 
-            <p class="text__main font_size_body">I decided that we could add a <code class="language-javascript">data-track-component-level-X</code> attribute, with <code class="language-javascript">X</code> being a number. (These would have to be set dynamically, because we would never know how many levels a given component was going to be nested.)</p>
+            <p class="text__main font_size_body">I decided that we could add a <code class="language-html">data-track-component-level-X</code> attribute, with <code class="language-html">X</code> being a number. (These would have to be set dynamically, because we would never know how many levels a given component was going to be nested.)</p>
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
@@ -190,7 +190,7 @@
               </li>
             </ul>
 
-            <p class="text__main font_size_body">The three (or more) of those would then be concatenated, in the correct order, and only if they exist. Since there could be multiple levels of parent components, we could potentially wind up with <code class="language-javascript">data-track-component-level-1</code>, <code class="language-javascript">2</code>, <code class="language-javascript">3</code>, etc.</p>
+            <p class="text__main font_size_body">The three (or more) of those would then be concatenated, in the correct order, and only if they exist. Since there could be multiple levels of parent components, we could potentially wind up with <code class="language-html">data-track-component-level-1</code>, <code class="language-html">2</code>, <code class="language-html">3</code>, etc.</p>
 
             <p class="text__main font_size_body">The question was how to add these attributes to each AEM Component. Our Content team did not have the bandwidth to add each one manually. Furthermore, AEM Components might be nested in a multitude of ways, and those ways might be changed on the fly. If each such change involved the complete reauthoring of every AEM Component&rsquo;s tracking attributes, the scope of each change would become unwieldy, and the opportunity for mistakes would increase.</p>
 
@@ -198,10 +198,10 @@
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">Each AEM Component would be given a <code class="language-javascript">data-track-component-type</code> attribute. Its value would represent the type of component: <code class="language-javascript">header</code>, <code class="language-javascript">footer</code>, <code class="language-javascript">breadcrumb</code>, <code class="language-javascript">crowdriff</code>, etc. (This is so we will know which elements to treat as AEM Components.)</p>
+                <p class="text__main font_size_body">Each AEM Component would be given a <code class="language-html">data-track-component-type</code> attribute. Its value would represent the type of component: <code class="language-html">header</code>, <code class="language-html">footer</code>, <code class="language-html">breadcrumb</code>, <code class="language-html">crowdriff</code>, etc. (This is so we will know which elements to treat as AEM Components.)</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Values from heading tags, link text, etc. are programmatically copied into <code class="language-javascript">data-track-verb</code> attributes.</p>
+                <p class="text__main font_size_body">Values from heading tags, link text, etc. are programmatically copied into <code class="language-html">data-track-verb</code> attributes.</p>
               </li>
               <li class="content__block_li">
                 <p class="text__main font_size_body">Each of these values would get programmatically standardized into lowercase kebab-case.</p>
@@ -212,20 +212,20 @@
 
             <ol class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">On each page/route load, an Adobe Launch rule would fire that would crawl the page. If it found any elements containing a <code class="language-javascript">data-track-component-type</code> attribute, it would collect its tracking attributes.</p>
+                <p class="text__main font_size_body">On each page/route load, an Adobe Launch rule would fire that would crawl the page. If it found any elements containing a <code class="language-html">data-track-component-type</code> attribute, it would collect its tracking attributes.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Then it would check the next layer of children for that element. If any contained a <code class="language-javascript">data-track-component-type</code> attribute, the tracking attributes from the parent element would be added to the tracking attributes of the child element using the <code class="language-javascript">data-track-component-level-X</code> attribute.</p>
+                <p class="text__main font_size_body">Then it would check the next layer of children for that element. If any contained a <code class="language-html">data-track-component-type</code> attribute, the tracking attributes from the parent element would be added to the tracking attributes of the child element using the <code class="language-html">data-track-component-level-X</code> attribute.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">The process would repeat for the children of that child, until no more children were found. Depending on how many layers of nesting there were for the AEM Components, this is where we might wind up with <code class="language-javascript">data-track-component-level-1</code>, <code class="language-javascript">data-track-component-level-2</code>, <code class="language-javascript">data-track-component-level-3</code>, etc.</p>
+                <p class="text__main font_size_body">The process would repeat for the children of that child, until no more children were found. Depending on how many layers of nesting there were for the AEM Components, this is where we might wind up with <code class="language-html">data-track-component-level-1</code>, <code class="language-html">data-track-component-level-2</code>, <code class="language-html">data-track-component-level-3</code>, etc.</p>
               </li>
               <li class="content__block_li">
                 <p class="text__main font_size_body">Once an element has been modified, the Launch rule would set a flag on it so we know it's been handled. That way, if more AEM Components got added to the page after the initial page load and our rule needed to crawl the page again, it could skip modifying the components it already modified in the previous pass.</p>
               </li>
             </ol>
 
-            <p class="text__main font_size_body">Then, the MarTech team would have to modify the <code class="code__name font_size_body">Global | Set Variables | Clicks or Events #25</code> rule. Currently, that rule only checked for <code class="language-javascript">data-track-noun</code> and <code class="language-javascript">data-track-verb</code> and concatenated the two. Now it would have to factor in any number of <code class="language-javascript">data-track-component-level-X</code> attributes at the beginning of that concatenation. (For an explanation on how that was accomplished, see my article on <a class="link link_theme_black" href="adobe-launch-global-clicks-events-tracking">Adobe Launch Global Clicks or Events Tracking</a>.)</p>
+            <p class="text__main font_size_body">Then, the MarTech team would have to modify the <code class="code__name font_size_body">Global | Set Variables | Clicks or Events #25</code> rule. Currently, that rule only checked for <code class="language-html">data-track-noun</code> and <code class="language-html">data-track-verb</code> and concatenated the two. Now it would have to factor in any number of <code class="language-html">data-track-component-level-X</code> attributes at the beginning of that concatenation. (For an explanation on how that was accomplished, see my article on <a class="link link_theme_black" href="adobe-launch-global-clicks-events-tracking">Adobe Launch Global Clicks or Events Tracking</a>.)</p>
 
             <p class="text__main font_size_body">But to see how the programming was done for the AEM Component attributes, keep reading.</p>
 
@@ -462,16 +462,16 @@ aemComponentTracking.init();</code></pre>
                     <p class="text__main font_size_body">Line 56: An empty array is created to collect any applicable existing tracking attributes.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 58 - 66: First, any <code class="language-javascript">data-track-component-level-X</code> attribute values that exist are collected in numerical order and pushed into the <code class="language-javascript">existingTrackingAttributes</code> array. Since we don&rsquo;t know how many (if any) there will be, a do while loop is used.</p>
+                    <p class="text__main font_size_body">Lines 58 - 66: First, any <code class="language-html">data-track-component-level-X</code> attribute values that exist are collected in numerical order and pushed into the <code class="language-javascript">existingTrackingAttributes</code> array. Since we don&rsquo;t know how many (if any) there will be, a do while loop is used.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 68 - 71: Next, if a <code class="language-javascript">data-track-noun</code> attribute exists, push that value in. (Note that there are use cases where this value may have been set to <code class="language-javascript">"no-title"</code> if the AEM Component was just a container and did not have anything of substance to be included in the click tracking. So we filter those out on Line 69.)</p>
+                    <p class="text__main font_size_body">Lines 68 - 71: Next, if a <code class="language-html">data-track-noun</code> attribute exists, push that value in. (Note that there are use cases where this value may have been set to <code class="language-html">"no-title"</code> if the AEM Component was just a container and did not have anything of substance to be included in the click tracking. So we filter those out on Line 69.)</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 73 - 76: Next, the same actions are performed for <code class="language-javascript">data-track-verb</code>.</p>
+                    <p class="text__main font_size_body">Lines 73 - 76: Next, the same actions are performed for <code class="language-html">data-track-verb</code>.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 78 - 86: If this is not the first pass that this rule is making on the page (for example, if more AEM Components were added after the page loaded), then a flag will have been set to prevent our code from needlessly refactoring the same attributes on the AEM Components that were already handled in the previous pass. This flag is the <code class="language-javascript">data-track-component-attributes-set="true"</code> attribute.</p>
+                    <p class="text__main font_size_body">Lines 78 - 86: If this is not the first pass that this rule is making on the page (for example, if more AEM Components were added after the page loaded), then a flag will have been set to prevent our code from needlessly refactoring the same attributes on the AEM Components that were already handled in the previous pass. This flag is the <code class="language-html">data-track-component-attributes-set="true"</code> attribute.</p>
                     <ul class="list__main font_size_body">
                       <li class="content__block_li">
                         <p class="text__main font_size_body">Line 83: If this attribute is found, we don&rsquo;t need to do any merging or setting of attributes. Instead, we just invoke the <code class="language-javascript">checkChildren</code> method on it and pass in the current element plus the existing tracking attributes we just collected, as they may need to get merged in with any child element tracking attributes if necessary.</p>
@@ -507,24 +507,24 @@ aemComponentTracking.init();</code></pre>
                 <p class="text__main font_size_body">Lines 2 - 26: <code class="language-javascript">setTrackingAttributes</code> method. This is where the ultimate purpose of this rule is achieved. Now that all parent tracking attributes and existing tracking attributes have been collected, deduplicated, and staged in the order that they should be concatenated for Analytics upon the user&rsquo;s click, it is time to populate those values into the appropriate data attributes within the current element. To prevent unintended results, all tracking attributes get overwritten.</p>
                 <ul class="list__main font_size_body">
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 7 - 9: This code block handles a very specific use case. I discovered times when an AEM Component contained only the <code class="language-javascript">data-track-noun</code> attribute. This meant that it was the only value to be collected and &ldquo;merged,&rdquo; and would be placed in <code class="language-javascript">data-track-verb</code> at this stage &mdash; resulting in both <code class="language-javascript">data-track-noun</code> and <code class="language-javascript">data-track-verb</code> having the same value. When clicked, the same value would be concatenated with each other. To prevent this, if only one value is going to be set, we first actively remove the <code class="language-javascript">data-track-noun</code> attribute from the current element.</p>
+                    <p class="text__main font_size_body">Lines 7 - 9: This code block handles a very specific use case. I discovered times when an AEM Component contained only the <code class="language-html">data-track-noun</code> attribute. This meant that it was the only value to be collected and &ldquo;merged,&rdquo; and would be placed in <code class="language-html">data-track-verb</code> at this stage &mdash; resulting in both <code class="language-html">data-track-noun</code> and <code class="language-html">data-track-verb</code> having the same value. When clicked, the same value would be concatenated with each other. To prevent this, if only one value is going to be set, we first actively remove the <code class="language-html">data-track-noun</code> attribute from the current element.</p>
                   </li>
                   <li class="content__block_li">
                     <p class="text__main font_size_body">Lines 11 - 22: Take the array of merged attributes and set them into the appropriate data attributes:</p>
                     <ul class="list__main font_size_body">
                       <li class="content__block_li">
-                        <p class="text__main font_size_body">Lines 13 - 15: The last value in the array gets set to <code class="language-javascript">data-track-verb</code>.</p>
+                        <p class="text__main font_size_body">Lines 13 - 15: The last value in the array gets set to <code class="language-html">data-track-verb</code>.</p>
                       </li>
                       <li class="content__block_li">
-                        <p class="text__main font_size_body">Lines 16 - 18: The second-to-last value in the array gets set to <code class="language-javascript">data-track-noun</code>. (We have to work a bit backward in this manner because we don&rsquo;t know how many items will be in the array.)</p>
+                        <p class="text__main font_size_body">Lines 16 - 18: The second-to-last value in the array gets set to <code class="language-html">data-track-noun</code>. (We have to work a bit backward in this manner because we don&rsquo;t know how many items will be in the array.)</p>
                       </li>
                       <li class="content__block_li">
-                        <p class="text__main font_size_body">Lines 19 - 20: If there are more than two items in the array, now we start from the front and set them into <code class="language-javascript">data-track-component-level-X</code> (whichever number <code class="language-javascript">X</code> is for this item &mdash; the index number plus 1).</p>
+                        <p class="text__main font_size_body">Lines 19 - 20: If there are more than two items in the array, now we start from the front and set them into <code class="language-html">data-track-component-level-X</code> (whichever number <code class="language-html">X</code> is for this item &mdash; the index number plus 1).</p>
                       </li>
                     </ul>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 23: Set the <code class="language-javascript">data-track-component-attributes-set</code> attribute to <code class="language-javascript">"true"</code>. This is the flag that will prevent us from running all this same logic again if the page needs to be crawled more than once.</p>
+                    <p class="text__main font_size_body">Line 23: Set the <code class="language-html">data-track-component-attributes-set</code> attribute to <code class="language-html">"true"</code>. This is the flag that will prevent us from running all this same logic again if the page needs to be crawled more than once.</p>
                   </li>
                   <li class="content__block_li">
                     <p class="text__main font_size_body">Line 25: And now that we&rsquo;ve handled this element, it&rsquo;s time to repeat this entire process on each of <em>its</em> children. So we invoke <code class="language-javascript">checkChildren</code> once again, and this time we <em>do</em> have merged tracking attributes to pass into it. Conveniently, they are already in the <code class="language-javascript">mergedTrackingAttributesArr</code> array, so there is no need to scrape them out of the current element all over again &mdash; we just pass that array into the <code class="language-javascript">checkChildren</code> method.</p>
