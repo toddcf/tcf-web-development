@@ -5,149 +5,6 @@
 * Browsers: last 4 version
 */
 
-@media (max-width: 575.98px) {
-
-  .card-small__backboard_author-site {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-  }
-
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-  .card-small__backboard_author-site {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
-  }
-
-}
-
-@media (min-width: 768px) {
-
-  .card-small__backboard_author-site {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-small__backboard_my-portfolio {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-  }
-
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-  .card-small__backboard_my-portfolio {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
-  }
-
-}
-
-@media (min-width: 768px) {
-
-  .card-small__backboard_my-portfolio {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-small__backboard_omnifood {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-  }
-
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-  .card-small__backboard_omnifood {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
-  }
-
-}
-
-@media (min-width: 768px) {
-
-  .card-small__backboard_omnifood {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-small__img_author-site {
-    background-image: url(../img/card-small/__img/_author-site/576x227-min.jpg);
-  }
-
-}
-
-@media (min-width: 576px) {
-
-  .card-small__img_author-site {
-    background-image: url(../img/card-small/__img/_author-site/768x302-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-small__img_my-portfolio {
-    background-image: url(../img/card-small/__img/_my-portfolio/576x227-min.jpg);
-  }
-
-}
-
-@media (min-width: 576px) {
-
-  .card-small__img_my-portfolio {
-    background-image: url(../img/card-small/__img/_my-portfolio/768x302-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-small__img_omnifood {
-    background-image: url(../img/card-small/__img/_omnifood/576x227-min.jpg);
-  }
-
-}
-
-@media (min-width: 576px) {
-
-  .card-small__img_omnifood {
-    background-image: url(../img/card-small/__img/_omnifood/768x302-min.jpg);
-  }
-
-}
-
-.body_homepage {
-  margin: 0;
-  padding: 0;
-}
-
 .body__project-container {
   overflow: hidden; /* Prevents the header video from going wider than the rest of the project */
   position: relative;
@@ -156,38 +13,19 @@
 
 .header {
   min-height: 100vh;
-  position: relative;
 }
 
 .header__text-overlay {
-  height: auto;
-  left: 50%;
-  margin: 0 auto;
-  position: absolute;
+  margin: 0 auto 3rem auto;
   text-align: center;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-  width: 100%;
-}
-
-.header__text-overlay_h1 {
-  font-size: 1em; /* Overrides H1 default size */
 }
 
 .header__text-overlay_h1_main-name {
-  -webkit-animation-duration: 8000ms;
-          animation-duration: 8000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: fadeInDown;
-          animation-name: fadeInDown;
   color: #fff;
   display: block;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  letter-spacing: .5em;
+  line-height: 1em; /* Carried over from author site */
   margin-bottom: .5em;
   text-align: center;
   text-shadow: .3em .3em .15em rgba(0, 0, 0, 0.9);
@@ -196,23 +34,15 @@
 
 @media (min-width: 800px) {
   .header__text-overlay_h1_main-name {
-    letter-spacing: .25em;
     text-shadow: .2em .2em .1em rgba(0, 0, 0, 0.5);
   }
 }
 
 .header__text-overlay_h1_main-subheading {
-  -webkit-animation-duration: 8000ms;
-          animation-duration: 8000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
   color: #fff;
   display: block;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  letter-spacing: .5em;
   text-align: center;
   text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.9);
   z-index: 10;
@@ -220,30 +50,6 @@
 
 @media (min-width: 800px) {
   .header__text-overlay_h1_main-subheading {
-    letter-spacing: .25em;
-    text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.7);
-  }
-}
-
-.header__text-overlay_h1_main-subheading_divider {
-  -webkit-animation-duration: 8000ms;
-          animation-duration: 8000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  color: #fff;
-  display: block;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  letter-spacing: .25em;
-  text-align: center;
-  text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.9);
-  z-index: 10;
-}
-
-@media (min-width: 800px) {
-  .header__text-overlay_h1_main-subheading_divider {
     text-shadow: .2em .2em .2em rgba(0, 0, 0, 0.7);
   }
 }
@@ -273,247 +79,4 @@
   right: 0; 
   width: auto;
   z-index: -100;
-}
-
-.portfolio__heading {
-  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .5) 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, .5)));
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .5) 100%);
-  padding: 7em 0 3.5em 0;
-  width: 100%;
-}
-
-.portfolio__heading_title {
-  color: #fff;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  letter-spacing: .25em;
-  margin-bottom: 0;
-  text-align: center;
-  text-shadow: .15em .15em .15em rgba(0, 0, 0, 0.5);
-  text-transform: uppercase;
-  z-index: 10;
-}
-
-.professional-section__heading {
-  background-image: -o-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 1) 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .5)), to(rgba(255, 255, 255, 1)));
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 1) 100%);
-  padding: .38rem 0 1.75rem 0;
-  width: 100%;
-}
-
-@media (min-width: 992px) {
-
-  .professional-section__heading {
-    padding: 1.5rem 0 3.5rem 0;
-  }
-
-}
-
-.professional-section__heading_overflow {
-  margin: 0 1em;
-  overflow: hidden;
-  text-align: center;
-}
-
-.professional-section__heading_title {
-  font-family: 'Lato', sans-serif;
-}
-
-.professional-section__heading_title-text {
-  color: #808080;
-  display: inline;
-  font-weight: 400;
-  position: relative;
-  text-transform: uppercase;
-}
-
-.professional-section__heading_title-text::before,
-.professional-section__heading_title-text::after {
-  border-top: 1px solid #555;
-  content: "";
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 100px;
-}
-
-.professional-section__heading_title-text::before {
-  margin-right: 20px;
-  right: 100%;
-}
-
-.professional-section__heading_title-text::after {
-  left: 100%;
-  margin-left: 1rem;
-}
-
-.professional-section__solid-white-bg {
-  background: #fff;
-  padding-bottom: 1px; /* Allows the white background to extend to the height of the card's margin-bottom. */
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen__backboard_acura-of-tempe {
-    background-image: -o-linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_acura-of-tempe/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../img/card-widescreen/__backboard/_acura-of-tempe/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_acura-of-tempe/left-crop-576x630-blur12px-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen__backboard_bmw-el-cajon {
-    background-image: -o-linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_bmw-el-cajon/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../img/card-widescreen/__backboard/_bmw-el-cajon/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_bmw-el-cajon/left-crop-576x630-blur12px-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen__backboard_honda-new-rochelle {
-    background-image: -o-linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_honda-new-rochelle/576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../img/card-widescreen/__backboard/_honda-new-rochelle/576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_honda-new-rochelle/576x630-blur12px-min.jpg);
-  }
-
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-
-  .card-widescreen__img_lg_acura-of-tempe {
-    background-image: url(../img/card-widescreen/__img/_lg/_acura-of-tempe/1268x499-min.jpg);
-  }
-
-}
-
-@media (min-width: 1200px) {
-
-  .card-widescreen__img_lg_acura-of-tempe {
-    background-image: url(../img/card-widescreen/__img/_lg/_acura-of-tempe/1440x567-min.jpg);
-  }
-
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-
-  .card-widescreen__img_lg_bmw-el-cajon {
-    background-image: url(../img/card-widescreen/__img/_lg/_bmw-el-cajon/1268x499-min.jpg);
-  }
-
-}
-
-@media (min-width: 1200px) {
-
-  .card-widescreen__img_lg_bmw-el-cajon {
-    background-image: url(../img/card-widescreen/__img/_lg/_bmw-el-cajon/1440x567-min.jpg);
-  }
-
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-
-  .card-widescreen__img_lg_honda-new-rochelle {
-    background-image: url(../img/card-widescreen/__img/_lg/_honda-new-rochelle/1268x499-min.jpg);
-  }
-
-}
-
-@media (min-width: 1200px) {
-
-  .card-widescreen__img_lg_honda-new-rochelle {
-    background-image: url(../img/card-widescreen/__img/_lg/_honda-new-rochelle/1440x567-min.jpg);
-  }
-
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-  .card-widescreen__img_md_acura-of-tempe {
-    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_acura-of-tempe/768x303-min.jpg);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_acura-of-tempe/768x303-min.jpg);
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_acura-of-tempe/768x303-min.jpg);
-  }
-
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-
-  .card-widescreen__img_md_acura-of-tempe {
-    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_acura-of-tempe/992x391-min.jpg);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_acura-of-tempe/992x391-min.jpg);
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_acura-of-tempe/992x391-min.jpg);
-  }
-
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-  .card-widescreen__img_md_bmw-el-cajon {
-    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/768x303-min.jpg);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/768x303-min.jpg);
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/768x303-min.jpg);
-  }
-
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-
-  .card-widescreen__img_md_bmw-el-cajon {
-    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/992x391-min.jpg);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/992x391-min.jpg);
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_bmw-el-cajon/992x391-min.jpg);
-  }
-
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-  .card-widescreen__img_md_honda-new-rochelle {
-    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/768x303-min.jpg);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/768x303-min.jpg);
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/768x303-min.jpg);
-  }
-
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-
-  .card-widescreen__img_md_honda-new-rochelle {
-    background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/992x391-min.jpg);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 1)), color-stop(10%, rgba(255, 255, 255, 0))), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/992x391-min.jpg);
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 10%), url(../img/card-widescreen/__img/_md/_honda-new-rochelle/992x391-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen__img_sm_acura-of-tempe {
-    background-image: url(../img/card-widescreen/__img/_sm/_acura-of-tempe/576x227-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen__img_sm_bmw-el-cajon {
-    background-image: url(../img/card-widescreen/__img/_sm/_bmw-el-cajon/576x227-min.jpg);
-  }
-
-}
-
-@media (max-width: 575.98px) {
-
-  .card-widescreen__img_sm_honda-new-rochelle {
-    background-image: url(../img/card-widescreen/__img/_sm/_honda-new-rochelle/576x227-min.jpg);
-  }
-
 }

@@ -18,7 +18,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/animation-min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/global-min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/text-min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/nav-min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/heading-min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/card-small-min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/card-widescreen-min.css">
@@ -26,10 +25,10 @@
     <link rel="stylesheet" type="text/css" href="assets/css/homepage-min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/footer-min.css">
     
-    <title>Todd Croak-Falen | Front End Developer & MarTech Programmer Portfolio</title>
+    <title>Todd Croak-Falen | Front End Developer Portfolio</title>
 
     <meta name="Author" content="Todd Croak-Falen">
-    <meta name="Description" content="Portfolio for Front End Developer & MarTech Programmer Todd Croak-Falen.">
+    <meta name="Description" content="Portfolio for Front End Developer Todd Croak-Falen.">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -43,35 +42,43 @@
 
   </head>
 
-  <body class="body body_homepage">
+  <body class="body">
 
     <div class="body__project-container">
 
-      <header class="header">
+      <header class="header content__center_vertical-outer">
 
-        <div class="header__text-overlay">
-          <h1 class="header__text-overlay_h1">
-            <span class="header__text-overlay_h1_main-name font_size_6">Todd Croak-Falen</span>
-            <span class="header__text-overlay_h1_main-subheading font_size_2">Front End Developer</span>
-            <span class="header__text-overlay_h1_main-subheading_divider font_size_2">&mdash;</span>
-            <span class="header__text-overlay_h1_main-subheading font_size_2">MarTech Programmer</span>
-          </h1>
-        </div>
+        <div class="content__center_vertical-inner">
 
-        <nav class="nav nav_dropdown-on-scroll">
-          <div class="content__center content__center_1140 nav__flex">
-            <a href="about-me" class="nav__flex_link font_size_1">
-              <div class="nav__flex_text"><i class="fas fa-user-circle nav__flex_icon"></i>About Me</div>
-            </a>
-            <a href="https://www.github.com/toddcf" target="_blank" class="nav__flex_link font_size_1">
-              <div class="nav__flex_text"><i class="fab fa-github nav__flex_icon"></i>GitHub</div>
-            </a>
-            <a href="resume_todd_croak-falen.pdf" target="_blank" class="nav__flex_link font_size_1">
-              <div class="nav__flex_text"><i class="fas fa-file-alt nav__flex_icon"></i>Résumé</div>
+          <div class="header__text-overlay content__center content__center_1440">
+            <h1 class="header__text-overlay_h1 font_size_1">
+              <span class="header__text-overlay_h1_main-name animated_expanding font_size_6">Todd Croak-Falen</span>
+              <span class="header__text-overlay_h1_main-subheading animated_expanding font_size_3">Front End Developer</span>
+            </h1>
+          </div>
+
+          <div class="console__button_duo content__center content__center_700">
+
+            <div class="console__button_duo_btn-1">
+              <a href="martech" class="button">
+                <div class="button__button-outer button_theme_tropical-sand">
+                  <div class="button__button-inner"><i class="fas fa-chart-line button__button-icon"></i>View MarTech Portfolio</div>
+                </div>
               </a>
-          </div> <!-- Close .nav__flex -->
-        </nav>
-        
+            </div>
+
+            <div class="console__button_duo_btn-2">
+              <a href="ui-development" class="button">
+                <div class="button__button-outer button_theme_tropical-sand">
+                  <div class="button__button-inner"><i class="fas fa-code button__button-icon"></i>View UI Development Portfolio</div>
+                </div>
+              </a>
+            </div>
+
+          </div> <!-- Close .console__button_duo -->
+
+        </div> <!-- Close .content__center_vertical-outer -->
+
         <!-- Video is placed after major DOM elements for performance and has image fallback -->
         <div class="header__video-background">
           <video autoplay loop muted playsinline class="header__video-background_video">
@@ -80,399 +87,6 @@
         </div>
 
       </header>
-
-      <main class="portfolio">
-
-        <div class="portfolio__heading">
-          <h2 class="portfolio__heading_title font_size_5">Portfolio</h2>
-        </div>
-
-        <section class="professional-section">
-
-          <div class="professional-section__heading">
-            <div class="professional-section__heading_overflow">
-              <h3 class="professional-section__heading_title font_size_4">
-                <span class="professional-section__heading_title-text">Professional Projects</span>
-              </h3>
-            </div>
-          </div>
-
-          <div class="professional-section__solid-white-bg">
-
-            <div class="content__center content__center_1440">
-
-              <!-- Acura of Tempe -->
-              <div class="card-widescreen">
-
-                <div class="card-widescreen__backboard card-widescreen__backboard_acura-of-tempe">
-
-                  <!-- Blurred bg img is passed into this container via CSS for small screens only -->
-
-                  <div class="card-widescreen__content">
-
-                    <div class="card-widescreen__img-riser">
-                      <div class="card-widescreen__img_sm card-widescreen__img_sm_acura-of-tempe">
-                        <!-- Image is passed into this container via CSS depending on screen size -->
-                      </div>
-                    </div>
-
-                    <div class="card-widescreen__title-box">
-                      <h4 class="card-widescreen__title font_size_3">Acura of Tempe</h4>
-                    </div>
-
-                    <div class="card-widescreen__img_md card-widescreen__img_md_acura-of-tempe">
-                      <!-- Image is passed into this container via CSS depending on screen size -->
-                    </div>
-
-                    <div class="card-widescreen__img_lg card-widescreen__img_lg_acura-of-tempe">
-                      
-                      <!-- Image is passed into this container via CSS depending on screen size -->
-
-                      <div class="card-widescreen__info-module card-widescreen__info-module_right">
-                        
-                        <p class="card-widescreen__info-module_text font_size_body">Six landing pages I designed and coded for the Acura of Tempe dealership. These meet Acura marketing guidelines and passed an Acura compliance check.</p>
-
-                        <div class="card-widescreen__button-trio">
-
-                          <div class="card-widescreen__button-trio_btn-1">
-                            <a href="https://toddcf.github.io/acura-of-tempe/index.html" target="_blank" class="button">
-                              <div class="button__button-outer button_theme_primary">
-                              <!-- <div class="button__button-outer button_theme_secondary button_theme_secondary_dark-bg-sm-only"> -->
-                                <div class="button__button-inner button__button-inner_theme_primary"><i class="fas fa-desktop button__button-icon"></i>Live Sites</div>
-                              </div>
-                            </a>
-                          </div>
-
-                          <div class="card-widescreen__button-trio_btn-2">
-                            <a href="https://github.com/toddcf/acura-of-tempe" target="_blank" class="button">
-                              <div class="button__button-outer button_theme_secondary button_theme_secondary_dark-bg-sm-only">
-                                <div class="button__button-inner button__button-inner_theme_secondary"><i class="fab fa-github button__button-icon"></i>GitHub</div>
-                              </div>
-                            </a>
-                          </div>
-
-                          <!-- <div class="card-widescreen__button-trio_btn-3">
-                            <a href="walkthrough/acura-of-tempe.html" class="button">
-                              <div class="button__button-outer button_theme_primary">
-                                <div class="button__button-inner"><i class="fas fa-code button__button-icon"></i>Project Walkthrough</div>
-                              </div>
-                            </a>
-                          </div> -->
-
-                        </div> <!-- Close .card-widescreen__button-trio -->
-
-                      </div> <!-- Close .card-widescreen_info-module -->
-
-                    </div> <!-- Close .card-widescreen_img_lg -->
-
-                  </div> <!-- Close .card-widescreen__content -->
-
-                </div> <!-- Close .card-widescreen__backboard_acura-of-tempe -->
-
-              </div> <!-- Close .card-widescreen -->
-
-              <!-- BMW of El Cajon -->
-              <div class="card-widescreen">
-
-                <div class="card-widescreen__backboard card-widescreen__backboard_bmw-el-cajon">
-
-                  <!-- Blurred bg img is passed into this container via CSS for small screens only -->
-
-                  <div class="card-widescreen__content">
-
-                    <div class="card-widescreen__img-riser">
-                      <div class="card-widescreen__img_sm card-widescreen__img_sm_bmw-el-cajon">
-                        <!-- Image is passed into this container via CSS depending on screen size -->
-                      </div>
-                    </div>
-
-                    <div class="card-widescreen__title-box">
-                      <h4 class="card-widescreen__title font_size_3">BMW of El Cajon</h4>
-                    </div>
-
-                    <div class="card-widescreen__img_md card-widescreen__img_md_bmw-el-cajon">
-                      <!-- Image is passed into this container via CSS depending on screen size -->
-                    </div>
-
-                    <div class="card-widescreen__img_lg card-widescreen__img_lg_bmw-el-cajon">
-                      
-                      <!-- Image is passed into this container via CSS depending on screen size -->
-
-                      <div class="card-widescreen__info-module card-widescreen__info-module_left">
-                        
-                        <p class="card-widescreen__info-module_text font_size_body">Two landing pages I designed and coded for BMW of El Cajon. They meet BMW's strict marketing style guidelines.</p>
-
-                        <div class="card-widescreen__button-trio">
-
-                          <div class="card-widescreen__button-trio_btn-1">
-                            <a href="https://toddcf.github.io/bmw-el-cajon/" target="_blank" class="button">
-                              <div class="button__button-outer button_theme_primary">
-                              <!-- <div class="button__button-outer button_theme_secondary button_theme_secondary_dark-bg-sm-only"> -->
-                                <div class="button__button-inner button__button-inner_theme_primary"><i class="fas fa-desktop button__button-icon"></i>Live Sites</div>
-                              </div>
-                            </a>
-                          </div>
-
-                          <div class="card-widescreen__button-trio_btn-2">
-                            <a href="https://github.com/toddcf/bmw-el-cajon" target="_blank" class="button">
-                              <div class="button__button-outer button_theme_secondary button_theme_secondary_dark-bg-sm-only">
-                                <div class="button__button-inner button__button-inner_theme_secondary"><i class="fab fa-github button__button-icon"></i>GitHub</div>
-                              </div>
-                            </a>
-                          </div>
-
-                          <!-- <div class="card-widescreen__button-trio_btn-3">
-                            <a href="#" class="button">
-                              <div class="button__button-outer button_theme_primary">
-                                <div class="button__button-inner"><i class="fas fa-code button__button-icon"></i>Project Walkthrough</div>
-                              </div>
-                            </a>
-                          </div> -->
-
-                        </div> <!-- Close .card-widescreen__button-trio -->
-
-                      </div> <!-- Close .card-widescreen_info-module -->
-
-                    </div> <!-- Close .card-widescreen_img_lg -->
-
-                  </div> <!-- Close .card-widescreen__content -->
-
-                </div> <!-- Close .card-widescreen__backboard -->
-
-              </div> <!-- Close .card-widescreen -->
-
-              <!-- Honda of New Rochelle -->
-              <div class="card-widescreen">
-
-                <div class="card-widescreen__backboard card-widescreen__backboard_honda-new-rochelle">
-
-                  <!-- Blurred bg img is passed into this container via CSS for small screens only -->
-
-                  <div class="card-widescreen__content">
-
-                    <div class="card-widescreen__img-riser">
-                      <div class="card-widescreen__img_sm card-widescreen__img_sm_honda-new-rochelle">
-                        <!-- Image is passed into this container via CSS depending on screen size -->
-                      </div>
-                    </div>
-
-                    <div class="card-widescreen__title-box">
-                      <h4 class="card-widescreen__title font_size_3">Honda of New Rochelle</h4>
-                    </div>
-
-                    <div class="card-widescreen__img_md card-widescreen__img_md_honda-new-rochelle">
-                      <!-- Image is passed into this container via CSS depending on screen size -->
-                    </div>
-
-                    <div class="card-widescreen__img_lg card-widescreen__img_lg_honda-new-rochelle">
-                      
-                      <!-- Image is passed into this container via CSS depending on screen size -->
-
-                      <div class="card-widescreen__info-module card-widescreen__info-module_right">
-                        
-                        <p class="card-widescreen__info-module_text font_size_body">Sample landing page I built for the 2018 Honda Accord as part of the interview process at fusionZONE Automotive, LLC. (And yes, I got the job!)</p>
-
-                        <div class="card-widescreen__button-trio">
-
-                          <div class="card-widescreen__button-trio_btn-1">
-                            <a href="https://toddcf.github.io/fzha/" target="_blank" class="button">
-                              <div class="button__button-outer button_theme_primary">
-                              <!-- <div class="button__button-outer button_theme_secondary button_theme_secondary_dark-bg-sm-only"> -->
-                                <div class="button__button-inner button__button-inner_theme_primary"><i class="fas fa-desktop button__button-icon"></i>Live Site</div>
-                              </div>
-                            </a>
-                          </div>
-
-                          <div class="card-widescreen__button-trio_btn-2">
-                            <a href="https://github.com/toddcf/fzha" target="_blank" class="button">
-                              <div class="button__button-outer button_theme_secondary button_theme_secondary_dark-bg-sm-only">
-                                <div class="button__button-inner button__button-inner_theme_secondary"><i class="fab fa-github button__button-icon"></i>GitHub</div>
-                              </div>
-                            </a>
-                          </div>
-
-                          <!-- <div class="card-widescreen__button-trio_btn-3">
-                            <a href="#" class="button">
-                              <div class="button__button-outer button_theme_primary">
-                                <div class="button__button-inner"><i class="fas fa-code button__button-icon"></i>Project Walkthrough</div>
-                              </div>
-                            </a>
-                          </div> -->
-
-                        </div> <!-- Close .card-widescreen__button-trio -->
-
-                      </div> <!-- Close .card-widescreen_info-module -->
-
-                    </div> <!-- Close .card-widescreen_img_lg -->
-
-                  </div> <!-- Close .card-widescreen__content -->
-
-                </div> <!-- Close .card-widescreen__backboard -->
-
-              </div> <!-- Close .card-widescreen -->
-
-            </div> <!-- Close .content__center content__center_1440 -->
-
-          </div> <!-- Close .professional-section__solid-white-bg -->
-          
-        </section> <!-- Close .professional-section -->
-
-        <section class="card-small-section">
-
-          <div class="heading heading_theme_black">
-            <div class="heading__title-overflow">
-              <h3 class="heading__title-tag font_size_4">
-                <span class="heading__title-tag_title">Additional Samples</span>
-              </h3>
-            </div>
-          </div>
-
-          <div class="background_theme_shaded">
-
-            <div class="content__center content__center_1440">
-
-              <div class="flexbox flexbox_layout_card-small">
-
-                <!-- My Portfolio -->
-                <div class="card-small">
-                  
-                  <div class="card-small__backboard card-small__backboard_my-portfolio card-small__backboard_1">
-
-                    <div class="card-small__content">
-
-                      <div class="card-small__img-riser">
-                        <div class="card-small__img card-small__img_my-portfolio">
-                          <!-- Image is passed into this container via CSS depending on screen size -->
-                        </div>
-                      </div>
-
-                      <h4 class="card-small__title font_size_2">My Portfolio</h4>
-                      
-                      <p class="card-small__text font_size_body">I designed and coded the portfolio you are looking at right now.</p>
-
-                      <div class="card-small__button-duo">
-
-                        <div class="card-small__button-duo_btn-2" style="opacity: 0;">
-                          <!-- <a href="walkthrough/my-portfolio.html" class="button"> -->
-                            <div class="button__button-outer button_theme_primary" style="cursor: default;">
-                              <div class="button__button-inner"><i class="fas fa-code button__button-icon"></i>Project Walkthrough</div>
-                            </div>
-                          <!-- </a> -->
-                        </div>
-
-                        <div class="card-small__button-duo_btn-1">
-                          <a href="https://github.com/toddcf/tcf-web-development" target="_blank" class="button">
-                            <div class="button__button-outer button_theme_secondary">
-                              <div class="button__button-inner button__button-inner_theme_secondary"><i class="fab fa-github button__button-icon"></i>GitHub</div>
-                            </div>
-                          </a>
-                        </div>
-
-                        
-
-                      </div> <!-- Close .card-small__button-duo -->
-
-                    </div> <!-- Close .card-small__content -->
-
-                  </div> <!-- Close .card-small__backboard -->
-
-                </div> <!-- Close .card-small -->
-
-                <!-- Omnifood -->
-                <div class="card-small">
-                  
-                  <div class="card-small__backboard card-small__backboard_omnifood card-small__backboard_2">
-
-                    <div class="card-small__content">
-
-                      <div class="card-small__img-riser">
-                        <div class="card-small__img card-small__img_omnifood">
-                          <!-- Image is passed into this container via CSS depending on screen size -->
-                        </div>
-                      </div>
-
-                      <h4 class="card-small__title font_size_2">Omnifood</h4>
-                        
-                      <p class="card-small__text font_size_body">Mobile responsive single-page sample site for high-end food delivery service.</p>
-
-                      <div class="card-small__button-duo">
-
-                        <div class="card-small__button-duo_btn-1">
-                          <a href="https://toddcf.github.io/omnifood-delivery/" target="_blank" class="button">
-                            <div class="button__button-outer button_theme_primary">
-                              <div class="button__button-inner button__button-inner_theme_primary"><i class="fas fa-desktop button__button-icon"></i>Live Site</div>
-                            </div>
-                          </a>
-                        </div>
-
-                        <div class="card-small__button-duo_btn-2">
-                          <a href="https://github.com/toddcf/omnifood-delivery" target="_blank" class="button">
-                            <div class="button__button-outer button_theme_secondary">
-                              <div class="button__button-inner button__button-inner_theme_secondary"><i class="fab fa-github button__button-icon"></i>GitHub</div>
-                            </div>
-                          </a>
-                        </div>
-
-                      </div> <!-- Close .card-small__button-duo -->
-
-                    </div> <!-- Close .card-small__content -->
-
-                  </div> <!-- Close .card-small__backboard -->
-
-                </div> <!-- Close .card-small -->
-
-                <!-- Author Site -->
-                <div class="card-small">
-                  
-                  <div class="card-small__backboard card-small__backboard_author-site card-small__backboard_3">
-
-                    <div class="card-small__content">
-
-                      <div class="card-small__img-riser">
-                        <div class="card-small__img card-small__img_author-site">
-                          <!-- Image is passed into this container via CSS depending on screen size -->
-                        </div>
-                      </div>
-
-                      <h4 class="card-small__title font_size_2">Author Site</h4>
-                        
-                      <p class="card-small__text font_size_body">Mobile responsive multipage website showcasing my published works.</p>
-
-                      <div class="card-small__button-duo">
-
-                        <div class="card-small__button-duo_btn-1">
-                          <a href="https://www.toddcf.com" target="_blank" class="button">
-                            <div class="button__button-outer button_theme_primary">
-                              <div class="button__button-inner button__button-inner_theme_primary"><i class="fas fa-desktop button__button-icon"></i>Live Site</div>
-                            </div>
-                          </a>
-                        </div>
-
-                        <div class="card-small__button-duo_btn-2">
-                          <a href="https://github.com/toddcf/toddcf" target="_blank" class="button">
-                            <div class="button__button-outer button_theme_secondary">
-                              <div class="button__button-inner button__button-inner_theme_secondary"><i class="fab fa-github button__button-icon"></i>GitHub</div>
-                            </div>
-                          </a>
-                        </div>
-
-                      </div> <!-- Close .card-small__button-duo -->
-
-                    </div> <!-- Close .card-small__content -->
-
-                  </div> <!-- Close .card-small__backboard -->
-
-                </div> <!-- Close .card-small -->
-                
-              </div> <!-- Close .flexbox_layout_card-small -->
-              
-            </div> <!-- Close .content__center content__center_1440 -->
-
-          </div> <!-- Close .background_theme_shaded -->
-          
-        </section> <!-- Close .card-small-section -->
-
-      </main>
 
       <footer class="footer footer_theme_black">
 
@@ -536,8 +150,7 @@
     <script src="assets/js/jquery.waypoints.min.js"></script>
 
     <!-- Custom JavaScript -->
-    <script src="assets/js/homepage-min.js"></script>
-    <script src="assets/js/card-small-min.js"></script>
+    <!-- script src="assets/js/homepage-min.js"></script> PROBABLY DELETE THIS FILE, TOO -->
     <script src="assets/js/footer-min.js"></script>
 
   </body>
