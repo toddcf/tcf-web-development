@@ -130,25 +130,20 @@
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">data-track-noun (represents &ldquo;what&rdquo; is being clicked)</p>
+                <p class="text__main font_size_body"><code class="language-html">data-track-noun</code> (represents &ldquo;what&rdquo; is being clicked)</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">data-track-verb (represents the &ldquo;action&rdquo; the user is taking)</p>
+                <p class="text__main font_size_body"><code class="language-html">data-track-verb</code> (represents the &ldquo;action&rdquo; the user is taking)</p>
               </li>
             </ul>
 
             <p class="text__main font_size_body">These two values get concatenated, colon-delimited, and assigned to eVar1. For example, if my site had a &ldquo;Careers&rdquo; card containing a &ldquo;Learn More&rdquo; button, that button would contain:</p>
 
-            <ul class="list__main font_size_body">
-              <li class="content__block_li">
-                <p class="text__main font_size_body">data-track-noun="careers"</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">data-track-verb="learn-more"</p>
-              </li>
-            </ul>
+            
+            <p><code class="language-html">data-track-noun="careers" data-track-verb="learn-more"</code></p>
+            
 
-            <p class="text__main font_size_body">(We standardize these values to lowercase kebab-case.) The resulting value passed in eVar1 would be <code class="code__snippet">careers:learn-more</code>.</p>
+            <p class="text__main font_size_body">(We standardize these values to lowercase kebab-case.) The resulting value passed in eVar1 would be <code class="language-html">careers:learn-more</code>.</p>
 
           </div> <!-- Close .content__block -->
 
@@ -172,10 +167,10 @@
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">faq:who-installs-your-panels:open</p>
+                <p><code class="language-html">faq:who-installs-your-panels:open</code></p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">faq:who-installs-your-panels:close</p>
+                <p><code class="language-html">faq:who-installs-your-panels:close</code></p>
               </li>
             </ul>
 
@@ -199,21 +194,21 @@
 
             <p class="text__main font_size_body">Even more complex is if the page has AEM components nested inside each other in any order and any combination you might imagine. (See my article on <a class="link link_theme_black" href="adobe-launch-nested-aem-component-click-tracking">Adobe Launch Nested AEM Component Click Tracking</a> for details.)</p>
 
-            <p class="text__main font_size_body">If this is the case, we will have additional attributes such as <code class="code__snippet font_size_body">data-track-component-level-X</code> (with <code class="code__snippet font_size_body">X</code> being a number) to also concatenate prior to the <code class="code__snippet font_size_body">data-track-noun</code> and <code class="code__snippet font_size_body">data-track-verb</code> values:</p>
+            <p class="text__main font_size_body">If this is the case, we will have additional attributes such as <code class="language-html">data-track-component-level-X</code> (with <code class="language-html">X</code> being a number) to also concatenate prior to the <code class="language-html">data-track-noun</code> and <code class="language-html">data-track-verb</code> values:</p>
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">data-track-component-level-1="employment"</p>
+                <p><code class="language-html">data-track-component-level-1="employment"</code></p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">data-track-noun="research-development"</p>
+                <p><code class="language-html">data-track-noun="research-development"</code></p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">data-track-verb="learn-more"</p>
+                <p><code class="language-html">data-track-verb="learn-more"</code></p>
               </li>
             </ul>
 
-            <p class="text__main font_size_body">Giving us results like: <code class="code__snippet font_size_body">employment:research-development:learn-more</code>.</p>
+            <p class="text__main font_size_body">Giving us results like: <code class="language-html">employment:research-development:learn-more</code>.</p>
           
           </div> <!-- Close .content__block -->
 
@@ -285,10 +280,10 @@
                 <p class="text__main font_size_body">Both rules listen for clicks on buttons.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">The &ldquo;Set Variables #25&rdquo; listens for the <code class="code__snippet">set-global-click-or-event-variables</code> direct call.</p>
+                <p class="text__main font_size_body">The &ldquo;Set Variables #25&rdquo; listens for the <code class="language-javascript">set-global-click-or-event-variables</code> direct call.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">The &ldquo;Send, Clear Variables #100&rdquo; listens for the <code class="code__snippet">send-global-click-or-event-beacon</code> direct call.</p>
+                <p class="text__main font_size_body">The &ldquo;Send, Clear Variables #100&rdquo; listens for the <code class="language-javascript">send-global-click-or-event-beacon</code> direct call.</p>
               </li>
             </ul>
 
@@ -521,7 +516,7 @@ s.linkTrackEvents = s.events;</code></pre>
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">Line 1: I want to know which type of event triggered the rule. The event could be a click, a shadow DOM click, a direct call, a &lsquo;change&rsquo;, etc. This will be used as a starting point to standardize the data coming in. I also strip out the <code class="code__snippet">core.</code> that is always going to be present. (Note that <code class="code__snippet">let</code> is used instead of <code class="code__snippet">const</code> because there will be some manipulation of this value if the event was a shadow DOM click. More on that later.)</p>
+                <p class="text__main font_size_body">Line 1: I want to know which type of event triggered the rule. The event could be a click, a shadow DOM click, a direct call, a &lsquo;change&rsquo;, etc. This will be used as a starting point to standardize the data coming in. I also strip out the <code class="language-javascript">core.</code> that is always going to be present. (Note that <code class="language-javascript">let</code> is used instead of <code class="language-javascript">const</code> because there will be some manipulation of this value if the event was a shadow DOM click. More on that later.)</p>
               </li>
               <li class="content__block_li">
                 <p class="text__main font_size_body">Lines 2 - 6: I declare a set of empty variables where certain data will be stored, if certain conditions are later met:</p>
@@ -544,13 +539,13 @@ s.linkTrackEvents = s.events;</code></pre>
                 </ul>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 9 - 13: Declare variables that will be used if the <code class="code__snippet">data-track-verb</code> attribute is missing from the clicked element.</p>
+                <p class="text__main font_size_body">Lines 9 - 13: Declare variables that will be used if the <code class="language-html">data-track-verb</code> attribute is missing from the clicked element.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 16 - 38: <code class="code__snippet">cleanText</code> is a helper function that standardizes text to lowercase kebab-case.</p>
+                <p class="text__main font_size_body">Lines 16 - 38: <code class="language-javascript">cleanText</code> is a helper function that standardizes text to lowercase kebab-case.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 40 - 67: <code class="code__snippet">getLinkName</code> is a helper function that contains fallbacks for getting a click tracking value from other places in the element if the normal <code class="code__snippet">data-track</code> attributes are missing.</p>
+                <p class="text__main font_size_body">Lines 40 - 67: <code class="language-javascript">getLinkName</code> is a helper function that contains fallbacks for getting a click tracking value from other places in the element if the normal <code class="language-html">data-track</code> attributes are missing.</p>
               </li>
               <li class="content__block_li">
                 <p class="text__main font_size_body">Lines 70 - 88: Next, I determine what I want to consider the clicked element to be:</p>
@@ -559,54 +554,54 @@ s.linkTrackEvents = s.events;</code></pre>
                     <p class="text__main font_size_body">Line 73: If the rule was triggered by a &lsquo;click&rsquo; or a &lsquo;change&rsquo;, the clicked element will be the &lsquo;this&rsquo; keyword.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 74: Since I know this use case means that it should be tracked as a click, I go ahead and increment <code class="code__snippet">event1</code> now.</p>
+                    <p class="text__main font_size_body">Line 74: Since I know this use case means that it should be tracked as a click, I go ahead and increment <code class="language-javascript">event1</code> now.</p>
                   </li>
                   <li class="content__block_li">
                     <p class="text__main font_size_body">Lines 78 - 80: If the rule was triggered by a direct call, it may have received an object along with it that I want to treat as the clicked element.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 82: If the rule was triggered by a shadow DOM click, I reassign its <code class="code__snippet">ruleTriggerType</code> value to <code class="code__snippet">shadowClick</code> so that I can differentiate between the two in my logic later.</p>
+                    <p class="text__main font_size_body">Line 82: If the rule was triggered by a shadow DOM click, I reassign its <code class="language-javascript">ruleTriggerType</code> value to <code class="language-javascript">shadowClick</code> so that I can differentiate between the two in my logic later.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 83: And if this event <em>was</em> a shadow DOM click, I can also go ahead and increment <code class="code__snippet">event1</code> now.</p>
+                    <p class="text__main font_size_body">Line 83: And if this event <em>was</em> a shadow DOM click, I can also go ahead and increment <code class="language-javascript">event1</code> now.</p>
                   </li>
                 </ul>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 89 - 91: Now that I&rsquo;ve determined what I want to use as my clicked element, I can pull the attributes from it and store them in an array. (The validation is necessary because <code class="code__snippet">clickedElement.attributes</code> will not work if a direct call passed a custom object into this rule containing only the specific data that is needed. That use case will be accounted for later.)</p>
+                <p class="text__main font_size_body">Lines 89 - 91: Now that I&rsquo;ve determined what I want to use as my clicked element, I can pull the attributes from it and store them in an array. (The validation is necessary because <code class="language-javascript">clickedElement.attributes</code> will not work if a direct call passed a custom object into this rule containing only the specific data that is needed. That use case will be accounted for later.)</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 93 - 99: Convert the array of attributes into key/value pairs and store them in the <code class="code__snippet">clickAttributes</code> object. (This is the format that will be used for the rest of the rule.) Once again, validation is necessary in case the object passed into this rule does not contain architecture consistent with that of a clicked element.</p>
+                <p class="text__main font_size_body">Lines 93 - 99: Convert the array of attributes into key/value pairs and store them in the <code class="language-javascript">clickAttributes</code> object. (This is the format that will be used for the rest of the rule.) Once again, validation is necessary in case the object passed into this rule does not contain architecture consistent with that of a clicked element.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 103 - 114: If the event was triggered by either a regular click or a shadow DOM click, and if the clicked element is missing the <code class="code__snippet">data-track-verb</code> attribute, fallback logic is used to source a value from other attributes instead.</p>
+                <p class="text__main font_size_body">Lines 103 - 114: If the event was triggered by either a regular click or a shadow DOM click, and if the clicked element is missing the <code class="language-html">data-track-verb</code> attribute, fallback logic is used to source a value from other attributes instead.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 116 - 125: If the clicked element is an accordion, the accordion status is set to either &lsquo;open&rsquo; or &lsquo;close&rsquo; based on the <code class="code__snippet">aria-expanded</code> attribute.</p>
+                <p class="text__main font_size_body">Lines 116 - 125: If the clicked element is an accordion, the accordion status is set to either &lsquo;open&rsquo; or &lsquo;close&rsquo; based on the <code class="language-html">aria-expanded</code> attribute.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Line 126: In the end, I store the fallback value in the <code class="code__snippet">clickAttributes</code> object&rsquo;s <code class="code__snippet">data-track-verb</code> property.</p>
+                <p class="text__main font_size_body">Line 126: In the end, I store the fallback value in the <code class="language-javascript">clickAttributes</code> object&rsquo;s <code class="language-javascript">data-track-verb</code> property.</p>
               </li>
               <li class="content__block_li">
                 <p class="text__main font_size_body">Lines 129 - 138: If the rule was triggered by a direct call with a custom object passed into it, I look specifically for those custom properties here.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 142 - 147: Finally, the <code class="code__snippet">clickAttributes</code> object contains all the key/value pairs it&rsquo;s going to get. The properties that will ultimately be passed to Adobe Analytics start with <code class="code__snippet">data-track</code>. Those are the only ones I need to convert to lowercase kebab-case. (And I do need to do this in case some of these values were indeed pulled from fallbacks such as link text, alt tags, aria-labels, etc. They could include special characters, spaces, capital letters, and more.)</p>
+                <p class="text__main font_size_body">Lines 142 - 147: Finally, the <code class="language-javascript">clickAttributes</code> object contains all the key/value pairs it&rsquo;s going to get. The properties that will ultimately be passed to Adobe Analytics start with <code class="language-html">data-track</code>. Those are the only ones I need to convert to lowercase kebab-case. (And I do need to do this in case some of these values were indeed pulled from fallbacks such as link text, alt tags, aria-labels, etc. They could include special characters, spaces, capital letters, and more.)</p>
               </li>
               <li class="content__block_li">
                 <p class="text__main font_size_body">Lines 149 - 169: Now that all of the tracking values have been standardized to lowercase kebab-case, it is time to stage them in the order that they will be concatenated and passed to Adobe Analytics in eVar1. This is done by simply pushing them into an array in the desired order:</p>
                 <ul class="list__main font_size_body">
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 149 - 157: That means I stage all the <code class="code__snippet">data-track-component-level-1</code>, <code class="code__snippet">2</code>, <code class="code__snippet">3</code>, etc. values first, and in numerical order. But I have no way of knowing how many there will be, or if there will even be any at all. (This use case will only apply if there are AEM components on the page. See my article on <a class="link link_theme_black" href="adobe-launch-nested-aem-component-click-tracking">Adobe Launch Nested AEM Component Click Tracking</a> for full details.) Therefore, I use a <code class="code__name">do while</code> loop.</p>
+                    <p class="text__main font_size_body">Lines 149 - 157: That means I stage all the <code class="language-javascript">data-track-component-level-1</code>, <code class="language-javascript">2</code>, <code class="language-javascript">3</code>, etc. values first, and in numerical order. But I have no way of knowing how many there will be, or if there will even be any at all. (This use case will only apply if there are AEM components on the page. See my article on <a class="link link_theme_black" href="adobe-launch-nested-aem-component-click-tracking">Adobe Launch Nested AEM Component Click Tracking</a> for full details.) Therefore, I use a <code class="code__name">do while</code> loop.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 159 - 161: If there is a <code class="code__snippet">data-track-noun</code> value, I stage that next.</p>
+                    <p class="text__main font_size_body">Lines 159 - 161: If there is a <code class="language-html">data-track-noun</code> value, I stage that next.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 163 - 165: If there is a <code class="code__snippet">data-track-verb</code> value, I stage that next.</p>
+                    <p class="text__main font_size_body">Lines 163 - 165: If there is a <code class="language-html">data-track-verb</code> value, I stage that next.</p>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 167 - 169: Lastly, if this was an accordion click, I stage either <code class="code__snippet">open</code> or <code class="code__snippet">close</code>.</p>
+                    <p class="text__main font_size_body">Lines 167 - 169: Lastly, if this was an accordion click, I stage either <code class="language-javascript">open</code> or <code class="language-javascript">close</code>.</p>
                   </li>
                 </ul>
               </li>
@@ -617,7 +612,7 @@ s.linkTrackEvents = s.events;</code></pre>
                 <p class="text__main font_size_body">Line 180: Finally, the actual concatenation is done by joining the items in the array with colons.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 182 - 184: Assign all the values to their respective places in Adobe&rsquo;s <code class="code__snippet">s</code> object.</p>
+                <p class="text__main font_size_body">Lines 182 - 184: Assign all the values to their respective places in Adobe&rsquo;s <code class="language-javascript">s</code> object.</p>
               </li>
             </ul>
               
