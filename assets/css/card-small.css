@@ -333,6 +333,11 @@
     -webkit-animation-delay: 300ms;
             animation-delay: 300ms;
   }
+
+  .card-small__backboard_4_effects {
+    -webkit-animation-delay: 450ms;
+            animation-delay: 450ms;
+  }
   
 }
 
