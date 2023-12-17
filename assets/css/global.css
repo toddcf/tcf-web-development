@@ -43,11 +43,6 @@
   font-weight: 700;
 }
 
-.code__snippet {
-  background-color: #000;
-  color: #fff;
-}
-
 .content__block {
   padding: 1.5em 0 3em 0;
 }
@@ -78,6 +73,22 @@
 
 .content__center_1920 {
   max-width: 1920px;
+}
+
+.content__center_vertical-inner {
+  height: auto;
+  left: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.content__center_vertical-outer {
+  position: relative;
 }
 
 .flexbox {
