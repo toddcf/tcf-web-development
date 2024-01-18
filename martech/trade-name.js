@@ -1,81 +1,81 @@
-let tradeName; // Do not default to empty string, or AEP will include it as an empty string. And in the Launch UI, make sure this data element's "enable default value" checkbox is *unchecked*.
-let tradeNameArr;
-let tradeNameMap;
+let destinationName; // Do not default to empty string, or AEP will include it as an empty string. And in the Launch UI, make sure this data element's "enable default value" checkbox is *unchecked*.
+let destinationNameArr;
+let destinationNameMap;
 
 const clickAttributes = (!!event && !!event.detail) ? event.detail : '';
 
 if (
     !!clickAttributes &&
-    !!clickAttributes['data-track'] &&
-    clickAttributes['data-track'] === 'filter-trade' &&
+    !!clickAttributes['data-track-noun'] &&
+    clickAttributes['data-track-noun'] === 'filter-destination' &&
     !!clickAttributes['data-track-name']
 ) {
-    // Booking Flow Trade Filter Clicks (future-proofed version):
-    tradeName = clickAttributes['data-track-name'];
+    // Booking Flow Destination Filter Clicks (future-proofed version):
+    destinationName = clickAttributes['data-track-name'];
 } else if (
     !!clickAttributes &&
-    !!clickAttributes['data-track'] &&
-    clickAttributes['data-track'] === 'search-filter'
+    !!clickAttributes['data-track-noun'] &&
+    clickAttributes['data-track-noun'] === 'search-filter'
 ) {
     // Do nothing -- this is a stopgap to prevent legacy attributes from allowing the Page/Route Load condition from being met on clicks.  We can delete this once the data attributes on the Filters elements are fixed.
-} else if (!!window.digitalData) {
+} else if (!!window.dataLayer) {
     if (
-        !!window.digitalData.itinerary &&
-        typeof window.digitalData.itinerary.trade === 'object' &&
-        typeof window.digitalData.itinerary.trade.name === 'string'
+        !!window.dataLayer.booking &&
+        typeof window.dataLayer.booking.destination === 'object' &&
+        typeof window.dataLayer.booking.destination.name === 'string'
     ) {
-        tradeName = window.digitalData.itinerary.trade.name;
-    } else if (!!window.digitalData.itinerary &&
-        typeof window.digitalData.itinerary.trade === 'string'
+        destinationName = window.dataLayer.booking.destination.name;
+    } else if (!!window.dataLayer.booking &&
+        typeof window.dataLayer.booking.destination === 'string'
     ) {
-        tradeName = window.digitalData.itinerary.trade;
+        destinationName = window.dataLayer.booking.destination;
     } else if (
-        !!window.digitalData.product &&
-        typeof window.digitalData.product.trade === 'object' &&
-        typeof window.digitalData.product.trade.name === 'string'
+        !!window.dataLayer.product &&
+        typeof window.dataLayer.product.destination === 'object' &&
+        typeof window.dataLayer.product.destination.name === 'string'
     ) {
-        tradeName = window.digitalData.product.trade.name;
+        destinationName = window.dataLayer.product.destination.name;
     } else if (
-        !!window.digitalData.product &&
-        !!window.digitalData.product.trade &&
-        typeof window.digitalData.product.trade === 'string'
+        !!window.dataLayer.product &&
+        !!window.dataLayer.product.destination &&
+        typeof window.dataLayer.product.destination === 'string'
     ) {
         // For EZair, which still uses legacy data layer architecture:
-        tradeName = window.digitalData.product.trade;
+        destinationName = window.dataLayer.product.destination;
     } else if (
-        !!window.digitalData.search &&
-        !!window.digitalData.search.trade &&
-        Array.isArray(window.digitalData.search.trade)
+        !!window.dataLayer.search &&
+        !!window.dataLayer.search.destination &&
+        Array.isArray(window.dataLayer.search.destination)
     ) {
-        tradeNameArr = window.digitalData.search.trade; // Get the array of id/name objects.
-        tradeNameMap = tradeNameArr.map(trade => trade.name); // Map each name property to a new array.
-        if (!!tradeNameMap && Array.isArray(tradeNameMap)) {
-            tradeName = tradeNameMap.toString(); // Only set the tradeName variable at this point to prevent prior states of the array/mapping from being passed to Analytics or AEP.
+        destinationNameArr = window.dataLayer.search.destination; // Get the array of id/name objects.
+        destinationNameMap = destinationNameArr.map(destination => destination.name); // Map each name property to a new array.
+        if (!!destinationNameMap && Array.isArray(destinationNameMap)) {
+            destinationName = destinationNameMap.toString(); // Only set the destinationName variable at this point to prevent prior states of the array/mapping from being passed to Analytics or AEP.
         }
     } else if (
-        !!window.digitalData.search &&
-        typeof window.digitalData.search.trade === 'string'
+        !!window.dataLayer.search &&
+        typeof window.dataLayer.search.destination === 'string'
     ) {
-        tradeName = window.digitalData.search.trade; // Shorex still uses this format.
+        destinationName = window.dataLayer.search.destination; // Shorex still uses this format.
     } else if (
-        !!window.digitalData.content &&
-        typeof window.digitalData.content.trade === 'object' &&
-        typeof window.digitalData.content.trade.name === 'string'
+        !!window.dataLayer.content &&
+        typeof window.dataLayer.content.destination === 'object' &&
+        typeof window.dataLayer.content.destination.name === 'string'
     ) {
-        tradeName = window.digitalData.content.trade.name;
+        destinationName = window.dataLayer.content.destination.name;
     } else if (
-        !!window.digitalData.content &&
-        typeof window.digitalData.content.trade === 'string'
+        !!window.dataLayer.content &&
+        typeof window.dataLayer.content.destination === 'string'
     ) {
-        tradeName = window.digitalData.content.trade;
+        destinationName = window.dataLayer.content.destination;
     }
 }
 
 // Prevent empty strings, null, or EZair's 'NA' defaults from being sent to AEP:
 if (
-    !!tradeName &&
-    typeof tradeName === 'string' &&
-    tradeName !== 'NA'
+    !!destinationName &&
+    typeof destinationName === 'string' &&
+    destinationName !== 'NA'
 ) {
-    return tradeName;
+    return destinationName;
 }
