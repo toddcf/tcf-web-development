@@ -30,19 +30,6 @@ if (
     ) {
         destinationName = window.dataLayer.booking.destination;
     } else if (
-        !!window.dataLayer.product &&
-        typeof window.dataLayer.product.destination === 'object' &&
-        typeof window.dataLayer.product.destination.name === 'string'
-    ) {
-        destinationName = window.dataLayer.product.destination.name;
-    } else if (
-        !!window.dataLayer.product &&
-        !!window.dataLayer.product.destination &&
-        typeof window.dataLayer.product.destination === 'string'
-    ) {
-        // For EZair, which still uses legacy data layer architecture:
-        destinationName = window.dataLayer.product.destination;
-    } else if (
         !!window.dataLayer.search &&
         !!window.dataLayer.search.destination &&
         Array.isArray(window.dataLayer.search.destination)
@@ -56,7 +43,7 @@ if (
         !!window.dataLayer.search &&
         typeof window.dataLayer.search.destination === 'string'
     ) {
-        destinationName = window.dataLayer.search.destination; // Shorex still uses this format.
+        destinationName = window.dataLayer.search.destination;
     } else if (
         !!window.dataLayer.content &&
         typeof window.dataLayer.content.destination === 'object' &&
