@@ -95,20 +95,24 @@
 
           <div class="content__block">
           
-            <p class="text__main font_size_body">At my company, there is a core set of tracking events and variables we send to Adobe Analytics for all events.</p>
+            <p class="text__main font_size_body">One issue I faced at my job was that the data layer architecture was inconsistent across the various site sections. I&rsquo;ll anonymize this by pretending I work for an airline; if we wanted to track the name of the destination(s) the user was looking at, there were a few main use cases:</p>
 
-            <p class="text__main font_size_body">For the purposes of this explanation, let&rsquo;s say I work at a solar power company. (All variables and attributes in this article have been changed to suit that scenario.) To keep things D.R.Y., this core set of variables is programmed into one Adobe Launch rule named <code class="code__name">Global | Set Variables | Clicks or Events #25</code>, which fires on every event we want to track.</p>
-
-            <p class="text__main font_size_body">In addition to those baseline variables, if that event is a click, we also send:</p>
-
-            <ul class="list__main font_size_body">
+            <ol class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">event1: Custom Link Click (increment)</p>
+                <p class="text__main font_size_body">The user is selecting (clicking) a specific destination, such as a filter in the booking flow, or a link to a content page about that destination.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">eVar1: Custom Link Value (describes which element was clicked)</p>
+                <p class="text__main font_size_body">The user is viewing search results for flights to a single or multiple destinations.</p>
               </li>
-            </ul>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">The user is looking at a content page about the destination itself.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">A known user is just browsing around, but they already have a booking to a specific destination. (Knowing this helps us serve personalized content to them as they browse.)</p>
+              </li>
+            </ol>
+
+            <p class="text__main font_size_body">Rather than having lots of diffent &lsquo;destination&rsquo; data elements in our codebase, which then have to be mapped into different Launch rules and XDMs, we can create <em>one</em> &lsquo;destination&rsquo; data element that checks for each of these use cases in order of priority.</p>
 
           </div> <!-- Close .content__block -->
 
