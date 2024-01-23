@@ -59,7 +59,6 @@ if (
   }
 }
 
-// Prevent empty strings, null, or EZair's 'NA' defaults from being sent to AEP:
 if (
   !!destinationName &&
   typeof destinationName === 'string' &&
