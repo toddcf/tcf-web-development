@@ -118,10 +118,22 @@
 
         </div> <!-- Close .content__center content__center_700 -->
 
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Use Cases</span>
+            </h2>
+          </div>
+        </div>
+
         <div class="heading heading_theme_clear">
           <div class="heading__title-overflow">
             <h3 class="heading__title-tag font_size_2">
-              <span class="heading__title-tag_title">Basic Custom Link Values</span>
+              <span class="heading__title-tag_title">Use Case 1: Modern Data Layer</span>
             </h3>
           </div>
         </div>
@@ -130,24 +142,63 @@
 
           <div class="content__block">
 
-            <p class="text__main font_size_body">The Custom Link Value that gets passed into eVar1 is typically a concatenation of two data attributes, which I put into each element we want to track clicks on:</p>
+            <p class="text__main font_size_body">The modern data layer architecture (which each of our site sections is refactoring to as each gets replatformed) groups the destination <code class="language-javascript">code</code> and <code class="language-javascript">name</code> together within each property, like this:</p>
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body"><code class="language-html">data-track-noun</code> (represents &ldquo;what&rdquo; is being clicked)</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body"><code class="language-html">data-track-verb</code> (represents the &ldquo;action&rdquo; the user is taking)</p>
+                <p class="text__main font_size_body">dataLayer</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">booking</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">destination</p>
+                        <ul class="list__main font_size_body">
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">code</p>
+                          </li>
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">name</p>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">content</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">destination</p>
+                        <ul class="list__main font_size_body">
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">code</p>
+                          </li>
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">name</p>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">search</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">destination</p>
+                        <ul class="list__main font_size_body">
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">code</p>
+                          </li>
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">name</p>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </li>
             </ul>
-
-            <p class="text__main font_size_body">These two values get concatenated, colon-delimited, and assigned to eVar1. For example, if my site had a &ldquo;Careers&rdquo; card containing a &ldquo;Learn More&rdquo; button, that button would contain:</p>
-
-            
-            <p><code class="language-html">data-track-noun="careers" data-track-verb="learn-more"</code></p>
-            
-
-            <p class="text__main font_size_body">(We standardize these values to lowercase kebab-case.) The resulting value passed in eVar1 would be <code class="language-html">careers:learn-more</code>.</p>
 
           </div> <!-- Close .content__block -->
 
