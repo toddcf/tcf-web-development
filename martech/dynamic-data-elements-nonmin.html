@@ -316,7 +316,7 @@
 
         <div class="content__center content__center_1140">
 
-  <pre class="code__block"><code class="language-javascript">let destinationName; // Do not default to empty string, or AEP will include it as an empty string. And in the Launch UI, make sure this data element's "enable default value" checkbox is *unchecked*.
+  <pre class="code__block"><code class="language-javascript">let destinationName;
 let destinationNameArr;
 let destinationNameMap;
 
@@ -335,7 +335,7 @@ if (
   !!clickAttributes['data-track-noun'] &&
   clickAttributes['data-track-noun'] === 'search-filter'
 ) {
-  // Do nothing -- this is a stopgap to prevent legacy attributes from allowing the Page/Route Load condition from being met on clicks.  We can delete this once the data attributes on the Filters elements are fixed.
+  // Do nothing.
 } else if (!!window.dataLayer) {
   if (
     !!window.dataLayer.booking &&
@@ -353,10 +353,10 @@ if (
     !!window.dataLayer.search.destination &&
     Array.isArray(window.dataLayer.search.destination)
   ) {
-    destinationNameArr = window.dataLayer.search.destination; // Get the array of id/name objects.
-    destinationNameMap = destinationNameArr.map(destination => destination.name); // Map each name property to a new array.
+    destinationNameArr = window.dataLayer.search.destination;
+    destinationNameMap = destinationNameArr.map(destination => destination.name);
     if (!!destinationNameMap && Array.isArray(destinationNameMap)) {
-      destinationName = destinationNameMap.toString(); // Only set the destinationName variable at this point to prevent prior states of the array/mapping from being passed to Analytics or AEP.
+      destinationName = destinationNameMap.toString();
     }
   } else if (
     !!window.dataLayer.search &&
