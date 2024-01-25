@@ -401,48 +401,44 @@ if (
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">Line 1: I want to know which type of event triggered the rule. The event could be a click, a shadow DOM click, a direct call, a &lsquo;change&rsquo;, etc. This will be used as a starting point to standardize the data coming in. I also strip out the <code class="language-javascript">core.</code> that is always going to be present. (Note that <code class="language-javascript">let</code> is used instead of <code class="language-javascript">const</code> because there will be some manipulation of this value if the event was a shadow DOM click. More on that later.)</p>
+                <p class="text__main font_size_body">Line 1: Declare the variable where the value will be stored. For AEP purposes, do not set any default value. (If there is no value, we want this data element to return <code class="language-javascript">undefined</code> so that its property is omitted from the XDM. If it defaults to <code class="language-javascript">''</code> or <code class="language-javascript">null</code>, the property will be added to the XDM, which could result in a batch ingestion failure.)</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 2 - 6: I declare a set of empty variables where certain data will be stored, if certain conditions are later met:</p>
+                <p class="text__main font_size_body">Lines 2 - 3: Declare the variables that will be used to handle array use cases later in this flow.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 5: If the rule that invokes this data element has been triggered by a click, an object will have been passed into it. That object will be the clicked element. We store it in the <code class="language-javascript">clickAttributes</code> variable. (And if the event was not a click, we default this variable to an empty string so that its condition will not be met later in our logic.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 7 - 14: The first thing we check are the click use cases. Some of our pages follow the new and improved convention of having <code class="language-html">data-track-noun="filter-destination"</code> attributes. If a clicked element has this attribute, we&rsquo;ll want to pull the value from its <code class="language-html">data-track-name</code> attribute. We check that both exist before attempting to do this.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 15 - 20: Some of our pages have search filters whose data attributes have <em>not</em> been updated to the new and improved convention described above. If this is the case, they will have a legacy attribute called <code class="language-html">data-track-noun="search-filter"</code>. If so, they do <em>not</em> also contain a <code class="language-html">data-track-name</code> attribute, so we can&rsquo;t pull the destination name from it. Instead, we keep a condition here that <em>will be met but do nothing</em>. This prevents clicks on these legacy elements from falling back to the values in the data layer further down the flow &mdash; which would not accurately reflect what was clicked.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 21 - 60: We now enter the data layer conditions.</p>
                 <ul class="list__main font_size_body">
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 2: For the clicked element (regular or simulated) itself.</p>
+                    <p class="text__main font_size_body">Lines 22 - 32: First we check if a <code class="language-javascript">booking</code> destination exists.</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 22 - 27: We first look for the <code class="language-javascript">booking</code> property in the <em>modern</em> data layer architecture.</p>
+                        <ul class="list__main font_size_body">
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">Line 24: Rather than just checking to see if <code class="language-javascript">window.dataLayer.booking.destination</code> exists, we confirm that it is an object. This is because if our code was reading the legacy data layer, this condition would be met even though it is only a string. If that were the case, attempting to check <code class="language-javascript">window.dataLayer.booking.destination.name</code> on the next line would throw an error.</p>
+                          </li>
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">Lines 25 - 27: Having confirmed that <code class="language-javascript">window.dataLayer.booking.destination</code> is an object, we now confirm that <code class="language-javascript">window.dataLayer.booking.destination.name</code> is a string. If so, we store it in our <code class="language-javascript">destinationName</code> variable.</p>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 28 - 32: If the destination name was not found in the <em>modern</em> data layer architecture, we check the <em>legacy</em> data layer architecture next.</p>
+                      </li>
+                    </ul>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 3: Will become an array where <em>all</em> the attributes of the clicked element will be stored.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 4: For the key/value pairs for each attribute after they are converted from the above array.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 5: For the &lsquo;open&rsquo; or &lsquo;close&rsquo; value on an accordion click.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 6: At the end, I will push just the values the anaylists want to track, in the order they want to track them, into this array.</p>
-                  </li>
-                </ul>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 9 - 13: Declare variables that will be used if the <code class="language-html">data-track-verb</code> attribute is missing from the clicked element.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 16 - 38: <code class="language-javascript">cleanText</code> is a helper function that standardizes text to lowercase kebab-case.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 40 - 67: <code class="language-javascript">getLinkName</code> is a helper function that contains fallbacks for getting a click tracking value from other places in the element if the normal <code class="language-html">data-track</code> attributes are missing.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 70 - 88: Next, I determine what I want to consider the clicked element to be:</p>
-                <ul class="list__main font_size_body">
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 73: If the rule was triggered by a &lsquo;click&rsquo; or a &lsquo;change&rsquo;, the clicked element will be the &lsquo;this&rsquo; keyword.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 74: Since I know this use case means that it should be tracked as a click, I go ahead and increment <code class="language-javascript">event1</code> now.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 78 - 80: If the rule was triggered by a direct call, it may have received an object along with it that I want to treat as the clicked element.</p>
+                    <p class="text__main font_size_body">Lines 33 - 47:</p>
                   </li>
                   <li class="content__block_li">
                     <p class="text__main font_size_body">Line 82: If the rule was triggered by a shadow DOM click, I reassign its <code class="language-javascript">ruleTriggerType</code> value to <code class="language-javascript">shadowClick</code> so that I can differentiate between the two in my logic later.</p>
