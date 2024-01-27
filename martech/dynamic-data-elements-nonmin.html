@@ -438,65 +438,40 @@ if (
                     </ul>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 33 - 47:</p>
+                    <p class="text__main font_size_body">Lines 33 - 47: If the destination name was not found in the <code class="language-javascript">booking</code> properties, it&rsquo;s time to check the <code class="language-javascript">search</code> properties &mdash; first in the modern architecture, then in the legacy architecture.</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 33 - 36: The modern data layer&rsquo;s <code class="language-javascript">search</code> property is a little more complex because it is an array. The user has the ability to search for multiple destinations at a time. This first condition includes validation to confirm that we are indeed dealing with an array before we try to run methods on a property that will throw an error if it&rsquo;s not an array.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Line 38: Store the array in <code class="language-javascript">destinationNameArr</code>. (Each item in the array will contain both a destination <code class="language-javascript">name</code> and a destination <code class="language-javascript">id</code> (code).)</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Line 39: Map each <code class="language-javascript">name</code> value into a new array, and store it in <code class="language-javascript">destinationNameMap</code>.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 40 -42: We do another quick validation check to make sure we aren&rsquo;t pulling the wrong data type, and then we convert the array into a string.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 44 - 47: On the other hand, if we are working with the legacy data layer, the list of destination names will already be a string. And they will not include destination codes.</p>
+                      </li>
+                    </ul>
                   </li>
                   <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 82: If the rule was triggered by a shadow DOM click, I reassign its <code class="language-javascript">ruleTriggerType</code> value to <code class="language-javascript">shadowClick</code> so that I can differentiate between the two in my logic later.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Line 83: And if this event <em>was</em> a shadow DOM click, I can also go ahead and increment <code class="language-javascript">event1</code> now.</p>
+                    <p class="text__main font_size_body">Lines 48 - 59: If the destination name was not found in <code class="language-javascript">booking</code> or <code class="language-javascript">search</code>, next check <code class="language-javascript">content</code>. As always, we check for the modern data layer first, and the legacy data layer second.</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 50 - 51: It is important to confirm that <code class="language-javascript">dataLayer.content.destination</code> is an object before considering it to be a match. This is because the legacy data layer also contains this exact same property, only it is a string and contains the final value. If this is the case and we next try to run some dot notation on it (on line 51), it will throw an error.</p>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 89 - 91: Now that I&rsquo;ve determined what I want to use as my clicked element, I can pull the attributes from it and store them in an array. (The validation is necessary because <code class="language-javascript">clickedElement.attributes</code> will not work if a direct call passed a custom object into this rule containing only the specific data that is needed. That use case will be accounted for later.)</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 93 - 99: Convert the array of attributes into key/value pairs and store them in the <code class="language-javascript">clickAttributes</code> object. (This is the format that will be used for the rest of the rule.) Once again, validation is necessary in case the object passed into this rule does not contain architecture consistent with that of a clicked element.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 103 - 114: If the event was triggered by either a regular click or a shadow DOM click, and if the clicked element is missing the <code class="language-html">data-track-verb</code> attribute, fallback logic is used to source a value from other attributes instead.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 116 - 125: If the clicked element is an accordion, the accordion status is set to either &lsquo;open&rsquo; or &lsquo;close&rsquo; based on the <code class="language-html">aria-expanded</code> attribute.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Line 126: In the end, I store the fallback value in the <code class="language-javascript">clickAttributes</code> object&rsquo;s <code class="language-javascript">data-track-verb</code> property.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 129 - 138: If the rule was triggered by a direct call with a custom object passed into it, I look specifically for those custom properties here.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 142 - 147: Finally, the <code class="language-javascript">clickAttributes</code> object contains all the key/value pairs it&rsquo;s going to get. The properties that will ultimately be passed to Adobe Analytics start with <code class="language-html">data-track</code>. Those are the only ones I need to convert to lowercase kebab-case. (And I do need to do this in case some of these values were indeed pulled from fallbacks such as link text, alt tags, aria-labels, etc. They could include special characters, spaces, capital letters, and more.)</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 149 - 169: Now that all of the tracking values have been standardized to lowercase kebab-case, it is time to stage them in the order that they will be concatenated and passed to Adobe Analytics in eVar1. This is done by simply pushing them into an array in the desired order:</p>
-                <ul class="list__main font_size_body">
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 149 - 157: That means I stage all the <code class="language-javascript">data-track-component-level-1</code>, <code class="language-javascript">2</code>, <code class="language-javascript">3</code>, etc. values first, and in numerical order. But I have no way of knowing how many there will be, or if there will even be any at all. (This use case will only apply if there are AEM components on the page. See my article on <a class="link link_theme_black" href="adobe-launch-nested-aem-component-click-tracking">Adobe Launch Nested AEM Component Click Tracking</a> for full details.) Therefore, I use a <code class="code__name">do while</code> loop.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 159 - 161: If there is a <code class="language-html">data-track-noun</code> value, I stage that next.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 163 - 165: If there is a <code class="language-html">data-track-verb</code> value, I stage that next.</p>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 167 - 169: Lastly, if this was an accordion click, I stage either <code class="language-javascript">open</code> or <code class="language-javascript">close</code>.</p>
-                  </li>
-                </ul>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 172 - 177: Adobe has a 255-character limit, and my concatenation could potentially get pretty long. (Especially if there are a lot of layers of nested components, or if the text from an anchor tag was used as a fallback.) If the custom link tracking value goes over 255 characters, Adobe will truncate it. I'd rather control how that truncation occurs, so I cap each individual value at 60 characters. (The ballpark estimation is that our site will likely not have more than four layers of nested components &mdash; plus perhaps an &lsquo;open&rsquo; or &lsquo;close&rsquo; appendage at the end if this was an accordion click.)</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Line 180: Finally, the actual concatenation is done by joining the items in the array with colons.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 182 - 184: Assign all the values to their respective places in Adobe&rsquo;s <code class="language-javascript">s</code> object.</p>
+                <p class="text__main font_size_body">Lines 63 - 65: To prevent batch ingestion failures in AEP, we make sure no <code class="language-javascript">null</code> values, empty strings, or <code class="language-javascript">'NA'</code> default values from the data layer get passed through. Done!</p>
               </li>
             </ul>
-              
+
           </div> <!-- Close .content__block -->
 
         </div> <!-- Close .content__center content__center_700 -->
