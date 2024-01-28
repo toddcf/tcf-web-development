@@ -46,21 +46,21 @@
 @media (max-width: 575.98px) {
 
   .card-small__backboard_author-site {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/576x630-blur12px-min.jpg);
   }
 
   .card-small__backboard_my-portfolio {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/576x630-blur12px-min.jpg);
   }
 
   .card-small__backboard_omnifood {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/576x630-blur12px-min.jpg);
   }
 
   .card-small__img_author-site {
@@ -76,15 +76,15 @@
   }
 
   .card-widescreen__backboard_acura-of-tempe {
-    background-image: -o-linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_acura-of-tempe/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../img/card-widescreen/__backboard/_acura-of-tempe/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_acura-of-tempe/left-crop-576x630-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_acura-of-tempe/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../img/card-widescreen/__backboard/_acura-of-tempe/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_acura-of-tempe/576x630-blur12px-min.jpg);
   }
 
   .card-widescreen__backboard_bmw-el-cajon {
-    background-image: -o-linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_bmw-el-cajon/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../img/card-widescreen/__backboard/_bmw-el-cajon/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_bmw-el-cajon/left-crop-576x630-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_bmw-el-cajon/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../img/card-widescreen/__backboard/_bmw-el-cajon/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(../img/card-widescreen/__backboard/_bmw-el-cajon/576x630-blur12px-min.jpg);
   }
 
   .card-widescreen__backboard_honda-new-rochelle {
@@ -114,21 +114,21 @@
 @media (min-width: 576px) and (max-width: 767.98px) {
 
   .card-small__backboard_author-site {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-768x840-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/768x840-blur12px-min.jpg);
   }
 
   .card-small__backboard_my-portfolio {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-768x840-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/768x840-blur12px-min.jpg);
   }
 
   .card-small__backboard_omnifood {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-768x840-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/768x840-blur12px-min.jpg);
   }
 
   .card-small__img_author-site {
@@ -166,21 +166,21 @@
 @media (min-width: 768px) {
 
   .card-small__backboard_author-site {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/left-crop-576x630-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_author-site/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_author-site/576x630-blur12px-min.jpg);
   }
 
   .card-small__backboard_my-portfolio {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/center-crop-576x630-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_my-portfolio/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_my-portfolio/576x630-blur12px-min.jpg);
   }
 
   .card-small__backboard_omnifood {
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
-    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/left-crop-576x630-blur12px-min.jpg);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/card-small/__backboard/_omnifood/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/card-small/__backboard/_omnifood/576x630-blur12px-min.jpg);
   }
 
   .card-small__img_author-site {
