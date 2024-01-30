@@ -183,46 +183,20 @@
 
             <p class="text__main font_size_body">Older site sections use a flatter data layer architecture, which does <em>not</em> nest the <code class="language-javascript">code</code> and <code class="language-javascript">name</code> together under one <code class="language-javascript">destination</code> property:</p>
 
-            <ul class="list__main font_size_body">
-              <li class="content__block_li">
-                <p class="text__main font_size_body">dataLayer</p>
-                <ul class="list__main font_size_body">
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">booking</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destination</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destinationCode</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">content</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destination</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destinationCode</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">search</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destination</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destinationCode</p>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            <pre class="code__block"><code class="language-javascript">dataLayer: {
+  booking: {
+    destination,
+    destinationCode,
+  },
+  content: {
+    destination,
+    destinationCode,
+  },
+  search: {
+    destination,
+    destinationCode,
+  },
+}</code></pre>
 
           </div> <!-- Close .content__block -->
 
