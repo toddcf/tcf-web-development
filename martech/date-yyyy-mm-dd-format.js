@@ -7,7 +7,7 @@ let outputYYYYMMDD = (!!inputDate) ? inputDate : ''; // Defaults for output (in 
 const formattedDateArr = [];
 
 // Converts a single date object to YYYY-MM-DD:
-function formatYYYYMMDD(singleDateObj) {
+const formatYYYYMMDD = (singleDateObj) => {
   // Defaults assist with debugging:
   let yyyy = 'YYYY';
   let mm = 'MM';
@@ -29,7 +29,7 @@ if (!!inputDate) {
     // If inputDate is an array:
     if (inputDate.length > 0 && typeof inputDate[0].getMonth === 'function') {
       // Converts an array of date objects to a string of YYYY-MM-DD,YYYY-MM-DD,YYYY-MM-DD:
-      inputDate.forEach(function(dateObj) {
+      inputDate.forEach((dateObj) => {
         // If it is a date object:
         if (typeof dateObj.getMonth === 'function') {
           formattedDateArr.push(formatYYYYMMDD(dateObj)); // Format each date and push it to the new array.
