@@ -2,16 +2,16 @@
 // Arrays of date objects will be convered to a 'YYYY-MM-DD,YYYY-MM-DD,YYYY-MM-DD' string.
 // 'any' strings will pass through unmodified.
 // Unwanted input formats are wiped to empty strings so that they will be flagged by ObservePoint.
-var inputDate = event; // The argument that is passed into this data element.
-var outputYYYYMMDD = (!!inputDate) ? inputDate : ''; // Defaults for output (in case the value is 'any', or nonexistent).
-var formattedDateArr = [];
+const inputDate = event; // The argument that is passed into this data element.
+let outputYYYYMMDD = (!!inputDate) ? inputDate : ''; // Defaults for output (in case the value is 'any', or nonexistent).
+const formattedDateArr = [];
 
 // Converts a single date object to YYYY-MM-DD:
 function formatYYYYMMDD(singleDateObj) {
   // Defaults assist with debugging:
-  var yyyy = 'YYYY';
-  var mm = 'MM';
-  var dd = 'DD';
+  let yyyy = 'YYYY';
+  let mm = 'MM';
+  let dd = 'DD';
   // Reformats date object. 'any' strings skip this part.
   if (typeof singleDateObj.getMonth === 'function') {
     yyyy = singleDateObj.getFullYear();
