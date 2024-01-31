@@ -144,61 +144,26 @@
 
             <p class="text__main font_size_body">The modern data layer architecture (which each of our site sections is refactoring to as each gets replatformed) groups the destination <code class="language-javascript">code</code> and <code class="language-javascript">name</code> together within each property, like this:</p>
 
-            <ul class="list__main font_size_body">
-              <li class="content__block_li">
-                <p class="text__main font_size_body">dataLayer</p>
-                <ul class="list__main font_size_body">
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">booking</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destination</p>
-                        <ul class="list__main font_size_body">
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">code</p>
-                          </li>
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">name</p>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">content</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destination</p>
-                        <ul class="list__main font_size_body">
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">code</p>
-                          </li>
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">name</p>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">search</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destination</p>
-                        <ul class="list__main font_size_body">
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">code</p>
-                          </li>
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">name</p>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            <pre class="code__block"><code class="language-javascript">dataLayer: {
+  booking: {
+    destination: {
+      code,
+      name,
+    },
+  },
+  content: {
+    destination: {
+      code,
+      name,
+    },
+  },
+  search: {
+    destination: {
+      code,
+      name,
+    },
+  },
+}</code></pre>
 
           </div> <!-- Close .content__block -->
 
@@ -218,46 +183,20 @@
 
             <p class="text__main font_size_body">Older site sections use a flatter data layer architecture, which does <em>not</em> nest the <code class="language-javascript">code</code> and <code class="language-javascript">name</code> together under one <code class="language-javascript">destination</code> property:</p>
 
-            <ul class="list__main font_size_body">
-              <li class="content__block_li">
-                <p class="text__main font_size_body">dataLayer</p>
-                <ul class="list__main font_size_body">
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">booking</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destination</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destinationCode</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">content</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destination</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destinationCode</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">search</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destination</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">destinationCode</p>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            <pre class="code__block"><code class="language-javascript">dataLayer: {
+  booking: {
+    destination,
+    destinationCode,
+  },
+  content: {
+    destination,
+    destinationCode,
+  },
+  search: {
+    destination,
+    destinationCode,
+  },
+}</code></pre>
 
           </div> <!-- Close .content__block -->
 
@@ -444,7 +383,7 @@ if (
                         <p class="text__main font_size_body">Lines 33 - 36: The modern data layer&rsquo;s <code class="language-javascript">search</code> property is a little more complex because it is an array. The user has the ability to search for multiple destinations at a time. This first condition includes validation to confirm that we are indeed dealing with an array before we try to run methods on a property that will throw an error if it&rsquo;s not an array.</p>
                       </li>
                       <li class="content__block_li">
-                        <p class="text__main font_size_body">Line 38: Store the array in <code class="language-javascript">destinationNameArr</code>. (Each item in the array will contain both a destination <code class="language-javascript">name</code> and a destination <code class="language-javascript">id</code> (code).)</p>
+                        <p class="text__main font_size_body">Line 38: Store the array in <code class="language-javascript">destinationNameArr</code>. (Each item in the array will contain both a destination <code class="language-javascript">name</code> and a destination <code class="language-javascript">code</code>.)</p>
                       </li>
                       <li class="content__block_li">
                         <p class="text__main font_size_body">Line 39: Map each <code class="language-javascript">name</code> value into a new array, and store it in <code class="language-javascript">destinationNameMap</code>.</p>

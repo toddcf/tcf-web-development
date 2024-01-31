@@ -139,36 +139,17 @@
 
             <p class="text__main font_size_body">OneTrust is a third-party application that we installed on our site. When the user first lands, a OneTrust banner or popup prompts them to select their tracking preferences. Once they do, OneTrust populates the following properties in the data layer with the corresponding Booleans:</p>
 
-            <ul class="list__main font_size_body">
-              <li class="content__block_li">
-                <p class="text__main font_size_body">dataLayer:</p>
-                <ul class="list__main font_size_body">
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">user:</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">consent:</p>
-                        <ul class="list__main font_size_body">
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">C0001</p>
-                          </li>
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">C0002</p>
-                          </li>
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">C0003</p>
-                          </li>
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">C0004</p>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            
+            <pre class="code__block"><code class="language-javascript">dataLayer: {
+  user: {
+    consent: {
+      C0001,
+      C0002,
+      C0003,
+      C0004,
+    },
+  },
+}</code></pre>
+
             <p class="text__main font_size_body">For example, if a user allowed Analytics tracking (Level 2), that property in the data layer would be set to:</p>
 
             <p class="text__main font_size_body"><code class="language-javascript">dataLayer.user.consent.C0002: true</code></p>
