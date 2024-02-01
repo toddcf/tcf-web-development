@@ -50,6 +50,12 @@
     background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/birds-flying/576x630-blur12px-min.jpg);
   }
   
+  .card-small__backboard_date-formatting {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/canyon-night-sky/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/canyon-night-sky/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/canyon-night-sky/576x630-blur12px-min.jpg);
+  }
+  
   .card-small__backboard_dynamic-data-elements {
     background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/leaf-venules/576x630-blur12px-min.jpg);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/leaf-venules/576x630-blur12px-min.jpg);
@@ -82,6 +88,12 @@
     background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/birds-flying/768x840-blur12px-min.jpg);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/birds-flying/768x840-blur12px-min.jpg);
     background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/birds-flying/768x840-blur12px-min.jpg);
+  }
+  
+  .card-small__backboard_date-formatting {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/canyon-night-sky/768x840-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/canyon-night-sky/768x840-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/canyon-night-sky/768x840-blur12px-min.jpg);
   }
   
   .card-small__backboard_dynamic-data-elements {
@@ -118,6 +130,12 @@
     background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/birds-flying/576x630-blur12px-min.jpg);
   }
   
+  .card-small__backboard_date-formatting {
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/canyon-night-sky/576x630-blur12px-min.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/canyon-night-sky/576x630-blur12px-min.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/canyon-night-sky/576x630-blur12px-min.jpg);
+  }
+  
   .card-small__backboard_dynamic-data-elements {
     background-image: -o-linear-gradient(rgba(255, 255, 255, .75) 0, rgba(255, 255, 255, .75) 100%), url(../img/martech/leaf-venules/576x630-blur12px-min.jpg);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, .75)), to(rgba(255, 255, 255, .75))), url(../img/martech/leaf-venules/576x630-blur12px-min.jpg);
@@ -150,6 +168,10 @@
     background-image: url(../img/martech/birds-flying/576x227-min.jpg);
   }
   
+  .card-small__img_date-formatting {
+    background-image: url(../img/martech/canyon-night-sky/576x227-min.jpg);
+  }
+  
   .card-small__img_dynamic-data-elements {
     background-image: url(../img/martech/leaf-venules/576x227-min.jpg);
   }
@@ -172,6 +194,10 @@
 
   .card-small__img_consent-levels {
     background-image: url(../img/martech/birds-flying/768x302-min.jpg);
+  }
+  
+  .card-small__img_date-formatting {
+    background-image: url(../img/martech/canyon-night-sky/768x302-min.jpg);
   }
   
   .card-small__img_dynamic-data-elements {
