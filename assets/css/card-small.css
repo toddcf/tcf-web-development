@@ -280,6 +280,57 @@
 
 }
 
+/* CARD 6 */
+.card-small__backboard_6 {
+  opacity: 0; /* Invisible before the animation is triggered */
+}
+
+.card-small__backboard_6.card-small__backboard_6_effects {
+  opacity: 1; /* Keeps this card visible after the animation is completed */
+}
+
+.card-small__backboard_6_effects {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: card-small__backboard_6_effects;
+          animation-name: card-small__backboard_6_effects;
+}
+
+/* fadeInUp */
+@-webkit-keyframes card-small__backboard_6_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
+@keyframes card-small__backboard_6_effects {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+}
+
 .card-small__button-duo_btn-1 {
   margin-bottom: 7.5px;
 }
@@ -394,6 +445,11 @@
   .card-small__backboard_5_effects {
     -webkit-animation-delay: 600ms;
             animation-delay: 600ms;
+  }
+
+  .card-small__backboard_6_effects {
+    -webkit-animation-delay: 750ms;
+            animation-delay: 750ms;
   }
   
 }

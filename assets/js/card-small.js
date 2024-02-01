@@ -85,4 +85,23 @@ $( document ).ready( function() {
     });
   }
 
+  // Card #6 Effects:
+  if ($(window).width() < 576) {
+    // At this screen size, this card's offset triggers its own animation.
+    // Not actually using "direction," because this animation will only happen once.
+    $( '.card-small__backboard_6' ).waypoint( function( direction ) {
+      $( '.card-small__backboard_6' ).addClass( 'card-small__backboard_6_effects' );
+    }, {
+      offset: '85%'
+    });
+  } else {
+    // At this screen size, Card #1's offset triggers animation for all other cards.
+    // Not actually using "direction," because this animation will only happen once.
+    $( '.card-small__backboard_1' ).waypoint( function( direction ) {
+      $( '.card-small__backboard_6' ).addClass( 'card-small__backboard_6_effects' );
+    }, {
+      offset: '85%'
+    });
+  }
+
 } );
