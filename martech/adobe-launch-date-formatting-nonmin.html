@@ -138,6 +138,12 @@
 
             <p class="text__main font_size_body">Here is our data element&rsquo;s full syntax. (Scroll past to see an explanation of each code block.)</p>
 
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center_700 -->
+
+        <div class="content__center content__center_1140">
+
             <pre class="code__block"><code class="language-javascript">const inputDate = event;
 let outputYYYYMMDD = (!!inputDate) ? inputDate : '';
 const formattedDateArr = [];
@@ -179,165 +185,6 @@ if (!!inputDate) {
 
 return outputYYYYMMDD;</code></pre>
 
-          </div> <!-- Close .content__block -->
-
-        </div> <!-- Close .content__center content__center_700 -->
-
-        <div class="heading heading_theme_clear">
-          <div class="heading__title-overflow">
-            <h3 class="heading__title-tag font_size_2">
-              <span class="heading__title-tag_title">Use Case 2: Legacy Data Layer</span>
-            </h3>
-          </div>
-        </div>
-
-        <div class="content__center content__center_700">
-
-          <div class="content__block">
-
-            <p class="text__main font_size_body">Older site sections use a flatter data layer architecture, which does <em>not</em> nest the <code class="language-javascript">code</code> and <code class="language-javascript">name</code> together under one <code class="language-javascript">destination</code> property:</p>
-
-            <pre class="code__block"><code class="language-javascript">dataLayer: {
-  booking: {
-    destination,
-    destinationCode,
-  },
-  content: {
-    destination,
-    destinationCode,
-  },
-  search: {
-    destination,
-    destinationCode,
-  },
-}</code></pre>
-
-          </div> <!-- Close .content__block -->
-
-        </div> <!-- Close .content__center content__center_700 -->
-
-        <div class="heading heading_theme_clear">
-          <div class="heading__title-overflow">
-            <h3 class="heading__title-tag font_size_2">
-              <span class="heading__title-tag_title">Use Case 3: Data Attributes (Clicks)</span>
-            </h3>
-          </div>
-        </div>
-
-        <div class="content__center content__center_700">
-
-          <div class="content__block">
-
-            <p class="text__main font_size_body">When we began implementing AEP as well, we created one global XDM that could be used for both clicks and page/route loads. The reasoning for this was twofold:</p>
-
-            <ol class="list__main font_size_body">
-              <li class="content__block_li">
-                <p class="text__main font_size_body">To be D.R.Y.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">To ensure that the schema architecture is <em>identical</em> in all circumstances, preventing batch ingestion failures.</p>
-              </li>
-            </ol>
-
-            <p class="text__main font_size_body">Therefore, these same dynamic data elements required logic that would first check if the rule-triggering event contained data attributes.</p>
-
-          </div> <!-- Close .content__block -->
-
-        </div> <!-- Close .content__center content__center_700 -->
-
-      </section>
-
-      <section>
-
-        <div class="heading heading_theme_black">
-          <div class="heading__title-overflow">
-            <h2 class="heading__title-tag font_size_3">
-              <span class="heading__title-tag_title">Syntax</span>
-            </h2>
-          </div>
-        </div>
-
-        <div class="content__center content__center_700">
-
-          <div class="content__block">
-
-            <p class="text__main font_size_body">Here is the actual programming. (Scroll down for a description of how it works.)</p>
-
-          </div> <!-- Close .content__block -->
-
-        </div> <!-- Close .content__center_700 -->
-
-        <div class="content__center content__center_1140">
-
-  <pre class="code__block"><code class="language-javascript">let destinationName;
-let destinationNameArr;
-let destinationNameMap;
-
-const clickAttributes = (!!event && !!event.detail) ? event.detail : '';
-
-if (
-  !!clickAttributes &&
-  !!clickAttributes['data-track-noun'] &&
-  clickAttributes['data-track-noun'] === 'filter-destination' &&
-  !!clickAttributes['data-track-name']
-) {
-  // Booking Flow Destination Filter Clicks (future-proofed version):
-  destinationName = clickAttributes['data-track-name'];
-} else if (
-  !!clickAttributes &&
-  !!clickAttributes['data-track-noun'] &&
-  clickAttributes['data-track-noun'] === 'search-filter'
-) {
-  // Do nothing.
-} else if (!!window.dataLayer) {
-  if (
-    !!window.dataLayer.booking &&
-    typeof window.dataLayer.booking.destination === 'object' &&
-    typeof window.dataLayer.booking.destination.name === 'string'
-  ) {
-    destinationName = window.dataLayer.booking.destination.name;
-  } else if (
-    !!window.dataLayer.booking &&
-    typeof window.dataLayer.booking.destination === 'string'
-  ) {
-    destinationName = window.dataLayer.booking.destination;
-  } else if (
-    !!window.dataLayer.search &&
-    !!window.dataLayer.search.destination &&
-    Array.isArray(window.dataLayer.search.destination)
-  ) {
-    destinationNameArr = window.dataLayer.search.destination;
-    destinationNameMap = destinationNameArr.map(destination => destination.name);
-    if (!!destinationNameMap && Array.isArray(destinationNameMap)) {
-      destinationName = destinationNameMap.toString();
-    }
-  } else if (
-    !!window.dataLayer.search &&
-    typeof window.dataLayer.search.destination === 'string'
-  ) {
-    destinationName = window.dataLayer.search.destination;
-  } else if (
-    !!window.dataLayer.content &&
-    typeof window.dataLayer.content.destination === 'object' &&
-    typeof window.dataLayer.content.destination.name === 'string'
-  ) {
-    destinationName = window.dataLayer.content.destination.name;
-  } else if (
-    !!window.dataLayer.content &&
-    typeof window.dataLayer.content.destination === 'string'
-  ) {
-    destinationName = window.dataLayer.content.destination;
-  }
-}
-
-if (
-  !!destinationName &&
-  typeof destinationName === 'string' &&
-  destinationName !== 'NA'
-) {
-  return destinationName;
-}</code></pre>
-
         </div> <!-- Close .content__center content__center_1140 -->
 
         <div class="heading heading_theme_clear">
@@ -356,73 +203,6 @@ if (
               <li class="content__block_li">
                 <p class="text__main font_size_body">Line 1: Declare the variable where the value will be stored. For AEP purposes, do not set any default value. (If there is no value, we want this data element to return <code class="language-javascript">undefined</code> so that its property is omitted from the XDM. If it defaults to <code class="language-javascript">''</code> or <code class="language-javascript">null</code>, the property will be added to the XDM, which could result in a batch ingestion failure.)</p>
               </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 2 - 3: Declare the variables that will be used to handle array use cases later in this flow.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Line 5: If the rule that invokes this data element has been triggered by a click, an object will have been passed into it. That object will be the clicked element. We store it in the <code class="language-javascript">clickAttributes</code> variable. (And if the event was not a click, we default this variable to an empty string so that its condition will not be met later in our logic.)</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 7 - 14: The first thing we check are the click use cases. Some of our pages follow the new and improved convention of having <code class="language-html">data-track-noun="filter-destination"</code> attributes. If a clicked element has this attribute, we&rsquo;ll want to pull the value from its <code class="language-html">data-track-name</code> attribute. We check that both exist before attempting to do this.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 15 - 20: Some of our pages have search filters whose data attributes have <em>not</em> been updated to the new and improved convention described above. If this is the case, they will have a legacy attribute called <code class="language-html">data-track-noun="search-filter"</code>. If so, they do <em>not</em> also contain a <code class="language-html">data-track-name</code> attribute, so we can&rsquo;t pull the destination name from it. Instead, we keep a condition here that <em>will be met but do nothing</em>. This prevents clicks on these legacy elements from falling back to the values in the data layer further down the flow &mdash; which would not accurately reflect what was clicked.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 21 - 60: We now enter the data layer conditions.</p>
-                <ul class="list__main font_size_body">
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 22 - 32: First we check if a <code class="language-javascript">booking</code> destination exists.</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">Lines 22 - 27: We first look for the <code class="language-javascript">booking</code> property in the <em>modern</em> data layer architecture.</p>
-                        <ul class="list__main font_size_body">
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">Line 24: Rather than just checking to see if <code class="language-javascript">window.dataLayer.booking.destination</code> exists, we confirm that it is an object. This is because if our code was reading the legacy data layer, this condition would be met even though it is only a string. If that were the case, attempting to check <code class="language-javascript">window.dataLayer.booking.destination.name</code> on the next line would throw an error.</p>
-                          </li>
-                          <li class="content__block_li">
-                            <p class="text__main font_size_body">Lines 25 - 27: Having confirmed that <code class="language-javascript">window.dataLayer.booking.destination</code> is an object, we now confirm that <code class="language-javascript">window.dataLayer.booking.destination.name</code> is a string. If so, we store it in our <code class="language-javascript">destinationName</code> variable.</p>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">Lines 28 - 32: If the destination name was not found in the <em>modern</em> data layer architecture, we check the <em>legacy</em> data layer architecture next.</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 33 - 47: If the destination name was not found in the <code class="language-javascript">booking</code> properties, it&rsquo;s time to check the <code class="language-javascript">search</code> properties &mdash; first in the modern architecture, then in the legacy architecture.</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">Lines 33 - 36: The modern data layer&rsquo;s <code class="language-javascript">search</code> property is a little more complex because it is an array. The user has the ability to search for multiple destinations at a time. This first condition includes validation to confirm that we are indeed dealing with an array before we try to run methods on a property that will throw an error if it&rsquo;s not an array.</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">Line 38: Store the array in <code class="language-javascript">destinationNameArr</code>. (Each item in the array will contain both a destination <code class="language-javascript">name</code> and a destination <code class="language-javascript">code</code>.)</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">Line 39: Map each <code class="language-javascript">name</code> value into a new array, and store it in <code class="language-javascript">destinationNameMap</code>.</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">Lines 40 -42: We do another quick validation check to make sure we aren&rsquo;t pulling the wrong data type, and then we convert the array into a string.</p>
-                      </li>
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">Lines 44 - 47: On the other hand, if we are working with the legacy data layer, the list of destination names will already be a string. And they will not include destination codes.</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="content__block_li">
-                    <p class="text__main font_size_body">Lines 48 - 59: If the destination name was not found in <code class="language-javascript">booking</code> or <code class="language-javascript">search</code>, next check <code class="language-javascript">content</code>. As always, we check for the modern data layer first, and the legacy data layer second.</p>
-                    <ul class="list__main font_size_body">
-                      <li class="content__block_li">
-                        <p class="text__main font_size_body">Lines 50 - 51: It is important to confirm that <code class="language-javascript">dataLayer.content.destination</code> is an object before considering it to be a match. This is because the legacy data layer also contains this exact same property, only it is a string and contains the final value. If this is the case and we next try to run some dot notation on it (on line 51), it will throw an error.</p>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">Lines 63 - 65: To prevent batch ingestion failures in AEP, we make sure no <code class="language-javascript">null</code> values, empty strings, or <code class="language-javascript">'NA'</code> default values from the data layer get passed through. Done!</p>
-              </li>
             </ul>
 
           </div> <!-- Close .content__block -->
@@ -430,7 +210,7 @@ if (
         </div> <!-- Close .content__center content__center_700 -->
 
       </section>
-    
+
     </main>
 
     <footer class="footer footer_theme_black">
