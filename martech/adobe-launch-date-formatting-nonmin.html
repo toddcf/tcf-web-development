@@ -95,24 +95,22 @@
 
           <div class="content__block">
           
-            <p class="text__main font_size_body">One issue I faced at my job was that the data layer architecture was inconsistent across the various site sections. I&rsquo;ll anonymize this by pretending I work for an airline; if we wanted to track the name of the destination(s) the user was looking at, there were a few main use cases:</p>
+            <p class="text__main font_size_body">One issue I faced at my job was that the data layer contained different date formats in different site sections &mdash; and sometimes in different portions of the same site section. For the purposes of this example, let&rsquo;s say I work on an airline website, and that early in the booking flow, the departure date is in the <code class="language-javascript">'MM/DD/YY'</code> format. But later in the booking flow, that same date is in the <code class="language-javascript">'YYYY-MM-DD'</code> format.</p>
+
+            <p class="text__main font_size_body">Adobe Analytics wants to receive the <code class="language-javascript">'YYYY-MM-DD'</code> format, which means that the lower funnel is fine .&nbsp;.&nbsp;. but the upper funnel would need some custom logic to reformat it.</p>
+
+            <p class="text__main font_size_body">To further complicate matters, one of our marketing pixels wants that same date in the <code class="language-javascript">'MM/DD/YYYY'</code> (four-digit year) format.</p>
+
+            <p class="text__main font_size_body">The solution:</p>
 
             <ol class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">The user is selecting (clicking) a specific destination, such as a filter in the booking flow, or a link to a content page about that destination.</p>
+                <p class="text__main font_size_body">Standardize the data layer so that all dates are JavaScript <em>date objects</em> instead of strings, giving us the most versatility to reformat any way we like from there.</p>
               </li>
               <li class="content__block_li">
-                <p class="text__main font_size_body">The user is viewing search results for flights to a single or multiple destinations.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">The user is looking at a content page about the destination itself.</p>
-              </li>
-              <li class="content__block_li">
-                <p class="text__main font_size_body">A known user is just browsing around, but they already have a booking to a specific destination. (Knowing this helps us serve personalized content to them as they browse.)</p>
+                <p class="text__main font_size_body">Create a set of Adobe Launch data elements that can take in a JavaScript date object and return it in a predetermined format. (One data element per desired format &mdash; one that returns a <code class="language-javascript">'YYYY-MM-DD'</code> string, one that returns a <code class="language-javascript">'MM/DD/YYYY'</code> string, etc.)</p>
               </li>
             </ol>
-
-            <p class="text__main font_size_body">Rather than having lots of diffent &lsquo;destination&rsquo; data elements in our codebase, which then have to be mapped into different Launch rules and XDMs, we can create <em>one</em> &lsquo;destination&rsquo; data element that checks for each of these use cases in order of priority.</p>
 
           </div> <!-- Close .content__block -->
 
