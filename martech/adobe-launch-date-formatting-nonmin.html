@@ -247,23 +247,25 @@ return outputYYYYMMDD;</code></pre>
                 <ul class="list__main font_size_body">
                   <li class="content__block_li">
                     <p class="text__main font_size_body">Lines 22 - 28: If the array contains date objects:</p>
-                    <li class="content__block_li">
-                      <p class="text__main font_size_body">Line 22: Confirm that we&rsquo;re dealing with an array, that it contains at least one item, and that at least the first item is a JavaScript date object.</p>
-                    </li>
-                    <li class="content__block_li">
-                      <p class="text__main font_size_body">Lines 23 - 27: Loop over the array and format each date object into a <code class="language-javascript">'YYYY-MM-DD'</code> string.</p>
-                      <ul class="list__main font_size_body">
-                        <li class="content__block_li">
-                          <p class="text__main font_size_body">Line 24: Validation to confirm that each item is in fact a date object.</p>
-                        </li>
-                        <li class="content__block_li">
-                          <p class="text__main font_size_body">Line 25: Format each date (using the <code class="language-javascript">formatYYYYMMDD</code> function we created up top), and then push it into our <code class="language-javascript">formattedDateArr</code> array.</p>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="content__block_li">
-                      <p class="text__main font_size_body">Line 28: After that process is complete, if the <code class="language-javascript">formattedDateArr</code> contains at least one item, join it with the default delimiter &mdash; commas &mdash; and store it in our <code class="language-javascript">outputYYYYMMDD</code> variable to be returned at the end. Otherwise, set it to an empty string. (NOTE: Do <em>not</em> encode the commas.)</p>
-                    </li>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Line 22: Confirm that we&rsquo;re dealing with an array, that it contains at least one item, and that at least the first item is a JavaScript date object.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 23 - 27: Loop over the array and format each date object into a <code class="language-javascript">'YYYY-MM-DD'</code> string.</p>
+                        <ul class="list__main font_size_body">
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">Line 24: Validation to confirm that each item is in fact a date object.</p>
+                          </li>
+                          <li class="content__block_li">
+                            <p class="text__main font_size_body">Line 25: Format each date (using the <code class="language-javascript">formatYYYYMMDD</code> function we created up top), and then push it into our <code class="language-javascript">formattedDateArr</code> array.</p>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Line 28: After that process is complete, if the <code class="language-javascript">formattedDateArr</code> contains at least one item, join it with the default delimiter &mdash; commas &mdash; and store it in our <code class="language-javascript">outputYYYYMMDD</code> variable to be returned at the end. Otherwise, set it to an empty string. (NOTE: Do <em>not</em> encode the commas.)</p>
+                      </li>
+                    </ul>
                   </li>
                   <li class="content__block_li">
                     <p class="text__main font_size_body">Lines 29 - 31: If the array contains items other than date objects, set our final value to an empty string. (Remember, we are preemptively accounting for breakages in the data layer.)</p>
