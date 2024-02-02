@@ -201,7 +201,93 @@ return outputYYYYMMDD;</code></pre>
 
             <ul class="list__main font_size_body">
               <li class="content__block_li">
-                <p class="text__main font_size_body">Line 1: Declare the variable where the value will be stored. For AEP purposes, do not set any default value. (If there is no value, we want this data element to return <code class="language-javascript">undefined</code> so that its property is omitted from the XDM. If it defaults to <code class="language-javascript">''</code> or <code class="language-javascript">null</code>, the property will be added to the XDM, which could result in a batch ingestion failure.)</p>
+                <p class="text__main font_size_body">Line 1: <code class="language-javascript">event</code> represents the argument that was passed into this data element. For the most part, we will expect this to be a JavaScript date object. (Although, as you will see later in this flow, that is not the only use case, and we have plenty of logic to confirm the data type before we start calling methods on it that could throw an error.) We store it in <code class="language-javascript">inputDate</code>.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 2: As the name implies, <code class="language-javascript">outputYYYYMMDD</code> is the <code class="language-javascript">let</code> that we will be returning at the end. But we set a default value up top, because there are some non-date-object use cases to account for &mdash; hence the ternary:</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">First, the value pulled from the data layer may be <code class="language-javascript">'any'</code> &mdash; a string, not a date object. This is the default value if the user is at the top of the booking funnel and has not filtered for a specific date (or range of dates) yet.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Second, something may have gone wrong in the data layer, and something like <code class="language-javascript">null</code> or <code class="language-javascript">undefined</code> or <code class="language-javascript">'NA'</code> has been passed into our data element. If so, we default to an empty string.</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 3: Create an empty array for use cases where multiple dates are being handled. (The user may be filtering for a range of departure dates.)</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 5 - 19: Create a reusable function that takes in a date object and returns it in the <code class="language-javascript">'YYYY-MM-DD'</code> string format. (The whole point of this particular data element.)</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 6 - 8: Set string defaults. This way, if only part of the logic has a problem, you can easily see which part.</p>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 9 - 15: Parse the date object and store each piece (year, month, day) in its respective variable.</p>
+                    <ul class="list__main font_size_body">
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Line 11: Add <code class="language-javascript">+1</code> to the month, since JavaScript months start at <code class="language-javascript">0</code>, and we don&rsquo;t want all the data we send to Analytics to be off by one month.</p>
+                      </li>
+                      <li class="content__block_li">
+                        <p class="text__main font_size_body">Lines 12 - 14: Prepend a <code class="language-javascript">0</code> to any single-digit month or day values.</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 16: Return the date as a string in the <code class="language-javascript">'YYYY-MM-DD'</code> format. <em>(NOTE: If you want this data element to return some other format, such as <code class="language-javascript">'MM/DD/YYYY'</code>, this is the line to edit.)</em></p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 19: Once again, use validation to confirm that something was actually passed in before attempting to run the rest of this logic on it.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 20 - 31: Use Case 1 &ndash; We have taken in an <em>array</em> of date objects and need to convert them into one string in the <code class="language-javascript">'YYYY-MM-DD,YYYY-MM-DD,YYYY-MM-DD'</code> format.</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 22 - 28: If the array contains date objects:</p>
+                    <li class="content__block_li">
+                      <p class="text__main font_size_body">Line 22: Confirm that we&rsquo;re dealing with an array, that it contains at least one item, and that at least the first item is a JavaScript date object.</p>
+                    </li>
+                    <li class="content__block_li">
+                      <p class="text__main font_size_body">Lines 23 - 27: Loop over the array and format each date object into a <code class="language-javascript">'YYYY-MM-DD'</code> string.</p>
+                      <ul class="list__main font_size_body">
+                        <li class="content__block_li">
+                          <p class="text__main font_size_body">Line 24: Validation to confirm that each item is in fact a date object.</p>
+                        </li>
+                        <li class="content__block_li">
+                          <p class="text__main font_size_body">Line 25: Format each date (using the <code class="language-javascript">formatYYYYMMDD</code> function we created up top), and then push it into our <code class="language-javascript">formattedDateArr</code> array.</p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="content__block_li">
+                      <p class="text__main font_size_body">Line 28: After that process is complete, if the <code class="language-javascript">formattedDateArr</code> contains at least one item, join it with the default delimiter &mdash; commas &mdash; and store it in our <code class="language-javascript">outputYYYYMMDD</code> variable to be returned at the end. Otherwise, set it to an empty string. (NOTE: Do <em>not</em> encode the commas.)</p>
+                    </li>
+                  </li>
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Lines 29 - 31: If the array contains items other than date objects, set our final value to an empty string. (Remember, we are preemptively accounting for breakages in the data layer.)</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 32 - 34: Use Case 2 &ndash; We have taken in an <em>individual</em> date object, and need to convert it into a string formatted like <code class="language-javascript">'YYYY-MM-DD'</code>.</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 34: This one&rsquo;s much simpler &mdash; just pass the date object into our <code class="language-javascript">formatYYYYMMDD</code> function we created up top, and store the result in <code class="language-javascript">outputYYYYMMDD</code>.</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Lines 35 - 37: Use Case 3 &ndash; We have taken in a string (other than <code class="language-javascript">'any'</code>), and need to wipe it.</p>
+                <ul class="list__main font_size_body">
+                  <li class="content__block_li">
+                    <p class="text__main font_size_body">Line 36: We have had recurring issues in our data layer where a date object somehow gets converted to a string. If this happens, we report it to that development team, and they fix it. But in the meantime, we want to wipe those strings so that we don&rsquo;t start passing odd values. Especially to AEP, which is very finicky about expected values and data types.</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">Line 40: Return the final value. Note that Use Case 4 would be that an <code class="language-javascript">'any'</code> string would have passed straight through this flow unscathed and been returned as the final value.</p>
               </li>
             </ul>
 
