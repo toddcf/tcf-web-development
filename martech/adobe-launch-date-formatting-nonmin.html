@@ -123,7 +123,7 @@
         <div class="heading heading_theme_black">
           <div class="heading__title-overflow">
             <h2 class="heading__title-tag font_size_3">
-              <span class="heading__title-tag_title">Syntax</span>
+              <span class="heading__title-tag_title">Date-Formatting Syntax</span>
             </h2>
           </div>
         </div>
@@ -288,6 +288,63 @@ return outputYYYYMMDD;</code></pre>
               </li>
               <li class="content__block_li">
                 <p class="text__main font_size_body">Line 40: Return the final value. Note that Use Case 4 would be that an <code class="language-javascript">'any'</code> string would have passed straight through this flow unscathed and been returned as the final value.</p>
+              </li>
+            </ul>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+      </section>
+
+      <section>
+
+        <div class="heading heading_theme_black">
+          <div class="heading__title-overflow">
+            <h2 class="heading__title-tag font_size_3">
+              <span class="heading__title-tag_title">Data Element Argument Syntax</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <p class="text__main font_size_body">The <code class="language-javascript">date | YYYY-MM-DD format</code> data element is ready. Now I can pass anything you want into it &mdash; I&rsquo;m not even limited to the departure date. It could be an arrival date, the current date, anything. It could even be the wrong data type, and our validation will prevent it from throwing a ton of errors.</p>
+
+            <p class="text__main font_size_body">But let&rsquo;s say I do want to pass the departure date into it, and that data element is simply titled <code class="language-javascript">departure date</code>. I just use <code class="language-javascript">_satellite.getVar()</code> to retrieve each one, and pass the <code class="language-javascript">departure date</code> data element into the <code class="language-javascript">date | YYYY-MM-DD format</code> data element. Like this:</p>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_700 -->
+
+        <div class="content__center content__center_1140">
+
+          <div class="content__block">
+
+            <pre class="code__block"><code class="language-javascript">_satellite.getVar('date | YYYY-MM-DD format', _satellite.getVar('departure date'));</code></pre>
+
+          </div> <!-- Close .content__block -->
+
+        </div> <!-- Close .content__center content__center_1140 -->
+
+        <div class="content__center content__center_700">
+
+          <div class="content__block">
+
+            <ul class="list__main font_size_body">
+              <li class="content__block_li">
+                <p class="text__main font_size_body">If it went in as a single date object, it will come out as a string, like <code class="language-javascript">'2024-02-01'</code>.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">If it went in as an array of date objects, it will come out as a comma-delimited string of <code class="language-javascript">YYYY-MM-DD</code> dates, like <code class="language-javascript">'2024-02-01,2024-02-02,2024-02-03'</code>.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">If it went in as an <code class="language-javascript">'any'</code> string, it will emerge intact as an <code class="language-javascript">'any'</code> string.</p>
+              </li>
+              <li class="content__block_li">
+                <p class="text__main font_size_body">And if it went in as any other data type, or falsy value, it will emerge as an empty string.</p>
               </li>
             </ul>
 
