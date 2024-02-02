@@ -123,16 +123,8 @@
         <div class="heading heading_theme_black">
           <div class="heading__title-overflow">
             <h2 class="heading__title-tag font_size_3">
-              <span class="heading__title-tag_title">Use Cases</span>
+              <span class="heading__title-tag_title">Syntax</span>
             </h2>
-          </div>
-        </div>
-
-        <div class="heading heading_theme_clear">
-          <div class="heading__title-overflow">
-            <h3 class="heading__title-tag font_size_2">
-              <span class="heading__title-tag_title">Use Case 1: Modern Data Layer</span>
-            </h3>
           </div>
         </div>
 
@@ -140,7 +132,11 @@
 
           <div class="content__block">
 
-            <p class="text__main font_size_body">The modern data layer architecture (which each of our site sections is refactoring to as each gets replatformed) groups the destination <code class="language-javascript">code</code> and <code class="language-javascript">name</code> together within each property, like this:</p>
+            <p class="text__main font_size_body">I&rsquo;ll use the <code class="language-javascript">'YYYY-MM-DD'</code> format as my example. The name of this data element will be <code class="language-javascript">date | YYYY-MM-DD format</code>.</p>
+
+            <p class="text__main font_size_body">The first thing to mention is that <em>you can pass one data element into another</em>. I didn&rsquo;t know that at first, and it was one of those discoveries that kind of blew my mind. I had been thinking of data elements as variables, since that was how we&rsquo;d been using them, but they are really more like functions &mdash; they return a value. And, optionally, they can take in an argument and do something with it before returning that value.</p>
+
+            <p class="text__main font_size_body">Here is our data element&rsquo;s full syntax. (Scroll past to see an explanation of each code block.)</p>
 
             <pre class="code__block"><code class="language-javascript">dataLayer: {
   booking: {
