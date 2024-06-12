@@ -107,6 +107,20 @@ html {
   color: #000;
 }
 
+.link_theme_white,
+.link_theme_white:link,
+.link_theme_white:visited {
+  border-bottom: 1.5px solid #808080;
+  color: #808080;
+}
+
+.link_theme_white:active,
+.link_theme_white:focus,
+.link_theme_white:hover {
+  border-bottom: 1.5px solid #fff;
+  color: #fff;
+}
+
 /* Max Root Font Size */
 @media (min-width: 1140px) {
   html {
