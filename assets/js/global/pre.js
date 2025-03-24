@@ -1,3 +1,4 @@
+alert('pre.js loaded');
 window.globalControl = {
   minify: (fileType, bool) => {
     if (
