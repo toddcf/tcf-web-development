@@ -517,7 +517,7 @@ window.digitalDataHelper = {
         window.digitalData.site.root = '/toddcf-author/';
         break;
       case 'local':
-        window.digitalData.site.root = '/toddcf-author/github/toddcf-author/';
+        window.digitalData.site.root = 'design/tcf-web-development-portfolio/tcf-web-development/';
         break;
     }
     // Standardize pathname using both the environment and root:
@@ -556,7 +556,6 @@ window.globalControl.init();
 
 // Then set a listener to run all the DOM-modification logic once the page finishes loading:
 window.onload = (event) => {
-  alert('window.onload');
   window.globalControl.tagBuilder({
     appendTo: 'body',
     attr: {
