@@ -1,3 +1,4 @@
+alert('post.js has loaded.');
 window.globalControl.postTags = () => {
   const pageLevels = window.digitalData?.page?.levels;
   const pageLevel2id = window.digitalData?.page?.levels[1]?.id;

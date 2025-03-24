@@ -140,9 +140,9 @@ window.digitalDataHelper = {
     return relativePath;
   },
   tagBuilder: (tag) => {
-    const pageLevels = window.digitalData?.page?.levels;
-    const pageLevel2id = pageLevels[1]?.id;
-    const pageLevel3id = pageLevels[2]?.id;
+    // const pageLevels = window.digitalData?.page?.levels;
+    // const pageLevel2id = pageLevels[1]?.id;
+    // const pageLevel3id = pageLevels[2]?.id;
     let el;
 
     if (typeof tag === 'object') {
@@ -155,19 +155,19 @@ window.digitalDataHelper = {
           tag.pathToRoot = true;
         }
 
-        if (
-          tag.favicon === true &&
-          !!tag.attr.href
-        ) {
-          if (
-            pageLevel2id === 'titles' &&
-            !!pageLevel3id
-          ) {
-            tag.attr.href = `assets/img/favicon/${pageLevel3id}/${tag.attr.href}`;
-          } else {
-            tag.attr.href = `assets/img/favicon/default/${tag.attr.href}`;
-          }
-        }
+        // if (
+        //   tag.favicon === true &&
+        //   !!tag.attr.href
+        // ) {
+        //   if (
+        //     pageLevel2id === 'titles' &&
+        //     !!pageLevel3id
+        //   ) {
+        //     tag.attr.href = `assets/img/favicon/${pageLevel3id}/${tag.attr.href}`;
+        //   } else {
+        //     tag.attr.href = `assets/img/favicon/default/${tag.attr.href}`;
+        //   }
+        // }
         
         if (typeof tag.attr.type === 'string') {
           switch (tag.attr.type) {
@@ -434,42 +434,42 @@ window.digitalDataHelper = {
   //   }
   //   return category;
   // },
-  setPageLevels: () => {
-    // Set page levels. NEEDS TO KNOW PATHNAME FIRST.
-    const pathname = window.digitalData.page.pathname;
-    // Homepage will always be Page Level 1, so hardcode its page level data:
-    const pageLevels = window.digitalData.page.levels = [{
-      category: 'home',
-      id: '',
-      name: 'Home',
-    }];
-    let pathnameArr;
-    if (pathname !== '/') {
-      // For all other pages, build the page level data object dynamically:
-      // First, convert the pathname into an array:
-      pathnameArr = pathname;
-      if (pathname[0] === '/') {
-        pathnameArr = pathnameArr.slice(1); // If there is an initial slash, remove it.
-      }
-      if (pathname[pathname.length -1] === '/') {
-        pathnameArr = pathnameArr.slice(0, -1); // If there is an ending slash, remove it.
-      }
-      pathnameArr = pathnameArr.split('/');
+  // setPageLevels: () => {
+  //   // Set page levels. NEEDS TO KNOW PATHNAME FIRST.
+  //   const pathname = window.digitalData.page.pathname;
+  //   // Homepage will always be Page Level 1, so hardcode its page level data:
+  //   const pageLevels = window.digitalData.page.levels = [{
+  //     category: 'home',
+  //     id: '',
+  //     name: 'Home',
+  //   }];
+  //   let pathnameArr;
+  //   if (pathname !== '/') {
+  //     // For all other pages, build the page level data object dynamically:
+  //     // First, convert the pathname into an array:
+  //     pathnameArr = pathname;
+  //     if (pathname[0] === '/') {
+  //       pathnameArr = pathnameArr.slice(1); // If there is an initial slash, remove it.
+  //     }
+  //     if (pathname[pathname.length -1] === '/') {
+  //       pathnameArr = pathnameArr.slice(0, -1); // If there is an ending slash, remove it.
+  //     }
+  //     pathnameArr = pathnameArr.split('/');
       
-      // Next, assign each array value to a page level:
-      pathnameArr.forEach( (levelValue, i) => {
-        const pageLevelObj = {
-          category: window.globalControl.setPageLevelCategory(levelValue),
-          id: levelValue,
-          name: window.globalControl.setPageLevelName(levelValue, this.category), // This one gets dynamically created from the levelValue.
-        };
+  //     // Next, assign each array value to a page level:
+  //     pathnameArr.forEach( (levelValue, i) => {
+  //       const pageLevelObj = {
+  //         category: window.globalControl.setPageLevelCategory(levelValue),
+  //         id: levelValue,
+  //         name: window.globalControl.setPageLevelName(levelValue, this.category), // This one gets dynamically created from the levelValue.
+  //       };
 
-        // Once the pageLevelObj is created, push it to the pageLevels array:
-        pageLevels.push(pageLevelObj);
-      });
-    }
-    window.globalControl.setCumulativePath();
-  },
+  //       // Once the pageLevelObj is created, push it to the pageLevels array:
+  //       pageLevels.push(pageLevelObj);
+  //     });
+  //   }
+  //   window.globalControl.setCumulativePath();
+  // },
   setPathToRoot: (pathname) => {
     // Count number of slashes in pathnames. Will be used to set relative paths. Must be done after pathname variable is standardized.
     const levelCount = pathname.match(/\//g).length;
@@ -480,7 +480,7 @@ window.digitalDataHelper = {
       pathToRootArr.push('..');
     }
     window.digitalData.page.pathToRoot = pathToRootArr.join('/');
-    window.globalControl.setPageLevels();
+    // window.globalControl.setPageLevels();
   },
   setPathname: () => {
     // Standardize pathname using both the environment and root:
@@ -556,6 +556,7 @@ window.globalControl.init();
 
 // Then set a listener to run all the DOM-modification logic once the page finishes loading:
 window.onload = (event) => {
+  alert('window.onload');
   window.globalControl.tagBuilder({
     appendTo: 'body',
     attr: {
