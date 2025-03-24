@@ -139,30 +139,6 @@ window.digitalDataHelper = {
     }
     return relativePath;
   },
-  buildTextTags: (arr, noteType) => {
-    // For the moment, this is specifically for Music Cards. But later, refactor it to programmatically take in what type of classes should be applied to the tag.
-    let tags = '';
-    if (arr.length > 0) {
-      arr.forEach(arrItem => {
-        // Each item in the array only has one key, so just get [0]:
-        const itemKey = Object.keys(arrItem)[0];
-        const itemValue = arrItem[itemKey];
-        switch(itemKey) {
-          case 'p':
-          case 'q':
-            tags += `<${itemKey} class="html__${itemKey} html__${itemKey}_white html_font-size-body music-card__${noteType}-notes_${itemKey}">${itemValue}</${itemKey}>`;
-            break;
-          case 'ol':
-          case 'ul':
-          case 'li':
-            // This case is incredibly recursive. It passes the <ol> or <ul> back through the same method, which will pass the li back through the same method, which will finally hit a <p> tag:
-            tags += `<${itemKey} class="html_font-size-body music-card__${itemKey}">${window.globalControl.buildTextTags(itemValue, noteType)}</${itemKey}>`;
-            break;
-        }
-      });
-    }
-    return tags;
-  },
   tagBuilder: (tag) => {
     const pageLevels = window.digitalData?.page?.levels;
     const pageLevel2id = pageLevels[1]?.id;
@@ -436,28 +412,28 @@ window.digitalDataHelper = {
     }
     return pageLevelName;
   },
-  setPageLevelCategory: (levelValue) => {
-    let category = '';
-    switch (levelValue) {
-      case 'titles':
-        category = 'title-hub';
-        break;
-      case 'catch-up-to-myself':
-      case 'rushing-falls':
-      case 'the-druggist':
-        // Would be nice to do this dynamically, but for now I am just listing all titles.
-        category = 'specific-title';
-        break;
-      case 'music':
-        category = 'music';
-        break;
-      default:
-        if (levelValue.includes('-series')) {
-          category = 'series-hub';
-        }
-    }
-    return category;
-  },
+  // setPageLevelCategory: (levelValue) => {
+  //   let category = '';
+  //   switch (levelValue) {
+  //     case 'titles':
+  //       category = 'title-hub';
+  //       break;
+  //     case 'catch-up-to-myself':
+  //     case 'rushing-falls':
+  //     case 'the-druggist':
+  //       // Would be nice to do this dynamically, but for now I am just listing all titles.
+  //       category = 'specific-title';
+  //       break;
+  //     case 'music':
+  //       category = 'music';
+  //       break;
+  //     default:
+  //       if (levelValue.includes('-series')) {
+  //         category = 'series-hub';
+  //       }
+  //   }
+  //   return category;
+  // },
   setPageLevels: () => {
     // Set page levels. NEEDS TO KNOW PATHNAME FIRST.
     const pathname = window.digitalData.page.pathname;
