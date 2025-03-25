@@ -413,25 +413,18 @@ window.digitalDataHelper = {
     }
     return pageLevelName;
   },
-  setPageLevelCategory: (levelValue) => {
+  setPageLevelCategory: (levelValue, i) => {
     let category = '';
-    switch (levelValue) {
-      case 'titles':
-        category = 'title-hub';
-        break;
-      case 'catch-up-to-myself':
-      case 'rushing-falls':
-      case 'the-druggist':
-        // Would be nice to do this dynamically, but for now I am just listing all titles.
-        category = 'specific-title';
-        break;
-      case 'music':
-        category = 'music';
-        break;
-      default:
-        if (levelValue.includes('-series')) {
-          category = 'series-hub';
-        }
+
+    if (
+      levelValue === 'martech' ||
+      levelValue === 'ui-development'
+    ) {
+      // Handle hub pages dynamically:
+      category = 'hub';
+    } else if (window.digitalData.page.levels[i].category === 'hub') {
+      // Handle subpages dynamically -- pass the parent id down to the child category:
+      category = window.digitalData.page.levels[i].id;
     }
     return category;
   },
@@ -460,7 +453,7 @@ window.digitalDataHelper = {
       // Next, assign each array value to a page level:
       pathnameArr.forEach( (levelValue, i) => {
         const pageLevelObj = {
-          category: window.globalControl.setPageLevelCategory(levelValue),
+          category: window.globalControl.setPageLevelCategory(levelValue, i),
           id: levelValue,
           name: window.globalControl.setPageLevelName(levelValue, this.category), // This one gets dynamically created from the levelValue.
         };
