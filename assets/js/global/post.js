@@ -1,8 +1,9 @@
+alert('post.js loaded.');
 window.globalControl.postTags = () => {
-  // const pageLevels = window.digitalData?.page?.levels;
-  // const pageLevel2id = window.digitalData?.page?.levels[1]?.id;
-  // const pageLevel3id = window.digitalData?.page?.levels[2]?.id;
-  // const pageLevel4id = window.digitalData?.page?.levels[3]?.id;
+  const pageLevels = window.digitalData?.page?.levels;
+  const pageLevel2id = window.digitalData?.page?.levels[1]?.id;
+  const pageLevel3id = window.digitalData?.page?.levels[2]?.id;
+  const pageLevel4id = window.digitalData?.page?.levels[3]?.id;
   // 'titles/digitalData.js' must be loaded before 'nav.js' due to a dependency.
   
 

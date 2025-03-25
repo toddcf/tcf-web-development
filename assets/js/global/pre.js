@@ -413,28 +413,28 @@ window.digitalDataHelper = {
     }
     return pageLevelName;
   },
-  // setPageLevelCategory: (levelValue) => {
-  //   let category = '';
-  //   switch (levelValue) {
-  //     case 'titles':
-  //       category = 'title-hub';
-  //       break;
-  //     case 'catch-up-to-myself':
-  //     case 'rushing-falls':
-  //     case 'the-druggist':
-  //       // Would be nice to do this dynamically, but for now I am just listing all titles.
-  //       category = 'specific-title';
-  //       break;
-  //     case 'music':
-  //       category = 'music';
-  //       break;
-  //     default:
-  //       if (levelValue.includes('-series')) {
-  //         category = 'series-hub';
-  //       }
-  //   }
-  //   return category;
-  // },
+  setPageLevelCategory: (levelValue) => {
+    let category = '';
+    switch (levelValue) {
+      case 'titles':
+        category = 'title-hub';
+        break;
+      case 'catch-up-to-myself':
+      case 'rushing-falls':
+      case 'the-druggist':
+        // Would be nice to do this dynamically, but for now I am just listing all titles.
+        category = 'specific-title';
+        break;
+      case 'music':
+        category = 'music';
+        break;
+      default:
+        if (levelValue.includes('-series')) {
+          category = 'series-hub';
+        }
+    }
+    return category;
+  },
   setPageLevels: () => {
     // Set page levels. NEEDS TO KNOW PATHNAME FIRST.
     const pathname = window.digitalData.page.pathname;
