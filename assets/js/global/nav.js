@@ -48,12 +48,8 @@ const navBuilder = {
     const breadcrumbHTMLarr = pageLevelsArr.map((pageLevelData, pageLevelIndex) => {
       const category = pageLevelData.category;
       let pathEnd = '';
-      if (
-        category.includes('-hub') ||
-        category.includes('-series') ||
-        category === 'specific-title'
-      ) {
-        pathEnd += '/index'; // Certain page categories need '/index' appended.
+      if (category === 'hub') {
+        pathEnd += '/index'; // Hub pages need '/index' appended.
       } else if (category === 'home') {
         pathEnd += 'index'; // Homepage *cannot* have the slash in the appendage.
       }
@@ -68,6 +64,7 @@ const navBuilder = {
       return breadcrumbHTML;
     });
     breadcrumbs = `<p class="breadcrumbs">${breadcrumbHTMLarr.join(' / ')}</p>`;
+    console.log(breadcrumbs);
     window.globalControl.internalLinkLogic();
     navBuilder.createNavHTML(dropdown, breadcrumbs);
   },
